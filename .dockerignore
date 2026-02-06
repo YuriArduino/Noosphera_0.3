@@ -1,0 +1,28 @@
+# Git / Python
+.git
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Dados pesados
+data/
+datasets/
+videos/
+audio/
+models/
+embeddings/
+faiss/
+
+# Outputs
+logs/
+outputs/
+*.npz
+*.parquet
+*.pt
+*.bin
+*.ckpt
+
+# Env / secrets
+.env
+.env.*
