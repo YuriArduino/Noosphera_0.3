@@ -5,19 +5,19 @@
       "file": "PDF_A_Digital.pdf",
       "pages": 3,
       "avg_confidence": 92.41,
-      "processing_time_s": 4.67
+      "processing_time_s": 4.57
     },
     {
       "file": "PDF_B_Digital.pdf",
       "pages": 6,
       "avg_confidence": 89.56,
-      "processing_time_s": 10.37
+      "processing_time_s": 10.9
     },
     {
       "file": "PDF_C_Digitalizado.pdf",
       "pages": 5,
       "avg_confidence": 87.71,
-      "processing_time_s": 6.09
+      "processing_time_s": 7.07
     }
   ]
 }

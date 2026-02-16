@@ -20,7 +20,7 @@
           "confidence": 73.5,
           "word_count": 16,
           "char_count": 93,
-          "processing_time_s": 0.9579651679996459,
+          "processing_time_s": 1.2511009639993063,
           "bbox": {
             "left": 137,
             "top": 82,
@@ -31,8 +31,9 @@
           "config_used": "gray_psm3_scale1.0_oem2"
         }
       ],
+      "page_quality": "poor",
       "page_confidence_mean": 73.5,
-      "processing_time_s": 0.9930198860001838,
+      "processing_time_s": 1.2886011709997547,
       "config_used": null,
       "warnings": []
     },
@@ -46,7 +47,7 @@
           "confidence": 95.325,
           "word_count": 40,
           "char_count": 289,
-          "processing_time_s": 0.8332768969994504,
+          "processing_time_s": 1.2280064779997701,
           "bbox": {
             "left": 224,
             "top": 115,
@@ -57,8 +58,9 @@
           "config_used": "gray_psm3_scale1.0_oem1"
         }
       ],
+      "page_quality": "excellent",
       "page_confidence_mean": 95.325,
-      "processing_time_s": 0.8715050959999644,
+      "processing_time_s": 1.2729903129993545,
       "config_used": null,
       "warnings": []
     },
@@ -72,7 +74,7 @@
           "confidence": 90.45348837209302,
           "word_count": 172,
           "char_count": 1168,
-          "processing_time_s": 2.2756260389996896,
+          "processing_time_s": 2.5054496700004165,
           "bbox": {
             "left": 275,
             "top": 547,
@@ -83,8 +85,9 @@
           "config_used": "gray_psm3_scale1.0_oem1"
         }
       ],
+      "page_quality": "excellent",
       "page_confidence_mean": 90.45348837209302,
-      "processing_time_s": 2.3354286069998125,
+      "processing_time_s": 2.5532176980004806,
       "config_used": null,
       "warnings": []
     },
@@ -98,7 +101,7 @@
           "confidence": 85.76923076923077,
           "word_count": 260,
           "char_count": 1558,
-          "processing_time_s": 2.910879229000784,
+          "processing_time_s": 3.620997387999523,
           "bbox": {
             "left": 7,
             "top": 100,
@@ -114,7 +117,7 @@
           "confidence": 87.6259842519685,
           "word_count": 254,
           "char_count": 1563,
-          "processing_time_s": 2.753137687999697,
+          "processing_time_s": 2.742766608999773,
           "bbox": {
             "left": 478,
             "top": 106,
@@ -125,8 +128,9 @@
           "config_used": "gray_psm4_scale1.0_oem1"
         }
       ],
+      "page_quality": "excellent",
       "page_confidence_mean": 86.69760751059964,
-      "processing_time_s": 5.722568427000624,
+      "processing_time_s": 6.415723560000515,
       "config_used": null,
       "warnings": []
     },
@@ -140,7 +144,7 @@
           "confidence": 92.58364312267658,
           "word_count": 269,
           "char_count": 1656,
-          "processing_time_s": 2.6954002420006873,
+          "processing_time_s": 3.2979410360003385,
           "bbox": {
             "left": 12,
             "top": 430,
@@ -156,7 +160,7 @@
           "confidence": 92.60079051383399,
           "word_count": 253,
           "char_count": 1587,
-          "processing_time_s": 2.4675657920006415,
+          "processing_time_s": 2.4454794800003583,
           "bbox": {
             "left": 557,
             "top": 435,
@@ -167,8 +171,9 @@
           "config_used": "gray_psm4_scale1.0_oem1"
         }
       ],
+      "page_quality": "excellent",
       "page_confidence_mean": 92.59221681825528,
-      "processing_time_s": 5.2178404059995955,
+      "processing_time_s": 5.795097782000084,
       "config_used": null,
       "warnings": []
     }
@@ -181,9 +186,12 @@
     "total_words": 1264,
     "total_characters": 7914,
     "average_confidence": 87.71366254018959,
-    "total_processing_time_s": 6.090210453000509,
-    "pages_per_second": 0.8209896913392563,
-    "quality_distribution": {},
+    "total_processing_time_s": 7.069203840999762,
+    "pages_per_second": 0.7072932274213322,
+    "quality_distribution": {
+      "poor": 1,
+      "excellent": 4
+    },
     "low_confidence_pages": []
   },
   "config": {
@@ -202,5 +210,5 @@
     "mode": "parallel",
     "llm_ready": true
   },
-  "created_at": "2026-02-16T19:43:08.689231"
+  "created_at": "2026-02-16T19:47:09.735585"
 }

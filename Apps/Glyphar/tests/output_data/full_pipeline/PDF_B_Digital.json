@@ -20,7 +20,7 @@
           "confidence": 71.53846153846153,
           "word_count": 13,
           "char_count": 78,
-          "processing_time_s": 0.9995872509998662,
+          "processing_time_s": 1.3784889580001618,
           "bbox": {
             "left": 53,
             "top": 22,
@@ -31,8 +31,9 @@
           "config_used": "gray_psm3_scale1.0_oem1"
         }
       ],
+      "page_quality": "excellent",
       "page_confidence_mean": 71.53846153846153,
-      "processing_time_s": 1.0386972979995335,
+      "processing_time_s": 1.4564603220005665,
       "config_used": null,
       "warnings": []
     },
@@ -46,7 +47,7 @@
           "confidence": 94.35593220338983,
           "word_count": 59,
           "char_count": 396,
-          "processing_time_s": 1.1047030429999722,
+          "processing_time_s": 1.3918852189999598,
           "bbox": {
             "left": 660,
             "top": 524,
@@ -57,8 +58,9 @@
           "config_used": "gray_psm3_scale1.0_oem1"
         }
       ],
+      "page_quality": "excellent",
       "page_confidence_mean": 94.35593220338983,
-      "processing_time_s": 1.1904390259996944,
+      "processing_time_s": 1.4898849050005083,
       "config_used": null,
       "warnings": []
     },
@@ -72,7 +74,7 @@
           "confidence": 93.85714285714286,
           "word_count": 238,
           "char_count": 1638,
-          "processing_time_s": 2.734322835999592,
+          "processing_time_s": 3.1020290939995903,
           "bbox": {
             "left": 623,
             "top": 700,
@@ -83,8 +85,9 @@
           "config_used": "gray_psm3_scale1.0_oem1"
         }
       ],
+      "page_quality": "excellent",
       "page_confidence_mean": 93.85714285714286,
-      "processing_time_s": 2.836684791999687,
+      "processing_time_s": 3.2461040769994725,
       "config_used": null,
       "warnings": []
     },
@@ -98,7 +101,7 @@
           "confidence": 90.13636363636364,
           "word_count": 44,
           "char_count": 271,
-          "processing_time_s": 1.0939635139993698,
+          "processing_time_s": 1.4121746290002193,
           "bbox": {
             "left": 763,
             "top": 523,
@@ -109,8 +112,9 @@
           "config_used": "gray_psm3_scale1.0_oem1"
         }
       ],
+      "page_quality": "excellent",
       "page_confidence_mean": 90.13636363636364,
-      "processing_time_s": 1.2030456100001174,
+      "processing_time_s": 1.5885362889994212,
       "config_used": null,
       "warnings": []
     },
@@ -124,7 +128,7 @@
           "confidence": 94.51890756302521,
           "word_count": 476,
           "char_count": 2992,
-          "processing_time_s": 4.175262343000213,
+          "processing_time_s": 4.4184550290001425,
           "bbox": {
             "left": 487,
             "top": 523,
@@ -135,8 +139,9 @@
           "config_used": "gray_psm3_scale1.0_oem1"
         }
       ],
+      "page_quality": "excellent",
       "page_confidence_mean": 94.51890756302521,
-      "processing_time_s": 4.236309666000125,
+      "processing_time_s": 4.486395165000431,
       "config_used": null,
       "warnings": []
     },
@@ -150,7 +155,7 @@
           "confidence": 94.11785714285715,
           "word_count": 280,
           "char_count": 1803,
-          "processing_time_s": 2.378874955000356,
+          "processing_time_s": 2.340541067000231,
           "bbox": {
             "left": 421,
             "top": 839,
@@ -166,7 +171,7 @@
           "confidence": 91.77173913043478,
           "word_count": 276,
           "char_count": 1834,
-          "processing_time_s": 2.663642582000648,
+          "processing_time_s": 2.5540029219991993,
           "bbox": {
             "left": 902,
             "top": 840,
@@ -177,8 +182,9 @@
           "config_used": "gray_psm4_scale1.0_oem1"
         }
       ],
+      "page_quality": "excellent",
       "page_confidence_mean": 92.94479813664597,
-      "processing_time_s": 5.0920956300005855,
+      "processing_time_s": 4.955381777000184,
       "config_used": null,
       "warnings": []
     }
@@ -191,9 +197,11 @@
     "total_words": 1386,
     "total_characters": 9012,
     "average_confidence": 89.55860098917151,
-    "total_processing_time_s": 10.368202363999444,
-    "pages_per_second": 0.5786924087084998,
-    "quality_distribution": {},
+    "total_processing_time_s": 10.89946925500044,
+    "pages_per_second": 0.5504855199483525,
+    "quality_distribution": {
+      "excellent": 6
+    },
     "low_confidence_pages": []
   },
   "config": {
@@ -212,5 +220,5 @@
     "mode": "parallel",
     "llm_ready": true
   },
-  "created_at": "2026-02-16T19:43:02.136315"
+  "created_at": "2026-02-16T19:47:02.214104"
 }
