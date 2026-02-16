@@ -107,25 +107,27 @@ def test_managed_engine_full_pipeline_smoke() -> None:
                 assert "processing_time_ms" in result
                 assert "config_used" in result
 
+            cache_consistent_text = result_1.get("text") == result_2.get("text")
+            cache_consistent_word_count = result_1.get("word_count") == result_2.get(
+                "word_count"
+            )
+            assert cache_consistent_text
+            assert cache_consistent_word_count
+
             per_file_results.append(
                 {
                     "pdf_file": pdf_path.name,
                     "page": page_index,
-                    "first_pass": result_1,
-                    "second_pass": result_2,
+                    "result": result_1,
+                    "cache_consistent_text": cache_consistent_text,
+                    "cache_consistent_word_count": cache_consistent_word_count,
                 }
             )
 
             stem = pdf_path.stem
             _write_json(
-                output_dir
-                / f"managed_smoke_{stem}_page_{page_index:03d}_result_1.json",
+                output_dir / f"managed_smoke_{stem}_page_{page_index:03d}.json",
                 result_1,
-            )
-            _write_json(
-                output_dir
-                / f"managed_smoke_{stem}_page_{page_index:03d}_result_2.json",
-                result_2,
             )
 
     assert engine.stats.cache_hits >= total_pages
@@ -152,8 +154,9 @@ def test_managed_engine_full_pipeline_smoke() -> None:
                 {
                     "pdf_file": entry["pdf_file"],
                     "page": entry["page"],
-                    "first_pass": entry["first_pass"].get("word_count", 0),
-                    "second_pass": entry["second_pass"].get("word_count", 0),
+                    "word_count": entry["result"].get("word_count", 0),
+                    "cache_consistent_text": entry["cache_consistent_text"],
+                    "cache_consistent_word_count": entry["cache_consistent_word_count"],
                 }
                 for entry in per_file_results
             ],

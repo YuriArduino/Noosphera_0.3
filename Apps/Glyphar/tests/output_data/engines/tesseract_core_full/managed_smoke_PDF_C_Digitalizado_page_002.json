@@ -1,0 +1,413 @@
+{
+  "text": "DICIONÁRIO ENCICLOPÉDICO DE PSICANÁLISE O legado de Freud e Lacan editado por PIERRE KAUFMANN Tradução: VERA RIBEIRO MARIA LUIZA X. DE A. BORGES Supervisão da edição brasileira: MARCO ANTONIO COUTINHO JORGE psiquiatra, psicanalista JORGE ZAHAR EDITOR Rio de Janeiro facebook.com/lacanempdf",
+  "confidence": 95.325,
+  "words": [
+    {
+      "text": "DICIONÁRIO",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 302,
+        "top": 115,
+        "width": 464,
+        "height": 76
+      }
+    },
+    {
+      "text": "ENCICLOPÉDICO",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 227,
+        "top": 224,
+        "width": 615,
+        "height": 69
+      }
+    },
+    {
+      "text": "DE",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 224,
+        "top": 341,
+        "width": 99,
+        "height": 51
+      }
+    },
+    {
+      "text": "PSICANÁLISE",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 350,
+        "top": 325,
+        "width": 497,
+        "height": 68
+      }
+    },
+    {
+      "text": "O",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 233,
+        "top": 469,
+        "width": 36,
+        "height": 39
+      }
+    },
+    {
+      "text": "legado",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 287,
+        "top": 469,
+        "width": 147,
+        "height": 51
+      }
+    },
+    {
+      "text": "de",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 452,
+        "top": 469,
+        "width": 49,
+        "height": 39
+      }
+    },
+    {
+      "text": "Freud",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 519,
+        "top": 469,
+        "width": 129,
+        "height": 39
+      }
+    },
+    {
+      "text": "e",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 664,
+        "top": 482,
+        "width": 22,
+        "height": 26
+      }
+    },
+    {
+      "text": "Lacan",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 703,
+        "top": 470,
+        "width": 136,
+        "height": 38
+      }
+    },
+    {
+      "text": "editado",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 454,
+        "top": 654,
+        "width": 105,
+        "height": 25
+      }
+    },
+    {
+      "text": "por",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 571,
+        "top": 662,
+        "width": 48,
+        "height": 24
+      }
+    },
+    {
+      "text": "PIERRE",
+      "confidence": 93.0,
+      "bbox": {
+        "left": 383,
+        "top": 701,
+        "width": 111,
+        "height": 27
+      }
+    },
+    {
+      "text": "KAUFMANN",
+      "confidence": 91.0,
+      "bbox": {
+        "left": 505,
+        "top": 701,
+        "width": 184,
+        "height": 27
+      }
+    },
+    {
+      "text": "Tradução:",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 481,
+        "top": 877,
+        "width": 109,
+        "height": 26
+      }
+    },
+    {
+      "text": "VERA",
+      "confidence": 95.0,
+      "bbox": {
+        "left": 454,
+        "top": 911,
+        "width": 64,
+        "height": 19
+      }
+    },
+    {
+      "text": "RIBEIRO",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 528,
+        "top": 911,
+        "width": 91,
+        "height": 19
+      }
+    },
+    {
+      "text": "MARIA",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 357,
+        "top": 945,
+        "width": 78,
+        "height": 19
+      }
+    },
+    {
+      "text": "LUIZA",
+      "confidence": 93.0,
+      "bbox": {
+        "left": 443,
+        "top": 945,
+        "width": 70,
+        "height": 19
+      }
+    },
+    {
+      "text": "X.",
+      "confidence": 92.0,
+      "bbox": {
+        "left": 521,
+        "top": 945,
+        "width": 25,
+        "height": 19
+      }
+    },
+    {
+      "text": "DE",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 557,
+        "top": 949,
+        "width": 28,
+        "height": 15
+      }
+    },
+    {
+      "text": "A.",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 592,
+        "top": 946,
+        "width": 25,
+        "height": 18
+      }
+    },
+    {
+      "text": "BORGES",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 626,
+        "top": 945,
+        "width": 90,
+        "height": 19
+      }
+    },
+    {
+      "text": "Supervisão",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 359,
+        "top": 1042,
+        "width": 123,
+        "height": 24
+      }
+    },
+    {
+      "text": "da",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 491,
+        "top": 1042,
+        "width": 24,
+        "height": 19
+      }
+    },
+    {
+      "text": "edição",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 524,
+        "top": 1042,
+        "width": 71,
+        "height": 25
+      }
+    },
+    {
+      "text": "brasileira:",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 604,
+        "top": 1042,
+        "width": 110,
+        "height": 20
+      }
+    },
+    {
+      "text": "MARCO",
+      "confidence": 95.0,
+      "bbox": {
+        "left": 333,
+        "top": 1075,
+        "width": 87,
+        "height": 19
+      }
+    },
+    {
+      "text": "ANTONIO",
+      "confidence": 95.0,
+      "bbox": {
+        "left": 427,
+        "top": 1076,
+        "width": 105,
+        "height": 18
+      }
+    },
+    {
+      "text": "COUTINHO",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 541,
+        "top": 1076,
+        "width": 119,
+        "height": 18
+      }
+    },
+    {
+      "text": "JORGE",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 669,
+        "top": 1075,
+        "width": 71,
+        "height": 19
+      }
+    },
+    {
+      "text": "psiquiatra,",
+      "confidence": 95.0,
+      "bbox": {
+        "left": 416,
+        "top": 1106,
+        "width": 109,
+        "height": 21
+      }
+    },
+    {
+      "text": "psicanalista",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 534,
+        "top": 1105,
+        "width": 122,
+        "height": 22
+      }
+    },
+    {
+      "text": "JORGE",
+      "confidence": 95.0,
+      "bbox": {
+        "left": 378,
+        "top": 1608,
+        "width": 90,
+        "height": 25
+      }
+    },
+    {
+      "text": "ZAHAR",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 479,
+        "top": 1609,
+        "width": 101,
+        "height": 24
+      }
+    },
+    {
+      "text": "EDITOR",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 591,
+        "top": 1608,
+        "width": 105,
+        "height": 25
+      }
+    },
+    {
+      "text": "Rio",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 457,
+        "top": 1648,
+        "width": 39,
+        "height": 19
+      }
+    },
+    {
+      "text": "de",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 506,
+        "top": 1648,
+        "width": 24,
+        "height": 20
+      }
+    },
+    {
+      "text": "Janeiro",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 539,
+        "top": 1648,
+        "width": 79,
+        "height": 20
+      }
+    },
+    {
+      "text": "facebook.com/lacanempdf",
+      "confidence": 89.0,
+      "bbox": {
+        "left": 318,
+        "top": 1711,
+        "width": 460,
+        "height": 37
+      }
+    }
+  ],
+  "word_count": 40,
+  "char_count": 289,
+  "avg_word_confidence": 95.325,
+  "min_word_confidence": 89.0,
+  "max_word_confidence": 96.0,
+  "config_used": "--tessdata-dir /media/yuri/Noosphera/Noosphera_0.3/Apps/Glyphar/src/glyphar/resources/tessdata --oem 1 --psm 3 --user-words /tmp/tesseract_user_words.txt -c preserve_interword_spaces=1 -c textord_min_linesize=2.5 -c textord_initialx_ile=1.0",
+  "processing_time_ms": 716.6427259980992
+}

@@ -1,0 +1,4773 @@
+{
+  "text": "PREFÁCIO O primeiro dicionário de psicanálise, intitulado Handwôrterbuch der Psychoana- lyse, foi elaborado por Richard Sterba, entre 1931 e 1938. Foram publicados cinco fascículos, até o momento em que a ocupação da Áustria pelos nazistas pôs fim ao empreendimento. A intenção era compor um léxico geral dos termos freudianos, um vocabulário mais do que um recenseamento dos conceitos: “Não desconheço, escreveu Freud em uma carta a seu discípulo, que o caminho que parte da letra A e passa por todo o alfabeto é muito longo, e que percorrê-lo significaria para você uma enorme carga de trabalho. Assim, não o faça, a menos que se sinta interna- mente levado a isso. Apenas sob o efeito desse impulso, mas certamente não a partir de uma incitação externa !”! Sem dúvida, Freud sabia melhor que ninguém que um dicionário pode respon- der a um impulso interno, a um desejo, a uma pulsão. Em sua famosa análise do caso Dora (Ida Bauer), ele frisava que um dicionário é sempre objeto de um prazer solitário e proibido, no qual a criança descobre, à revelia dos adultos, a verdade das palavras, a história do mundo ou a geografia do sexo.? Obrigado a se exilar nos Estados Unidos, como a quase totalidade dos psicana- listas europeus de língua alemã, Sterba interrompeu a redação do seu Handwôr- terbuch na letra L, e a impressão do último volume na palavra Grôssenwahn: “Não sei, declarou vinte anos depois em uma carta a Daniel Lagache, se esse termo se refere à minha megalomania ou à de Hitler.” De qualquer forma, o Handwôrterbuch inacabado serviu de modelo para as obras do gênero, todas publicadas na mesma data (1967-1968), em uma época em que o movimento psicanalítico internacional, envolvido em rupturas e dúvidas, experimentava a necessidade de fazer um balanço e recompor, através de um saber comum, a sua unidade perdida. Diversas denominações foram utilizadas: glossário, dicionário, enciclopédia, vocabulário. O Glossary of Psychoanalytic Terms and Concepts (180 verbetes, 70 colabora- dores), obra coletiva publicada sob a égide da poderosa American Psychoanalytic Association (APsaA), expressava a ortodoxia de um freudismo pragmático e medicalizado. Na mesma perspectiva, a Encyclopedia of Psychoanalysis — rea- lizada sob a direção de Ludwig Eidelberg (1898-1970), psicanalista americano nascido na parte polonesa do antigo Império Austro-Húngaro e radicado em Nova York depois de escapar do nazismo — se mostrava mais ambiciosa, ampliando a 1. Sigmund Freud, \"Prefácio ao Dicionário de psicanálise, de Richard Sterba“ (1936), ESB, XXIII, 309; OC, XIX, 287-9; GW, Nachtragsband, 761; SE, XXII, 253. Richard Sterba, Han- dworterbuch der Psychoanalyse, 5 vols., Viena, Intern. Psychoanalytischer Verlag, 1936-1938. 2. Sigmund Freud, “Fragmento da análise de um caso de histeria” (1905), ESB, VII, 5-128. vii Dicionário de Psicanálise (PSI) 1º revisão — 13.08.98 2º revisão — 31.08.98 3º revisão — 24.09.98 4º revisão — 29.09.98 — Cad. O Produção: Textos & Formas Para: Ed. Zahar",
+  "confidence": 94.51890756302521,
+  "words": [
+    {
+      "text": "PREFÁCIO",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 839,
+        "top": 523,
+        "width": 174,
+        "height": 33
+      }
+    },
+    {
+      "text": "O",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 488,
+        "top": 772,
+        "width": 18,
+        "height": 19
+      }
+    },
+    {
+      "text": "primeiro",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 513,
+        "top": 772,
+        "width": 93,
+        "height": 25
+      }
+    },
+    {
+      "text": "dicionário",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 614,
+        "top": 772,
+        "width": 109,
+        "height": 19
+      }
+    },
+    {
+      "text": "de",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 730,
+        "top": 772,
+        "width": 24,
+        "height": 19
+      }
+    },
+    {
+      "text": "psicanálise,",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 762,
+        "top": 772,
+        "width": 124,
+        "height": 25
+      }
+    },
+    {
+      "text": "intitulado",
+      "confidence": 92.0,
+      "bbox": {
+        "left": 894,
+        "top": 772,
+        "width": 103,
+        "height": 19
+      }
+    },
+    {
+      "text": "Handwôrterbuch",
+      "confidence": 86.0,
+      "bbox": {
+        "left": 1004,
+        "top": 772,
+        "width": 186,
+        "height": 19
+      }
+    },
+    {
+      "text": "der",
+      "confidence": 93.0,
+      "bbox": {
+        "left": 1197,
+        "top": 772,
+        "width": 37,
+        "height": 19
+      }
+    },
+    {
+      "text": "Psychoana-",
+      "confidence": 92.0,
+      "bbox": {
+        "left": 1240,
+        "top": 772,
+        "width": 128,
+        "height": 25
+      }
+    },
+    {
+      "text": "lyse,",
+      "confidence": 81.0,
+      "bbox": {
+        "left": 488,
+        "top": 805,
+        "width": 46,
+        "height": 25
+      }
+    },
+    {
+      "text": "foi",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 542,
+        "top": 805,
+        "width": 28,
+        "height": 19
+      }
+    },
+    {
+      "text": "elaborado",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 578,
+        "top": 805,
+        "width": 106,
+        "height": 19
+      }
+    },
+    {
+      "text": "por",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 691,
+        "top": 811,
+        "width": 36,
+        "height": 19
+      }
+    },
+    {
+      "text": "Richard",
+      "confidence": 93.0,
+      "bbox": {
+        "left": 732,
+        "top": 805,
+        "width": 86,
+        "height": 19
+      }
+    },
+    {
+      "text": "Sterba,",
+      "confidence": 93.0,
+      "bbox": {
+        "left": 825,
+        "top": 805,
+        "width": 74,
+        "height": 23
+      }
+    },
+    {
+      "text": "entre",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 906,
+        "top": 809,
+        "width": 53,
+        "height": 15
+      }
+    },
+    {
+      "text": "1931",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 969,
+        "top": 805,
+        "width": 48,
+        "height": 20
+      }
+    },
+    {
+      "text": "e",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1026,
+        "top": 811,
+        "width": 10,
+        "height": 13
+      }
+    },
+    {
+      "text": "1938.",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1047,
+        "top": 805,
+        "width": 56,
+        "height": 19
+      }
+    },
+    {
+      "text": "Foram",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1110,
+        "top": 806,
+        "width": 71,
+        "height": 18
+      }
+    },
+    {
+      "text": "publicados",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1187,
+        "top": 805,
+        "width": 116,
+        "height": 25
+      }
+    },
+    {
+      "text": "cinco",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1310,
+        "top": 805,
+        "width": 58,
+        "height": 19
+      }
+    },
+    {
+      "text": "fascículos,",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 488,
+        "top": 838,
+        "width": 113,
+        "height": 23
+      }
+    },
+    {
+      "text": "até",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 609,
+        "top": 838,
+        "width": 30,
+        "height": 19
+      }
+    },
+    {
+      "text": "o",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 657,
+        "top": 844,
+        "width": 2,
+        "height": 13
+      }
+    },
+    {
+      "text": "momento",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 666,
+        "top": 842,
+        "width": 101,
+        "height": 15
+      }
+    },
+    {
+      "text": "em",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 774,
+        "top": 844,
+        "width": 33,
+        "height": 13
+      }
+    },
+    {
+      "text": "que",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 814,
+        "top": 844,
+        "width": 38,
+        "height": 19
+      }
+    },
+    {
+      "text": "a",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 859,
+        "top": 844,
+        "width": 11,
+        "height": 13
+      }
+    },
+    {
+      "text": "ocupação",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 877,
+        "top": 839,
+        "width": 102,
+        "height": 24
+      }
+    },
+    {
+      "text": "da",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 985,
+        "top": 838,
+        "width": 25,
+        "height": 19
+      }
+    },
+    {
+      "text": "Áustria",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1016,
+        "top": 832,
+        "width": 80,
+        "height": 25
+      }
+    },
+    {
+      "text": "pelos",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1102,
+        "top": 838,
+        "width": 56,
+        "height": 25
+      }
+    },
+    {
+      "text": "nazistas",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1165,
+        "top": 838,
+        "width": 85,
+        "height": 19
+      }
+    },
+    {
+      "text": "pôs",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1257,
+        "top": 838,
+        "width": 36,
+        "height": 25
+      }
+    },
+    {
+      "text": "fim",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1300,
+        "top": 838,
+        "width": 37,
+        "height": 19
+      }
+    },
+    {
+      "text": "ao",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1344,
+        "top": 844,
+        "width": 24,
+        "height": 13
+      }
+    },
+    {
+      "text": "empreendimento.",
+      "confidence": 95.0,
+      "bbox": {
+        "left": 488,
+        "top": 872,
+        "width": 187,
+        "height": 25
+      }
+    },
+    {
+      "text": "A",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 685,
+        "top": 872,
+        "width": 19,
+        "height": 19
+      }
+    },
+    {
+      "text": "intenção",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 711,
+        "top": 872,
+        "width": 91,
+        "height": 25
+      }
+    },
+    {
+      "text": "era",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 811,
+        "top": 878,
+        "width": 33,
+        "height": 13
+      }
+    },
+    {
+      "text": "compor",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 852,
+        "top": 878,
+        "width": 83,
+        "height": 19
+      }
+    },
+    {
+      "text": "um",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 943,
+        "top": 878,
+        "width": 34,
+        "height": 13
+      }
+    },
+    {
+      "text": "léxico",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 985,
+        "top": 872,
+        "width": 66,
+        "height": 19
+      }
+    },
+    {
+      "text": "geral",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1059,
+        "top": 872,
+        "width": 54,
+        "height": 25
+      }
+    },
+    {
+      "text": "dos",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1121,
+        "top": 872,
+        "width": 36,
+        "height": 19
+      }
+    },
+    {
+      "text": "termos",
+      "confidence": 93.0,
+      "bbox": {
+        "left": 1167,
+        "top": 875,
+        "width": 72,
+        "height": 16
+      }
+    },
+    {
+      "text": "freudianos,",
+      "confidence": 92.0,
+      "bbox": {
+        "left": 1248,
+        "top": 872,
+        "width": 120,
+        "height": 23
+      }
+    },
+    {
+      "text": "um",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 488,
+        "top": 911,
+        "width": 33,
+        "height": 13
+      }
+    },
+    {
+      "text": "vocabulário",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 529,
+        "top": 905,
+        "width": 127,
+        "height": 19
+      }
+    },
+    {
+      "text": "mais",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 664,
+        "top": 905,
+        "width": 50,
+        "height": 19
+      }
+    },
+    {
+      "text": "do",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 722,
+        "top": 905,
+        "width": 26,
+        "height": 19
+      }
+    },
+    {
+      "text": "que",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 755,
+        "top": 911,
+        "width": 38,
+        "height": 19
+      }
+    },
+    {
+      "text": "um",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 801,
+        "top": 911,
+        "width": 34,
+        "height": 13
+      }
+    },
+    {
+      "text": "recenseamento",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 842,
+        "top": 908,
+        "width": 161,
+        "height": 16
+      }
+    },
+    {
+      "text": "dos",
+      "confidence": 95.0,
+      "bbox": {
+        "left": 1010,
+        "top": 905,
+        "width": 37,
+        "height": 19
+      }
+    },
+    {
+      "text": "conceitos:",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1054,
+        "top": 905,
+        "width": 108,
+        "height": 19
+      }
+    },
+    {
+      "text": "“Não",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1171,
+        "top": 905,
+        "width": 57,
+        "height": 19
+      }
+    },
+    {
+      "text": "desconheço,",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1235,
+        "top": 905,
+        "width": 133,
+        "height": 25
+      }
+    },
+    {
+      "text": "escreveu",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 488,
+        "top": 944,
+        "width": 93,
+        "height": 13
+      }
+    },
+    {
+      "text": "Freud",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 590,
+        "top": 938,
+        "width": 62,
+        "height": 19
+      }
+    },
+    {
+      "text": "em",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 660,
+        "top": 944,
+        "width": 33,
+        "height": 13
+      }
+    },
+    {
+      "text": "uma",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 700,
+        "top": 944,
+        "width": 46,
+        "height": 13
+      }
+    },
+    {
+      "text": "carta",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 754,
+        "top": 941,
+        "width": 52,
+        "height": 16
+      }
+    },
+    {
+      "text": "a",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 814,
+        "top": 944,
+        "width": 11,
+        "height": 13
+      }
+    },
+    {
+      "text": "seu",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 833,
+        "top": 944,
+        "width": 34,
+        "height": 13
+      }
+    },
+    {
+      "text": "discípulo,",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 876,
+        "top": 938,
+        "width": 104,
+        "height": 25
+      }
+    },
+    {
+      "text": "que",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 988,
+        "top": 944,
+        "width": 38,
+        "height": 19
+      }
+    },
+    {
+      "text": "o",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1035,
+        "top": 944,
+        "width": 12,
+        "height": 13
+      }
+    },
+    {
+      "text": "caminho",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1055,
+        "top": 938,
+        "width": 92,
+        "height": 19
+      }
+    },
+    {
+      "text": "que",
+      "confidence": 97.0,
+      "bbox": {
+        "left": 1156,
+        "top": 944,
+        "width": 38,
+        "height": 19
+      }
+    },
+    {
+      "text": "parte",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1201,
+        "top": 941,
+        "width": 53,
+        "height": 22
+      }
+    },
+    {
+      "text": "da",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1262,
+        "top": 938,
+        "width": 26,
+        "height": 19
+      }
+    },
+    {
+      "text": "letra",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1295,
+        "top": 938,
+        "width": 48,
+        "height": 19
+      }
+    },
+    {
+      "text": "A",
+      "confidence": 95.0,
+      "bbox": {
+        "left": 1350,
+        "top": 939,
+        "width": 18,
+        "height": 18
+      }
+    },
+    {
+      "text": "e",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 488,
+        "top": 978,
+        "width": 10,
+        "height": 13
+      }
+    },
+    {
+      "text": "passa",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 505,
+        "top": 978,
+        "width": 59,
+        "height": 19
+      }
+    },
+    {
+      "text": "por",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 571,
+        "top": 978,
+        "width": 36,
+        "height": 19
+      }
+    },
+    {
+      "text": "todo",
+      "confidence": 95.0,
+      "bbox": {
+        "left": 614,
+        "top": 972,
+        "width": 47,
+        "height": 19
+      }
+    },
+    {
+      "text": "o",
+      "confidence": 95.0,
+      "bbox": {
+        "left": 669,
+        "top": 978,
+        "width": 12,
+        "height": 13
+      }
+    },
+    {
+      "text": "alfabeto",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 688,
+        "top": 972,
+        "width": 87,
+        "height": 19
+      }
+    },
+    {
+      "text": "é",
+      "confidence": 95.0,
+      "bbox": {
+        "left": 782,
+        "top": 972,
+        "width": 10,
+        "height": 19
+      }
+    },
+    {
+      "text": "muito",
+      "confidence": 95.0,
+      "bbox": {
+        "left": 801,
+        "top": 972,
+        "width": 62,
+        "height": 19
+      }
+    },
+    {
+      "text": "longo,",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 871,
+        "top": 972,
+        "width": 66,
+        "height": 25
+      }
+    },
+    {
+      "text": "e",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 945,
+        "top": 978,
+        "width": 11,
+        "height": 13
+      }
+    },
+    {
+      "text": "que",
+      "confidence": 93.0,
+      "bbox": {
+        "left": 964,
+        "top": 978,
+        "width": 38,
+        "height": 19
+      }
+    },
+    {
+      "text": "percorrê-lo",
+      "confidence": 92.0,
+      "bbox": {
+        "left": 1009,
+        "top": 972,
+        "width": 120,
+        "height": 25
+      }
+    },
+    {
+      "text": "significaria",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1137,
+        "top": 972,
+        "width": 121,
+        "height": 25
+      }
+    },
+    {
+      "text": "para",
+      "confidence": 95.0,
+      "bbox": {
+        "left": 1265,
+        "top": 978,
+        "width": 46,
+        "height": 19
+      }
+    },
+    {
+      "text": "você",
+      "confidence": 95.0,
+      "bbox": {
+        "left": 1318,
+        "top": 972,
+        "width": 50,
+        "height": 19
+      }
+    },
+    {
+      "text": "uma",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 488,
+        "top": 1011,
+        "width": 46,
+        "height": 13
+      }
+    },
+    {
+      "text": "enorme",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 542,
+        "top": 1011,
+        "width": 81,
+        "height": 13
+      }
+    },
+    {
+      "text": "carga",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 632,
+        "top": 1011,
+        "width": 58,
+        "height": 19
+      }
+    },
+    {
+      "text": "de",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 699,
+        "top": 1005,
+        "width": 24,
+        "height": 19
+      }
+    },
+    {
+      "text": "trabalho.",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 733,
+        "top": 1005,
+        "width": 93,
+        "height": 19
+      }
+    },
+    {
+      "text": "Assim,",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 836,
+        "top": 1005,
+        "width": 74,
+        "height": 23
+      }
+    },
+    {
+      "text": "não",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 920,
+        "top": 1006,
+        "width": 39,
+        "height": 18
+      }
+    },
+    {
+      "text": "o",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 968,
+        "top": 1011,
+        "width": 12,
+        "height": 13
+      }
+    },
+    {
+      "text": "faça,",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 989,
+        "top": 1005,
+        "width": 51,
+        "height": 25
+      }
+    },
+    {
+      "text": "a",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1055,
+        "top": 1011,
+        "width": 5,
+        "height": 13
+      }
+    },
+    {
+      "text": "menos",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1069,
+        "top": 1011,
+        "width": 70,
+        "height": 13
+      }
+    },
+    {
+      "text": "que",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1148,
+        "top": 1011,
+        "width": 38,
+        "height": 19
+      }
+    },
+    {
+      "text": "se",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1196,
+        "top": 1011,
+        "width": 20,
+        "height": 13
+      }
+    },
+    {
+      "text": "sinta",
+      "confidence": 93.0,
+      "bbox": {
+        "left": 1226,
+        "top": 1005,
+        "width": 50,
+        "height": 19
+      }
+    },
+    {
+      "text": "interna-",
+      "confidence": 91.0,
+      "bbox": {
+        "left": 1285,
+        "top": 1005,
+        "width": 83,
+        "height": 19
+      }
+    },
+    {
+      "text": "mente",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 488,
+        "top": 1041,
+        "width": 65,
+        "height": 16
+      }
+    },
+    {
+      "text": "levado",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 563,
+        "top": 1038,
+        "width": 72,
+        "height": 19
+      }
+    },
+    {
+      "text": "a",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 645,
+        "top": 1044,
+        "width": 11,
+        "height": 13
+      }
+    },
+    {
+      "text": "isso.",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 666,
+        "top": 1038,
+        "width": 47,
+        "height": 19
+      }
+    },
+    {
+      "text": "Apenas",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 724,
+        "top": 1038,
+        "width": 81,
+        "height": 25
+      }
+    },
+    {
+      "text": "sob",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 816,
+        "top": 1038,
+        "width": 35,
+        "height": 19
+      }
+    },
+    {
+      "text": "o",
+      "confidence": 94.0,
+      "bbox": {
+        "left": 862,
+        "top": 1044,
+        "width": 12,
+        "height": 13
+      }
+    },
+    {
+      "text": "efeito",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 884,
+        "top": 1038,
+        "width": 61,
+        "height": 19
+      }
+    },
+    {
+      "text": "desse",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 956,
+        "top": 1038,
+        "width": 57,
+        "height": 19
+      }
+    },
+    {
+      "text": "impulso,",
+      "confidence": 95.0,
+      "bbox": {
+        "left": 1024,
+        "top": 1038,
+        "width": 92,
+        "height": 25
+      }
+    },
+    {
+      "text": "mas",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1127,
+        "top": 1044,
+        "width": 42,
+        "height": 13
+      }
+    },
+    {
+      "text": "certamente",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1180,
+        "top": 1041,
+        "width": 118,
+        "height": 16
+      }
+    },
+    {
+      "text": "não",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1309,
+        "top": 1039,
+        "width": 38,
+        "height": 18
+      }
+    },
+    {
+      "text": "a",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1357,
+        "top": 1044,
+        "width": 11,
+        "height": 13
+      }
+    },
+    {
+      "text": "partir",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 487,
+        "top": 1071,
+        "width": 59,
+        "height": 25
+      }
+    },
+    {
+      "text": "de",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 553,
+        "top": 1071,
+        "width": 24,
+        "height": 19
+      }
+    },
+    {
+      "text": "uma",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 586,
+        "top": 1077,
+        "width": 46,
+        "height": 13
+      }
+    },
+    {
+      "text": "incitação",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 639,
+        "top": 1071,
+        "width": 98,
+        "height": 25
+      }
+    },
+    {
+      "text": "externa",
+      "confidence": 45.0,
+      "bbox": {
+        "left": 744,
+        "top": 1070,
+        "width": 108,
+        "height": 20
+      }
+    },
+    {
+      "text": "!”!",
+      "confidence": 45.0,
+      "bbox": {
+        "left": 825,
+        "top": 1066,
+        "width": 30,
+        "height": 34
+      }
+    },
+    {
+      "text": "Sem",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 521,
+        "top": 1106,
+        "width": 48,
+        "height": 19
+      }
+    },
+    {
+      "text": "dúvida,",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 576,
+        "top": 1106,
+        "width": 78,
+        "height": 23
+      }
+    },
+    {
+      "text": "Freud",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 663,
+        "top": 1106,
+        "width": 63,
+        "height": 19
+      }
+    },
+    {
+      "text": "sabia",
+      "confidence": 95.0,
+      "bbox": {
+        "left": 733,
+        "top": 1106,
+        "width": 55,
+        "height": 19
+      }
+    },
+    {
+      "text": "melhor",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 795,
+        "top": 1106,
+        "width": 77,
+        "height": 19
+      }
+    },
+    {
+      "text": "que",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 878,
+        "top": 1112,
+        "width": 38,
+        "height": 19
+      }
+    },
+    {
+      "text": "ninguém",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 924,
+        "top": 1106,
+        "width": 95,
+        "height": 25
+      }
+    },
+    {
+      "text": "que",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1026,
+        "top": 1112,
+        "width": 38,
+        "height": 19
+      }
+    },
+    {
+      "text": "um",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1071,
+        "top": 1112,
+        "width": 34,
+        "height": 13
+      }
+    },
+    {
+      "text": "dicionário",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1112,
+        "top": 1106,
+        "width": 109,
+        "height": 19
+      }
+    },
+    {
+      "text": "pode",
+      "confidence": 93.0,
+      "bbox": {
+        "left": 1228,
+        "top": 1106,
+        "width": 52,
+        "height": 25
+      }
+    },
+    {
+      "text": "respon-",
+      "confidence": 89.0,
+      "bbox": {
+        "left": 1287,
+        "top": 1112,
+        "width": 81,
+        "height": 19
+      }
+    },
+    {
+      "text": "der",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 488,
+        "top": 1139,
+        "width": 34,
+        "height": 19
+      }
+    },
+    {
+      "text": "a",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 530,
+        "top": 1145,
+        "width": 11,
+        "height": 13
+      }
+    },
+    {
+      "text": "um",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 550,
+        "top": 1145,
+        "width": 33,
+        "height": 13
+      }
+    },
+    {
+      "text": "impulso",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 592,
+        "top": 1139,
+        "width": 87,
+        "height": 25
+      }
+    },
+    {
+      "text": "interno,",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 687,
+        "top": 1139,
+        "width": 82,
+        "height": 23
+      }
+    },
+    {
+      "text": "a",
+      "confidence": 95.0,
+      "bbox": {
+        "left": 779,
+        "top": 1145,
+        "width": 11,
+        "height": 13
+      }
+    },
+    {
+      "text": "um",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 798,
+        "top": 1145,
+        "width": 34,
+        "height": 13
+      }
+    },
+    {
+      "text": "desejo,",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 841,
+        "top": 1139,
+        "width": 74,
+        "height": 25
+      }
+    },
+    {
+      "text": "a",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 925,
+        "top": 1145,
+        "width": 11,
+        "height": 13
+      }
+    },
+    {
+      "text": "uma",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 944,
+        "top": 1145,
+        "width": 46,
+        "height": 13
+      }
+    },
+    {
+      "text": "pulsão.",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 999,
+        "top": 1139,
+        "width": 75,
+        "height": 25
+      }
+    },
+    {
+      "text": "Em",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1084,
+        "top": 1140,
+        "width": 37,
+        "height": 18
+      }
+    },
+    {
+      "text": "sua",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1130,
+        "top": 1145,
+        "width": 35,
+        "height": 13
+      }
+    },
+    {
+      "text": "famosa",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1173,
+        "top": 1139,
+        "width": 78,
+        "height": 19
+      }
+    },
+    {
+      "text": "análise",
+      "confidence": 95.0,
+      "bbox": {
+        "left": 1259,
+        "top": 1139,
+        "width": 74,
+        "height": 19
+      }
+    },
+    {
+      "text": "do",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1342,
+        "top": 1139,
+        "width": 26,
+        "height": 19
+      }
+    },
+    {
+      "text": "caso",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 488,
+        "top": 1179,
+        "width": 47,
+        "height": 13
+      }
+    },
+    {
+      "text": "Dora",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 542,
+        "top": 1174,
+        "width": 53,
+        "height": 18
+      }
+    },
+    {
+      "text": "(Ida",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 602,
+        "top": 1173,
+        "width": 42,
+        "height": 24
+      }
+    },
+    {
+      "text": "Bauer),",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 651,
+        "top": 1174,
+        "width": 79,
+        "height": 22
+      }
+    },
+    {
+      "text": "ele",
+      "confidence": 93.0,
+      "bbox": {
+        "left": 737,
+        "top": 1173,
+        "width": 31,
+        "height": 19
+      }
+    },
+    {
+      "text": "frisava",
+      "confidence": 92.0,
+      "bbox": {
+        "left": 774,
+        "top": 1173,
+        "width": 74,
+        "height": 19
+      }
+    },
+    {
+      "text": "que",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 854,
+        "top": 1179,
+        "width": 38,
+        "height": 19
+      }
+    },
+    {
+      "text": "um",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 898,
+        "top": 1179,
+        "width": 35,
+        "height": 13
+      }
+    },
+    {
+      "text": "dicionário",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 939,
+        "top": 1173,
+        "width": 109,
+        "height": 19
+      }
+    },
+    {
+      "text": "é",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1054,
+        "top": 1173,
+        "width": 11,
+        "height": 19
+      }
+    },
+    {
+      "text": "sempre",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1073,
+        "top": 1179,
+        "width": 77,
+        "height": 19
+      }
+    },
+    {
+      "text": "objeto",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1157,
+        "top": 1173,
+        "width": 66,
+        "height": 25
+      }
+    },
+    {
+      "text": "de",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1230,
+        "top": 1173,
+        "width": 24,
+        "height": 19
+      }
+    },
+    {
+      "text": "um",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1261,
+        "top": 1179,
+        "width": 34,
+        "height": 13
+      }
+    },
+    {
+      "text": "prazer",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1301,
+        "top": 1179,
+        "width": 68,
+        "height": 19
+      }
+    },
+    {
+      "text": "solitário",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 488,
+        "top": 1206,
+        "width": 87,
+        "height": 19
+      }
+    },
+    {
+      "text": "e",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 584,
+        "top": 1212,
+        "width": 11,
+        "height": 13
+      }
+    },
+    {
+      "text": "proibido,",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 605,
+        "top": 1206,
+        "width": 97,
+        "height": 25
+      }
+    },
+    {
+      "text": "no",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 712,
+        "top": 1212,
+        "width": 26,
+        "height": 13
+      }
+    },
+    {
+      "text": "qual",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 748,
+        "top": 1206,
+        "width": 45,
+        "height": 25
+      }
+    },
+    {
+      "text": "a",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 803,
+        "top": 1212,
+        "width": 11,
+        "height": 13
+      }
+    },
+    {
+      "text": "criança",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 823,
+        "top": 1206,
+        "width": 78,
+        "height": 25
+      }
+    },
+    {
+      "text": "descobre,",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 910,
+        "top": 1206,
+        "width": 101,
+        "height": 23
+      }
+    },
+    {
+      "text": "à",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1021,
+        "top": 1206,
+        "width": 11,
+        "height": 19
+      }
+    },
+    {
+      "text": "revelia",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1041,
+        "top": 1206,
+        "width": 74,
+        "height": 19
+      }
+    },
+    {
+      "text": "dos",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1124,
+        "top": 1206,
+        "width": 36,
+        "height": 19
+      }
+    },
+    {
+      "text": "adultos,",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1170,
+        "top": 1206,
+        "width": 83,
+        "height": 23
+      }
+    },
+    {
+      "text": "a",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1263,
+        "top": 1212,
+        "width": 12,
+        "height": 13
+      }
+    },
+    {
+      "text": "verdade",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1283,
+        "top": 1206,
+        "width": 85,
+        "height": 19
+      }
+    },
+    {
+      "text": "das",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 488,
+        "top": 1239,
+        "width": 34,
+        "height": 19
+      }
+    },
+    {
+      "text": "palavras,",
+      "confidence": 95.0,
+      "bbox": {
+        "left": 530,
+        "top": 1239,
+        "width": 96,
+        "height": 25
+      }
+    },
+    {
+      "text": "a",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 635,
+        "top": 1245,
+        "width": 11,
+        "height": 13
+      }
+    },
+    {
+      "text": "história",
+      "confidence": 95.0,
+      "bbox": {
+        "left": 654,
+        "top": 1239,
+        "width": 80,
+        "height": 19
+      }
+    },
+    {
+      "text": "do",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 742,
+        "top": 1239,
+        "width": 25,
+        "height": 19
+      }
+    },
+    {
+      "text": "mundo",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 776,
+        "top": 1239,
+        "width": 74,
+        "height": 19
+      }
+    },
+    {
+      "text": "ou",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 859,
+        "top": 1245,
+        "width": 25,
+        "height": 13
+      }
+    },
+    {
+      "text": "a",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 893,
+        "top": 1245,
+        "width": 11,
+        "height": 13
+      }
+    },
+    {
+      "text": "geografia",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 911,
+        "top": 1239,
+        "width": 102,
+        "height": 25
+      }
+    },
+    {
+      "text": "do",
+      "confidence": 92.0,
+      "bbox": {
+        "left": 1021,
+        "top": 1239,
+        "width": 26,
+        "height": 19
+      }
+    },
+    {
+      "text": "sexo.?",
+      "confidence": 88.0,
+      "bbox": {
+        "left": 1056,
+        "top": 1238,
+        "width": 64,
+        "height": 20
+      }
+    },
+    {
+      "text": "Obrigado",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 521,
+        "top": 1273,
+        "width": 102,
+        "height": 25
+      }
+    },
+    {
+      "text": "a",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 630,
+        "top": 1279,
+        "width": 11,
+        "height": 13
+      }
+    },
+    {
+      "text": "se",
+      "confidence": 93.0,
+      "bbox": {
+        "left": 648,
+        "top": 1279,
+        "width": 21,
+        "height": 13
+      }
+    },
+    {
+      "text": "exilar",
+      "confidence": 92.0,
+      "bbox": {
+        "left": 676,
+        "top": 1273,
+        "width": 62,
+        "height": 19
+      }
+    },
+    {
+      "text": "nos",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 744,
+        "top": 1279,
+        "width": 37,
+        "height": 13
+      }
+    },
+    {
+      "text": "Estados",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 788,
+        "top": 1273,
+        "width": 83,
+        "height": 19
+      }
+    },
+    {
+      "text": "Unidos,",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 880,
+        "top": 1273,
+        "width": 82,
+        "height": 23
+      }
+    },
+    {
+      "text": "como",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 970,
+        "top": 1279,
+        "width": 59,
+        "height": 13
+      }
+    },
+    {
+      "text": "a",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1037,
+        "top": 1279,
+        "width": 11,
+        "height": 13
+      }
+    },
+    {
+      "text": "quase",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1054,
+        "top": 1279,
+        "width": 60,
+        "height": 19
+      }
+    },
+    {
+      "text": "totalidade",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1122,
+        "top": 1273,
+        "width": 106,
+        "height": 19
+      }
+    },
+    {
+      "text": "dos",
+      "confidence": 93.0,
+      "bbox": {
+        "left": 1235,
+        "top": 1273,
+        "width": 36,
+        "height": 19
+      }
+    },
+    {
+      "text": "psicana-",
+      "confidence": 92.0,
+      "bbox": {
+        "left": 1278,
+        "top": 1273,
+        "width": 90,
+        "height": 25
+      }
+    },
+    {
+      "text": "listas",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 488,
+        "top": 1307,
+        "width": 53,
+        "height": 19
+      }
+    },
+    {
+      "text": "europeus",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 551,
+        "top": 1313,
+        "width": 97,
+        "height": 19
+      }
+    },
+    {
+      "text": "de",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 657,
+        "top": 1307,
+        "width": 25,
+        "height": 19
+      }
+    },
+    {
+      "text": "língua",
+      "confidence": 95.0,
+      "bbox": {
+        "left": 691,
+        "top": 1307,
+        "width": 67,
+        "height": 25
+      }
+    },
+    {
+      "text": "alemã,",
+      "confidence": 93.0,
+      "bbox": {
+        "left": 767,
+        "top": 1307,
+        "width": 70,
+        "height": 23
+      }
+    },
+    {
+      "text": "Sterba",
+      "confidence": 92.0,
+      "bbox": {
+        "left": 847,
+        "top": 1307,
+        "width": 69,
+        "height": 19
+      }
+    },
+    {
+      "text": "interrompeu",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 925,
+        "top": 1307,
+        "width": 131,
+        "height": 25
+      }
+    },
+    {
+      "text": "a",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1066,
+        "top": 1313,
+        "width": 11,
+        "height": 13
+      }
+    },
+    {
+      "text": "redação",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1085,
+        "top": 1307,
+        "width": 84,
+        "height": 25
+      }
+    },
+    {
+      "text": "do",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1178,
+        "top": 1307,
+        "width": 26,
+        "height": 19
+      }
+    },
+    {
+      "text": "seu",
+      "confidence": 93.0,
+      "bbox": {
+        "left": 1214,
+        "top": 1313,
+        "width": 34,
+        "height": 13
+      }
+    },
+    {
+      "text": "Handwôr-",
+      "confidence": 86.0,
+      "bbox": {
+        "left": 1256,
+        "top": 1307,
+        "width": 112,
+        "height": 19
+      }
+    },
+    {
+      "text": "terbuch",
+      "confidence": 90.0,
+      "bbox": {
+        "left": 488,
+        "top": 1340,
+        "width": 81,
+        "height": 19
+      }
+    },
+    {
+      "text": "na",
+      "confidence": 94.0,
+      "bbox": {
+        "left": 576,
+        "top": 1346,
+        "width": 25,
+        "height": 13
+      }
+    },
+    {
+      "text": "letra",
+      "confidence": 93.0,
+      "bbox": {
+        "left": 607,
+        "top": 1340,
+        "width": 48,
+        "height": 19
+      }
+    },
+    {
+      "text": "L,",
+      "confidence": 54.0,
+      "bbox": {
+        "left": 660,
+        "top": 1341,
+        "width": 21,
+        "height": 22
+      }
+    },
+    {
+      "text": "e",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 688,
+        "top": 1346,
+        "width": 11,
+        "height": 13
+      }
+    },
+    {
+      "text": "a",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 706,
+        "top": 1346,
+        "width": 11,
+        "height": 13
+      }
+    },
+    {
+      "text": "impressão",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 723,
+        "top": 1340,
+        "width": 109,
+        "height": 25
+      }
+    },
+    {
+      "text": "do",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 838,
+        "top": 1340,
+        "width": 26,
+        "height": 19
+      }
+    },
+    {
+      "text": "último",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 870,
+        "top": 1340,
+        "width": 70,
+        "height": 19
+      }
+    },
+    {
+      "text": "volume",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 947,
+        "top": 1340,
+        "width": 80,
+        "height": 19
+      }
+    },
+    {
+      "text": "na",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1033,
+        "top": 1346,
+        "width": 25,
+        "height": 13
+      }
+    },
+    {
+      "text": "palavra",
+      "confidence": 93.0,
+      "bbox": {
+        "left": 1063,
+        "top": 1340,
+        "width": 80,
+        "height": 25
+      }
+    },
+    {
+      "text": "Grôssenwahn:",
+      "confidence": 90.0,
+      "bbox": {
+        "left": 1150,
+        "top": 1340,
+        "width": 154,
+        "height": 20
+      }
+    },
+    {
+      "text": "“Não",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1312,
+        "top": 1340,
+        "width": 56,
+        "height": 19
+      }
+    },
+    {
+      "text": "sei,",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 488,
+        "top": 1373,
+        "width": 34,
+        "height": 23
+      }
+    },
+    {
+      "text": "declarou",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 532,
+        "top": 1373,
+        "width": 93,
+        "height": 19
+      }
+    },
+    {
+      "text": "vinte",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 633,
+        "top": 1373,
+        "width": 53,
+        "height": 19
+      }
+    },
+    {
+      "text": "anos",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 695,
+        "top": 1379,
+        "width": 49,
+        "height": 13
+      }
+    },
+    {
+      "text": "depois",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 752,
+        "top": 1373,
+        "width": 70,
+        "height": 25
+      }
+    },
+    {
+      "text": "em",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 831,
+        "top": 1379,
+        "width": 33,
+        "height": 13
+      }
+    },
+    {
+      "text": "uma",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 872,
+        "top": 1379,
+        "width": 46,
+        "height": 13
+      }
+    },
+    {
+      "text": "carta",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 926,
+        "top": 1377,
+        "width": 52,
+        "height": 15
+      }
+    },
+    {
+      "text": "a",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 987,
+        "top": 1379,
+        "width": 11,
+        "height": 13
+      }
+    },
+    {
+      "text": "Daniel",
+      "confidence": 93.0,
+      "bbox": {
+        "left": 1006,
+        "top": 1373,
+        "width": 72,
+        "height": 19
+      }
+    },
+    {
+      "text": "Lagache,",
+      "confidence": 92.0,
+      "bbox": {
+        "left": 1086,
+        "top": 1373,
+        "width": 98,
+        "height": 25
+      }
+    },
+    {
+      "text": "se",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1194,
+        "top": 1379,
+        "width": 20,
+        "height": 13
+      }
+    },
+    {
+      "text": "esse",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1223,
+        "top": 1379,
+        "width": 44,
+        "height": 13
+      }
+    },
+    {
+      "text": "termo",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1276,
+        "top": 1377,
+        "width": 62,
+        "height": 15
+      }
+    },
+    {
+      "text": "se",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1348,
+        "top": 1379,
+        "width": 20,
+        "height": 13
+      }
+    },
+    {
+      "text": "refere",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 487,
+        "top": 1407,
+        "width": 63,
+        "height": 19
+      }
+    },
+    {
+      "text": "à",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 558,
+        "top": 1407,
+        "width": 11,
+        "height": 19
+      }
+    },
+    {
+      "text": "minha",
+      "confidence": 93.0,
+      "bbox": {
+        "left": 576,
+        "top": 1407,
+        "width": 67,
+        "height": 19
+      }
+    },
+    {
+      "text": "megalomania",
+      "confidence": 92.0,
+      "bbox": {
+        "left": 652,
+        "top": 1407,
+        "width": 146,
+        "height": 25
+      }
+    },
+    {
+      "text": "ou",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 806,
+        "top": 1413,
+        "width": 25,
+        "height": 13
+      }
+    },
+    {
+      "text": "à",
+      "confidence": 97.0,
+      "bbox": {
+        "left": 840,
+        "top": 1407,
+        "width": 11,
+        "height": 19
+      }
+    },
+    {
+      "text": "de",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 858,
+        "top": 1407,
+        "width": 24,
+        "height": 19
+      }
+    },
+    {
+      "text": "Hitler.”",
+      "confidence": 92.0,
+      "bbox": {
+        "left": 891,
+        "top": 1407,
+        "width": 79,
+        "height": 19
+      }
+    },
+    {
+      "text": "De",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 521,
+        "top": 1442,
+        "width": 30,
+        "height": 18
+      }
+    },
+    {
+      "text": "qualquer",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 562,
+        "top": 1441,
+        "width": 96,
+        "height": 25
+      }
+    },
+    {
+      "text": "forma,",
+      "confidence": 95.0,
+      "bbox": {
+        "left": 667,
+        "top": 1441,
+        "width": 70,
+        "height": 23
+      }
+    },
+    {
+      "text": "o",
+      "confidence": 93.0,
+      "bbox": {
+        "left": 756,
+        "top": 1447,
+        "width": 5,
+        "height": 13
+      }
+    },
+    {
+      "text": "Handwôrterbuch",
+      "confidence": 91.0,
+      "bbox": {
+        "left": 771,
+        "top": 1441,
+        "width": 186,
+        "height": 19
+      }
+    },
+    {
+      "text": "inacabado",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 968,
+        "top": 1441,
+        "width": 109,
+        "height": 19
+      }
+    },
+    {
+      "text": "serviu",
+      "confidence": 95.0,
+      "bbox": {
+        "left": 1089,
+        "top": 1441,
+        "width": 64,
+        "height": 19
+      }
+    },
+    {
+      "text": "de",
+      "confidence": 95.0,
+      "bbox": {
+        "left": 1164,
+        "top": 1441,
+        "width": 24,
+        "height": 19
+      }
+    },
+    {
+      "text": "modelo",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1199,
+        "top": 1441,
+        "width": 81,
+        "height": 19
+      }
+    },
+    {
+      "text": "para",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1290,
+        "top": 1447,
+        "width": 46,
+        "height": 19
+      }
+    },
+    {
+      "text": "as",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1347,
+        "top": 1447,
+        "width": 21,
+        "height": 13
+      }
+    },
+    {
+      "text": "obras",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 488,
+        "top": 1474,
+        "width": 57,
+        "height": 19
+      }
+    },
+    {
+      "text": "do",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 552,
+        "top": 1474,
+        "width": 27,
+        "height": 19
+      }
+    },
+    {
+      "text": "gênero,",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 586,
+        "top": 1474,
+        "width": 79,
+        "height": 25
+      }
+    },
+    {
+      "text": "todas",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 673,
+        "top": 1474,
+        "width": 56,
+        "height": 19
+      }
+    },
+    {
+      "text": "publicadas",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 736,
+        "top": 1474,
+        "width": 115,
+        "height": 25
+      }
+    },
+    {
+      "text": "na",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 859,
+        "top": 1480,
+        "width": 25,
+        "height": 13
+      }
+    },
+    {
+      "text": "mesma",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 891,
+        "top": 1480,
+        "width": 76,
+        "height": 13
+      }
+    },
+    {
+      "text": "data",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 974,
+        "top": 1474,
+        "width": 44,
+        "height": 19
+      }
+    },
+    {
+      "text": "(1967-1968),",
+      "confidence": 95.0,
+      "bbox": {
+        "left": 1026,
+        "top": 1474,
+        "width": 140,
+        "height": 23
+      }
+    },
+    {
+      "text": "em",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1174,
+        "top": 1480,
+        "width": 33,
+        "height": 13
+      }
+    },
+    {
+      "text": "uma",
+      "confidence": 97.0,
+      "bbox": {
+        "left": 1213,
+        "top": 1480,
+        "width": 47,
+        "height": 13
+      }
+    },
+    {
+      "text": "época",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1266,
+        "top": 1474,
+        "width": 63,
+        "height": 25
+      }
+    },
+    {
+      "text": "em",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1336,
+        "top": 1480,
+        "width": 33,
+        "height": 13
+      }
+    },
+    {
+      "text": "que",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 488,
+        "top": 1513,
+        "width": 38,
+        "height": 19
+      }
+    },
+    {
+      "text": "o",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 537,
+        "top": 1513,
+        "width": 12,
+        "height": 13
+      }
+    },
+    {
+      "text": "movimento",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 559,
+        "top": 1507,
+        "width": 123,
+        "height": 19
+      }
+    },
+    {
+      "text": "psicanalítico",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 692,
+        "top": 1507,
+        "width": 137,
+        "height": 25
+      }
+    },
+    {
+      "text": "internacional,",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 840,
+        "top": 1507,
+        "width": 146,
+        "height": 23
+      }
+    },
+    {
+      "text": "envolvido",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 998,
+        "top": 1507,
+        "width": 108,
+        "height": 19
+      }
+    },
+    {
+      "text": "em",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1116,
+        "top": 1513,
+        "width": 33,
+        "height": 13
+      }
+    },
+    {
+      "text": "rupturas",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1158,
+        "top": 1510,
+        "width": 88,
+        "height": 22
+      }
+    },
+    {
+      "text": "e",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1257,
+        "top": 1513,
+        "width": 11,
+        "height": 13
+      }
+    },
+    {
+      "text": "dúvidas,",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1278,
+        "top": 1507,
+        "width": 90,
+        "height": 23
+      }
+    },
+    {
+      "text": "experimentava",
+      "confidence": 92.0,
+      "bbox": {
+        "left": 488,
+        "top": 1541,
+        "width": 160,
+        "height": 25
+      }
+    },
+    {
+      "text": "a",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 654,
+        "top": 1547,
+        "width": 11,
+        "height": 13
+      }
+    },
+    {
+      "text": "necessidade",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 671,
+        "top": 1541,
+        "width": 129,
+        "height": 19
+      }
+    },
+    {
+      "text": "de",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 806,
+        "top": 1541,
+        "width": 24,
+        "height": 19
+      }
+    },
+    {
+      "text": "fazer",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 837,
+        "top": 1541,
+        "width": 54,
+        "height": 19
+      }
+    },
+    {
+      "text": "um",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 896,
+        "top": 1547,
+        "width": 35,
+        "height": 13
+      }
+    },
+    {
+      "text": "balanço",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 936,
+        "top": 1541,
+        "width": 84,
+        "height": 25
+      }
+    },
+    {
+      "text": "e",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1026,
+        "top": 1547,
+        "width": 11,
+        "height": 13
+      }
+    },
+    {
+      "text": "recompor,",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1043,
+        "top": 1547,
+        "width": 109,
+        "height": 19
+      }
+    },
+    {
+      "text": "através",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1159,
+        "top": 1541,
+        "width": 76,
+        "height": 19
+      }
+    },
+    {
+      "text": "de",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1241,
+        "top": 1541,
+        "width": 25,
+        "height": 19
+      }
+    },
+    {
+      "text": "um",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1272,
+        "top": 1547,
+        "width": 34,
+        "height": 13
+      }
+    },
+    {
+      "text": "saber",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1312,
+        "top": 1541,
+        "width": 57,
+        "height": 19
+      }
+    },
+    {
+      "text": "comum,",
+      "confidence": 73.0,
+      "bbox": {
+        "left": 488,
+        "top": 1580,
+        "width": 86,
+        "height": 17
+      }
+    },
+    {
+      "text": "a",
+      "confidence": 95.0,
+      "bbox": {
+        "left": 580,
+        "top": 1580,
+        "width": 12,
+        "height": 13
+      }
+    },
+    {
+      "text": "sua",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 597,
+        "top": 1580,
+        "width": 35,
+        "height": 13
+      }
+    },
+    {
+      "text": "unidade",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 637,
+        "top": 1574,
+        "width": 85,
+        "height": 19
+      }
+    },
+    {
+      "text": "perdida.",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 727,
+        "top": 1574,
+        "width": 86,
+        "height": 25
+      }
+    },
+    {
+      "text": "Diversas",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 820,
+        "top": 1574,
+        "width": 94,
+        "height": 19
+      }
+    },
+    {
+      "text": "denominações",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 919,
+        "top": 1574,
+        "width": 155,
+        "height": 25
+      }
+    },
+    {
+      "text": "foram",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1080,
+        "top": 1574,
+        "width": 64,
+        "height": 19
+      }
+    },
+    {
+      "text": "utilizadas:",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1149,
+        "top": 1574,
+        "width": 109,
+        "height": 19
+      }
+    },
+    {
+      "text": "glossário,",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1265,
+        "top": 1574,
+        "width": 103,
+        "height": 25
+      }
+    },
+    {
+      "text": "dicionário,",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 488,
+        "top": 1607,
+        "width": 114,
+        "height": 23
+      }
+    },
+    {
+      "text": "enciclopédia,",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 611,
+        "top": 1607,
+        "width": 143,
+        "height": 25
+      }
+    },
+    {
+      "text": "vocabulário.",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 763,
+        "top": 1607,
+        "width": 133,
+        "height": 19
+      }
+    },
+    {
+      "text": "O",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 521,
+        "top": 1641,
+        "width": 18,
+        "height": 19
+      }
+    },
+    {
+      "text": "Glossary",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 547,
+        "top": 1641,
+        "width": 97,
+        "height": 25
+      }
+    },
+    {
+      "text": "of",
+      "confidence": 93.0,
+      "bbox": {
+        "left": 650,
+        "top": 1641,
+        "width": 25,
+        "height": 25
+      }
+    },
+    {
+      "text": "Psychoanalytic",
+      "confidence": 90.0,
+      "bbox": {
+        "left": 677,
+        "top": 1641,
+        "width": 166,
+        "height": 25
+      }
+    },
+    {
+      "text": "Terms",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 850,
+        "top": 1642,
+        "width": 64,
+        "height": 18
+      }
+    },
+    {
+      "text": "and",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 920,
+        "top": 1641,
+        "width": 42,
+        "height": 19
+      }
+    },
+    {
+      "text": "Concepts",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 968,
+        "top": 1641,
+        "width": 100,
+        "height": 25
+      }
+    },
+    {
+      "text": "(180",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1075,
+        "top": 1641,
+        "width": 49,
+        "height": 24
+      }
+    },
+    {
+      "text": "verbetes,",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1131,
+        "top": 1641,
+        "width": 95,
+        "height": 23
+      }
+    },
+    {
+      "text": "70",
+      "confidence": 93.0,
+      "bbox": {
+        "left": 1233,
+        "top": 1641,
+        "width": 27,
+        "height": 19
+      }
+    },
+    {
+      "text": "colabora-",
+      "confidence": 92.0,
+      "bbox": {
+        "left": 1266,
+        "top": 1641,
+        "width": 102,
+        "height": 19
+      }
+    },
+    {
+      "text": "dores),",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 488,
+        "top": 1675,
+        "width": 72,
+        "height": 23
+      }
+    },
+    {
+      "text": "obra",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 568,
+        "top": 1675,
+        "width": 48,
+        "height": 19
+      }
+    },
+    {
+      "text": "coletiva",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 622,
+        "top": 1675,
+        "width": 87,
+        "height": 19
+      }
+    },
+    {
+      "text": "publicada",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 715,
+        "top": 1675,
+        "width": 106,
+        "height": 25
+      }
+    },
+    {
+      "text": "sob",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 828,
+        "top": 1675,
+        "width": 36,
+        "height": 19
+      }
+    },
+    {
+      "text": "a",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 871,
+        "top": 1681,
+        "width": 12,
+        "height": 13
+      }
+    },
+    {
+      "text": "égide",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 889,
+        "top": 1675,
+        "width": 58,
+        "height": 25
+      }
+    },
+    {
+      "text": "da",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 954,
+        "top": 1675,
+        "width": 25,
+        "height": 19
+      }
+    },
+    {
+      "text": "poderosa",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 986,
+        "top": 1675,
+        "width": 98,
+        "height": 25
+      }
+    },
+    {
+      "text": "American",
+      "confidence": 93.0,
+      "bbox": {
+        "left": 1090,
+        "top": 1675,
+        "width": 107,
+        "height": 19
+      }
+    },
+    {
+      "text": "Psychoanalytic",
+      "confidence": 92.0,
+      "bbox": {
+        "left": 1204,
+        "top": 1675,
+        "width": 163,
+        "height": 25
+      }
+    },
+    {
+      "text": "Association",
+      "confidence": 93.0,
+      "bbox": {
+        "left": 488,
+        "top": 1709,
+        "width": 127,
+        "height": 19
+      }
+    },
+    {
+      "text": "(APsaA),",
+      "confidence": 91.0,
+      "bbox": {
+        "left": 629,
+        "top": 1709,
+        "width": 99,
+        "height": 24
+      }
+    },
+    {
+      "text": "expressava",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 742,
+        "top": 1715,
+        "width": 120,
+        "height": 19
+      }
+    },
+    {
+      "text": "a",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 874,
+        "top": 1715,
+        "width": 12,
+        "height": 13
+      }
+    },
+    {
+      "text": "ortodoxia",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 898,
+        "top": 1709,
+        "width": 104,
+        "height": 19
+      }
+    },
+    {
+      "text": "de",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1015,
+        "top": 1709,
+        "width": 25,
+        "height": 19
+      }
+    },
+    {
+      "text": "um",
+      "confidence": 93.0,
+      "bbox": {
+        "left": 1053,
+        "top": 1715,
+        "width": 34,
+        "height": 13
+      }
+    },
+    {
+      "text": "freudismo",
+      "confidence": 92.0,
+      "bbox": {
+        "left": 1100,
+        "top": 1709,
+        "width": 109,
+        "height": 19
+      }
+    },
+    {
+      "text": "pragmático",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1222,
+        "top": 1709,
+        "width": 122,
+        "height": 25
+      }
+    },
+    {
+      "text": "e",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1357,
+        "top": 1715,
+        "width": 11,
+        "height": 13
+      }
+    },
+    {
+      "text": "medicalizado.",
+      "confidence": 91.0,
+      "bbox": {
+        "left": 488,
+        "top": 1741,
+        "width": 149,
+        "height": 19
+      }
+    },
+    {
+      "text": "Na",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 648,
+        "top": 1742,
+        "width": 31,
+        "height": 18
+      }
+    },
+    {
+      "text": "mesma",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 688,
+        "top": 1747,
+        "width": 76,
+        "height": 13
+      }
+    },
+    {
+      "text": "perspectiva,",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 772,
+        "top": 1741,
+        "width": 130,
+        "height": 25
+      }
+    },
+    {
+      "text": "a",
+      "confidence": 95.0,
+      "bbox": {
+        "left": 917,
+        "top": 1747,
+        "width": 5,
+        "height": 13
+      }
+    },
+    {
+      "text": "Encyclopedia",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 930,
+        "top": 1741,
+        "width": 148,
+        "height": 25
+      }
+    },
+    {
+      "text": "of",
+      "confidence": 93.0,
+      "bbox": {
+        "left": 1087,
+        "top": 1741,
+        "width": 25,
+        "height": 25
+      }
+    },
+    {
+      "text": "Psychoanalysis",
+      "confidence": 91.0,
+      "bbox": {
+        "left": 1116,
+        "top": 1741,
+        "width": 167,
+        "height": 25
+      }
+    },
+    {
+      "text": "—",
+      "confidence": 91.0,
+      "bbox": {
+        "left": 1291,
+        "top": 1753,
+        "width": 28,
+        "height": 2
+      }
+    },
+    {
+      "text": "rea-",
+      "confidence": 92.0,
+      "bbox": {
+        "left": 1327,
+        "top": 1747,
+        "width": 41,
+        "height": 13
+      }
+    },
+    {
+      "text": "lizada",
+      "confidence": 92.0,
+      "bbox": {
+        "left": 488,
+        "top": 1775,
+        "width": 64,
+        "height": 19
+      }
+    },
+    {
+      "text": "sob",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 563,
+        "top": 1775,
+        "width": 36,
+        "height": 19
+      }
+    },
+    {
+      "text": "a",
+      "confidence": 95.0,
+      "bbox": {
+        "left": 610,
+        "top": 1781,
+        "width": 11,
+        "height": 13
+      }
+    },
+    {
+      "text": "direção",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 632,
+        "top": 1775,
+        "width": 79,
+        "height": 25
+      }
+    },
+    {
+      "text": "de",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 722,
+        "top": 1775,
+        "width": 24,
+        "height": 19
+      }
+    },
+    {
+      "text": "Ludwig",
+      "confidence": 93.0,
+      "bbox": {
+        "left": 757,
+        "top": 1775,
+        "width": 84,
+        "height": 25
+      }
+    },
+    {
+      "text": "Eidelberg",
+      "confidence": 92.0,
+      "bbox": {
+        "left": 852,
+        "top": 1775,
+        "width": 104,
+        "height": 25
+      }
+    },
+    {
+      "text": "(1898-1970),",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 967,
+        "top": 1775,
+        "width": 141,
+        "height": 24
+      }
+    },
+    {
+      "text": "psicanalista",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1119,
+        "top": 1775,
+        "width": 126,
+        "height": 25
+      }
+    },
+    {
+      "text": "americano",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1256,
+        "top": 1775,
+        "width": 112,
+        "height": 19
+      }
+    },
+    {
+      "text": "nascido",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 488,
+        "top": 1809,
+        "width": 81,
+        "height": 19
+      }
+    },
+    {
+      "text": "na",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 576,
+        "top": 1815,
+        "width": 26,
+        "height": 13
+      }
+    },
+    {
+      "text": "parte",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 607,
+        "top": 1812,
+        "width": 54,
+        "height": 22
+      }
+    },
+    {
+      "text": "polonesa",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 668,
+        "top": 1809,
+        "width": 96,
+        "height": 25
+      }
+    },
+    {
+      "text": "do",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 771,
+        "top": 1809,
+        "width": 26,
+        "height": 19
+      }
+    },
+    {
+      "text": "antigo",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 804,
+        "top": 1809,
+        "width": 67,
+        "height": 25
+      }
+    },
+    {
+      "text": "Império",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 878,
+        "top": 1809,
+        "width": 85,
+        "height": 25
+      }
+    },
+    {
+      "text": "Austro-Húngaro",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 970,
+        "top": 1809,
+        "width": 177,
+        "height": 25
+      }
+    },
+    {
+      "text": "e",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1154,
+        "top": 1815,
+        "width": 10,
+        "height": 13
+      }
+    },
+    {
+      "text": "radicado",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1171,
+        "top": 1809,
+        "width": 93,
+        "height": 19
+      }
+    },
+    {
+      "text": "em",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1271,
+        "top": 1815,
+        "width": 32,
+        "height": 13
+      }
+    },
+    {
+      "text": "Nova",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1310,
+        "top": 1810,
+        "width": 58,
+        "height": 18
+      }
+    },
+    {
+      "text": "York",
+      "confidence": 95.0,
+      "bbox": {
+        "left": 489,
+        "top": 1841,
+        "width": 51,
+        "height": 19
+      }
+    },
+    {
+      "text": "depois",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 548,
+        "top": 1841,
+        "width": 70,
+        "height": 25
+      }
+    },
+    {
+      "text": "de",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 626,
+        "top": 1841,
+        "width": 25,
+        "height": 19
+      }
+    },
+    {
+      "text": "escapar",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 660,
+        "top": 1847,
+        "width": 81,
+        "height": 19
+      }
+    },
+    {
+      "text": "do",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 748,
+        "top": 1841,
+        "width": 27,
+        "height": 19
+      }
+    },
+    {
+      "text": "nazismo",
+      "confidence": 93.0,
+      "bbox": {
+        "left": 783,
+        "top": 1841,
+        "width": 90,
+        "height": 19
+      }
+    },
+    {
+      "text": "—",
+      "confidence": 92.0,
+      "bbox": {
+        "left": 880,
+        "top": 1853,
+        "width": 28,
+        "height": 2
+      }
+    },
+    {
+      "text": "se",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 916,
+        "top": 1847,
+        "width": 20,
+        "height": 13
+      }
+    },
+    {
+      "text": "mostrava",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 945,
+        "top": 1844,
+        "width": 99,
+        "height": 16
+      }
+    },
+    {
+      "text": "mais",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1053,
+        "top": 1841,
+        "width": 49,
+        "height": 19
+      }
+    },
+    {
+      "text": "ambiciosa,",
+      "confidence": 92.0,
+      "bbox": {
+        "left": 1111,
+        "top": 1841,
+        "width": 115,
+        "height": 23
+      }
+    },
+    {
+      "text": "ampliando",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1235,
+        "top": 1841,
+        "width": 114,
+        "height": 25
+      }
+    },
+    {
+      "text": "a",
+      "confidence": 94.0,
+      "bbox": {
+        "left": 1357,
+        "top": 1847,
+        "width": 11,
+        "height": 13
+      }
+    },
+    {
+      "text": "1.",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 507,
+        "top": 1917,
+        "width": 12,
+        "height": 16
+      }
+    },
+    {
+      "text": "Sigmund",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 530,
+        "top": 1917,
+        "width": 82,
+        "height": 21
+      }
+    },
+    {
+      "text": "Freud,",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 620,
+        "top": 1917,
+        "width": 58,
+        "height": 19
+      }
+    },
+    {
+      "text": "\"Prefácio",
+      "confidence": 23.0,
+      "bbox": {
+        "left": 687,
+        "top": 1917,
+        "width": 86,
+        "height": 16
+      }
+    },
+    {
+      "text": "ao",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 782,
+        "top": 1922,
+        "width": 20,
+        "height": 11
+      }
+    },
+    {
+      "text": "Dicionário",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 810,
+        "top": 1917,
+        "width": 101,
+        "height": 16
+      }
+    },
+    {
+      "text": "de",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 919,
+        "top": 1917,
+        "width": 20,
+        "height": 16
+      }
+    },
+    {
+      "text": "psicanálise,",
+      "confidence": 95.0,
+      "bbox": {
+        "left": 946,
+        "top": 1917,
+        "width": 109,
+        "height": 21
+      }
+    },
+    {
+      "text": "de",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1064,
+        "top": 1917,
+        "width": 21,
+        "height": 16
+      }
+    },
+    {
+      "text": "Richard",
+      "confidence": 93.0,
+      "bbox": {
+        "left": 1093,
+        "top": 1917,
+        "width": 72,
+        "height": 16
+      }
+    },
+    {
+      "text": "Sterba“",
+      "confidence": 88.0,
+      "bbox": {
+        "left": 1174,
+        "top": 1917,
+        "width": 67,
+        "height": 16
+      }
+    },
+    {
+      "text": "(1936),",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1250,
+        "top": 1917,
+        "width": 65,
+        "height": 20
+      }
+    },
+    {
+      "text": "ESB,",
+      "confidence": 95.0,
+      "bbox": {
+        "left": 1323,
+        "top": 1917,
+        "width": 45,
+        "height": 19
+      }
+    },
+    {
+      "text": "XXIII,",
+      "confidence": 83.0,
+      "bbox": {
+        "left": 488,
+        "top": 1944,
+        "width": 60,
+        "height": 19
+      }
+    },
+    {
+      "text": "309;",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 557,
+        "top": 1944,
+        "width": 39,
+        "height": 19
+      }
+    },
+    {
+      "text": "OC,",
+      "confidence": 95.0,
+      "bbox": {
+        "left": 606,
+        "top": 1944,
+        "width": 35,
+        "height": 19
+      }
+    },
+    {
+      "text": "XIX,",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 650,
+        "top": 1944,
+        "width": 46,
+        "height": 19
+      }
+    },
+    {
+      "text": "287-9;",
+      "confidence": 94.0,
+      "bbox": {
+        "left": 705,
+        "top": 1944,
+        "width": 57,
+        "height": 19
+      }
+    },
+    {
+      "text": "GW,",
+      "confidence": 93.0,
+      "bbox": {
+        "left": 772,
+        "top": 1944,
+        "width": 40,
+        "height": 19
+      }
+    },
+    {
+      "text": "Nachtragsband,",
+      "confidence": 92.0,
+      "bbox": {
+        "left": 820,
+        "top": 1944,
+        "width": 146,
+        "height": 21
+      }
+    },
+    {
+      "text": "761;",
+      "confidence": 94.0,
+      "bbox": {
+        "left": 976,
+        "top": 1944,
+        "width": 38,
+        "height": 19
+      }
+    },
+    {
+      "text": "SE,",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1023,
+        "top": 1944,
+        "width": 30,
+        "height": 19
+      }
+    },
+    {
+      "text": "XXII,",
+      "confidence": 91.0,
+      "bbox": {
+        "left": 1062,
+        "top": 1944,
+        "width": 53,
+        "height": 19
+      }
+    },
+    {
+      "text": "253.",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1124,
+        "top": 1944,
+        "width": 37,
+        "height": 16
+      }
+    },
+    {
+      "text": "Richard",
+      "confidence": 93.0,
+      "bbox": {
+        "left": 1170,
+        "top": 1944,
+        "width": 72,
+        "height": 16
+      }
+    },
+    {
+      "text": "Sterba,",
+      "confidence": 93.0,
+      "bbox": {
+        "left": 1251,
+        "top": 1944,
+        "width": 62,
+        "height": 19
+      }
+    },
+    {
+      "text": "Han-",
+      "confidence": 93.0,
+      "bbox": {
+        "left": 1321,
+        "top": 1944,
+        "width": 47,
+        "height": 16
+      }
+    },
+    {
+      "text": "dworterbuch",
+      "confidence": 57.0,
+      "bbox": {
+        "left": 487,
+        "top": 1972,
+        "width": 117,
+        "height": 16
+      }
+    },
+    {
+      "text": "der",
+      "confidence": 93.0,
+      "bbox": {
+        "left": 611,
+        "top": 1972,
+        "width": 30,
+        "height": 16
+      }
+    },
+    {
+      "text": "Psychoanalyse,",
+      "confidence": 91.0,
+      "bbox": {
+        "left": 647,
+        "top": 1972,
+        "width": 141,
+        "height": 21
+      }
+    },
+    {
+      "text": "5",
+      "confidence": 92.0,
+      "bbox": {
+        "left": 795,
+        "top": 1972,
+        "width": 9,
+        "height": 16
+      }
+    },
+    {
+      "text": "vols.,",
+      "confidence": 92.0,
+      "bbox": {
+        "left": 813,
+        "top": 1972,
+        "width": 47,
+        "height": 19
+      }
+    },
+    {
+      "text": "Viena,",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 868,
+        "top": 1972,
+        "width": 58,
+        "height": 19
+      }
+    },
+    {
+      "text": "Intern.",
+      "confidence": 93.0,
+      "bbox": {
+        "left": 934,
+        "top": 1972,
+        "width": 58,
+        "height": 16
+      }
+    },
+    {
+      "text": "Psychoanalytischer",
+      "confidence": 92.0,
+      "bbox": {
+        "left": 1000,
+        "top": 1972,
+        "width": 177,
+        "height": 21
+      }
+    },
+    {
+      "text": "Verlag,",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1183,
+        "top": 1972,
+        "width": 67,
+        "height": 21
+      }
+    },
+    {
+      "text": "1936-1938.",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1259,
+        "top": 1972,
+        "width": 101,
+        "height": 17
+      }
+    },
+    {
+      "text": "2.",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 505,
+        "top": 2000,
+        "width": 14,
+        "height": 16
+      }
+    },
+    {
+      "text": "Sigmund",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 530,
+        "top": 2000,
+        "width": 82,
+        "height": 21
+      }
+    },
+    {
+      "text": "Freud,",
+      "confidence": 93.0,
+      "bbox": {
+        "left": 618,
+        "top": 2000,
+        "width": 58,
+        "height": 19
+      }
+    },
+    {
+      "text": "“Fragmento",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 684,
+        "top": 2000,
+        "width": 109,
+        "height": 21
+      }
+    },
+    {
+      "text": "da",
+      "confidence": 93.0,
+      "bbox": {
+        "left": 799,
+        "top": 2000,
+        "width": 21,
+        "height": 16
+      }
+    },
+    {
+      "text": "análise",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 826,
+        "top": 2000,
+        "width": 64,
+        "height": 16
+      }
+    },
+    {
+      "text": "de",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 896,
+        "top": 2000,
+        "width": 21,
+        "height": 16
+      }
+    },
+    {
+      "text": "um",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 923,
+        "top": 2005,
+        "width": 29,
+        "height": 11
+      }
+    },
+    {
+      "text": "caso",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 958,
+        "top": 2005,
+        "width": 40,
+        "height": 11
+      }
+    },
+    {
+      "text": "de",
+      "confidence": 93.0,
+      "bbox": {
+        "left": 1005,
+        "top": 2000,
+        "width": 20,
+        "height": 16
+      }
+    },
+    {
+      "text": "histeria”",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1032,
+        "top": 2000,
+        "width": 76,
+        "height": 16
+      }
+    },
+    {
+      "text": "(1905),",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1116,
+        "top": 2000,
+        "width": 65,
+        "height": 20
+      }
+    },
+    {
+      "text": "ESB,",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1188,
+        "top": 2000,
+        "width": 44,
+        "height": 19
+      }
+    },
+    {
+      "text": "VII,",
+      "confidence": 94.0,
+      "bbox": {
+        "left": 1240,
+        "top": 2000,
+        "width": 36,
+        "height": 19
+      }
+    },
+    {
+      "text": "5-128.",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1283,
+        "top": 2000,
+        "width": 57,
+        "height": 16
+      }
+    },
+    {
+      "text": "vii",
+      "confidence": 94.0,
+      "bbox": {
+        "left": 917,
+        "top": 2068,
+        "width": 23,
+        "height": 16
+      }
+    },
+    {
+      "text": "Dicionário",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 808,
+        "top": 2208,
+        "width": 82,
+        "height": 14
+      }
+    },
+    {
+      "text": "de",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 896,
+        "top": 2208,
+        "width": 20,
+        "height": 14
+      }
+    },
+    {
+      "text": "Psicanálise",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 924,
+        "top": 2208,
+        "width": 93,
+        "height": 14
+      }
+    },
+    {
+      "text": "(PSI)",
+      "confidence": 94.0,
+      "bbox": {
+        "left": 1024,
+        "top": 2208,
+        "width": 40,
+        "height": 18
+      }
+    },
+    {
+      "text": "1º",
+      "confidence": 92.0,
+      "bbox": {
+        "left": 809,
+        "top": 2230,
+        "width": 15,
+        "height": 14
+      }
+    },
+    {
+      "text": "revisão",
+      "confidence": 93.0,
+      "bbox": {
+        "left": 831,
+        "top": 2230,
+        "width": 59,
+        "height": 14
+      }
+    },
+    {
+      "text": "—",
+      "confidence": 93.0,
+      "bbox": {
+        "left": 896,
+        "top": 2238,
+        "width": 11,
+        "height": 1
+      }
+    },
+    {
+      "text": "13.08.98",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 914,
+        "top": 2230,
+        "width": 70,
+        "height": 14
+      }
+    },
+    {
+      "text": "2º",
+      "confidence": 95.0,
+      "bbox": {
+        "left": 808,
+        "top": 2252,
+        "width": 16,
+        "height": 14
+      }
+    },
+    {
+      "text": "revisão",
+      "confidence": 92.0,
+      "bbox": {
+        "left": 831,
+        "top": 2252,
+        "width": 59,
+        "height": 14
+      }
+    },
+    {
+      "text": "—",
+      "confidence": 92.0,
+      "bbox": {
+        "left": 896,
+        "top": 2260,
+        "width": 11,
+        "height": 1
+      }
+    },
+    {
+      "text": "31.08.98",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 912,
+        "top": 2252,
+        "width": 72,
+        "height": 14
+      }
+    },
+    {
+      "text": "3º",
+      "confidence": 95.0,
+      "bbox": {
+        "left": 808,
+        "top": 2274,
+        "width": 16,
+        "height": 14
+      }
+    },
+    {
+      "text": "revisão",
+      "confidence": 93.0,
+      "bbox": {
+        "left": 831,
+        "top": 2274,
+        "width": 59,
+        "height": 14
+      }
+    },
+    {
+      "text": "—",
+      "confidence": 93.0,
+      "bbox": {
+        "left": 896,
+        "top": 2282,
+        "width": 11,
+        "height": 1
+      }
+    },
+    {
+      "text": "24.09.98",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 912,
+        "top": 2274,
+        "width": 72,
+        "height": 14
+      }
+    },
+    {
+      "text": "4º",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 807,
+        "top": 2297,
+        "width": 17,
+        "height": 14
+      }
+    },
+    {
+      "text": "revisão",
+      "confidence": 93.0,
+      "bbox": {
+        "left": 831,
+        "top": 2297,
+        "width": 59,
+        "height": 14
+      }
+    },
+    {
+      "text": "—",
+      "confidence": 93.0,
+      "bbox": {
+        "left": 896,
+        "top": 2305,
+        "width": 11,
+        "height": 1
+      }
+    },
+    {
+      "text": "29.09.98",
+      "confidence": 93.0,
+      "bbox": {
+        "left": 912,
+        "top": 2297,
+        "width": 72,
+        "height": 14
+      }
+    },
+    {
+      "text": "—",
+      "confidence": 91.0,
+      "bbox": {
+        "left": 990,
+        "top": 2305,
+        "width": 11,
+        "height": 1
+      }
+    },
+    {
+      "text": "Cad.",
+      "confidence": 95.0,
+      "bbox": {
+        "left": 1007,
+        "top": 2297,
+        "width": 37,
+        "height": 14
+      }
+    },
+    {
+      "text": "O",
+      "confidence": 92.0,
+      "bbox": {
+        "left": 1052,
+        "top": 2297,
+        "width": 9,
+        "height": 14
+      }
+    },
+    {
+      "text": "Produção:",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 809,
+        "top": 2319,
+        "width": 83,
+        "height": 18
+      }
+    },
+    {
+      "text": "Textos",
+      "confidence": 93.0,
+      "bbox": {
+        "left": 901,
+        "top": 2319,
+        "width": 59,
+        "height": 14
+      }
+    },
+    {
+      "text": "&",
+      "confidence": 92.0,
+      "bbox": {
+        "left": 965,
+        "top": 2319,
+        "width": 13,
+        "height": 14
+      }
+    },
+    {
+      "text": "Formas",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 984,
+        "top": 2319,
+        "width": 68,
+        "height": 14
+      }
+    },
+    {
+      "text": "Para:",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 809,
+        "top": 2341,
+        "width": 42,
+        "height": 14
+      }
+    },
+    {
+      "text": "Ed.",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 859,
+        "top": 2341,
+        "width": 25,
+        "height": 14
+      }
+    },
+    {
+      "text": "Zahar",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 891,
+        "top": 2341,
+        "width": 50,
+        "height": 14
+      }
+    }
+  ],
+  "word_count": 476,
+  "char_count": 2992,
+  "avg_word_confidence": 94.51890756302521,
+  "min_word_confidence": 23.0,
+  "max_word_confidence": 97.0,
+  "config_used": "--tessdata-dir /media/yuri/Noosphera/Noosphera_0.3/Apps/Glyphar/src/glyphar/resources/tessdata --oem 1 --psm 3 --user-words /tmp/tesseract_user_words.txt -c preserve_interword_spaces=1 -c textord_min_linesize=2.5 -c textord_initialx_ile=1.0",
+  "processing_time_ms": 3605.3395490016555
+}

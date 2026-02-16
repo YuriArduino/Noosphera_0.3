@@ -1,0 +1,603 @@
+{
+  "text": "Elisabeth Roudinesco Michel Plon DICIONÁRIO DE PSICANÁLISE TRADUÇÃO: Vera Ribeiro psicanalista Lucy Magalhães letras neolatinas SUPERVISÃO DA EDIÇÃO BRASILEIRA: Marco Antonio Coutinho Jorge psiquiatra e psicanalista 4 & ZAHAR Dicionário de Psicanálise (PSI) 1º revisão — 13.08.98 2º revisão — 31.08.98 3º revisão — 24.09.98 4º revisão — 29.09.98 — Cad. O Produção: Textos & Formas Para: Ed. Zahar",
+  "confidence": 94.37288135593221,
+  "words": [
+    {
+      "text": "Elisabeth",
+      "confidence": 91.0,
+      "bbox": {
+        "left": 701,
+        "top": 524,
+        "width": 194,
+        "height": 37
+      }
+    },
+    {
+      "text": "Roudinesco",
+      "confidence": 91.0,
+      "bbox": {
+        "left": 908,
+        "top": 524,
+        "width": 246,
+        "height": 37
+      }
+    },
+    {
+      "text": "Michel",
+      "confidence": 92.0,
+      "bbox": {
+        "left": 800,
+        "top": 582,
+        "width": 147,
+        "height": 37
+      }
+    },
+    {
+      "text": "Plon",
+      "confidence": 90.0,
+      "bbox": {
+        "left": 961,
+        "top": 582,
+        "width": 95,
+        "height": 37
+      }
+    },
+    {
+      "text": "DICIONÁRIO",
+      "confidence": 95.0,
+      "bbox": {
+        "left": 663,
+        "top": 910,
+        "width": 419,
+        "height": 63
+      }
+    },
+    {
+      "text": "DE",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1102,
+        "top": 926,
+        "width": 90,
+        "height": 46
+      }
+    },
+    {
+      "text": "PSICANÁLISE",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 660,
+        "top": 1008,
+        "width": 537,
+        "height": 75
+      }
+    },
+    {
+      "text": "TRADUÇÃO:",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 864,
+        "top": 1223,
+        "width": 126,
+        "height": 24
+      }
+    },
+    {
+      "text": "Vera",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 853,
+        "top": 1268,
+        "width": 54,
+        "height": 20
+      }
+    },
+    {
+      "text": "Ribeiro",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 915,
+        "top": 1267,
+        "width": 88,
+        "height": 21
+      }
+    },
+    {
+      "text": "psicanalista",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 867,
+        "top": 1299,
+        "width": 119,
+        "height": 22
+      }
+    },
+    {
+      "text": "Lucy",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 829,
+        "top": 1346,
+        "width": 60,
+        "height": 27
+      }
+    },
+    {
+      "text": "Magalhães",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 898,
+        "top": 1345,
+        "width": 128,
+        "height": 28
+      }
+    },
+    {
+      "text": "letras",
+      "confidence": 93.0,
+      "bbox": {
+        "left": 847,
+        "top": 1376,
+        "width": 54,
+        "height": 17
+      }
+    },
+    {
+      "text": "neolatinas",
+      "confidence": 91.0,
+      "bbox": {
+        "left": 908,
+        "top": 1376,
+        "width": 101,
+        "height": 17
+      }
+    },
+    {
+      "text": "SUPERVISÃO",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 731,
+        "top": 1459,
+        "width": 131,
+        "height": 19
+      }
+    },
+    {
+      "text": "DA",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 868,
+        "top": 1463,
+        "width": 31,
+        "height": 15
+      }
+    },
+    {
+      "text": "EDIÇÃO",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 904,
+        "top": 1459,
+        "width": 81,
+        "height": 24
+      }
+    },
+    {
+      "text": "BRASILEIRA:",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 992,
+        "top": 1463,
+        "width": 132,
+        "height": 15
+      }
+    },
+    {
+      "text": "Marco",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 742,
+        "top": 1502,
+        "width": 77,
+        "height": 20
+      }
+    },
+    {
+      "text": "Antonio",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 827,
+        "top": 1501,
+        "width": 97,
+        "height": 21
+      }
+    },
+    {
+      "text": "Coutinho",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 933,
+        "top": 1501,
+        "width": 110,
+        "height": 21
+      }
+    },
+    {
+      "text": "Jorge",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1050,
+        "top": 1502,
+        "width": 64,
+        "height": 27
+      }
+    },
+    {
+      "text": "psiquiatra",
+      "confidence": 95.0,
+      "bbox": {
+        "left": 806,
+        "top": 1534,
+        "width": 101,
+        "height": 21
+      }
+    },
+    {
+      "text": "e",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 915,
+        "top": 1539,
+        "width": 9,
+        "height": 11
+      }
+    },
+    {
+      "text": "psicanalista",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 929,
+        "top": 1533,
+        "width": 119,
+        "height": 22
+      }
+    },
+    {
+      "text": "4",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 894,
+        "top": 1927,
+        "width": 26,
+        "height": 32
+      }
+    },
+    {
+      "text": "&",
+      "confidence": 86.0,
+      "bbox": {
+        "left": 892,
+        "top": 1935,
+        "width": 64,
+        "height": 59
+      }
+    },
+    {
+      "text": "ZAHAR",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 858,
+        "top": 2004,
+        "width": 136,
+        "height": 26
+      }
+    },
+    {
+      "text": "Dicionário",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 809,
+        "top": 2208,
+        "width": 81,
+        "height": 14
+      }
+    },
+    {
+      "text": "de",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 896,
+        "top": 2208,
+        "width": 20,
+        "height": 14
+      }
+    },
+    {
+      "text": "Psicanálise",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 924,
+        "top": 2208,
+        "width": 93,
+        "height": 14
+      }
+    },
+    {
+      "text": "(PSI)",
+      "confidence": 87.0,
+      "bbox": {
+        "left": 1024,
+        "top": 2208,
+        "width": 40,
+        "height": 18
+      }
+    },
+    {
+      "text": "1º",
+      "confidence": 95.0,
+      "bbox": {
+        "left": 809,
+        "top": 2230,
+        "width": 15,
+        "height": 14
+      }
+    },
+    {
+      "text": "revisão",
+      "confidence": 93.0,
+      "bbox": {
+        "left": 831,
+        "top": 2230,
+        "width": 59,
+        "height": 14
+      }
+    },
+    {
+      "text": "—",
+      "confidence": 93.0,
+      "bbox": {
+        "left": 896,
+        "top": 2238,
+        "width": 11,
+        "height": 1
+      }
+    },
+    {
+      "text": "13.08.98",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 914,
+        "top": 2230,
+        "width": 70,
+        "height": 14
+      }
+    },
+    {
+      "text": "2º",
+      "confidence": 95.0,
+      "bbox": {
+        "left": 808,
+        "top": 2252,
+        "width": 16,
+        "height": 14
+      }
+    },
+    {
+      "text": "revisão",
+      "confidence": 92.0,
+      "bbox": {
+        "left": 831,
+        "top": 2252,
+        "width": 59,
+        "height": 14
+      }
+    },
+    {
+      "text": "—",
+      "confidence": 92.0,
+      "bbox": {
+        "left": 896,
+        "top": 2260,
+        "width": 11,
+        "height": 1
+      }
+    },
+    {
+      "text": "31.08.98",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 913,
+        "top": 2252,
+        "width": 71,
+        "height": 14
+      }
+    },
+    {
+      "text": "3º",
+      "confidence": 95.0,
+      "bbox": {
+        "left": 808,
+        "top": 2274,
+        "width": 16,
+        "height": 14
+      }
+    },
+    {
+      "text": "revisão",
+      "confidence": 93.0,
+      "bbox": {
+        "left": 831,
+        "top": 2274,
+        "width": 59,
+        "height": 14
+      }
+    },
+    {
+      "text": "—",
+      "confidence": 93.0,
+      "bbox": {
+        "left": 896,
+        "top": 2282,
+        "width": 11,
+        "height": 1
+      }
+    },
+    {
+      "text": "24.09.98",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 912,
+        "top": 2274,
+        "width": 72,
+        "height": 14
+      }
+    },
+    {
+      "text": "4º",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 807,
+        "top": 2297,
+        "width": 17,
+        "height": 14
+      }
+    },
+    {
+      "text": "revisão",
+      "confidence": 93.0,
+      "bbox": {
+        "left": 831,
+        "top": 2297,
+        "width": 59,
+        "height": 14
+      }
+    },
+    {
+      "text": "—",
+      "confidence": 92.0,
+      "bbox": {
+        "left": 896,
+        "top": 2305,
+        "width": 11,
+        "height": 1
+      }
+    },
+    {
+      "text": "29.09.98",
+      "confidence": 93.0,
+      "bbox": {
+        "left": 912,
+        "top": 2297,
+        "width": 72,
+        "height": 14
+      }
+    },
+    {
+      "text": "—",
+      "confidence": 92.0,
+      "bbox": {
+        "left": 990,
+        "top": 2305,
+        "width": 11,
+        "height": 1
+      }
+    },
+    {
+      "text": "Cad.",
+      "confidence": 95.0,
+      "bbox": {
+        "left": 1007,
+        "top": 2297,
+        "width": 37,
+        "height": 14
+      }
+    },
+    {
+      "text": "O",
+      "confidence": 94.0,
+      "bbox": {
+        "left": 1052,
+        "top": 2297,
+        "width": 9,
+        "height": 14
+      }
+    },
+    {
+      "text": "Produção:",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 809,
+        "top": 2319,
+        "width": 83,
+        "height": 18
+      }
+    },
+    {
+      "text": "Textos",
+      "confidence": 93.0,
+      "bbox": {
+        "left": 901,
+        "top": 2319,
+        "width": 58,
+        "height": 14
+      }
+    },
+    {
+      "text": "&",
+      "confidence": 92.0,
+      "bbox": {
+        "left": 966,
+        "top": 2319,
+        "width": 12,
+        "height": 14
+      }
+    },
+    {
+      "text": "Formas",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 985,
+        "top": 2319,
+        "width": 67,
+        "height": 14
+      }
+    },
+    {
+      "text": "Para:",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 809,
+        "top": 2341,
+        "width": 42,
+        "height": 14
+      }
+    },
+    {
+      "text": "Ed.",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 859,
+        "top": 2341,
+        "width": 25,
+        "height": 14
+      }
+    },
+    {
+      "text": "Zahar",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 891,
+        "top": 2341,
+        "width": 50,
+        "height": 14
+      }
+    }
+  ],
+  "word_count": 59,
+  "char_count": 396,
+  "avg_word_confidence": 94.37288135593221,
+  "min_word_confidence": 86.0,
+  "max_word_confidence": 96.0,
+  "config_used": "--tessdata-dir /media/yuri/Noosphera/Noosphera_0.3/Apps/Glyphar/src/glyphar/resources/tessdata --oem 1 --psm 3 --user-words /tmp/tesseract_user_words.txt -c preserve_interword_spaces=1 -c textord_min_linesize=2.5 -c textord_initialx_ile=1.0",
+  "processing_time_ms": 971.6756979978527
+}

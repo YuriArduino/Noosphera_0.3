@@ -1,0 +1,113 @@
+{
+  "text": "ELISABETH ROUDINESCO E MICHEL PLON DICIONÁRIO DE PSICANÁLISE Àb ZAHAR",
+  "confidence": 88.7,
+  "words": [
+    {
+      "text": "ELISABETH",
+      "confidence": 90.0,
+      "bbox": {
+        "left": 72,
+        "top": 22,
+        "width": 473,
+        "height": 64
+      }
+    },
+    {
+      "text": "ROUDINESCO",
+      "confidence": 90.0,
+      "bbox": {
+        "left": 578,
+        "top": 22,
+        "width": 616,
+        "height": 64
+      }
+    },
+    {
+      "text": "E",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 73,
+        "top": 140,
+        "width": 40,
+        "height": 62
+      }
+    },
+    {
+      "text": "MICHEL",
+      "confidence": 93.0,
+      "bbox": {
+        "left": 144,
+        "top": 139,
+        "width": 358,
+        "height": 64
+      }
+    },
+    {
+      "text": "PLON",
+      "confidence": 91.0,
+      "bbox": {
+        "left": 532,
+        "top": 139,
+        "width": 241,
+        "height": 64
+      }
+    },
+    {
+      "text": "DICIONÁRIO",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 75,
+        "top": 259,
+        "width": 893,
+        "height": 172
+      }
+    },
+    {
+      "text": "DE",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1023,
+        "top": 287,
+        "width": 178,
+        "height": 95
+      }
+    },
+    {
+      "text": "PSICANÁLISE",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 82,
+        "top": 402,
+        "width": 1117,
+        "height": 291
+      }
+    },
+    {
+      "text": "Àb",
+      "confidence": 43.0,
+      "bbox": {
+        "left": 53,
+        "top": 1716,
+        "width": 60,
+        "height": 70
+      }
+    },
+    {
+      "text": "ZAHAR",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 136,
+        "top": 1738,
+        "width": 134,
+        "height": 28
+      }
+    }
+  ],
+  "word_count": 10,
+  "char_count": 69,
+  "avg_word_confidence": 88.7,
+  "min_word_confidence": 43.0,
+  "max_word_confidence": 96.0,
+  "config_used": "--tessdata-dir /media/yuri/Noosphera/Noosphera_0.3/Apps/Glyphar/src/glyphar/resources/tessdata --oem 1 --psm 3 --user-words /tmp/tesseract_user_words.txt -c preserve_interword_spaces=1 -c textord_min_linesize=2.5 -c textord_initialx_ile=1.0",
+  "processing_time_ms": 1148.5774220018357
+}

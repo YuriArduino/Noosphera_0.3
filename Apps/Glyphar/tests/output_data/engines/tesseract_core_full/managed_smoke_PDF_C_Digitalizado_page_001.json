@@ -1,0 +1,193 @@
+{
+  "text": "DICIONÁRIO PSICANALISE | t ~ Wu editddo por PIERRE PRIMEIRO GRANDE DICIONÁRIO LACANIANO | JORGE ZAHAR EDITOR |",
+  "confidence": 77.11111111111111,
+  "words": [
+    {
+      "text": "DICIONÁRIO",
+      "confidence": 92.0,
+      "bbox": {
+        "left": 231,
+        "top": 83,
+        "width": 655,
+        "height": 118
+      }
+    },
+    {
+      "text": "PSICANALISE",
+      "confidence": 41.0,
+      "bbox": {
+        "left": 316,
+        "top": 322,
+        "width": 572,
+        "height": 118
+      }
+    },
+    {
+      "text": "|",
+      "confidence": 88.0,
+      "bbox": {
+        "left": 935,
+        "top": 329,
+        "width": 25,
+        "height": 24
+      }
+    },
+    {
+      "text": "t",
+      "confidence": 40.0,
+      "bbox": {
+        "left": 127,
+        "top": 483,
+        "width": 9,
+        "height": 15
+      }
+    },
+    {
+      "text": "~",
+      "confidence": 77.0,
+      "bbox": {
+        "left": 464,
+        "top": 1438,
+        "width": 58,
+        "height": 19
+      }
+    },
+    {
+      "text": "Wu",
+      "confidence": 35.0,
+      "bbox": {
+        "left": 504,
+        "top": 1434,
+        "width": 22,
+        "height": 33
+      }
+    },
+    {
+      "text": "editddo",
+      "confidence": 90.0,
+      "bbox": {
+        "left": 389,
+        "top": 1460,
+        "width": 108,
+        "height": 39
+      }
+    },
+    {
+      "text": "por",
+      "confidence": 93.0,
+      "bbox": {
+        "left": 510,
+        "top": 1478,
+        "width": 45,
+        "height": 25
+      }
+    },
+    {
+      "text": "PIERRE",
+      "confidence": 88.0,
+      "bbox": {
+        "left": 580,
+        "top": 1472,
+        "width": 130,
+        "height": 32
+      }
+    },
+    {
+      "text": "PRIMEIRO",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 140,
+        "top": 1548,
+        "width": 185,
+        "height": 40
+      }
+    },
+    {
+      "text": "GRANDE",
+      "confidence": 93.0,
+      "bbox": {
+        "left": 340,
+        "top": 1533,
+        "width": 160,
+        "height": 49
+      }
+    },
+    {
+      "text": "DICIONÁRIO",
+      "confidence": 84.0,
+      "bbox": {
+        "left": 517,
+        "top": 1539,
+        "width": 233,
+        "height": 40
+      }
+    },
+    {
+      "text": "LACANIANO",
+      "confidence": 67.0,
+      "bbox": {
+        "left": 765,
+        "top": 1542,
+        "width": 232,
+        "height": 44
+      }
+    },
+    {
+      "text": "|",
+      "confidence": 53.0,
+      "bbox": {
+        "left": 466,
+        "top": 1594,
+        "width": 2,
+        "height": 18
+      }
+    },
+    {
+      "text": "JORGE",
+      "confidence": 93.0,
+      "bbox": {
+        "left": 328,
+        "top": 1645,
+        "width": 143,
+        "height": 29
+      }
+    },
+    {
+      "text": "ZAHAR",
+      "confidence": 75.0,
+      "bbox": {
+        "left": 509,
+        "top": 1644,
+        "width": 155,
+        "height": 28
+      }
+    },
+    {
+      "text": "EDITOR",
+      "confidence": 92.0,
+      "bbox": {
+        "left": 703,
+        "top": 1642,
+        "width": 167,
+        "height": 28
+      }
+    },
+    {
+      "text": "|",
+      "confidence": 91.0,
+      "bbox": {
+        "left": 925,
+        "top": 1626,
+        "width": 3,
+        "height": 3
+      }
+    }
+  ],
+  "word_count": 18,
+  "char_count": 110,
+  "avg_word_confidence": 77.11111111111111,
+  "min_word_confidence": 35.0,
+  "max_word_confidence": 96.0,
+  "config_used": "--tessdata-dir /media/yuri/Noosphera/Noosphera_0.3/Apps/Glyphar/src/glyphar/resources/tessdata --oem 1 --psm 3 --user-words /tmp/tesseract_user_words.txt -c preserve_interword_spaces=1 -c textord_min_linesize=2.5 -c textord_initialx_ile=1.0",
+  "processing_time_ms": 1416.4067400015483
+}

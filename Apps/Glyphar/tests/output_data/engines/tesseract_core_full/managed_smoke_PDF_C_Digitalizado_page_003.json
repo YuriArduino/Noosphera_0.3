@@ -1,0 +1,1733 @@
+{
+  "text": "Título original: L'apport freudien: Eléments pour une encyclopédie de la psychanalyse Tradução autorizada da edição francesa publicada em 1993 por Editions Bordas, de Paris, França Copyright © 1993. Editions Bordas Copyright © 1996 da edição em lingua portuguesa: Jorge Zahar Editor Lida. rua México 31 sobreloja 2003 1-144 Rio de Janeiro, RJ tel.: (21) 240-0226 / fax: (21) 262-5123 e-mail: jze@ zahar.com.br Todos os direitos reservados. A reprodução nio-autorizada desta publicação, no todo ou em parte, constitui violação do copyright. (Lei 5.988) Capa: Carol Sá Ilustração da capa: Infanta, óleo sobre tela de Antonio Saura, 1960 CIP-Brasil. Catalogagdo-na-fonte Sindicato Nacional dos Editores de Livros, RJ. D542 96-1424 Dicionário enciclopédico de psicanálise: o legado de Freude Lacan / editado por Pierre Kaufmann; tradução, Vera Ribeiro. Maria Luiza X. de A. Borges: consultoria, Marco Antonio Coutinho Jorge — Rio de Janeiro: Jorge Zahar Ed., 1996 Contém dados bibliográficos ISBN: 85-7110-360-7 I. Freud, Sigmund, 1856-1939 — Dicionários. 2. Lacan Jacques, 1901-1981. 3. Psicanálise — Dicionários. L Kaufmann, Pierre. CDD — 150.19503 CDU — 159.964.2 (038)",
+  "confidence": 90.45348837209302,
+  "words": [
+    {
+      "text": "Título",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 500,
+        "top": 547,
+        "width": 58,
+        "height": 16
+      }
+    },
+    {
+      "text": "original:",
+      "confidence": 95.0,
+      "bbox": {
+        "left": 566,
+        "top": 547,
+        "width": 79,
+        "height": 17
+      }
+    },
+    {
+      "text": "L'apport",
+      "confidence": 89.0,
+      "bbox": {
+        "left": 386,
+        "top": 575,
+        "width": 83,
+        "height": 22
+      }
+    },
+    {
+      "text": "freudien:",
+      "confidence": 89.0,
+      "bbox": {
+        "left": 479,
+        "top": 575,
+        "width": 90,
+        "height": 22
+      }
+    },
+    {
+      "text": "Eléments",
+      "confidence": 91.0,
+      "bbox": {
+        "left": 579,
+        "top": 575,
+        "width": 86,
+        "height": 17
+      }
+    },
+    {
+      "text": "pour",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 673,
+        "top": 581,
+        "width": 46,
+        "height": 16
+      }
+    },
+    {
+      "text": "une",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 727,
+        "top": 582,
+        "width": 32,
+        "height": 10
+      }
+    },
+    {
+      "text": "encyclopédie",
+      "confidence": 52.0,
+      "bbox": {
+        "left": 414,
+        "top": 604,
+        "width": 125,
+        "height": 22
+      }
+    },
+    {
+      "text": "de",
+      "confidence": 90.0,
+      "bbox": {
+        "left": 549,
+        "top": 604,
+        "width": 20,
+        "height": 17
+      }
+    },
+    {
+      "text": "la",
+      "confidence": 90.0,
+      "bbox": {
+        "left": 579,
+        "top": 605,
+        "width": 17,
+        "height": 16
+      }
+    },
+    {
+      "text": "psychanalyse",
+      "confidence": 94.0,
+      "bbox": {
+        "left": 604,
+        "top": 605,
+        "width": 129,
+        "height": 21
+      }
+    },
+    {
+      "text": "Tradução",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 382,
+        "top": 650,
+        "width": 89,
+        "height": 21
+      }
+    },
+    {
+      "text": "autorizada",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 481,
+        "top": 650,
+        "width": 97,
+        "height": 17
+      }
+    },
+    {
+      "text": "da",
+      "confidence": 92.0,
+      "bbox": {
+        "left": 587,
+        "top": 650,
+        "width": 22,
+        "height": 16
+      }
+    },
+    {
+      "text": "edição",
+      "confidence": 95.0,
+      "bbox": {
+        "left": 616,
+        "top": 650,
+        "width": 61,
+        "height": 21
+      }
+    },
+    {
+      "text": "francesa",
+      "confidence": 95.0,
+      "bbox": {
+        "left": 686,
+        "top": 650,
+        "width": 79,
+        "height": 16
+      }
+    },
+    {
+      "text": "publicada",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 299,
+        "top": 679,
+        "width": 92,
+        "height": 21
+      }
+    },
+    {
+      "text": "em",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 399,
+        "top": 684,
+        "width": 27,
+        "height": 11
+      }
+    },
+    {
+      "text": "1993",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 438,
+        "top": 679,
+        "width": 41,
+        "height": 16
+      }
+    },
+    {
+      "text": "por",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 490,
+        "top": 684,
+        "width": 30,
+        "height": 16
+      }
+    },
+    {
+      "text": "Editions",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 528,
+        "top": 679,
+        "width": 79,
+        "height": 16
+      }
+    },
+    {
+      "text": "Bordas,",
+      "confidence": 95.0,
+      "bbox": {
+        "left": 616,
+        "top": 679,
+        "width": 71,
+        "height": 16
+      }
+    },
+    {
+      "text": "de",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 696,
+        "top": 679,
+        "width": 21,
+        "height": 16
+      }
+    },
+    {
+      "text": "Paris,",
+      "confidence": 93.0,
+      "bbox": {
+        "left": 726,
+        "top": 679,
+        "width": 51,
+        "height": 17
+      }
+    },
+    {
+      "text": "França",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 786,
+        "top": 679,
+        "width": 65,
+        "height": 21
+      }
+    },
+    {
+      "text": "Copyright",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 403,
+        "top": 724,
+        "width": 96,
+        "height": 22
+      }
+    },
+    {
+      "text": "©",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 507,
+        "top": 724,
+        "width": 16,
+        "height": 17
+      }
+    },
+    {
+      "text": "1993.",
+      "confidence": 90.0,
+      "bbox": {
+        "left": 535,
+        "top": 724,
+        "width": 49,
+        "height": 16
+      }
+    },
+    {
+      "text": "Editions",
+      "confidence": 93.0,
+      "bbox": {
+        "left": 592,
+        "top": 719,
+        "width": 79,
+        "height": 21
+      }
+    },
+    {
+      "text": "Bordas",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 679,
+        "top": 724,
+        "width": 66,
+        "height": 16
+      }
+    },
+    {
+      "text": "Copyright",
+      "confidence": 95.0,
+      "bbox": {
+        "left": 326,
+        "top": 761,
+        "width": 98,
+        "height": 21
+      }
+    },
+    {
+      "text": "©",
+      "confidence": 95.0,
+      "bbox": {
+        "left": 438,
+        "top": 761,
+        "width": 8,
+        "height": 17
+      }
+    },
+    {
+      "text": "1996",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 459,
+        "top": 761,
+        "width": 43,
+        "height": 16
+      }
+    },
+    {
+      "text": "da",
+      "confidence": 92.0,
+      "bbox": {
+        "left": 510,
+        "top": 761,
+        "width": 21,
+        "height": 16
+      }
+    },
+    {
+      "text": "edição",
+      "confidence": 95.0,
+      "bbox": {
+        "left": 539,
+        "top": 761,
+        "width": 61,
+        "height": 21
+      }
+    },
+    {
+      "text": "em",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 608,
+        "top": 766,
+        "width": 28,
+        "height": 11
+      }
+    },
+    {
+      "text": "lingua",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 645,
+        "top": 761,
+        "width": 58,
+        "height": 21
+      }
+    },
+    {
+      "text": "portuguesa:",
+      "confidence": 95.0,
+      "bbox": {
+        "left": 711,
+        "top": 764,
+        "width": 109,
+        "height": 18
+      }
+    },
+    {
+      "text": "Jorge",
+      "confidence": 92.0,
+      "bbox": {
+        "left": 456,
+        "top": 790,
+        "width": 50,
+        "height": 21
+      }
+    },
+    {
+      "text": "Zahar",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 515,
+        "top": 790,
+        "width": 55,
+        "height": 16
+      }
+    },
+    {
+      "text": "Editor",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 578,
+        "top": 790,
+        "width": 54,
+        "height": 16
+      }
+    },
+    {
+      "text": "Lida.",
+      "confidence": 80.0,
+      "bbox": {
+        "left": 644,
+        "top": 790,
+        "width": 47,
+        "height": 16
+      }
+    },
+    {
+      "text": "rua",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 458,
+        "top": 823,
+        "width": 29,
+        "height": 11
+      }
+    },
+    {
+      "text": "México",
+      "confidence": 95.0,
+      "bbox": {
+        "left": 495,
+        "top": 818,
+        "width": 72,
+        "height": 16
+      }
+    },
+    {
+      "text": "31",
+      "confidence": 91.0,
+      "bbox": {
+        "left": 575,
+        "top": 818,
+        "width": 19,
+        "height": 16
+      }
+    },
+    {
+      "text": "sobreloja",
+      "confidence": 91.0,
+      "bbox": {
+        "left": 606,
+        "top": 818,
+        "width": 87,
+        "height": 21
+      }
+    },
+    {
+      "text": "2003",
+      "confidence": 65.0,
+      "bbox": {
+        "left": 431,
+        "top": 847,
+        "width": 44,
+        "height": 16
+      }
+    },
+    {
+      "text": "1-144",
+      "confidence": 65.0,
+      "bbox": {
+        "left": 484,
+        "top": 847,
+        "width": 51,
+        "height": 16
+      }
+    },
+    {
+      "text": "Rio",
+      "confidence": 93.0,
+      "bbox": {
+        "left": 542,
+        "top": 847,
+        "width": 34,
+        "height": 16
+      }
+    },
+    {
+      "text": "de",
+      "confidence": 93.0,
+      "bbox": {
+        "left": 583,
+        "top": 847,
+        "width": 23,
+        "height": 16
+      }
+    },
+    {
+      "text": "Janeiro,",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 613,
+        "top": 847,
+        "width": 74,
+        "height": 19
+      }
+    },
+    {
+      "text": "RJ",
+      "confidence": 94.0,
+      "bbox": {
+        "left": 696,
+        "top": 847,
+        "width": 22,
+        "height": 16
+      }
+    },
+    {
+      "text": "tel.:",
+      "confidence": 92.0,
+      "bbox": {
+        "left": 383,
+        "top": 875,
+        "width": 34,
+        "height": 16
+      }
+    },
+    {
+      "text": "(21)",
+      "confidence": 95.0,
+      "bbox": {
+        "left": 427,
+        "top": 876,
+        "width": 37,
+        "height": 18
+      }
+    },
+    {
+      "text": "240-0226",
+      "confidence": 89.0,
+      "bbox": {
+        "left": 474,
+        "top": 875,
+        "width": 90,
+        "height": 16
+      }
+    },
+    {
+      "text": "/",
+      "confidence": 89.0,
+      "bbox": {
+        "left": 572,
+        "top": 874,
+        "width": 7,
+        "height": 17
+      }
+    },
+    {
+      "text": "fax:",
+      "confidence": 82.0,
+      "bbox": {
+        "left": 586,
+        "top": 874,
+        "width": 35,
+        "height": 17
+      }
+    },
+    {
+      "text": "(21)",
+      "confidence": 94.0,
+      "bbox": {
+        "left": 631,
+        "top": 875,
+        "width": 38,
+        "height": 19
+      }
+    },
+    {
+      "text": "262-5123",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 678,
+        "top": 875,
+        "width": 89,
+        "height": 16
+      }
+    },
+    {
+      "text": "e-mail:",
+      "confidence": 80.0,
+      "bbox": {
+        "left": 452,
+        "top": 904,
+        "width": 64,
+        "height": 16
+      }
+    },
+    {
+      "text": "jze@",
+      "confidence": 61.0,
+      "bbox": {
+        "left": 527,
+        "top": 904,
+        "width": 42,
+        "height": 21
+      }
+    },
+    {
+      "text": "zahar.com.br",
+      "confidence": 61.0,
+      "bbox": {
+        "left": 570,
+        "top": 904,
+        "width": 130,
+        "height": 16
+      }
+    },
+    {
+      "text": "Todos",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 437,
+        "top": 948,
+        "width": 56,
+        "height": 17
+      }
+    },
+    {
+      "text": "os",
+      "confidence": 92.0,
+      "bbox": {
+        "left": 501,
+        "top": 954,
+        "width": 20,
+        "height": 11
+      }
+    },
+    {
+      "text": "direitos",
+      "confidence": 93.0,
+      "bbox": {
+        "left": 529,
+        "top": 949,
+        "width": 70,
+        "height": 16
+      }
+    },
+    {
+      "text": "reservados.",
+      "confidence": 95.0,
+      "bbox": {
+        "left": 608,
+        "top": 949,
+        "width": 105,
+        "height": 16
+      }
+    },
+    {
+      "text": "A",
+      "confidence": 91.0,
+      "bbox": {
+        "left": 309,
+        "top": 979,
+        "width": 14,
+        "height": 15
+      }
+    },
+    {
+      "text": "reprodução",
+      "confidence": 93.0,
+      "bbox": {
+        "left": 333,
+        "top": 978,
+        "width": 106,
+        "height": 21
+      }
+    },
+    {
+      "text": "nio-autorizada",
+      "confidence": 51.0,
+      "bbox": {
+        "left": 448,
+        "top": 978,
+        "width": 141,
+        "height": 16
+      }
+    },
+    {
+      "text": "desta",
+      "confidence": 92.0,
+      "bbox": {
+        "left": 597,
+        "top": 978,
+        "width": 49,
+        "height": 16
+      }
+    },
+    {
+      "text": "publicação,",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 655,
+        "top": 977,
+        "width": 106,
+        "height": 22
+      }
+    },
+    {
+      "text": "no",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 772,
+        "top": 983,
+        "width": 21,
+        "height": 11
+      }
+    },
+    {
+      "text": "todo",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 803,
+        "top": 978,
+        "width": 40,
+        "height": 16
+      }
+    },
+    {
+      "text": "ou",
+      "confidence": 90.0,
+      "bbox": {
+        "left": 302,
+        "top": 1012,
+        "width": 22,
+        "height": 11
+      }
+    },
+    {
+      "text": "em",
+      "confidence": 90.0,
+      "bbox": {
+        "left": 332,
+        "top": 1012,
+        "width": 28,
+        "height": 11
+      }
+    },
+    {
+      "text": "parte,",
+      "confidence": 93.0,
+      "bbox": {
+        "left": 369,
+        "top": 1010,
+        "width": 51,
+        "height": 18
+      }
+    },
+    {
+      "text": "constitui",
+      "confidence": 95.0,
+      "bbox": {
+        "left": 428,
+        "top": 1007,
+        "width": 82,
+        "height": 16
+      }
+    },
+    {
+      "text": "violação",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 520,
+        "top": 1007,
+        "width": 78,
+        "height": 21
+      }
+    },
+    {
+      "text": "do",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 607,
+        "top": 1007,
+        "width": 22,
+        "height": 16
+      }
+    },
+    {
+      "text": "copyright.",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 637,
+        "top": 1007,
+        "width": 95,
+        "height": 21
+      }
+    },
+    {
+      "text": "(Lei",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 742,
+        "top": 1007,
+        "width": 37,
+        "height": 19
+      }
+    },
+    {
+      "text": "5.988)",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 789,
+        "top": 1007,
+        "width": 60,
+        "height": 19
+      }
+    },
+    {
+      "text": "Capa:",
+      "confidence": 95.0,
+      "bbox": {
+        "left": 504,
+        "top": 1052,
+        "width": 53,
+        "height": 21
+      }
+    },
+    {
+      "text": "Carol",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 567,
+        "top": 1052,
+        "width": 51,
+        "height": 17
+      }
+    },
+    {
+      "text": "Sá",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 627,
+        "top": 1052,
+        "width": 23,
+        "height": 16
+      }
+    },
+    {
+      "text": "Ilustração",
+      "confidence": 23.0,
+      "bbox": {
+        "left": 445,
+        "top": 1080,
+        "width": 92,
+        "height": 22
+      }
+    },
+    {
+      "text": "da",
+      "confidence": 93.0,
+      "bbox": {
+        "left": 547,
+        "top": 1080,
+        "width": 22,
+        "height": 16
+      }
+    },
+    {
+      "text": "capa:",
+      "confidence": 91.0,
+      "bbox": {
+        "left": 577,
+        "top": 1085,
+        "width": 48,
+        "height": 16
+      }
+    },
+    {
+      "text": "Infanta,",
+      "confidence": 84.0,
+      "bbox": {
+        "left": 635,
+        "top": 1081,
+        "width": 74,
+        "height": 19
+      }
+    },
+    {
+      "text": "óleo",
+      "confidence": 65.0,
+      "bbox": {
+        "left": 389,
+        "top": 1109,
+        "width": 40,
+        "height": 16
+      }
+    },
+    {
+      "text": "sobre",
+      "confidence": 95.0,
+      "bbox": {
+        "left": 437,
+        "top": 1110,
+        "width": 50,
+        "height": 15
+      }
+    },
+    {
+      "text": "tela",
+      "confidence": 95.0,
+      "bbox": {
+        "left": 496,
+        "top": 1109,
+        "width": 33,
+        "height": 16
+      }
+    },
+    {
+      "text": "de",
+      "confidence": 95.0,
+      "bbox": {
+        "left": 537,
+        "top": 1109,
+        "width": 21,
+        "height": 16
+      }
+    },
+    {
+      "text": "Antonio",
+      "confidence": 93.0,
+      "bbox": {
+        "left": 567,
+        "top": 1109,
+        "width": 76,
+        "height": 16
+      }
+    },
+    {
+      "text": "Saura,",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 651,
+        "top": 1109,
+        "width": 59,
+        "height": 17
+      }
+    },
+    {
+      "text": "1960",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 721,
+        "top": 1109,
+        "width": 44,
+        "height": 16
+      }
+    },
+    {
+      "text": "CIP-Brasil.",
+      "confidence": 90.0,
+      "bbox": {
+        "left": 417,
+        "top": 1195,
+        "width": 106,
+        "height": 17
+      }
+    },
+    {
+      "text": "Catalogagdo-na-fonte",
+      "confidence": 43.0,
+      "bbox": {
+        "left": 535,
+        "top": 1194,
+        "width": 205,
+        "height": 22
+      }
+    },
+    {
+      "text": "Sindicato",
+      "confidence": 90.0,
+      "bbox": {
+        "left": 353,
+        "top": 1223,
+        "width": 89,
+        "height": 17
+      }
+    },
+    {
+      "text": "Nacional",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 451,
+        "top": 1224,
+        "width": 83,
+        "height": 16
+      }
+    },
+    {
+      "text": "dos",
+      "confidence": 93.0,
+      "bbox": {
+        "left": 543,
+        "top": 1224,
+        "width": 32,
+        "height": 16
+      }
+    },
+    {
+      "text": "Editores",
+      "confidence": 92.0,
+      "bbox": {
+        "left": 583,
+        "top": 1224,
+        "width": 78,
+        "height": 16
+      }
+    },
+    {
+      "text": "de",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 669,
+        "top": 1224,
+        "width": 22,
+        "height": 16
+      }
+    },
+    {
+      "text": "Livros,",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 699,
+        "top": 1224,
+        "width": 66,
+        "height": 19
+      }
+    },
+    {
+      "text": "RJ.",
+      "confidence": 89.0,
+      "bbox": {
+        "left": 774,
+        "top": 1224,
+        "width": 29,
+        "height": 17
+      }
+    },
+    {
+      "text": "D542",
+      "confidence": 82.0,
+      "bbox": {
+        "left": 275,
+        "top": 1266,
+        "width": 52,
+        "height": 16
+      }
+    },
+    {
+      "text": "96-1424",
+      "confidence": 94.0,
+      "bbox": {
+        "left": 277,
+        "top": 1631,
+        "width": 80,
+        "height": 16
+      }
+    },
+    {
+      "text": "Dicionário",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 381,
+        "top": 1266,
+        "width": 102,
+        "height": 16
+      }
+    },
+    {
+      "text": "enciclopédico",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 491,
+        "top": 1266,
+        "width": 129,
+        "height": 21
+      }
+    },
+    {
+      "text": "de",
+      "confidence": 93.0,
+      "bbox": {
+        "left": 629,
+        "top": 1266,
+        "width": 21,
+        "height": 16
+      }
+    },
+    {
+      "text": "psicanálise:",
+      "confidence": 95.0,
+      "bbox": {
+        "left": 656,
+        "top": 1266,
+        "width": 111,
+        "height": 21
+      }
+    },
+    {
+      "text": "o",
+      "confidence": 94.0,
+      "bbox": {
+        "left": 774,
+        "top": 1271,
+        "width": 10,
+        "height": 11
+      }
+    },
+    {
+      "text": "legado",
+      "confidence": 95.0,
+      "bbox": {
+        "left": 793,
+        "top": 1266,
+        "width": 61,
+        "height": 21
+      }
+    },
+    {
+      "text": "de",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 861,
+        "top": 1266,
+        "width": 22,
+        "height": 16
+      }
+    },
+    {
+      "text": "Freude",
+      "confidence": 90.0,
+      "bbox": {
+        "left": 347,
+        "top": 1296,
+        "width": 72,
+        "height": 16
+      }
+    },
+    {
+      "text": "Lacan",
+      "confidence": 87.0,
+      "bbox": {
+        "left": 426,
+        "top": 1296,
+        "width": 57,
+        "height": 16
+      }
+    },
+    {
+      "text": "/",
+      "confidence": 90.0,
+      "bbox": {
+        "left": 490,
+        "top": 1295,
+        "width": 6,
+        "height": 17
+      }
+    },
+    {
+      "text": "editado",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 503,
+        "top": 1296,
+        "width": 69,
+        "height": 16
+      }
+    },
+    {
+      "text": "por",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 580,
+        "top": 1300,
+        "width": 31,
+        "height": 17
+      }
+    },
+    {
+      "text": "Pierre",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 617,
+        "top": 1296,
+        "width": 57,
+        "height": 16
+      }
+    },
+    {
+      "text": "Kaufmann;",
+      "confidence": 89.0,
+      "bbox": {
+        "left": 681,
+        "top": 1295,
+        "width": 106,
+        "height": 18
+      }
+    },
+    {
+      "text": "tradução,",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 795,
+        "top": 1296,
+        "width": 87,
+        "height": 21
+      }
+    },
+    {
+      "text": "Vera",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 349,
+        "top": 1325,
+        "width": 42,
+        "height": 15
+      }
+    },
+    {
+      "text": "Ribeiro.",
+      "confidence": 84.0,
+      "bbox": {
+        "left": 398,
+        "top": 1324,
+        "width": 76,
+        "height": 16
+      }
+    },
+    {
+      "text": "Maria",
+      "confidence": 95.0,
+      "bbox": {
+        "left": 483,
+        "top": 1324,
+        "width": 55,
+        "height": 16
+      }
+    },
+    {
+      "text": "Luiza",
+      "confidence": 93.0,
+      "bbox": {
+        "left": 546,
+        "top": 1324,
+        "width": 53,
+        "height": 16
+      }
+    },
+    {
+      "text": "X.",
+      "confidence": 92.0,
+      "bbox": {
+        "left": 606,
+        "top": 1324,
+        "width": 20,
+        "height": 16
+      }
+    },
+    {
+      "text": "de",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 633,
+        "top": 1324,
+        "width": 22,
+        "height": 16
+      }
+    },
+    {
+      "text": "A.",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 663,
+        "top": 1324,
+        "width": 13,
+        "height": 16
+      }
+    },
+    {
+      "text": "Borges:",
+      "confidence": 86.0,
+      "bbox": {
+        "left": 692,
+        "top": 1324,
+        "width": 71,
+        "height": 21
+      }
+    },
+    {
+      "text": "consultoria,",
+      "confidence": 95.0,
+      "bbox": {
+        "left": 770,
+        "top": 1324,
+        "width": 111,
+        "height": 17
+      }
+    },
+    {
+      "text": "Marco",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 349,
+        "top": 1352,
+        "width": 60,
+        "height": 16
+      }
+    },
+    {
+      "text": "Antonio",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 417,
+        "top": 1352,
+        "width": 76,
+        "height": 16
+      }
+    },
+    {
+      "text": "Coutinho",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 501,
+        "top": 1352,
+        "width": 88,
+        "height": 17
+      }
+    },
+    {
+      "text": "Jorge",
+      "confidence": 92.0,
+      "bbox": {
+        "left": 595,
+        "top": 1352,
+        "width": 51,
+        "height": 21
+      }
+    },
+    {
+      "text": "—",
+      "confidence": 92.0,
+      "bbox": {
+        "left": 652,
+        "top": 1362,
+        "width": 24,
+        "height": 1
+      }
+    },
+    {
+      "text": "Rio",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 683,
+        "top": 1352,
+        "width": 33,
+        "height": 16
+      }
+    },
+    {
+      "text": "de",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 722,
+        "top": 1352,
+        "width": 22,
+        "height": 16
+      }
+    },
+    {
+      "text": "Janeiro:",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 750,
+        "top": 1352,
+        "width": 75,
+        "height": 16
+      }
+    },
+    {
+      "text": "Jorge",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 832,
+        "top": 1352,
+        "width": 51,
+        "height": 21
+      }
+    },
+    {
+      "text": "Zahar",
+      "confidence": 91.0,
+      "bbox": {
+        "left": 349,
+        "top": 1381,
+        "width": 55,
+        "height": 16
+      }
+    },
+    {
+      "text": "Ed.,",
+      "confidence": 83.0,
+      "bbox": {
+        "left": 413,
+        "top": 1380,
+        "width": 35,
+        "height": 18
+      }
+    },
+    {
+      "text": "1996",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 461,
+        "top": 1381,
+        "width": 43,
+        "height": 16
+      }
+    },
+    {
+      "text": "Contém",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 383,
+        "top": 1426,
+        "width": 74,
+        "height": 16
+      }
+    },
+    {
+      "text": "dados",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 465,
+        "top": 1426,
+        "width": 55,
+        "height": 16
+      }
+    },
+    {
+      "text": "bibliográficos",
+      "confidence": 48.0,
+      "bbox": {
+        "left": 529,
+        "top": 1426,
+        "width": 132,
+        "height": 21
+      }
+    },
+    {
+      "text": "ISBN:",
+      "confidence": 92.0,
+      "bbox": {
+        "left": 383,
+        "top": 1455,
+        "width": 58,
+        "height": 17
+      }
+    },
+    {
+      "text": "85-7110-360-7",
+      "confidence": 91.0,
+      "bbox": {
+        "left": 453,
+        "top": 1455,
+        "width": 141,
+        "height": 16
+      }
+    },
+    {
+      "text": "I.",
+      "confidence": 94.0,
+      "bbox": {
+        "left": 386,
+        "top": 1500,
+        "width": 3,
+        "height": 16
+      }
+    },
+    {
+      "text": "Freud,",
+      "confidence": 80.0,
+      "bbox": {
+        "left": 411,
+        "top": 1500,
+        "width": 62,
+        "height": 17
+      }
+    },
+    {
+      "text": "Sigmund,",
+      "confidence": 85.0,
+      "bbox": {
+        "left": 487,
+        "top": 1500,
+        "width": 92,
+        "height": 21
+      }
+    },
+    {
+      "text": "1856-1939",
+      "confidence": 93.0,
+      "bbox": {
+        "left": 596,
+        "top": 1500,
+        "width": 103,
+        "height": 16
+      }
+    },
+    {
+      "text": "—",
+      "confidence": 92.0,
+      "bbox": {
+        "left": 710,
+        "top": 1510,
+        "width": 12,
+        "height": 1
+      }
+    },
+    {
+      "text": "Dicionários.",
+      "confidence": 95.0,
+      "bbox": {
+        "left": 733,
+        "top": 1500,
+        "width": 121,
+        "height": 16
+      }
+    },
+    {
+      "text": "2.",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 867,
+        "top": 1500,
+        "width": 16,
+        "height": 16
+      }
+    },
+    {
+      "text": "Lacan",
+      "confidence": 78.0,
+      "bbox": {
+        "left": 349,
+        "top": 1528,
+        "width": 65,
+        "height": 17
+      }
+    },
+    {
+      "text": "Jacques,",
+      "confidence": 78.0,
+      "bbox": {
+        "left": 419,
+        "top": 1528,
+        "width": 78,
+        "height": 22
+      }
+    },
+    {
+      "text": "1901-1981.",
+      "confidence": 86.0,
+      "bbox": {
+        "left": 507,
+        "top": 1528,
+        "width": 104,
+        "height": 16
+      }
+    },
+    {
+      "text": "3.",
+      "confidence": 86.0,
+      "bbox": {
+        "left": 619,
+        "top": 1528,
+        "width": 15,
+        "height": 16
+      }
+    },
+    {
+      "text": "Psicanálise",
+      "confidence": 93.0,
+      "bbox": {
+        "left": 640,
+        "top": 1528,
+        "width": 106,
+        "height": 16
+      }
+    },
+    {
+      "text": "—",
+      "confidence": 88.0,
+      "bbox": {
+        "left": 751,
+        "top": 1538,
+        "width": 12,
+        "height": 1
+      }
+    },
+    {
+      "text": "Dicionários.",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 768,
+        "top": 1528,
+        "width": 115,
+        "height": 16
+      }
+    },
+    {
+      "text": "L",
+      "confidence": 86.0,
+      "bbox": {
+        "left": 352,
+        "top": 1556,
+        "width": 10,
+        "height": 16
+      }
+    },
+    {
+      "text": "Kaufmann,",
+      "confidence": 92.0,
+      "bbox": {
+        "left": 372,
+        "top": 1556,
+        "width": 104,
+        "height": 18
+      }
+    },
+    {
+      "text": "Pierre.",
+      "confidence": 91.0,
+      "bbox": {
+        "left": 485,
+        "top": 1557,
+        "width": 61,
+        "height": 16
+      }
+    },
+    {
+      "text": "CDD",
+      "confidence": 90.0,
+      "bbox": {
+        "left": 641,
+        "top": 1602,
+        "width": 48,
+        "height": 17
+      }
+    },
+    {
+      "text": "—",
+      "confidence": 84.0,
+      "bbox": {
+        "left": 698,
+        "top": 1612,
+        "width": 23,
+        "height": 1
+      }
+    },
+    {
+      "text": "150.19503",
+      "confidence": 85.0,
+      "bbox": {
+        "left": 733,
+        "top": 1602,
+        "width": 96,
+        "height": 16
+      }
+    },
+    {
+      "text": "CDU",
+      "confidence": 93.0,
+      "bbox": {
+        "left": 642,
+        "top": 1630,
+        "width": 49,
+        "height": 17
+      }
+    },
+    {
+      "text": "—",
+      "confidence": 87.0,
+      "bbox": {
+        "left": 699,
+        "top": 1641,
+        "width": 24,
+        "height": 1
+      }
+    },
+    {
+      "text": "159.964.2",
+      "confidence": 89.0,
+      "bbox": {
+        "left": 735,
+        "top": 1631,
+        "width": 90,
+        "height": 16
+      }
+    },
+    {
+      "text": "(038)",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 835,
+        "top": 1631,
+        "width": 49,
+        "height": 18
+      }
+    }
+  ],
+  "word_count": 172,
+  "char_count": 1168,
+  "avg_word_confidence": 90.45348837209302,
+  "min_word_confidence": 23.0,
+  "max_word_confidence": 96.0,
+  "config_used": "--tessdata-dir /media/yuri/Noosphera/Noosphera_0.3/Apps/Glyphar/src/glyphar/resources/tessdata --oem 1 --psm 3 --user-words /tmp/tesseract_user_words.txt -c preserve_interword_spaces=1 -c textord_min_linesize=2.5 -c textord_initialx_ile=1.0",
+  "processing_time_ms": 1770.0553229988145
+}

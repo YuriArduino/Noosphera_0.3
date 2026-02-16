@@ -1,0 +1,126 @@
+{
+  "configured": {
+    "tessdata_dir": "/media/yuri/Noosphera/Noosphera_0.3/Apps/Glyphar/src/glyphar/resources/tessdata",
+    "languages": "por+eng",
+    "model_type": "fast",
+    "config": {
+      "psm": 3,
+      "quality_hint": "good",
+      "min_confidence": 20.0
+    },
+    "total_pdf_files": 3,
+    "total_pages": 14,
+    "pdf_files": [
+      "PDF_A_Digital.pdf",
+      "PDF_B_Digital.pdf",
+      "PDF_C_Digitalizado.pdf"
+    ]
+  },
+  "runtime": {
+    "cache_hits": 14,
+    "cache_misses": 14,
+    "cache_entries": 14,
+    "avg_confidence": 91.13460229442406,
+    "avg_time_ms": 2366.4783850004565,
+    "per_file_word_counts": [
+      {
+        "pdf_file": "PDF_A_Digital.pdf",
+        "page": 1,
+        "word_count": 6,
+        "cache_consistent_text": true,
+        "cache_consistent_word_count": true
+      },
+      {
+        "pdf_file": "PDF_A_Digital.pdf",
+        "page": 2,
+        "word_count": 358,
+        "cache_consistent_text": true,
+        "cache_consistent_word_count": true
+      },
+      {
+        "pdf_file": "PDF_A_Digital.pdf",
+        "page": 3,
+        "word_count": 482,
+        "cache_consistent_text": true,
+        "cache_consistent_word_count": true
+      },
+      {
+        "pdf_file": "PDF_B_Digital.pdf",
+        "page": 1,
+        "word_count": 10,
+        "cache_consistent_text": true,
+        "cache_consistent_word_count": true
+      },
+      {
+        "pdf_file": "PDF_B_Digital.pdf",
+        "page": 2,
+        "word_count": 59,
+        "cache_consistent_text": true,
+        "cache_consistent_word_count": true
+      },
+      {
+        "pdf_file": "PDF_B_Digital.pdf",
+        "page": 3,
+        "word_count": 238,
+        "cache_consistent_text": true,
+        "cache_consistent_word_count": true
+      },
+      {
+        "pdf_file": "PDF_B_Digital.pdf",
+        "page": 4,
+        "word_count": 44,
+        "cache_consistent_text": true,
+        "cache_consistent_word_count": true
+      },
+      {
+        "pdf_file": "PDF_B_Digital.pdf",
+        "page": 5,
+        "word_count": 476,
+        "cache_consistent_text": true,
+        "cache_consistent_word_count": true
+      },
+      {
+        "pdf_file": "PDF_B_Digital.pdf",
+        "page": 6,
+        "word_count": 552,
+        "cache_consistent_text": true,
+        "cache_consistent_word_count": true
+      },
+      {
+        "pdf_file": "PDF_C_Digitalizado.pdf",
+        "page": 1,
+        "word_count": 18,
+        "cache_consistent_text": true,
+        "cache_consistent_word_count": true
+      },
+      {
+        "pdf_file": "PDF_C_Digitalizado.pdf",
+        "page": 2,
+        "word_count": 40,
+        "cache_consistent_text": true,
+        "cache_consistent_word_count": true
+      },
+      {
+        "pdf_file": "PDF_C_Digitalizado.pdf",
+        "page": 3,
+        "word_count": 172,
+        "cache_consistent_text": true,
+        "cache_consistent_word_count": true
+      },
+      {
+        "pdf_file": "PDF_C_Digitalizado.pdf",
+        "page": 4,
+        "word_count": 494,
+        "cache_consistent_text": true,
+        "cache_consistent_word_count": true
+      },
+      {
+        "pdf_file": "PDF_C_Digitalizado.pdf",
+        "page": 5,
+        "word_count": 521,
+        "cache_consistent_text": true,
+        "cache_consistent_word_count": true
+      }
+    ]
+  }
+}

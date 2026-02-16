@@ -1,0 +1,3593 @@
+{
+  "text": "Dr. Sigmund Freud A SEXUALIDADE NA ETIOLOGIA DAS NEUROSES (1898) DIE SEXUALITAET IN DER AETIOLOGIE DER NEUROSEN (a)EDICOES ALEMÃS: 1898 Wien. klin. Rdsch., 12 (2), 21-2, (4), 55-7, (5), 70-2, (7), 103-5. (9, 23 e 30 de janeiro e 13 de fevereiro.) 1906 S.K.S.N., 1, 181-204. (1911, 22 ed.; 1922, 42 ed.) 1925 G.S., 1, 439-64. 1952 G.W., 1, 491-516. (b)TRADUGAO INGLESA: “Sexuality in the Aetiology of the Neuroses” 1924 C.P., 1, 220-48. (Trad. de J. Bernays.) A presente tradução é uma versão modificada da publicada em 1924. Este artigo foi concluido em 9 de fevereiro de 1898, como nos informa uma carta a Fliess (Freud, 1950a, Carta 83.) Ja fora iniciado um més antes (ibid., Carta 81) e, em ambas as cartas, Freud o trata desdenhosamente como um artigo “Gartenlaube’. Este era o titulo (literalmente, “caramanchao”) de uma revista de assuntos domésticos cujo nome se tornara proverbial por suas histórias sentimentais. Mas ele acrescenta que o artigo “é bastante impudente e basicamente destinado a criar caso, no que sem dúvida terá êxito. Breuer dirá que me causei muitos prejuízos.” Dois anos se haviam passado desde o último artigo de Freud sobre psicopatologia, “A Etiologia da Histeria” (1896c), e durante esses dois anos muita coisa acontecera para ocupar sua mente. Talvez a menos importante (pelo menos do nosso ponto de vista) tenha sido a conclusão, em inícios de 1897, de seu tratado de trezentas páginas sobre as paralisias infantis para a grande enciclopédia de medicina de Nothnagel, no qual estivera ocupado por vários anos, muito a contragosto, e que foi seu último trabalho neurológico. Cf., por exemplo, as cartas a Fliess de 20 e 31 de outubro e 8 de novembro de 1895, 4 de julho e 2 de novembro de 1896, e 24 de janeiro de 1897 (Freud, 1950a, Cartas 32, 33, 35, 47, 50 e 57). Uma vez ultrapassada essa tarefa, ele podia devotar-se mais completamente à psicologia, e logo se envolveu num evento que se revelaria um marco memorável - sua própria auto-análise.Esta começou no verão de 1897 e, já pelo outono, conduzira a algumas descobertas fundamentais: o abandono da teoria traumática da etiologia das",
+  "confidence": 94.20949720670392,
+  "words": [
+    {
+      "text": "Dr.",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 724,
+        "top": 203,
+        "width": 35,
+        "height": 22
+      }
+    },
+    {
+      "text": "Sigmund",
+      "confidence": 95.0,
+      "bbox": {
+        "left": 772,
+        "top": 202,
+        "width": 117,
+        "height": 30
+      }
+    },
+    {
+      "text": "Freud",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 902,
+        "top": 203,
+        "width": 75,
+        "height": 23
+      }
+    },
+    {
+      "text": "A",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 449,
+        "top": 296,
+        "width": 22,
+        "height": 24
+      }
+    },
+    {
+      "text": "SEXUALIDADE",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 482,
+        "top": 295,
+        "width": 236,
+        "height": 26
+      }
+    },
+    {
+      "text": "NA",
+      "confidence": 93.0,
+      "bbox": {
+        "left": 731,
+        "top": 296,
+        "width": 46,
+        "height": 24
+      }
+    },
+    {
+      "text": "ETIOLOGIA",
+      "confidence": 92.0,
+      "bbox": {
+        "left": 789,
+        "top": 295,
+        "width": 181,
+        "height": 26
+      }
+    },
+    {
+      "text": "DAS",
+      "confidence": 93.0,
+      "bbox": {
+        "left": 981,
+        "top": 295,
+        "width": 67,
+        "height": 26
+      }
+    },
+    {
+      "text": "NEUROSES",
+      "confidence": 92.0,
+      "bbox": {
+        "left": 1061,
+        "top": 295,
+        "width": 184,
+        "height": 26
+      }
+    },
+    {
+      "text": "(1898)",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1257,
+        "top": 296,
+        "width": 93,
+        "height": 31
+      }
+    },
+    {
+      "text": "DIE",
+      "confidence": 93.0,
+      "bbox": {
+        "left": 339,
+        "top": 448,
+        "width": 42,
+        "height": 20
+      }
+    },
+    {
+      "text": "SEXUALITAET",
+      "confidence": 90.0,
+      "bbox": {
+        "left": 392,
+        "top": 447,
+        "width": 186,
+        "height": 22
+      }
+    },
+    {
+      "text": "IN",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 589,
+        "top": 448,
+        "width": 23,
+        "height": 20
+      }
+    },
+    {
+      "text": "DER",
+      "confidence": 93.0,
+      "bbox": {
+        "left": 624,
+        "top": 448,
+        "width": 55,
+        "height": 20
+      }
+    },
+    {
+      "text": "AETIOLOGIE",
+      "confidence": 91.0,
+      "bbox": {
+        "left": 689,
+        "top": 447,
+        "width": 166,
+        "height": 22
+      }
+    },
+    {
+      "text": "DER",
+      "confidence": 92.0,
+      "bbox": {
+        "left": 866,
+        "top": 448,
+        "width": 55,
+        "height": 20
+      }
+    },
+    {
+      "text": "NEUROSEN",
+      "confidence": 92.0,
+      "bbox": {
+        "left": 932,
+        "top": 447,
+        "width": 153,
+        "height": 22
+      }
+    },
+    {
+      "text": "(a)EDICOES",
+      "confidence": 69.0,
+      "bbox": {
+        "left": 338,
+        "top": 491,
+        "width": 156,
+        "height": 31
+      }
+    },
+    {
+      "text": "ALEMÃS:",
+      "confidence": 95.0,
+      "bbox": {
+        "left": 503,
+        "top": 491,
+        "width": 118,
+        "height": 26
+      }
+    },
+    {
+      "text": "1898",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 437,
+        "top": 544,
+        "width": 58,
+        "height": 21
+      }
+    },
+    {
+      "text": "Wien.",
+      "confidence": 93.0,
+      "bbox": {
+        "left": 509,
+        "top": 544,
+        "width": 65,
+        "height": 21
+      }
+    },
+    {
+      "text": "klin.",
+      "confidence": 85.0,
+      "bbox": {
+        "left": 586,
+        "top": 544,
+        "width": 46,
+        "height": 20
+      }
+    },
+    {
+      "text": "Rdsch.,",
+      "confidence": 91.0,
+      "bbox": {
+        "left": 645,
+        "top": 544,
+        "width": 89,
+        "height": 24
+      }
+    },
+    {
+      "text": "12",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 748,
+        "top": 544,
+        "width": 27,
+        "height": 20
+      }
+    },
+    {
+      "text": "(2),",
+      "confidence": 94.0,
+      "bbox": {
+        "left": 786,
+        "top": 544,
+        "width": 38,
+        "height": 26
+      }
+    },
+    {
+      "text": "21-2,",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 836,
+        "top": 544,
+        "width": 60,
+        "height": 24
+      }
+    },
+    {
+      "text": "(4),",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 909,
+        "top": 544,
+        "width": 37,
+        "height": 26
+      }
+    },
+    {
+      "text": "55-7,",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 958,
+        "top": 544,
+        "width": 60,
+        "height": 24
+      }
+    },
+    {
+      "text": "(5),",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1031,
+        "top": 544,
+        "width": 37,
+        "height": 26
+      }
+    },
+    {
+      "text": "70-2,",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1080,
+        "top": 544,
+        "width": 60,
+        "height": 24
+      }
+    },
+    {
+      "text": "(7),",
+      "confidence": 95.0,
+      "bbox": {
+        "left": 1153,
+        "top": 544,
+        "width": 37,
+        "height": 26
+      }
+    },
+    {
+      "text": "103-5.",
+      "confidence": 95.0,
+      "bbox": {
+        "left": 1204,
+        "top": 544,
+        "width": 74,
+        "height": 21
+      }
+    },
+    {
+      "text": "(9,",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1290,
+        "top": 544,
+        "width": 29,
+        "height": 26
+      }
+    },
+    {
+      "text": "23",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1330,
+        "top": 544,
+        "width": 29,
+        "height": 21
+      }
+    },
+    {
+      "text": "e",
+      "confidence": 95.0,
+      "bbox": {
+        "left": 1370,
+        "top": 549,
+        "width": 13,
+        "height": 16
+      }
+    },
+    {
+      "text": "30",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1394,
+        "top": 544,
+        "width": 28,
+        "height": 21
+      }
+    },
+    {
+      "text": "de",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1433,
+        "top": 544,
+        "width": 29,
+        "height": 21
+      }
+    },
+    {
+      "text": "janeiro",
+      "confidence": 92.0,
+      "bbox": {
+        "left": 334,
+        "top": 592,
+        "width": 82,
+        "height": 26
+      }
+    },
+    {
+      "text": "e",
+      "confidence": 92.0,
+      "bbox": {
+        "left": 427,
+        "top": 597,
+        "width": 13,
+        "height": 16
+      }
+    },
+    {
+      "text": "13",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 451,
+        "top": 592,
+        "width": 27,
+        "height": 21
+      }
+    },
+    {
+      "text": "de",
+      "confidence": 93.0,
+      "bbox": {
+        "left": 488,
+        "top": 592,
+        "width": 29,
+        "height": 21
+      }
+    },
+    {
+      "text": "fevereiro.)",
+      "confidence": 92.0,
+      "bbox": {
+        "left": 526,
+        "top": 592,
+        "width": 123,
+        "height": 26
+      }
+    },
+    {
+      "text": "1906",
+      "confidence": 93.0,
+      "bbox": {
+        "left": 437,
+        "top": 639,
+        "width": 58,
+        "height": 21
+      }
+    },
+    {
+      "text": "S.K.S.N.,",
+      "confidence": 90.0,
+      "bbox": {
+        "left": 506,
+        "top": 638,
+        "width": 110,
+        "height": 25
+      }
+    },
+    {
+      "text": "1,",
+      "confidence": 91.0,
+      "bbox": {
+        "left": 629,
+        "top": 639,
+        "width": 18,
+        "height": 24
+      }
+    },
+    {
+      "text": "181-204.",
+      "confidence": 91.0,
+      "bbox": {
+        "left": 659,
+        "top": 639,
+        "width": 105,
+        "height": 21
+      }
+    },
+    {
+      "text": "(1911,",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 776,
+        "top": 639,
+        "width": 74,
+        "height": 26
+      }
+    },
+    {
+      "text": "22",
+      "confidence": 92.0,
+      "bbox": {
+        "left": 861,
+        "top": 638,
+        "width": 24,
+        "height": 21
+      }
+    },
+    {
+      "text": "ed.;",
+      "confidence": 88.0,
+      "bbox": {
+        "left": 895,
+        "top": 639,
+        "width": 44,
+        "height": 24
+      }
+    },
+    {
+      "text": "1922,",
+      "confidence": 95.0,
+      "bbox": {
+        "left": 950,
+        "top": 639,
+        "width": 65,
+        "height": 24
+      }
+    },
+    {
+      "text": "42",
+      "confidence": 91.0,
+      "bbox": {
+        "left": 1026,
+        "top": 638,
+        "width": 24,
+        "height": 21
+      }
+    },
+    {
+      "text": "ed.)",
+      "confidence": 92.0,
+      "bbox": {
+        "left": 1060,
+        "top": 639,
+        "width": 44,
+        "height": 26
+      }
+    },
+    {
+      "text": "1925",
+      "confidence": 90.0,
+      "bbox": {
+        "left": 339,
+        "top": 687,
+        "width": 57,
+        "height": 21
+      }
+    },
+    {
+      "text": "G.S.,",
+      "confidence": 88.0,
+      "bbox": {
+        "left": 408,
+        "top": 686,
+        "width": 58,
+        "height": 25
+      }
+    },
+    {
+      "text": "1,",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 479,
+        "top": 687,
+        "width": 18,
+        "height": 24
+      }
+    },
+    {
+      "text": "439-64.",
+      "confidence": 95.0,
+      "bbox": {
+        "left": 508,
+        "top": 687,
+        "width": 91,
+        "height": 21
+      }
+    },
+    {
+      "text": "1952",
+      "confidence": 92.0,
+      "bbox": {
+        "left": 339,
+        "top": 735,
+        "width": 57,
+        "height": 21
+      }
+    },
+    {
+      "text": "G.W.,",
+      "confidence": 76.0,
+      "bbox": {
+        "left": 408,
+        "top": 734,
+        "width": 67,
+        "height": 25
+      }
+    },
+    {
+      "text": "1,",
+      "confidence": 94.0,
+      "bbox": {
+        "left": 487,
+        "top": 735,
+        "width": 18,
+        "height": 24
+      }
+    },
+    {
+      "text": "491-516.",
+      "confidence": 94.0,
+      "bbox": {
+        "left": 516,
+        "top": 735,
+        "width": 106,
+        "height": 21
+      }
+    },
+    {
+      "text": "(b)TRADUGAO",
+      "confidence": 73.0,
+      "bbox": {
+        "left": 338,
+        "top": 826,
+        "width": 187,
+        "height": 31
+      }
+    },
+    {
+      "text": "INGLESA:",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 536,
+        "top": 830,
+        "width": 124,
+        "height": 22
+      }
+    },
+    {
+      "text": "“Sexuality",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 337,
+        "top": 879,
+        "width": 121,
+        "height": 26
+      }
+    },
+    {
+      "text": "in",
+      "confidence": 95.0,
+      "bbox": {
+        "left": 468,
+        "top": 879,
+        "width": 17,
+        "height": 20
+      }
+    },
+    {
+      "text": "the",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 495,
+        "top": 879,
+        "width": 37,
+        "height": 20
+      }
+    },
+    {
+      "text": "Aetiology",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 541,
+        "top": 879,
+        "width": 114,
+        "height": 26
+      }
+    },
+    {
+      "text": "of",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 664,
+        "top": 879,
+        "width": 23,
+        "height": 20
+      }
+    },
+    {
+      "text": "the",
+      "confidence": 93.0,
+      "bbox": {
+        "left": 695,
+        "top": 879,
+        "width": 37,
+        "height": 20
+      }
+    },
+    {
+      "text": "Neuroses”",
+      "confidence": 91.0,
+      "bbox": {
+        "left": 742,
+        "top": 879,
+        "width": 125,
+        "height": 20
+      }
+    },
+    {
+      "text": "1924",
+      "confidence": 92.0,
+      "bbox": {
+        "left": 339,
+        "top": 975,
+        "width": 58,
+        "height": 21
+      }
+    },
+    {
+      "text": "C.P.,",
+      "confidence": 72.0,
+      "bbox": {
+        "left": 409,
+        "top": 974,
+        "width": 56,
+        "height": 25
+      }
+    },
+    {
+      "text": "1,",
+      "confidence": 93.0,
+      "bbox": {
+        "left": 478,
+        "top": 975,
+        "width": 18,
+        "height": 24
+      }
+    },
+    {
+      "text": "220-48.",
+      "confidence": 93.0,
+      "bbox": {
+        "left": 507,
+        "top": 975,
+        "width": 91,
+        "height": 21
+      }
+    },
+    {
+      "text": "(Trad.",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 610,
+        "top": 975,
+        "width": 70,
+        "height": 26
+      }
+    },
+    {
+      "text": "de",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 691,
+        "top": 975,
+        "width": 28,
+        "height": 21
+      }
+    },
+    {
+      "text": "J.",
+      "confidence": 93.0,
+      "bbox": {
+        "left": 729,
+        "top": 975,
+        "width": 19,
+        "height": 21
+      }
+    },
+    {
+      "text": "Bernays.)",
+      "confidence": 92.0,
+      "bbox": {
+        "left": 760,
+        "top": 975,
+        "width": 114,
+        "height": 26
+      }
+    },
+    {
+      "text": "A",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 337,
+        "top": 1071,
+        "width": 17,
+        "height": 20
+      }
+    },
+    {
+      "text": "presente",
+      "confidence": 93.0,
+      "bbox": {
+        "left": 364,
+        "top": 1072,
+        "width": 105,
+        "height": 25
+      }
+    },
+    {
+      "text": "tradução",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 478,
+        "top": 1071,
+        "width": 107,
+        "height": 26
+      }
+    },
+    {
+      "text": "é",
+      "confidence": 97.0,
+      "bbox": {
+        "left": 595,
+        "top": 1070,
+        "width": 13,
+        "height": 22
+      }
+    },
+    {
+      "text": "uma",
+      "confidence": 93.0,
+      "bbox": {
+        "left": 619,
+        "top": 1076,
+        "width": 52,
+        "height": 16
+      }
+    },
+    {
+      "text": "versão",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 679,
+        "top": 1071,
+        "width": 82,
+        "height": 21
+      }
+    },
+    {
+      "text": "modificada",
+      "confidence": 95.0,
+      "bbox": {
+        "left": 771,
+        "top": 1071,
+        "width": 132,
+        "height": 21
+      }
+    },
+    {
+      "text": "da",
+      "confidence": 93.0,
+      "bbox": {
+        "left": 912,
+        "top": 1071,
+        "width": 30,
+        "height": 21
+      }
+    },
+    {
+      "text": "publicada",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 952,
+        "top": 1071,
+        "width": 117,
+        "height": 26
+      }
+    },
+    {
+      "text": "em",
+      "confidence": 95.0,
+      "bbox": {
+        "left": 1078,
+        "top": 1076,
+        "width": 35,
+        "height": 16
+      }
+    },
+    {
+      "text": "1924.",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1126,
+        "top": 1071,
+        "width": 64,
+        "height": 21
+      }
+    },
+    {
+      "text": "Este",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 339,
+        "top": 1167,
+        "width": 51,
+        "height": 21
+      }
+    },
+    {
+      "text": "artigo",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 402,
+        "top": 1167,
+        "width": 67,
+        "height": 26
+      }
+    },
+    {
+      "text": "foi",
+      "confidence": 93.0,
+      "bbox": {
+        "left": 480,
+        "top": 1167,
+        "width": 27,
+        "height": 21
+      }
+    },
+    {
+      "text": "concluido",
+      "confidence": 92.0,
+      "bbox": {
+        "left": 520,
+        "top": 1166,
+        "width": 116,
+        "height": 22
+      }
+    },
+    {
+      "text": "em",
+      "confidence": 95.0,
+      "bbox": {
+        "left": 648,
+        "top": 1172,
+        "width": 36,
+        "height": 16
+      }
+    },
+    {
+      "text": "9",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 697,
+        "top": 1167,
+        "width": 13,
+        "height": 21
+      }
+    },
+    {
+      "text": "de",
+      "confidence": 92.0,
+      "bbox": {
+        "left": 721,
+        "top": 1167,
+        "width": 29,
+        "height": 21
+      }
+    },
+    {
+      "text": "fevereiro",
+      "confidence": 92.0,
+      "bbox": {
+        "left": 760,
+        "top": 1167,
+        "width": 107,
+        "height": 21
+      }
+    },
+    {
+      "text": "de",
+      "confidence": 95.0,
+      "bbox": {
+        "left": 878,
+        "top": 1167,
+        "width": 29,
+        "height": 21
+      }
+    },
+    {
+      "text": "1898,",
+      "confidence": 95.0,
+      "bbox": {
+        "left": 921,
+        "top": 1167,
+        "width": 64,
+        "height": 24
+      }
+    },
+    {
+      "text": "como",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 998,
+        "top": 1172,
+        "width": 66,
+        "height": 16
+      }
+    },
+    {
+      "text": "nos",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1076,
+        "top": 1172,
+        "width": 42,
+        "height": 16
+      }
+    },
+    {
+      "text": "informa",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1130,
+        "top": 1167,
+        "width": 91,
+        "height": 21
+      }
+    },
+    {
+      "text": "uma",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1232,
+        "top": 1172,
+        "width": 52,
+        "height": 16
+      }
+    },
+    {
+      "text": "carta",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1295,
+        "top": 1168,
+        "width": 60,
+        "height": 20
+      }
+    },
+    {
+      "text": "a",
+      "confidence": 93.0,
+      "bbox": {
+        "left": 1366,
+        "top": 1172,
+        "width": 14,
+        "height": 16
+      }
+    },
+    {
+      "text": "Fliess",
+      "confidence": 92.0,
+      "bbox": {
+        "left": 1392,
+        "top": 1167,
+        "width": 69,
+        "height": 21
+      }
+    },
+    {
+      "text": "(Freud,",
+      "confidence": 93.0,
+      "bbox": {
+        "left": 238,
+        "top": 1215,
+        "width": 85,
+        "height": 26
+      }
+    },
+    {
+      "text": "1950a,",
+      "confidence": 85.0,
+      "bbox": {
+        "left": 338,
+        "top": 1215,
+        "width": 80,
+        "height": 24
+      }
+    },
+    {
+      "text": "Carta",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 432,
+        "top": 1214,
+        "width": 66,
+        "height": 22
+      }
+    },
+    {
+      "text": "83.)",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 509,
+        "top": 1215,
+        "width": 45,
+        "height": 26
+      }
+    },
+    {
+      "text": "Ja",
+      "confidence": 90.0,
+      "bbox": {
+        "left": 567,
+        "top": 1214,
+        "width": 29,
+        "height": 22
+      }
+    },
+    {
+      "text": "fora",
+      "confidence": 93.0,
+      "bbox": {
+        "left": 606,
+        "top": 1215,
+        "width": 48,
+        "height": 21
+      }
+    },
+    {
+      "text": "iniciado",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 666,
+        "top": 1215,
+        "width": 91,
+        "height": 21
+      }
+    },
+    {
+      "text": "um",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 770,
+        "top": 1220,
+        "width": 35,
+        "height": 16
+      }
+    },
+    {
+      "text": "més",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 819,
+        "top": 1214,
+        "width": 50,
+        "height": 22
+      }
+    },
+    {
+      "text": "antes",
+      "confidence": 93.0,
+      "bbox": {
+        "left": 881,
+        "top": 1216,
+        "width": 65,
+        "height": 20
+      }
+    },
+    {
+      "text": "(ibid.,",
+      "confidence": 92.0,
+      "bbox": {
+        "left": 959,
+        "top": 1215,
+        "width": 64,
+        "height": 26
+      }
+    },
+    {
+      "text": "Carta",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1037,
+        "top": 1214,
+        "width": 66,
+        "height": 22
+      }
+    },
+    {
+      "text": "81)",
+      "confidence": 93.0,
+      "bbox": {
+        "left": 1114,
+        "top": 1215,
+        "width": 37,
+        "height": 26
+      }
+    },
+    {
+      "text": "e,",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1165,
+        "top": 1220,
+        "width": 19,
+        "height": 19
+      }
+    },
+    {
+      "text": "em",
+      "confidence": 93.0,
+      "bbox": {
+        "left": 1198,
+        "top": 1220,
+        "width": 35,
+        "height": 16
+      }
+    },
+    {
+      "text": "ambas",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1247,
+        "top": 1215,
+        "width": 81,
+        "height": 21
+      }
+    },
+    {
+      "text": "as",
+      "confidence": 93.0,
+      "bbox": {
+        "left": 1340,
+        "top": 1220,
+        "width": 27,
+        "height": 16
+      }
+    },
+    {
+      "text": "cartas,",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1379,
+        "top": 1216,
+        "width": 80,
+        "height": 23
+      }
+    },
+    {
+      "text": "Freud",
+      "confidence": 92.0,
+      "bbox": {
+        "left": 238,
+        "top": 1262,
+        "width": 69,
+        "height": 20
+      }
+    },
+    {
+      "text": "o",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 323,
+        "top": 1267,
+        "width": 14,
+        "height": 15
+      }
+    },
+    {
+      "text": "trata",
+      "confidence": 93.0,
+      "bbox": {
+        "left": 352,
+        "top": 1263,
+        "width": 54,
+        "height": 19
+      }
+    },
+    {
+      "text": "desdenhosamente",
+      "confidence": 92.0,
+      "bbox": {
+        "left": 422,
+        "top": 1262,
+        "width": 227,
+        "height": 20
+      }
+    },
+    {
+      "text": "como",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 665,
+        "top": 1267,
+        "width": 66,
+        "height": 15
+      }
+    },
+    {
+      "text": "um",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 748,
+        "top": 1267,
+        "width": 34,
+        "height": 15
+      }
+    },
+    {
+      "text": "artigo",
+      "confidence": 93.0,
+      "bbox": {
+        "left": 799,
+        "top": 1262,
+        "width": 68,
+        "height": 26
+      }
+    },
+    {
+      "text": "“Gartenlaube’.",
+      "confidence": 47.0,
+      "bbox": {
+        "left": 883,
+        "top": 1261,
+        "width": 176,
+        "height": 22
+      }
+    },
+    {
+      "text": "Este",
+      "confidence": 95.0,
+      "bbox": {
+        "left": 1078,
+        "top": 1262,
+        "width": 52,
+        "height": 20
+      }
+    },
+    {
+      "text": "era",
+      "confidence": 93.0,
+      "bbox": {
+        "left": 1146,
+        "top": 1267,
+        "width": 38,
+        "height": 15
+      }
+    },
+    {
+      "text": "o",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1201,
+        "top": 1267,
+        "width": 13,
+        "height": 16
+      }
+    },
+    {
+      "text": "titulo",
+      "confidence": 92.0,
+      "bbox": {
+        "left": 1229,
+        "top": 1261,
+        "width": 59,
+        "height": 22
+      }
+    },
+    {
+      "text": "(literalmente,",
+      "confidence": 95.0,
+      "bbox": {
+        "left": 1305,
+        "top": 1262,
+        "width": 156,
+        "height": 26
+      }
+    },
+    {
+      "text": "“caramanchao”)",
+      "confidence": 22.0,
+      "bbox": {
+        "left": 237,
+        "top": 1311,
+        "width": 194,
+        "height": 26
+      }
+    },
+    {
+      "text": "de",
+      "confidence": 95.0,
+      "bbox": {
+        "left": 442,
+        "top": 1311,
+        "width": 29,
+        "height": 20
+      }
+    },
+    {
+      "text": "uma",
+      "confidence": 95.0,
+      "bbox": {
+        "left": 483,
+        "top": 1316,
+        "width": 52,
+        "height": 15
+      }
+    },
+    {
+      "text": "revista",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 547,
+        "top": 1311,
+        "width": 79,
+        "height": 20
+      }
+    },
+    {
+      "text": "de",
+      "confidence": 93.0,
+      "bbox": {
+        "left": 637,
+        "top": 1311,
+        "width": 29,
+        "height": 20
+      }
+    },
+    {
+      "text": "assuntos",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 678,
+        "top": 1312,
+        "width": 109,
+        "height": 19
+      }
+    },
+    {
+      "text": "domésticos",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 798,
+        "top": 1311,
+        "width": 139,
+        "height": 20
+      }
+    },
+    {
+      "text": "cujo",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 948,
+        "top": 1311,
+        "width": 49,
+        "height": 26
+      }
+    },
+    {
+      "text": "nome",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1009,
+        "top": 1316,
+        "width": 68,
+        "height": 15
+      }
+    },
+    {
+      "text": "se",
+      "confidence": 93.0,
+      "bbox": {
+        "left": 1088,
+        "top": 1316,
+        "width": 27,
+        "height": 15
+      }
+    },
+    {
+      "text": "tornara",
+      "confidence": 93.0,
+      "bbox": {
+        "left": 1126,
+        "top": 1312,
+        "width": 86,
+        "height": 19
+      }
+    },
+    {
+      "text": "proverbial",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1224,
+        "top": 1311,
+        "width": 119,
+        "height": 26
+      }
+    },
+    {
+      "text": "por",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1356,
+        "top": 1316,
+        "width": 39,
+        "height": 21
+      }
+    },
+    {
+      "text": "suas",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1404,
+        "top": 1316,
+        "width": 57,
+        "height": 15
+      }
+    },
+    {
+      "text": "histórias",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 238,
+        "top": 1358,
+        "width": 100,
+        "height": 20
+      }
+    },
+    {
+      "text": "sentimentais.",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 354,
+        "top": 1358,
+        "width": 161,
+        "height": 20
+      }
+    },
+    {
+      "text": "Mas",
+      "confidence": 93.0,
+      "bbox": {
+        "left": 533,
+        "top": 1358,
+        "width": 50,
+        "height": 20
+      }
+    },
+    {
+      "text": "ele",
+      "confidence": 93.0,
+      "bbox": {
+        "left": 599,
+        "top": 1358,
+        "width": 35,
+        "height": 20
+      }
+    },
+    {
+      "text": "acrescenta",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 650,
+        "top": 1359,
+        "width": 133,
+        "height": 19
+      }
+    },
+    {
+      "text": "que",
+      "confidence": 93.0,
+      "bbox": {
+        "left": 800,
+        "top": 1363,
+        "width": 44,
+        "height": 21
+      }
+    },
+    {
+      "text": "o",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 860,
+        "top": 1363,
+        "width": 14,
+        "height": 15
+      }
+    },
+    {
+      "text": "artigo",
+      "confidence": 93.0,
+      "bbox": {
+        "left": 890,
+        "top": 1358,
+        "width": 67,
+        "height": 26
+      }
+    },
+    {
+      "text": "“é",
+      "confidence": 95.0,
+      "bbox": {
+        "left": 973,
+        "top": 1358,
+        "width": 23,
+        "height": 20
+      }
+    },
+    {
+      "text": "bastante",
+      "confidence": 93.0,
+      "bbox": {
+        "left": 1013,
+        "top": 1358,
+        "width": 104,
+        "height": 20
+      }
+    },
+    {
+      "text": "impudente",
+      "confidence": 92.0,
+      "bbox": {
+        "left": 1134,
+        "top": 1358,
+        "width": 126,
+        "height": 26
+      }
+    },
+    {
+      "text": "e",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1276,
+        "top": 1363,
+        "width": 14,
+        "height": 15
+      }
+    },
+    {
+      "text": "basicamente",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1307,
+        "top": 1358,
+        "width": 155,
+        "height": 20
+      }
+    },
+    {
+      "text": "destinado",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 237,
+        "top": 1406,
+        "width": 118,
+        "height": 21
+      }
+    },
+    {
+      "text": "a",
+      "confidence": 95.0,
+      "bbox": {
+        "left": 365,
+        "top": 1411,
+        "width": 14,
+        "height": 16
+      }
+    },
+    {
+      "text": "criar",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 388,
+        "top": 1406,
+        "width": 53,
+        "height": 21
+      }
+    },
+    {
+      "text": "caso,",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 450,
+        "top": 1411,
+        "width": 63,
+        "height": 19
+      }
+    },
+    {
+      "text": "no",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 525,
+        "top": 1411,
+        "width": 28,
+        "height": 16
+      }
+    },
+    {
+      "text": "que",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 562,
+        "top": 1411,
+        "width": 44,
+        "height": 21
+      }
+    },
+    {
+      "text": "sem",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 616,
+        "top": 1411,
+        "width": 50,
+        "height": 16
+      }
+    },
+    {
+      "text": "dúvida",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 677,
+        "top": 1405,
+        "width": 80,
+        "height": 22
+      }
+    },
+    {
+      "text": "terá",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 766,
+        "top": 1405,
+        "width": 46,
+        "height": 22
+      }
+    },
+    {
+      "text": "êxito.",
+      "confidence": 93.0,
+      "bbox": {
+        "left": 822,
+        "top": 1406,
+        "width": 63,
+        "height": 20
+      }
+    },
+    {
+      "text": "Breuer",
+      "confidence": 91.0,
+      "bbox": {
+        "left": 897,
+        "top": 1406,
+        "width": 82,
+        "height": 20
+      }
+    },
+    {
+      "text": "dirá",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 987,
+        "top": 1406,
+        "width": 44,
+        "height": 20
+      }
+    },
+    {
+      "text": "que",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1041,
+        "top": 1411,
+        "width": 44,
+        "height": 21
+      }
+    },
+    {
+      "text": "me",
+      "confidence": 93.0,
+      "bbox": {
+        "left": 1096,
+        "top": 1411,
+        "width": 36,
+        "height": 15
+      }
+    },
+    {
+      "text": "causei",
+      "confidence": 93.0,
+      "bbox": {
+        "left": 1142,
+        "top": 1406,
+        "width": 77,
+        "height": 20
+      }
+    },
+    {
+      "text": "muitos",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1231,
+        "top": 1406,
+        "width": 79,
+        "height": 20
+      }
+    },
+    {
+      "text": "prejuízos.”",
+      "confidence": 94.0,
+      "bbox": {
+        "left": 1320,
+        "top": 1406,
+        "width": 127,
+        "height": 26
+      }
+    },
+    {
+      "text": "Dois",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 338,
+        "top": 1454,
+        "width": 52,
+        "height": 20
+      }
+    },
+    {
+      "text": "anos",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 405,
+        "top": 1459,
+        "width": 58,
+        "height": 15
+      }
+    },
+    {
+      "text": "se",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 478,
+        "top": 1459,
+        "width": 28,
+        "height": 15
+      }
+    },
+    {
+      "text": "haviam",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 521,
+        "top": 1454,
+        "width": 86,
+        "height": 20
+      }
+    },
+    {
+      "text": "passado",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 624,
+        "top": 1454,
+        "width": 102,
+        "height": 26
+      }
+    },
+    {
+      "text": "desde",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 741,
+        "top": 1454,
+        "width": 73,
+        "height": 20
+      }
+    },
+    {
+      "text": "o",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 829,
+        "top": 1459,
+        "width": 13,
+        "height": 15
+      }
+    },
+    {
+      "text": "último",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 858,
+        "top": 1454,
+        "width": 72,
+        "height": 20
+      }
+    },
+    {
+      "text": "artigo",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 944,
+        "top": 1454,
+        "width": 68,
+        "height": 26
+      }
+    },
+    {
+      "text": "de",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1026,
+        "top": 1454,
+        "width": 30,
+        "height": 20
+      }
+    },
+    {
+      "text": "Freud",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1071,
+        "top": 1454,
+        "width": 69,
+        "height": 20
+      }
+    },
+    {
+      "text": "sobre",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1155,
+        "top": 1454,
+        "width": 68,
+        "height": 20
+      }
+    },
+    {
+      "text": "psicopatologia,",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1239,
+        "top": 1454,
+        "width": 181,
+        "height": 26
+      }
+    },
+    {
+      "text": "“A",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1436,
+        "top": 1454,
+        "width": 27,
+        "height": 20
+      }
+    },
+    {
+      "text": "Etiologia",
+      "confidence": 91.0,
+      "bbox": {
+        "left": 238,
+        "top": 1502,
+        "width": 103,
+        "height": 26
+      }
+    },
+    {
+      "text": "da",
+      "confidence": 93.0,
+      "bbox": {
+        "left": 353,
+        "top": 1502,
+        "width": 29,
+        "height": 20
+      }
+    },
+    {
+      "text": "Histeria”",
+      "confidence": 91.0,
+      "bbox": {
+        "left": 395,
+        "top": 1502,
+        "width": 100,
+        "height": 20
+      }
+    },
+    {
+      "text": "(1896c),",
+      "confidence": 92.0,
+      "bbox": {
+        "left": 507,
+        "top": 1502,
+        "width": 99,
+        "height": 26
+      }
+    },
+    {
+      "text": "e",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 618,
+        "top": 1507,
+        "width": 14,
+        "height": 15
+      }
+    },
+    {
+      "text": "durante",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 643,
+        "top": 1502,
+        "width": 92,
+        "height": 20
+      }
+    },
+    {
+      "text": "esses",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 747,
+        "top": 1507,
+        "width": 71,
+        "height": 15
+      }
+    },
+    {
+      "text": "dois",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 829,
+        "top": 1502,
+        "width": 49,
+        "height": 20
+      }
+    },
+    {
+      "text": "anos",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 890,
+        "top": 1507,
+        "width": 58,
+        "height": 15
+      }
+    },
+    {
+      "text": "muita",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 960,
+        "top": 1502,
+        "width": 65,
+        "height": 20
+      }
+    },
+    {
+      "text": "coisa",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1037,
+        "top": 1502,
+        "width": 63,
+        "height": 20
+      }
+    },
+    {
+      "text": "acontecera",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1111,
+        "top": 1503,
+        "width": 136,
+        "height": 19
+      }
+    },
+    {
+      "text": "para",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1259,
+        "top": 1507,
+        "width": 53,
+        "height": 21
+      }
+    },
+    {
+      "text": "ocupar",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1324,
+        "top": 1507,
+        "width": 84,
+        "height": 21
+      }
+    },
+    {
+      "text": "sua",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1418,
+        "top": 1507,
+        "width": 43,
+        "height": 15
+      }
+    },
+    {
+      "text": "mente.",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 238,
+        "top": 1551,
+        "width": 81,
+        "height": 20
+      }
+    },
+    {
+      "text": "Talvez",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 331,
+        "top": 1550,
+        "width": 80,
+        "height": 21
+      }
+    },
+    {
+      "text": "a",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 423,
+        "top": 1555,
+        "width": 14,
+        "height": 16
+      }
+    },
+    {
+      "text": "menos",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 449,
+        "top": 1555,
+        "width": 80,
+        "height": 16
+      }
+    },
+    {
+      "text": "importante",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 542,
+        "top": 1550,
+        "width": 128,
+        "height": 26
+      }
+    },
+    {
+      "text": "(pelo",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 683,
+        "top": 1550,
+        "width": 59,
+        "height": 26
+      }
+    },
+    {
+      "text": "menos",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 754,
+        "top": 1555,
+        "width": 81,
+        "height": 16
+      }
+    },
+    {
+      "text": "do",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 846,
+        "top": 1550,
+        "width": 29,
+        "height": 21
+      }
+    },
+    {
+      "text": "nosso",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 888,
+        "top": 1555,
+        "width": 71,
+        "height": 16
+      }
+    },
+    {
+      "text": "ponto",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 971,
+        "top": 1551,
+        "width": 67,
+        "height": 25
+      }
+    },
+    {
+      "text": "de",
+      "confidence": 97.0,
+      "bbox": {
+        "left": 1049,
+        "top": 1550,
+        "width": 29,
+        "height": 21
+      }
+    },
+    {
+      "text": "vista)",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1090,
+        "top": 1550,
+        "width": 64,
+        "height": 26
+      }
+    },
+    {
+      "text": "tenha",
+      "confidence": 95.0,
+      "bbox": {
+        "left": 1166,
+        "top": 1550,
+        "width": 68,
+        "height": 21
+      }
+    },
+    {
+      "text": "sido",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1246,
+        "top": 1550,
+        "width": 48,
+        "height": 21
+      }
+    },
+    {
+      "text": "a",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1306,
+        "top": 1555,
+        "width": 14,
+        "height": 16
+      }
+    },
+    {
+      "text": "conclusão,",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1331,
+        "top": 1550,
+        "width": 129,
+        "height": 24
+      }
+    },
+    {
+      "text": "em",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 237,
+        "top": 1603,
+        "width": 36,
+        "height": 16
+      }
+    },
+    {
+      "text": "inícios",
+      "confidence": 95.0,
+      "bbox": {
+        "left": 286,
+        "top": 1597,
+        "width": 75,
+        "height": 22
+      }
+    },
+    {
+      "text": "de",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 372,
+        "top": 1598,
+        "width": 29,
+        "height": 21
+      }
+    },
+    {
+      "text": "1897,",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 414,
+        "top": 1598,
+        "width": 64,
+        "height": 24
+      }
+    },
+    {
+      "text": "de",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 490,
+        "top": 1598,
+        "width": 29,
+        "height": 21
+      }
+    },
+    {
+      "text": "seu",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 530,
+        "top": 1603,
+        "width": 42,
+        "height": 16
+      }
+    },
+    {
+      "text": "tratado",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 584,
+        "top": 1598,
+        "width": 84,
+        "height": 21
+      }
+    },
+    {
+      "text": "de",
+      "confidence": 95.0,
+      "bbox": {
+        "left": 679,
+        "top": 1598,
+        "width": 29,
+        "height": 21
+      }
+    },
+    {
+      "text": "trezentas",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 718,
+        "top": 1599,
+        "width": 113,
+        "height": 20
+      }
+    },
+    {
+      "text": "páginas",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 843,
+        "top": 1597,
+        "width": 94,
+        "height": 27
+      }
+    },
+    {
+      "text": "sobre",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 949,
+        "top": 1598,
+        "width": 66,
+        "height": 21
+      }
+    },
+    {
+      "text": "as",
+      "confidence": 93.0,
+      "bbox": {
+        "left": 1027,
+        "top": 1603,
+        "width": 27,
+        "height": 16
+      }
+    },
+    {
+      "text": "paralisias",
+      "confidence": 91.0,
+      "bbox": {
+        "left": 1065,
+        "top": 1598,
+        "width": 115,
+        "height": 26
+      }
+    },
+    {
+      "text": "infantis",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1192,
+        "top": 1598,
+        "width": 85,
+        "height": 21
+      }
+    },
+    {
+      "text": "para",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1288,
+        "top": 1603,
+        "width": 54,
+        "height": 21
+      }
+    },
+    {
+      "text": "a",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1353,
+        "top": 1603,
+        "width": 13,
+        "height": 16
+      }
+    },
+    {
+      "text": "grande",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1377,
+        "top": 1598,
+        "width": 84,
+        "height": 26
+      }
+    },
+    {
+      "text": "enciclopédia",
+      "confidence": 95.0,
+      "bbox": {
+        "left": 237,
+        "top": 1645,
+        "width": 153,
+        "height": 27
+      }
+    },
+    {
+      "text": "de",
+      "confidence": 95.0,
+      "bbox": {
+        "left": 407,
+        "top": 1646,
+        "width": 29,
+        "height": 21
+      }
+    },
+    {
+      "text": "medicina",
+      "confidence": 95.0,
+      "bbox": {
+        "left": 456,
+        "top": 1646,
+        "width": 109,
+        "height": 21
+      }
+    },
+    {
+      "text": "de",
+      "confidence": 93.0,
+      "bbox": {
+        "left": 582,
+        "top": 1646,
+        "width": 29,
+        "height": 21
+      }
+    },
+    {
+      "text": "Nothnagel,",
+      "confidence": 93.0,
+      "bbox": {
+        "left": 631,
+        "top": 1646,
+        "width": 129,
+        "height": 26
+      }
+    },
+    {
+      "text": "no",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 781,
+        "top": 1651,
+        "width": 28,
+        "height": 16
+      }
+    },
+    {
+      "text": "qual",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 827,
+        "top": 1646,
+        "width": 50,
+        "height": 26
+      }
+    },
+    {
+      "text": "estivera",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 897,
+        "top": 1646,
+        "width": 95,
+        "height": 21
+      }
+    },
+    {
+      "text": "ocupado",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1010,
+        "top": 1646,
+        "width": 104,
+        "height": 26
+      }
+    },
+    {
+      "text": "por",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1133,
+        "top": 1651,
+        "width": 39,
+        "height": 21
+      }
+    },
+    {
+      "text": "vários",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1189,
+        "top": 1645,
+        "width": 72,
+        "height": 22
+      }
+    },
+    {
+      "text": "anos,",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1280,
+        "top": 1651,
+        "width": 64,
+        "height": 19
+      }
+    },
+    {
+      "text": "muito",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1365,
+        "top": 1646,
+        "width": 66,
+        "height": 21
+      }
+    },
+    {
+      "text": "a",
+      "confidence": 95.0,
+      "bbox": {
+        "left": 1450,
+        "top": 1651,
+        "width": 13,
+        "height": 16
+      }
+    },
+    {
+      "text": "contragosto,",
+      "confidence": 91.0,
+      "bbox": {
+        "left": 237,
+        "top": 1695,
+        "width": 149,
+        "height": 25
+      }
+    },
+    {
+      "text": "e",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 399,
+        "top": 1699,
+        "width": 13,
+        "height": 16
+      }
+    },
+    {
+      "text": "que",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 422,
+        "top": 1699,
+        "width": 44,
+        "height": 21
+      }
+    },
+    {
+      "text": "foi",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 477,
+        "top": 1694,
+        "width": 27,
+        "height": 21
+      }
+    },
+    {
+      "text": "seu",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 515,
+        "top": 1699,
+        "width": 42,
+        "height": 16
+      }
+    },
+    {
+      "text": "último",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 569,
+        "top": 1693,
+        "width": 72,
+        "height": 22
+      }
+    },
+    {
+      "text": "trabalho",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 651,
+        "top": 1694,
+        "width": 98,
+        "height": 21
+      }
+    },
+    {
+      "text": "neurológico.",
+      "confidence": 93.0,
+      "bbox": {
+        "left": 761,
+        "top": 1693,
+        "width": 147,
+        "height": 27
+      }
+    },
+    {
+      "text": "Cf.,",
+      "confidence": 90.0,
+      "bbox": {
+        "left": 920,
+        "top": 1693,
+        "width": 40,
+        "height": 25
+      }
+    },
+    {
+      "text": "por",
+      "confidence": 95.0,
+      "bbox": {
+        "left": 972,
+        "top": 1699,
+        "width": 39,
+        "height": 21
+      }
+    },
+    {
+      "text": "exemplo,",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1021,
+        "top": 1694,
+        "width": 109,
+        "height": 26
+      }
+    },
+    {
+      "text": "as",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1142,
+        "top": 1699,
+        "width": 27,
+        "height": 16
+      }
+    },
+    {
+      "text": "cartas",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1180,
+        "top": 1695,
+        "width": 73,
+        "height": 20
+      }
+    },
+    {
+      "text": "a",
+      "confidence": 93.0,
+      "bbox": {
+        "left": 1264,
+        "top": 1699,
+        "width": 14,
+        "height": 16
+      }
+    },
+    {
+      "text": "Fliess",
+      "confidence": 92.0,
+      "bbox": {
+        "left": 1289,
+        "top": 1694,
+        "width": 69,
+        "height": 21
+      }
+    },
+    {
+      "text": "de",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1368,
+        "top": 1694,
+        "width": 29,
+        "height": 21
+      }
+    },
+    {
+      "text": "20",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1408,
+        "top": 1694,
+        "width": 29,
+        "height": 21
+      }
+    },
+    {
+      "text": "e",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1448,
+        "top": 1699,
+        "width": 13,
+        "height": 16
+      }
+    },
+    {
+      "text": "31",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 237,
+        "top": 1742,
+        "width": 24,
+        "height": 21
+      }
+    },
+    {
+      "text": "de",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 277,
+        "top": 1742,
+        "width": 29,
+        "height": 21
+      }
+    },
+    {
+      "text": "outubro",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 317,
+        "top": 1742,
+        "width": 92,
+        "height": 21
+      }
+    },
+    {
+      "text": "e",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 421,
+        "top": 1747,
+        "width": 13,
+        "height": 16
+      }
+    },
+    {
+      "text": "8",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 445,
+        "top": 1742,
+        "width": 14,
+        "height": 21
+      }
+    },
+    {
+      "text": "de",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 470,
+        "top": 1742,
+        "width": 29,
+        "height": 21
+      }
+    },
+    {
+      "text": "novembro",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 511,
+        "top": 1742,
+        "width": 121,
+        "height": 21
+      }
+    },
+    {
+      "text": "de",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 643,
+        "top": 1742,
+        "width": 29,
+        "height": 21
+      }
+    },
+    {
+      "text": "1895,",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 685,
+        "top": 1742,
+        "width": 64,
+        "height": 24
+      }
+    },
+    {
+      "text": "4",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 761,
+        "top": 1742,
+        "width": 14,
+        "height": 20
+      }
+    },
+    {
+      "text": "de",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 786,
+        "top": 1742,
+        "width": 29,
+        "height": 21
+      }
+    },
+    {
+      "text": "julho",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 825,
+        "top": 1742,
+        "width": 58,
+        "height": 26
+      }
+    },
+    {
+      "text": "e",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 894,
+        "top": 1747,
+        "width": 13,
+        "height": 16
+      }
+    },
+    {
+      "text": "2",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 919,
+        "top": 1742,
+        "width": 13,
+        "height": 20
+      }
+    },
+    {
+      "text": "de",
+      "confidence": 95.0,
+      "bbox": {
+        "left": 943,
+        "top": 1742,
+        "width": 29,
+        "height": 21
+      }
+    },
+    {
+      "text": "novembro",
+      "confidence": 95.0,
+      "bbox": {
+        "left": 985,
+        "top": 1742,
+        "width": 120,
+        "height": 21
+      }
+    },
+    {
+      "text": "de",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1116,
+        "top": 1742,
+        "width": 29,
+        "height": 21
+      }
+    },
+    {
+      "text": "1896,",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1158,
+        "top": 1742,
+        "width": 65,
+        "height": 24
+      }
+    },
+    {
+      "text": "e",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1235,
+        "top": 1747,
+        "width": 13,
+        "height": 16
+      }
+    },
+    {
+      "text": "24",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1260,
+        "top": 1742,
+        "width": 29,
+        "height": 20
+      }
+    },
+    {
+      "text": "de",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1299,
+        "top": 1742,
+        "width": 29,
+        "height": 21
+      }
+    },
+    {
+      "text": "janeiro",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1338,
+        "top": 1742,
+        "width": 83,
+        "height": 26
+      }
+    },
+    {
+      "text": "de",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1432,
+        "top": 1742,
+        "width": 29,
+        "height": 21
+      }
+    },
+    {
+      "text": "1897",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 239,
+        "top": 1790,
+        "width": 58,
+        "height": 21
+      }
+    },
+    {
+      "text": "(Freud,",
+      "confidence": 92.0,
+      "bbox": {
+        "left": 309,
+        "top": 1790,
+        "width": 85,
+        "height": 26
+      }
+    },
+    {
+      "text": "1950a,",
+      "confidence": 92.0,
+      "bbox": {
+        "left": 408,
+        "top": 1790,
+        "width": 80,
+        "height": 24
+      }
+    },
+    {
+      "text": "Cartas",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 501,
+        "top": 1789,
+        "width": 80,
+        "height": 22
+      }
+    },
+    {
+      "text": "32,",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 592,
+        "top": 1790,
+        "width": 35,
+        "height": 24
+      }
+    },
+    {
+      "text": "33,",
+      "confidence": 95.0,
+      "bbox": {
+        "left": 640,
+        "top": 1790,
+        "width": 35,
+        "height": 24
+      }
+    },
+    {
+      "text": "35,",
+      "confidence": 94.0,
+      "bbox": {
+        "left": 687,
+        "top": 1790,
+        "width": 36,
+        "height": 24
+      }
+    },
+    {
+      "text": "47,",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 735,
+        "top": 1790,
+        "width": 35,
+        "height": 24
+      }
+    },
+    {
+      "text": "50",
+      "confidence": 95.0,
+      "bbox": {
+        "left": 783,
+        "top": 1790,
+        "width": 29,
+        "height": 21
+      }
+    },
+    {
+      "text": "e",
+      "confidence": 95.0,
+      "bbox": {
+        "left": 823,
+        "top": 1795,
+        "width": 13,
+        "height": 16
+      }
+    },
+    {
+      "text": "57).",
+      "confidence": 95.0,
+      "bbox": {
+        "left": 848,
+        "top": 1790,
+        "width": 44,
+        "height": 26
+      }
+    },
+    {
+      "text": "Uma",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 907,
+        "top": 1790,
+        "width": 56,
+        "height": 21
+      }
+    },
+    {
+      "text": "vez",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 974,
+        "top": 1795,
+        "width": 41,
+        "height": 16
+      }
+    },
+    {
+      "text": "ultrapassada",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1027,
+        "top": 1790,
+        "width": 156,
+        "height": 26
+      }
+    },
+    {
+      "text": "essa",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1195,
+        "top": 1795,
+        "width": 57,
+        "height": 16
+      }
+    },
+    {
+      "text": "tarefa,",
+      "confidence": 95.0,
+      "bbox": {
+        "left": 1262,
+        "top": 1790,
+        "width": 76,
+        "height": 24
+      }
+    },
+    {
+      "text": "ele",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1351,
+        "top": 1790,
+        "width": 34,
+        "height": 21
+      }
+    },
+    {
+      "text": "podia",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1397,
+        "top": 1790,
+        "width": 66,
+        "height": 26
+      }
+    },
+    {
+      "text": "devotar-se",
+      "confidence": 92.0,
+      "bbox": {
+        "left": 237,
+        "top": 1838,
+        "width": 129,
+        "height": 21
+      }
+    },
+    {
+      "text": "mais",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 379,
+        "top": 1838,
+        "width": 55,
+        "height": 21
+      }
+    },
+    {
+      "text": "completamente",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 446,
+        "top": 1838,
+        "width": 188,
+        "height": 26
+      }
+    },
+    {
+      "text": "à",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 646,
+        "top": 1837,
+        "width": 14,
+        "height": 22
+      }
+    },
+    {
+      "text": "psicologia,",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 671,
+        "top": 1838,
+        "width": 127,
+        "height": 26
+      }
+    },
+    {
+      "text": "e",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 811,
+        "top": 1843,
+        "width": 13,
+        "height": 16
+      }
+    },
+    {
+      "text": "logo",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 837,
+        "top": 1838,
+        "width": 49,
+        "height": 26
+      }
+    },
+    {
+      "text": "se",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 899,
+        "top": 1843,
+        "width": 27,
+        "height": 16
+      }
+    },
+    {
+      "text": "envolveu",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 938,
+        "top": 1838,
+        "width": 107,
+        "height": 21
+      }
+    },
+    {
+      "text": "num",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1059,
+        "top": 1843,
+        "width": 50,
+        "height": 16
+      }
+    },
+    {
+      "text": "evento",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1122,
+        "top": 1839,
+        "width": 80,
+        "height": 20
+      }
+    },
+    {
+      "text": "que",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1214,
+        "top": 1843,
+        "width": 44,
+        "height": 21
+      }
+    },
+    {
+      "text": "se",
+      "confidence": 92.0,
+      "bbox": {
+        "left": 1270,
+        "top": 1843,
+        "width": 27,
+        "height": 16
+      }
+    },
+    {
+      "text": "revelaria",
+      "confidence": 92.0,
+      "bbox": {
+        "left": 1310,
+        "top": 1838,
+        "width": 104,
+        "height": 21
+      }
+    },
+    {
+      "text": "um",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1426,
+        "top": 1843,
+        "width": 34,
+        "height": 16
+      }
+    },
+    {
+      "text": "marco",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 238,
+        "top": 1890,
+        "width": 74,
+        "height": 16
+      }
+    },
+    {
+      "text": "memorável",
+      "confidence": 93.0,
+      "bbox": {
+        "left": 327,
+        "top": 1884,
+        "width": 134,
+        "height": 22
+      }
+    },
+    {
+      "text": "-",
+      "confidence": 93.0,
+      "bbox": {
+        "left": 475,
+        "top": 1896,
+        "width": 7,
+        "height": 2
+      }
+    },
+    {
+      "text": "sua",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 496,
+        "top": 1890,
+        "width": 43,
+        "height": 16
+      }
+    },
+    {
+      "text": "própria",
+      "confidence": 93.0,
+      "bbox": {
+        "left": 553,
+        "top": 1884,
+        "width": 84,
+        "height": 27
+      }
+    },
+    {
+      "text": "auto-análise.Esta",
+      "confidence": 91.0,
+      "bbox": {
+        "left": 650,
+        "top": 1884,
+        "width": 213,
+        "height": 22
+      }
+    },
+    {
+      "text": "começou",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 876,
+        "top": 1890,
+        "width": 110,
+        "height": 21
+      }
+    },
+    {
+      "text": "no",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1002,
+        "top": 1890,
+        "width": 27,
+        "height": 16
+      }
+    },
+    {
+      "text": "verão",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1043,
+        "top": 1885,
+        "width": 67,
+        "height": 21
+      }
+    },
+    {
+      "text": "de",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1124,
+        "top": 1885,
+        "width": 28,
+        "height": 21
+      }
+    },
+    {
+      "text": "1897",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1168,
+        "top": 1885,
+        "width": 58,
+        "height": 21
+      }
+    },
+    {
+      "text": "e,",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1240,
+        "top": 1890,
+        "width": 20,
+        "height": 19
+      }
+    },
+    {
+      "text": "já",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1273,
+        "top": 1884,
+        "width": 22,
+        "height": 27
+      }
+    },
+    {
+      "text": "pelo",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1308,
+        "top": 1885,
+        "width": 50,
+        "height": 26
+      }
+    },
+    {
+      "text": "outono,",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1371,
+        "top": 1886,
+        "width": 90,
+        "height": 23
+      }
+    },
+    {
+      "text": "conduzira",
+      "confidence": 91.0,
+      "bbox": {
+        "left": 237,
+        "top": 1933,
+        "width": 119,
+        "height": 21
+      }
+    },
+    {
+      "text": "a",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 367,
+        "top": 1938,
+        "width": 14,
+        "height": 16
+      }
+    },
+    {
+      "text": "algumas",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 392,
+        "top": 1933,
+        "width": 103,
+        "height": 26
+      }
+    },
+    {
+      "text": "descobertas",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 506,
+        "top": 1933,
+        "width": 149,
+        "height": 21
+      }
+    },
+    {
+      "text": "fundamentais:",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 666,
+        "top": 1933,
+        "width": 172,
+        "height": 21
+      }
+    },
+    {
+      "text": "o",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 858,
+        "top": 1938,
+        "width": 6,
+        "height": 16
+      }
+    },
+    {
+      "text": "abandono",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 876,
+        "top": 1933,
+        "width": 120,
+        "height": 21
+      }
+    },
+    {
+      "text": "da",
+      "confidence": 95.0,
+      "bbox": {
+        "left": 1008,
+        "top": 1933,
+        "width": 30,
+        "height": 21
+      }
+    },
+    {
+      "text": "teoria",
+      "confidence": 95.0,
+      "bbox": {
+        "left": 1048,
+        "top": 1933,
+        "width": 68,
+        "height": 21
+      }
+    },
+    {
+      "text": "traumática",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1127,
+        "top": 1932,
+        "width": 129,
+        "height": 22
+      }
+    },
+    {
+      "text": "da",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1266,
+        "top": 1933,
+        "width": 30,
+        "height": 21
+      }
+    },
+    {
+      "text": "etiologia",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1306,
+        "top": 1933,
+        "width": 102,
+        "height": 26
+      }
+    },
+    {
+      "text": "das",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1419,
+        "top": 1933,
+        "width": 42,
+        "height": 21
+      }
+    }
+  ],
+  "word_count": 358,
+  "char_count": 2124,
+  "avg_word_confidence": 94.20949720670392,
+  "min_word_confidence": 22.0,
+  "max_word_confidence": 97.0,
+  "config_used": "--tessdata-dir /media/yuri/Noosphera/Noosphera_0.3/Apps/Glyphar/src/glyphar/resources/tessdata --oem 1 --psm 3 --user-words /tmp/tesseract_user_words.txt -c preserve_interword_spaces=1 -c textord_min_linesize=2.5 -c textord_initialx_ile=1.0",
+  "processing_time_ms": 3461.391665001429
+}

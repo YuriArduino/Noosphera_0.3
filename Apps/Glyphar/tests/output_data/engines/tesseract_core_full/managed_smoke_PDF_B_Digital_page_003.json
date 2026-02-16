@@ -1,0 +1,2393 @@
+{
+  "text": "Titulo original: Dictionnaire de la psychanalyse Tradução autorizada da primeira edição francesa publicada em 1997 por Librairie Arthême Fayard, de Paris, França Copyright O 1997, Libraire Arthême Fayard Copyright da edição em língua portuguesa O 1998: Jorge Zahar Editor Ltda. rua México 31 sobreloja 20031-144 Rio de Janeiro, RJ tel.: (21) 2108-0808 / fax: (21) 2108-0800 editora@zahar.com.br www.zahar.com br Não pode circular em Portugal. Todos os direitos reservados. A reprodução ndo-autorizada desta publicação, no todo ou em parte, constitui violação de direitos autorais (Lei 9.610/98) Este livro, publicado no âmbito do programa de auxílio a publicação, contou com o apoio do Ministério francés das Relações Exteriores, da Embaixada da França no Brasil e da Maison francaise do Rio de Janeiro. Revisão de texto: André Telles Revisão tipográfica: Lincoln Natal Jr. Preparação de bibliografia: Marcela Boechat Preparação de índice: Nelly Telles Capa: Carol Sá CIP-Brasil. Catalogação-na fonte Sindicato Nacional dos Editores de Livros, RJ Roudinesco, Elisabeth, 1944 — R765d Dicionário de psicanálise/Elisabeth Roudinesco, Michel Plon; tradução Vera Ribeiro, Lucy Magalhães; supervisão da edição brasileira Marco Antonio Couti- nho Jorge. — Rio de Janeiro: Zahar, 1998. Tradução de: Dictionnaire de la psychanalyse Inclui bibliografia ISBN 978-85-7110-444-0 1. Psicanálise — Dicionários. I. Plon, Michel. II. Título. CDD: 150.19503 98-1608 CDU: 159.964.2(038) Dicionário de Psicanálise (PSI) 1º revisão — 13.08.98 2º revisão — 31.08.98 3º revisão — 24.09.98 4º revisão — 29.09.98 — Cad. O Produção: Textos & Formas Para: Ed. Zahar",
+  "confidence": 94.03361344537815,
+  "words": [
+    {
+      "text": "Titulo",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 859,
+        "top": 700,
+        "width": 54,
+        "height": 16
+      }
+    },
+    {
+      "text": "original:",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 921,
+        "top": 700,
+        "width": 75,
+        "height": 21
+      }
+    },
+    {
+      "text": "Dictionnaire",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 780,
+        "top": 726,
+        "width": 117,
+        "height": 16
+      }
+    },
+    {
+      "text": "de",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 903,
+        "top": 726,
+        "width": 21,
+        "height": 16
+      }
+    },
+    {
+      "text": "la",
+      "confidence": 93.0,
+      "bbox": {
+        "left": 931,
+        "top": 726,
+        "width": 16,
+        "height": 16
+      }
+    },
+    {
+      "text": "psychanalyse",
+      "confidence": 92.0,
+      "bbox": {
+        "left": 952,
+        "top": 726,
+        "width": 124,
+        "height": 21
+      }
+    },
+    {
+      "text": "Tradução",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 706,
+        "top": 777,
+        "width": 85,
+        "height": 21
+      }
+    },
+    {
+      "text": "autorizada",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 798,
+        "top": 777,
+        "width": 94,
+        "height": 16
+      }
+    },
+    {
+      "text": "da",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 899,
+        "top": 777,
+        "width": 20,
+        "height": 16
+      }
+    },
+    {
+      "text": "primeira",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 926,
+        "top": 777,
+        "width": 78,
+        "height": 21
+      }
+    },
+    {
+      "text": "edição",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1010,
+        "top": 777,
+        "width": 59,
+        "height": 21
+      }
+    },
+    {
+      "text": "francesa",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1075,
+        "top": 777,
+        "width": 76,
+        "height": 16
+      }
+    },
+    {
+      "text": "publicada",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 700,
+        "top": 804,
+        "width": 88,
+        "height": 21
+      }
+    },
+    {
+      "text": "em",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 795,
+        "top": 809,
+        "width": 27,
+        "height": 11
+      }
+    },
+    {
+      "text": "1997",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 832,
+        "top": 804,
+        "width": 41,
+        "height": 16
+      }
+    },
+    {
+      "text": "por",
+      "confidence": 92.0,
+      "bbox": {
+        "left": 880,
+        "top": 809,
+        "width": 30,
+        "height": 16
+      }
+    },
+    {
+      "text": "Librairie",
+      "confidence": 90.0,
+      "bbox": {
+        "left": 916,
+        "top": 804,
+        "width": 79,
+        "height": 16
+      }
+    },
+    {
+      "text": "Arthême",
+      "confidence": 91.0,
+      "bbox": {
+        "left": 1002,
+        "top": 804,
+        "width": 80,
+        "height": 16
+      }
+    },
+    {
+      "text": "Fayard,",
+      "confidence": 90.0,
+      "bbox": {
+        "left": 1088,
+        "top": 804,
+        "width": 70,
+        "height": 21
+      }
+    },
+    {
+      "text": "de",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 856,
+        "top": 830,
+        "width": 20,
+        "height": 16
+      }
+    },
+    {
+      "text": "Paris,",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 883,
+        "top": 830,
+        "width": 51,
+        "height": 19
+      }
+    },
+    {
+      "text": "França",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 940,
+        "top": 830,
+        "width": 62,
+        "height": 21
+      }
+    },
+    {
+      "text": "Copyright",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 724,
+        "top": 882,
+        "width": 94,
+        "height": 21
+      }
+    },
+    {
+      "text": "O",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 823,
+        "top": 882,
+        "width": 17,
+        "height": 16
+      }
+    },
+    {
+      "text": "1997,",
+      "confidence": 93.0,
+      "bbox": {
+        "left": 850,
+        "top": 882,
+        "width": 48,
+        "height": 19
+      }
+    },
+    {
+      "text": "Libraire",
+      "confidence": 92.0,
+      "bbox": {
+        "left": 904,
+        "top": 882,
+        "width": 73,
+        "height": 16
+      }
+    },
+    {
+      "text": "Arthême",
+      "confidence": 92.0,
+      "bbox": {
+        "left": 984,
+        "top": 882,
+        "width": 79,
+        "height": 16
+      }
+    },
+    {
+      "text": "Fayard",
+      "confidence": 92.0,
+      "bbox": {
+        "left": 1070,
+        "top": 882,
+        "width": 63,
+        "height": 21
+      }
+    },
+    {
+      "text": "Copyright",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 693,
+        "top": 933,
+        "width": 93,
+        "height": 21
+      }
+    },
+    {
+      "text": "da",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 792,
+        "top": 933,
+        "width": 21,
+        "height": 16
+      }
+    },
+    {
+      "text": "edição",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 820,
+        "top": 933,
+        "width": 59,
+        "height": 21
+      }
+    },
+    {
+      "text": "em",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 885,
+        "top": 938,
+        "width": 28,
+        "height": 11
+      }
+    },
+    {
+      "text": "língua",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 920,
+        "top": 933,
+        "width": 56,
+        "height": 21
+      }
+    },
+    {
+      "text": "portuguesa",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 983,
+        "top": 936,
+        "width": 100,
+        "height": 18
+      }
+    },
+    {
+      "text": "O",
+      "confidence": 95.0,
+      "bbox": {
+        "left": 1089,
+        "top": 933,
+        "width": 16,
+        "height": 16
+      }
+    },
+    {
+      "text": "1998:",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1116,
+        "top": 933,
+        "width": 47,
+        "height": 17
+      }
+    },
+    {
+      "text": "Jorge",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 816,
+        "top": 959,
+        "width": 49,
+        "height": 21
+      }
+    },
+    {
+      "text": "Zahar",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 872,
+        "top": 959,
+        "width": 53,
+        "height": 16
+      }
+    },
+    {
+      "text": "Editor",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 931,
+        "top": 959,
+        "width": 57,
+        "height": 16
+      }
+    },
+    {
+      "text": "Ltda.",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 994,
+        "top": 959,
+        "width": 47,
+        "height": 16
+      }
+    },
+    {
+      "text": "rua",
+      "confidence": 95.0,
+      "bbox": {
+        "left": 817,
+        "top": 991,
+        "width": 29,
+        "height": 11
+      }
+    },
+    {
+      "text": "México",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 853,
+        "top": 986,
+        "width": 69,
+        "height": 16
+      }
+    },
+    {
+      "text": "31",
+      "confidence": 93.0,
+      "bbox": {
+        "left": 929,
+        "top": 986,
+        "width": 19,
+        "height": 16
+      }
+    },
+    {
+      "text": "sobreloja",
+      "confidence": 92.0,
+      "bbox": {
+        "left": 958,
+        "top": 986,
+        "width": 83,
+        "height": 21
+      }
+    },
+    {
+      "text": "20031-144",
+      "confidence": 95.0,
+      "bbox": {
+        "left": 793,
+        "top": 1012,
+        "width": 98,
+        "height": 16
+      }
+    },
+    {
+      "text": "Rio",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 898,
+        "top": 1012,
+        "width": 32,
+        "height": 16
+      }
+    },
+    {
+      "text": "de",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 936,
+        "top": 1012,
+        "width": 21,
+        "height": 16
+      }
+    },
+    {
+      "text": "Janeiro,",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 963,
+        "top": 1012,
+        "width": 73,
+        "height": 19
+      }
+    },
+    {
+      "text": "RJ",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1042,
+        "top": 1012,
+        "width": 23,
+        "height": 16
+      }
+    },
+    {
+      "text": "tel.:",
+      "confidence": 92.0,
+      "bbox": {
+        "left": 736,
+        "top": 1038,
+        "width": 33,
+        "height": 16
+      }
+    },
+    {
+      "text": "(21)",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 777,
+        "top": 1038,
+        "width": 37,
+        "height": 20
+      }
+    },
+    {
+      "text": "2108-0808",
+      "confidence": 93.0,
+      "bbox": {
+        "left": 821,
+        "top": 1038,
+        "width": 97,
+        "height": 16
+      }
+    },
+    {
+      "text": "/",
+      "confidence": 93.0,
+      "bbox": {
+        "left": 926,
+        "top": 1038,
+        "width": 6,
+        "height": 16
+      }
+    },
+    {
+      "text": "fax:",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 938,
+        "top": 1038,
+        "width": 33,
+        "height": 16
+      }
+    },
+    {
+      "text": "(21)",
+      "confidence": 95.0,
+      "bbox": {
+        "left": 980,
+        "top": 1038,
+        "width": 36,
+        "height": 20
+      }
+    },
+    {
+      "text": "2108-0800",
+      "confidence": 95.0,
+      "bbox": {
+        "left": 1024,
+        "top": 1038,
+        "width": 98,
+        "height": 16
+      }
+    },
+    {
+      "text": "editora@zahar.com.br",
+      "confidence": 80.0,
+      "bbox": {
+        "left": 827,
+        "top": 1065,
+        "width": 204,
+        "height": 16
+      }
+    },
+    {
+      "text": "www.zahar.com",
+      "confidence": 60.0,
+      "bbox": {
+        "left": 843,
+        "top": 1091,
+        "width": 173,
+        "height": 16
+      }
+    },
+    {
+      "text": "br",
+      "confidence": 60.0,
+      "bbox": {
+        "left": 996,
+        "top": 1087,
+        "width": 23,
+        "height": 30
+      }
+    },
+    {
+      "text": "Não",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 785,
+        "top": 1142,
+        "width": 38,
+        "height": 16
+      }
+    },
+    {
+      "text": "pode",
+      "confidence": 94.0,
+      "bbox": {
+        "left": 830,
+        "top": 1142,
+        "width": 43,
+        "height": 21
+      }
+    },
+    {
+      "text": "circular",
+      "confidence": 94.0,
+      "bbox": {
+        "left": 880,
+        "top": 1142,
+        "width": 70,
+        "height": 16
+      }
+    },
+    {
+      "text": "em",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 956,
+        "top": 1147,
+        "width": 27,
+        "height": 11
+      }
+    },
+    {
+      "text": "Portugal.",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 990,
+        "top": 1142,
+        "width": 82,
+        "height": 21
+      }
+    },
+    {
+      "text": "Todos",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 796,
+        "top": 1194,
+        "width": 55,
+        "height": 16
+      }
+    },
+    {
+      "text": "os",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 858,
+        "top": 1199,
+        "width": 19,
+        "height": 11
+      }
+    },
+    {
+      "text": "direitos",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 884,
+        "top": 1194,
+        "width": 68,
+        "height": 16
+      }
+    },
+    {
+      "text": "reservados.",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 959,
+        "top": 1194,
+        "width": 102,
+        "height": 16
+      }
+    },
+    {
+      "text": "A",
+      "confidence": 87.0,
+      "bbox": {
+        "left": 677,
+        "top": 1220,
+        "width": 15,
+        "height": 16
+      }
+    },
+    {
+      "text": "reprodução",
+      "confidence": 93.0,
+      "bbox": {
+        "left": 698,
+        "top": 1220,
+        "width": 103,
+        "height": 21
+      }
+    },
+    {
+      "text": "ndo-autorizada",
+      "confidence": 77.0,
+      "bbox": {
+        "left": 807,
+        "top": 1220,
+        "width": 136,
+        "height": 16
+      }
+    },
+    {
+      "text": "desta",
+      "confidence": 93.0,
+      "bbox": {
+        "left": 949,
+        "top": 1220,
+        "width": 46,
+        "height": 16
+      }
+    },
+    {
+      "text": "publicação,",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1002,
+        "top": 1220,
+        "width": 105,
+        "height": 21
+      }
+    },
+    {
+      "text": "no",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1112,
+        "top": 1225,
+        "width": 22,
+        "height": 11
+      }
+    },
+    {
+      "text": "todo",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1141,
+        "top": 1220,
+        "width": 40,
+        "height": 16
+      }
+    },
+    {
+      "text": "ou",
+      "confidence": 93.0,
+      "bbox": {
+        "left": 629,
+        "top": 1252,
+        "width": 21,
+        "height": 11
+      }
+    },
+    {
+      "text": "em",
+      "confidence": 93.0,
+      "bbox": {
+        "left": 657,
+        "top": 1252,
+        "width": 28,
+        "height": 11
+      }
+    },
+    {
+      "text": "parte,",
+      "confidence": 93.0,
+      "bbox": {
+        "left": 691,
+        "top": 1250,
+        "width": 51,
+        "height": 18
+      }
+    },
+    {
+      "text": "constitui",
+      "confidence": 95.0,
+      "bbox": {
+        "left": 748,
+        "top": 1247,
+        "width": 78,
+        "height": 16
+      }
+    },
+    {
+      "text": "violação",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 833,
+        "top": 1247,
+        "width": 77,
+        "height": 21
+      }
+    },
+    {
+      "text": "de",
+      "confidence": 95.0,
+      "bbox": {
+        "left": 916,
+        "top": 1247,
+        "width": 21,
+        "height": 16
+      }
+    },
+    {
+      "text": "direitos",
+      "confidence": 93.0,
+      "bbox": {
+        "left": 943,
+        "top": 1247,
+        "width": 69,
+        "height": 16
+      }
+    },
+    {
+      "text": "autorais",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1019,
+        "top": 1247,
+        "width": 71,
+        "height": 16
+      }
+    },
+    {
+      "text": "(Lei",
+      "confidence": 93.0,
+      "bbox": {
+        "left": 1098,
+        "top": 1247,
+        "width": 36,
+        "height": 20
+      }
+    },
+    {
+      "text": "9.610/98)",
+      "confidence": 92.0,
+      "bbox": {
+        "left": 1141,
+        "top": 1247,
+        "width": 87,
+        "height": 20
+      }
+    },
+    {
+      "text": "Este",
+      "confidence": 93.0,
+      "bbox": {
+        "left": 650,
+        "top": 1298,
+        "width": 33,
+        "height": 14
+      }
+    },
+    {
+      "text": "livro,",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 689,
+        "top": 1298,
+        "width": 42,
+        "height": 17
+      }
+    },
+    {
+      "text": "publicado",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 737,
+        "top": 1298,
+        "width": 79,
+        "height": 19
+      }
+    },
+    {
+      "text": "no",
+      "confidence": 93.0,
+      "bbox": {
+        "left": 822,
+        "top": 1302,
+        "width": 20,
+        "height": 10
+      }
+    },
+    {
+      "text": "âmbito",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 848,
+        "top": 1298,
+        "width": 55,
+        "height": 14
+      }
+    },
+    {
+      "text": "do",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 909,
+        "top": 1298,
+        "width": 19,
+        "height": 14
+      }
+    },
+    {
+      "text": "programa",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 934,
+        "top": 1302,
+        "width": 77,
+        "height": 15
+      }
+    },
+    {
+      "text": "de",
+      "confidence": 93.0,
+      "bbox": {
+        "left": 1017,
+        "top": 1298,
+        "width": 18,
+        "height": 14
+      }
+    },
+    {
+      "text": "auxílio",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1041,
+        "top": 1298,
+        "width": 55,
+        "height": 14
+      }
+    },
+    {
+      "text": "a",
+      "confidence": 92.0,
+      "bbox": {
+        "left": 1102,
+        "top": 1298,
+        "width": 8,
+        "height": 14
+      }
+    },
+    {
+      "text": "publicação,",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1116,
+        "top": 1298,
+        "width": 92,
+        "height": 19
+      }
+    },
+    {
+      "text": "contou",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 658,
+        "top": 1324,
+        "width": 54,
+        "height": 11
+      }
+    },
+    {
+      "text": "com",
+      "confidence": 92.0,
+      "bbox": {
+        "left": 718,
+        "top": 1325,
+        "width": 35,
+        "height": 10
+      }
+    },
+    {
+      "text": "o",
+      "confidence": 95.0,
+      "bbox": {
+        "left": 758,
+        "top": 1325,
+        "width": 10,
+        "height": 10
+      }
+    },
+    {
+      "text": "apoio",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 774,
+        "top": 1321,
+        "width": 44,
+        "height": 19
+      }
+    },
+    {
+      "text": "do",
+      "confidence": 93.0,
+      "bbox": {
+        "left": 824,
+        "top": 1321,
+        "width": 19,
+        "height": 14
+      }
+    },
+    {
+      "text": "Ministério",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 849,
+        "top": 1321,
+        "width": 84,
+        "height": 14
+      }
+    },
+    {
+      "text": "francés",
+      "confidence": 95.0,
+      "bbox": {
+        "left": 939,
+        "top": 1321,
+        "width": 57,
+        "height": 14
+      }
+    },
+    {
+      "text": "das",
+      "confidence": 93.0,
+      "bbox": {
+        "left": 1002,
+        "top": 1321,
+        "width": 26,
+        "height": 14
+      }
+    },
+    {
+      "text": "Relações",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1034,
+        "top": 1321,
+        "width": 72,
+        "height": 19
+      }
+    },
+    {
+      "text": "Exteriores,",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1112,
+        "top": 1321,
+        "width": 88,
+        "height": 17
+      }
+    },
+    {
+      "text": "da",
+      "confidence": 91.0,
+      "bbox": {
+        "left": 623,
+        "top": 1345,
+        "width": 18,
+        "height": 14
+      }
+    },
+    {
+      "text": "Embaixada",
+      "confidence": 95.0,
+      "bbox": {
+        "left": 647,
+        "top": 1345,
+        "width": 91,
+        "height": 14
+      }
+    },
+    {
+      "text": "da",
+      "confidence": 93.0,
+      "bbox": {
+        "left": 743,
+        "top": 1345,
+        "width": 19,
+        "height": 14
+      }
+    },
+    {
+      "text": "França",
+      "confidence": 97.0,
+      "bbox": {
+        "left": 768,
+        "top": 1345,
+        "width": 54,
+        "height": 19
+      }
+    },
+    {
+      "text": "no",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 828,
+        "top": 1349,
+        "width": 19,
+        "height": 10
+      }
+    },
+    {
+      "text": "Brasil",
+      "confidence": 92.0,
+      "bbox": {
+        "left": 853,
+        "top": 1345,
+        "width": 47,
+        "height": 14
+      }
+    },
+    {
+      "text": "e",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 906,
+        "top": 1349,
+        "width": 8,
+        "height": 10
+      }
+    },
+    {
+      "text": "da",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 920,
+        "top": 1345,
+        "width": 19,
+        "height": 14
+      }
+    },
+    {
+      "text": "Maison",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 944,
+        "top": 1345,
+        "width": 60,
+        "height": 14
+      }
+    },
+    {
+      "text": "francaise",
+      "confidence": 80.0,
+      "bbox": {
+        "left": 1011,
+        "top": 1345,
+        "width": 71,
+        "height": 19
+      }
+    },
+    {
+      "text": "do",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1088,
+        "top": 1345,
+        "width": 20,
+        "height": 14
+      }
+    },
+    {
+      "text": "Rio",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1114,
+        "top": 1345,
+        "width": 28,
+        "height": 14
+      }
+    },
+    {
+      "text": "de",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1147,
+        "top": 1345,
+        "width": 19,
+        "height": 14
+      }
+    },
+    {
+      "text": "Janeiro.",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1172,
+        "top": 1345,
+        "width": 62,
+        "height": 14
+      }
+    },
+    {
+      "text": "Revisão",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 788,
+        "top": 1394,
+        "width": 73,
+        "height": 16
+      }
+    },
+    {
+      "text": "de",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 867,
+        "top": 1394,
+        "width": 21,
+        "height": 16
+      }
+    },
+    {
+      "text": "texto:",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 895,
+        "top": 1397,
+        "width": 49,
+        "height": 13
+      }
+    },
+    {
+      "text": "André",
+      "confidence": 92.0,
+      "bbox": {
+        "left": 952,
+        "top": 1394,
+        "width": 57,
+        "height": 16
+      }
+    },
+    {
+      "text": "Telles",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1015,
+        "top": 1394,
+        "width": 54,
+        "height": 16
+      }
+    },
+    {
+      "text": "Revisão",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 756,
+        "top": 1420,
+        "width": 74,
+        "height": 16
+      }
+    },
+    {
+      "text": "tipográfica:",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 836,
+        "top": 1420,
+        "width": 104,
+        "height": 21
+      }
+    },
+    {
+      "text": "Lincoln",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 948,
+        "top": 1420,
+        "width": 70,
+        "height": 16
+      }
+    },
+    {
+      "text": "Natal",
+      "confidence": 94.0,
+      "bbox": {
+        "left": 1025,
+        "top": 1420,
+        "width": 48,
+        "height": 16
+      }
+    },
+    {
+      "text": "Jr.",
+      "confidence": 93.0,
+      "bbox": {
+        "left": 1080,
+        "top": 1420,
+        "width": 20,
+        "height": 16
+      }
+    },
+    {
+      "text": "Preparação",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 724,
+        "top": 1447,
+        "width": 101,
+        "height": 21
+      }
+    },
+    {
+      "text": "de",
+      "confidence": 93.0,
+      "bbox": {
+        "left": 832,
+        "top": 1447,
+        "width": 20,
+        "height": 16
+      }
+    },
+    {
+      "text": "bibliografia:",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 860,
+        "top": 1447,
+        "width": 110,
+        "height": 21
+      }
+    },
+    {
+      "text": "Marcela",
+      "confidence": 93.0,
+      "bbox": {
+        "left": 978,
+        "top": 1447,
+        "width": 75,
+        "height": 16
+      }
+    },
+    {
+      "text": "Boechat",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1059,
+        "top": 1447,
+        "width": 75,
+        "height": 16
+      }
+    },
+    {
+      "text": "Preparação",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 772,
+        "top": 1473,
+        "width": 101,
+        "height": 21
+      }
+    },
+    {
+      "text": "de",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 879,
+        "top": 1473,
+        "width": 21,
+        "height": 16
+      }
+    },
+    {
+      "text": "índice:",
+      "confidence": 92.0,
+      "bbox": {
+        "left": 907,
+        "top": 1473,
+        "width": 60,
+        "height": 16
+      }
+    },
+    {
+      "text": "Nelly",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 975,
+        "top": 1473,
+        "width": 50,
+        "height": 21
+      }
+    },
+    {
+      "text": "Telles",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1031,
+        "top": 1473,
+        "width": 54,
+        "height": 16
+      }
+    },
+    {
+      "text": "Capa:",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 860,
+        "top": 1500,
+        "width": 51,
+        "height": 21
+      }
+    },
+    {
+      "text": "Carol",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 919,
+        "top": 1500,
+        "width": 50,
+        "height": 16
+      }
+    },
+    {
+      "text": "Sá",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 976,
+        "top": 1500,
+        "width": 22,
+        "height": 16
+      }
+    },
+    {
+      "text": "CIP-Brasil.",
+      "confidence": 91.0,
+      "bbox": {
+        "left": 776,
+        "top": 1576,
+        "width": 103,
+        "height": 16
+      }
+    },
+    {
+      "text": "Catalogação-na",
+      "confidence": 92.0,
+      "bbox": {
+        "left": 886,
+        "top": 1576,
+        "width": 142,
+        "height": 21
+      }
+    },
+    {
+      "text": "fonte",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1035,
+        "top": 1576,
+        "width": 46,
+        "height": 16
+      }
+    },
+    {
+      "text": "Sindicato",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 717,
+        "top": 1602,
+        "width": 86,
+        "height": 16
+      }
+    },
+    {
+      "text": "Nacional",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 809,
+        "top": 1602,
+        "width": 82,
+        "height": 16
+      }
+    },
+    {
+      "text": "dos",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 897,
+        "top": 1602,
+        "width": 32,
+        "height": 16
+      }
+    },
+    {
+      "text": "Editores",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 936,
+        "top": 1602,
+        "width": 75,
+        "height": 16
+      }
+    },
+    {
+      "text": "de",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1017,
+        "top": 1602,
+        "width": 22,
+        "height": 16
+      }
+    },
+    {
+      "text": "Livros,",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1045,
+        "top": 1602,
+        "width": 66,
+        "height": 19
+      }
+    },
+    {
+      "text": "RJ",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1117,
+        "top": 1602,
+        "width": 22,
+        "height": 16
+      }
+    },
+    {
+      "text": "Roudinesco,",
+      "confidence": 91.0,
+      "bbox": {
+        "left": 728,
+        "top": 1646,
+        "width": 114,
+        "height": 19
+      }
+    },
+    {
+      "text": "Elisabeth,",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 848,
+        "top": 1646,
+        "width": 92,
+        "height": 19
+      }
+    },
+    {
+      "text": "1944",
+      "confidence": 93.0,
+      "bbox": {
+        "left": 949,
+        "top": 1646,
+        "width": 41,
+        "height": 16
+      }
+    },
+    {
+      "text": "—",
+      "confidence": 92.0,
+      "bbox": {
+        "left": 999,
+        "top": 1656,
+        "width": 18,
+        "height": 1
+      }
+    },
+    {
+      "text": "R765d",
+      "confidence": 92.0,
+      "bbox": {
+        "left": 628,
+        "top": 1676,
+        "width": 61,
+        "height": 16
+      }
+    },
+    {
+      "text": "Dicionário",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 762,
+        "top": 1676,
+        "width": 99,
+        "height": 16
+      }
+    },
+    {
+      "text": "de",
+      "confidence": 93.0,
+      "bbox": {
+        "left": 873,
+        "top": 1676,
+        "width": 21,
+        "height": 16
+      }
+    },
+    {
+      "text": "psicanálise/Elisabeth",
+      "confidence": 92.0,
+      "bbox": {
+        "left": 907,
+        "top": 1676,
+        "width": 194,
+        "height": 21
+      }
+    },
+    {
+      "text": "Roudinesco,",
+      "confidence": 91.0,
+      "bbox": {
+        "left": 1114,
+        "top": 1676,
+        "width": 114,
+        "height": 19
+      }
+    },
+    {
+      "text": "Michel",
+      "confidence": 93.0,
+      "bbox": {
+        "left": 728,
+        "top": 1703,
+        "width": 65,
+        "height": 16
+      }
+    },
+    {
+      "text": "Plon;",
+      "confidence": 91.0,
+      "bbox": {
+        "left": 800,
+        "top": 1703,
+        "width": 47,
+        "height": 19
+      }
+    },
+    {
+      "text": "tradução",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 854,
+        "top": 1703,
+        "width": 79,
+        "height": 21
+      }
+    },
+    {
+      "text": "Vera",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 940,
+        "top": 1703,
+        "width": 41,
+        "height": 16
+      }
+    },
+    {
+      "text": "Ribeiro,",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 988,
+        "top": 1703,
+        "width": 74,
+        "height": 19
+      }
+    },
+    {
+      "text": "Lucy",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1069,
+        "top": 1703,
+        "width": 46,
+        "height": 21
+      }
+    },
+    {
+      "text": "Magalhães;",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1122,
+        "top": 1703,
+        "width": 105,
+        "height": 21
+      }
+    },
+    {
+      "text": "supervisão",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 729,
+        "top": 1730,
+        "width": 97,
+        "height": 21
+      }
+    },
+    {
+      "text": "da",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 834,
+        "top": 1730,
+        "width": 20,
+        "height": 16
+      }
+    },
+    {
+      "text": "edição",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 862,
+        "top": 1730,
+        "width": 59,
+        "height": 21
+      }
+    },
+    {
+      "text": "brasileira",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 929,
+        "top": 1730,
+        "width": 84,
+        "height": 16
+      }
+    },
+    {
+      "text": "Marco",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1021,
+        "top": 1730,
+        "width": 59,
+        "height": 16
+      }
+    },
+    {
+      "text": "Antonio",
+      "confidence": 92.0,
+      "bbox": {
+        "left": 1088,
+        "top": 1730,
+        "width": 74,
+        "height": 16
+      }
+    },
+    {
+      "text": "Couti-",
+      "confidence": 92.0,
+      "bbox": {
+        "left": 1170,
+        "top": 1730,
+        "width": 57,
+        "height": 16
+      }
+    },
+    {
+      "text": "nho",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 729,
+        "top": 1758,
+        "width": 33,
+        "height": 16
+      }
+    },
+    {
+      "text": "Jorge.",
+      "confidence": 93.0,
+      "bbox": {
+        "left": 769,
+        "top": 1758,
+        "width": 54,
+        "height": 21
+      }
+    },
+    {
+      "text": "—",
+      "confidence": 92.0,
+      "bbox": {
+        "left": 832,
+        "top": 1768,
+        "width": 18,
+        "height": 1
+      }
+    },
+    {
+      "text": "Rio",
+      "confidence": 95.0,
+      "bbox": {
+        "left": 859,
+        "top": 1758,
+        "width": 32,
+        "height": 16
+      }
+    },
+    {
+      "text": "de",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 898,
+        "top": 1758,
+        "width": 20,
+        "height": 16
+      }
+    },
+    {
+      "text": "Janeiro:",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 925,
+        "top": 1758,
+        "width": 70,
+        "height": 16
+      }
+    },
+    {
+      "text": "Zahar,",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1003,
+        "top": 1758,
+        "width": 59,
+        "height": 19
+      }
+    },
+    {
+      "text": "1998.",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1071,
+        "top": 1758,
+        "width": 48,
+        "height": 17
+      }
+    },
+    {
+      "text": "Tradução",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 762,
+        "top": 1804,
+        "width": 85,
+        "height": 21
+      }
+    },
+    {
+      "text": "de:",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 854,
+        "top": 1804,
+        "width": 26,
+        "height": 16
+      }
+    },
+    {
+      "text": "Dictionnaire",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 888,
+        "top": 1804,
+        "width": 114,
+        "height": 16
+      }
+    },
+    {
+      "text": "de",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1008,
+        "top": 1804,
+        "width": 21,
+        "height": 16
+      }
+    },
+    {
+      "text": "la",
+      "confidence": 93.0,
+      "bbox": {
+        "left": 1036,
+        "top": 1804,
+        "width": 15,
+        "height": 16
+      }
+    },
+    {
+      "text": "psychanalyse",
+      "confidence": 91.0,
+      "bbox": {
+        "left": 1058,
+        "top": 1804,
+        "width": 121,
+        "height": 21
+      }
+    },
+    {
+      "text": "Inclui",
+      "confidence": 93.0,
+      "bbox": {
+        "left": 762,
+        "top": 1831,
+        "width": 52,
+        "height": 16
+      }
+    },
+    {
+      "text": "bibliografia",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 822,
+        "top": 1831,
+        "width": 105,
+        "height": 21
+      }
+    },
+    {
+      "text": "ISBN",
+      "confidence": 92.0,
+      "bbox": {
+        "left": 762,
+        "top": 1858,
+        "width": 52,
+        "height": 16
+      }
+    },
+    {
+      "text": "978-85-7110-444-0",
+      "confidence": 89.0,
+      "bbox": {
+        "left": 820,
+        "top": 1858,
+        "width": 179,
+        "height": 16
+      }
+    },
+    {
+      "text": "1.",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 765,
+        "top": 1904,
+        "width": 13,
+        "height": 16
+      }
+    },
+    {
+      "text": "Psicanálise",
+      "confidence": 93.0,
+      "bbox": {
+        "left": 788,
+        "top": 1904,
+        "width": 100,
+        "height": 16
+      }
+    },
+    {
+      "text": "—",
+      "confidence": 93.0,
+      "bbox": {
+        "left": 900,
+        "top": 1914,
+        "width": 18,
+        "height": 1
+      }
+    },
+    {
+      "text": "Dicionários.",
+      "confidence": 93.0,
+      "bbox": {
+        "left": 930,
+        "top": 1904,
+        "width": 112,
+        "height": 16
+      }
+    },
+    {
+      "text": "I.",
+      "confidence": 93.0,
+      "bbox": {
+        "left": 1052,
+        "top": 1904,
+        "width": 11,
+        "height": 16
+      }
+    },
+    {
+      "text": "Plon,",
+      "confidence": 92.0,
+      "bbox": {
+        "left": 1073,
+        "top": 1904,
+        "width": 47,
+        "height": 19
+      }
+    },
+    {
+      "text": "Michel.",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 1129,
+        "top": 1904,
+        "width": 70,
+        "height": 16
+      }
+    },
+    {
+      "text": "II.",
+      "confidence": 94.0,
+      "bbox": {
+        "left": 1208,
+        "top": 1904,
+        "width": 20,
+        "height": 16
+      }
+    },
+    {
+      "text": "Título.",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 728,
+        "top": 1932,
+        "width": 61,
+        "height": 16
+      }
+    },
+    {
+      "text": "CDD:",
+      "confidence": 89.0,
+      "bbox": {
+        "left": 1029,
+        "top": 1977,
+        "width": 53,
+        "height": 16
+      }
+    },
+    {
+      "text": "150.19503",
+      "confidence": 92.0,
+      "bbox": {
+        "left": 1093,
+        "top": 1977,
+        "width": 93,
+        "height": 17
+      }
+    },
+    {
+      "text": "98-1608",
+      "confidence": 92.0,
+      "bbox": {
+        "left": 629,
+        "top": 2004,
+        "width": 75,
+        "height": 17
+      }
+    },
+    {
+      "text": "CDU:",
+      "confidence": 93.0,
+      "bbox": {
+        "left": 1030,
+        "top": 2004,
+        "width": 52,
+        "height": 16
+      }
+    },
+    {
+      "text": "159.964.2(038)",
+      "confidence": 92.0,
+      "bbox": {
+        "left": 1093,
+        "top": 2004,
+        "width": 137,
+        "height": 20
+      }
+    },
+    {
+      "text": "Dicionário",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 666,
+        "top": 2208,
+        "width": 82,
+        "height": 14
+      }
+    },
+    {
+      "text": "de",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 754,
+        "top": 2208,
+        "width": 20,
+        "height": 14
+      }
+    },
+    {
+      "text": "Psicanálise",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 781,
+        "top": 2208,
+        "width": 94,
+        "height": 14
+      }
+    },
+    {
+      "text": "(PSI)",
+      "confidence": 90.0,
+      "bbox": {
+        "left": 881,
+        "top": 2208,
+        "width": 41,
+        "height": 18
+      }
+    },
+    {
+      "text": "1º",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 667,
+        "top": 2230,
+        "width": 15,
+        "height": 14
+      }
+    },
+    {
+      "text": "revisão",
+      "confidence": 93.0,
+      "bbox": {
+        "left": 689,
+        "top": 2230,
+        "width": 59,
+        "height": 14
+      }
+    },
+    {
+      "text": "—",
+      "confidence": 92.0,
+      "bbox": {
+        "left": 753,
+        "top": 2238,
+        "width": 11,
+        "height": 1
+      }
+    },
+    {
+      "text": "13.08.98",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 771,
+        "top": 2230,
+        "width": 71,
+        "height": 14
+      }
+    },
+    {
+      "text": "2º",
+      "confidence": 95.0,
+      "bbox": {
+        "left": 666,
+        "top": 2252,
+        "width": 16,
+        "height": 14
+      }
+    },
+    {
+      "text": "revisão",
+      "confidence": 92.0,
+      "bbox": {
+        "left": 689,
+        "top": 2252,
+        "width": 59,
+        "height": 14
+      }
+    },
+    {
+      "text": "—",
+      "confidence": 92.0,
+      "bbox": {
+        "left": 753,
+        "top": 2260,
+        "width": 11,
+        "height": 1
+      }
+    },
+    {
+      "text": "31.08.98",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 770,
+        "top": 2252,
+        "width": 72,
+        "height": 14
+      }
+    },
+    {
+      "text": "3º",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 665,
+        "top": 2274,
+        "width": 17,
+        "height": 14
+      }
+    },
+    {
+      "text": "revisão",
+      "confidence": 93.0,
+      "bbox": {
+        "left": 689,
+        "top": 2274,
+        "width": 59,
+        "height": 14
+      }
+    },
+    {
+      "text": "—",
+      "confidence": 92.0,
+      "bbox": {
+        "left": 753,
+        "top": 2282,
+        "width": 11,
+        "height": 1
+      }
+    },
+    {
+      "text": "24.09.98",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 770,
+        "top": 2274,
+        "width": 72,
+        "height": 14
+      }
+    },
+    {
+      "text": "4º",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 665,
+        "top": 2297,
+        "width": 17,
+        "height": 14
+      }
+    },
+    {
+      "text": "revisão",
+      "confidence": 93.0,
+      "bbox": {
+        "left": 689,
+        "top": 2297,
+        "width": 59,
+        "height": 14
+      }
+    },
+    {
+      "text": "—",
+      "confidence": 92.0,
+      "bbox": {
+        "left": 753,
+        "top": 2305,
+        "width": 11,
+        "height": 1
+      }
+    },
+    {
+      "text": "29.09.98",
+      "confidence": 93.0,
+      "bbox": {
+        "left": 770,
+        "top": 2297,
+        "width": 72,
+        "height": 14
+      }
+    },
+    {
+      "text": "—",
+      "confidence": 84.0,
+      "bbox": {
+        "left": 848,
+        "top": 2305,
+        "width": 11,
+        "height": 1
+      }
+    },
+    {
+      "text": "Cad.",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 864,
+        "top": 2297,
+        "width": 38,
+        "height": 14
+      }
+    },
+    {
+      "text": "O",
+      "confidence": 94.0,
+      "bbox": {
+        "left": 909,
+        "top": 2297,
+        "width": 10,
+        "height": 14
+      }
+    },
+    {
+      "text": "Produção:",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 667,
+        "top": 2319,
+        "width": 83,
+        "height": 18
+      }
+    },
+    {
+      "text": "Textos",
+      "confidence": 92.0,
+      "bbox": {
+        "left": 758,
+        "top": 2319,
+        "width": 59,
+        "height": 14
+      }
+    },
+    {
+      "text": "&",
+      "confidence": 92.0,
+      "bbox": {
+        "left": 823,
+        "top": 2319,
+        "width": 13,
+        "height": 14
+      }
+    },
+    {
+      "text": "Formas",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 842,
+        "top": 2319,
+        "width": 68,
+        "height": 14
+      }
+    },
+    {
+      "text": "Para:",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 667,
+        "top": 2341,
+        "width": 41,
+        "height": 14
+      }
+    },
+    {
+      "text": "Ed.",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 717,
+        "top": 2341,
+        "width": 25,
+        "height": 14
+      }
+    },
+    {
+      "text": "Zahar",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 749,
+        "top": 2341,
+        "width": 49,
+        "height": 14
+      }
+    }
+  ],
+  "word_count": 238,
+  "char_count": 1638,
+  "avg_word_confidence": 94.03361344537815,
+  "min_word_confidence": 60.0,
+  "max_word_confidence": 97.0,
+  "config_used": "--tessdata-dir /media/yuri/Noosphera/Noosphera_0.3/Apps/Glyphar/src/glyphar/resources/tessdata --oem 1 --psm 3 --user-words /tmp/tesseract_user_words.txt -c preserve_interword_spaces=1 -c textord_min_linesize=2.5 -c textord_initialx_ile=1.0",
+  "processing_time_ms": 2304.0806019998854
+}

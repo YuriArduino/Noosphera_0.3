@@ -1,0 +1,453 @@
+{
+  "text": "SUMÁRIO Prefácio vii Sobre os autores x Agradecimentos xi Nota à edição brasileira xiii Abreviaturas bibliográficas xiii VERBETES — A-Z 1 Cronologia 795 Índice onomástico 831 Índice dos verbetes 865 4º revisão — 29.09.98 — Cad. O Produção: Textos & Formas Para: Ed. Zahar",
+  "confidence": 90.13636363636364,
+  "words": [
+    {
+      "text": "SUMÁRIO",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 844,
+        "top": 523,
+        "width": 169,
+        "height": 33
+      }
+    },
+    {
+      "text": "Prefácio",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 763,
+        "top": 772,
+        "width": 117,
+        "height": 25
+      }
+    },
+    {
+      "text": "vii",
+      "confidence": 85.0,
+      "bbox": {
+        "left": 915,
+        "top": 777,
+        "width": 29,
+        "height": 20
+      }
+    },
+    {
+      "text": "Sobre",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 764,
+        "top": 844,
+        "width": 81,
+        "height": 26
+      }
+    },
+    {
+      "text": "os",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 855,
+        "top": 852,
+        "width": 30,
+        "height": 17
+      }
+    },
+    {
+      "text": "autores",
+      "confidence": 89.0,
+      "bbox": {
+        "left": 896,
+        "top": 849,
+        "width": 100,
+        "height": 20
+      }
+    },
+    {
+      "text": "x",
+      "confidence": 67.0,
+      "bbox": {
+        "left": 1030,
+        "top": 856,
+        "width": 15,
+        "height": 13
+      }
+    },
+    {
+      "text": "Agradecimentos",
+      "confidence": 91.0,
+      "bbox": {
+        "left": 763,
+        "top": 915,
+        "width": 232,
+        "height": 33
+      }
+    },
+    {
+      "text": "xi",
+      "confidence": 88.0,
+      "bbox": {
+        "left": 1028,
+        "top": 920,
+        "width": 22,
+        "height": 20
+      }
+    },
+    {
+      "text": "Nota",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 763,
+        "top": 988,
+        "width": 69,
+        "height": 24
+      }
+    },
+    {
+      "text": "à",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 842,
+        "top": 988,
+        "width": 14,
+        "height": 24
+      }
+    },
+    {
+      "text": "edição",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 866,
+        "top": 987,
+        "width": 91,
+        "height": 33
+      }
+    },
+    {
+      "text": "brasileira",
+      "confidence": 95.0,
+      "bbox": {
+        "left": 968,
+        "top": 987,
+        "width": 132,
+        "height": 25
+      }
+    },
+    {
+      "text": "xiii",
+      "confidence": 68.0,
+      "bbox": {
+        "left": 1132,
+        "top": 992,
+        "width": 38,
+        "height": 20
+      }
+    },
+    {
+      "text": "Abreviaturas",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 763,
+        "top": 1059,
+        "width": 182,
+        "height": 25
+      }
+    },
+    {
+      "text": "bibliográficas",
+      "confidence": 93.0,
+      "bbox": {
+        "left": 956,
+        "top": 1059,
+        "width": 194,
+        "height": 33
+      }
+    },
+    {
+      "text": "xiii",
+      "confidence": 85.0,
+      "bbox": {
+        "left": 1184,
+        "top": 1064,
+        "width": 38,
+        "height": 20
+      }
+    },
+    {
+      "text": "VERBETES",
+      "confidence": 87.0,
+      "bbox": {
+        "left": 763,
+        "top": 1132,
+        "width": 154,
+        "height": 24
+      }
+    },
+    {
+      "text": "—",
+      "confidence": 86.0,
+      "bbox": {
+        "left": 927,
+        "top": 1147,
+        "width": 36,
+        "height": 2
+      }
+    },
+    {
+      "text": "A-Z",
+      "confidence": 84.0,
+      "bbox": {
+        "left": 972,
+        "top": 1132,
+        "width": 58,
+        "height": 24
+      }
+    },
+    {
+      "text": "1",
+      "confidence": 63.0,
+      "bbox": {
+        "left": 1066,
+        "top": 1135,
+        "width": 10,
+        "height": 21
+      }
+    },
+    {
+      "text": "Cronologia",
+      "confidence": 89.0,
+      "bbox": {
+        "left": 763,
+        "top": 1202,
+        "width": 160,
+        "height": 33
+      }
+    },
+    {
+      "text": "795",
+      "confidence": 89.0,
+      "bbox": {
+        "left": 958,
+        "top": 1206,
+        "width": 43,
+        "height": 21
+      }
+    },
+    {
+      "text": "Índice",
+      "confidence": 93.0,
+      "bbox": {
+        "left": 763,
+        "top": 1267,
+        "width": 88,
+        "height": 32
+      }
+    },
+    {
+      "text": "onomástico",
+      "confidence": 92.0,
+      "bbox": {
+        "left": 861,
+        "top": 1274,
+        "width": 163,
+        "height": 25
+      }
+    },
+    {
+      "text": "831",
+      "confidence": 74.0,
+      "bbox": {
+        "left": 1059,
+        "top": 1278,
+        "width": 41,
+        "height": 21
+      }
+    },
+    {
+      "text": "Índice",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 763,
+        "top": 1338,
+        "width": 88,
+        "height": 32
+      }
+    },
+    {
+      "text": "dos",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 861,
+        "top": 1346,
+        "width": 47,
+        "height": 24
+      }
+    },
+    {
+      "text": "verbetes",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 919,
+        "top": 1345,
+        "width": 117,
+        "height": 25
+      }
+    },
+    {
+      "text": "865",
+      "confidence": 75.0,
+      "bbox": {
+        "left": 1071,
+        "top": 1349,
+        "width": 44,
+        "height": 21
+      }
+    },
+    {
+      "text": "4º",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 807,
+        "top": 2297,
+        "width": 17,
+        "height": 14
+      }
+    },
+    {
+      "text": "revisão",
+      "confidence": 93.0,
+      "bbox": {
+        "left": 831,
+        "top": 2297,
+        "width": 59,
+        "height": 14
+      }
+    },
+    {
+      "text": "—",
+      "confidence": 92.0,
+      "bbox": {
+        "left": 896,
+        "top": 2305,
+        "width": 11,
+        "height": 1
+      }
+    },
+    {
+      "text": "29.09.98",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 912,
+        "top": 2286,
+        "width": 72,
+        "height": 25
+      }
+    },
+    {
+      "text": "—",
+      "confidence": 91.0,
+      "bbox": {
+        "left": 990,
+        "top": 2305,
+        "width": 11,
+        "height": 1
+      }
+    },
+    {
+      "text": "Cad.",
+      "confidence": 92.0,
+      "bbox": {
+        "left": 1007,
+        "top": 2297,
+        "width": 37,
+        "height": 14
+      }
+    },
+    {
+      "text": "O",
+      "confidence": 92.0,
+      "bbox": {
+        "left": 1052,
+        "top": 2297,
+        "width": 9,
+        "height": 14
+      }
+    },
+    {
+      "text": "Produção:",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 809,
+        "top": 2319,
+        "width": 83,
+        "height": 18
+      }
+    },
+    {
+      "text": "Textos",
+      "confidence": 93.0,
+      "bbox": {
+        "left": 901,
+        "top": 2319,
+        "width": 59,
+        "height": 14
+      }
+    },
+    {
+      "text": "&",
+      "confidence": 92.0,
+      "bbox": {
+        "left": 965,
+        "top": 2319,
+        "width": 13,
+        "height": 14
+      }
+    },
+    {
+      "text": "Formas",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 985,
+        "top": 2319,
+        "width": 67,
+        "height": 14
+      }
+    },
+    {
+      "text": "Para:",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 809,
+        "top": 2341,
+        "width": 42,
+        "height": 14
+      }
+    },
+    {
+      "text": "Ed.",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 859,
+        "top": 2341,
+        "width": 25,
+        "height": 14
+      }
+    },
+    {
+      "text": "Zahar",
+      "confidence": 96.0,
+      "bbox": {
+        "left": 891,
+        "top": 2341,
+        "width": 50,
+        "height": 14
+      }
+    }
+  ],
+  "word_count": 44,
+  "char_count": 271,
+  "avg_word_confidence": 90.13636363636364,
+  "min_word_confidence": 63.0,
+  "max_word_confidence": 96.0,
+  "config_used": "--tessdata-dir /media/yuri/Noosphera/Noosphera_0.3/Apps/Glyphar/src/glyphar/resources/tessdata --oem 1 --psm 3 --user-words /tmp/tesseract_user_words.txt -c preserve_interword_spaces=1 -c textord_min_linesize=2.5 -c textord_initialx_ile=1.0",
+  "processing_time_ms": 910.3472890019475
+}
