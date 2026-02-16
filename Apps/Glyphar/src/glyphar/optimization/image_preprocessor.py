@@ -12,12 +12,15 @@ Type guarantees:
 
 from __future__ import annotations
 
+from typing import Literal
+
 import cv2
 import numpy as np
 import numpy.typing as npt
 
 
 UInt8Image = npt.NDArray[np.uint8]
+PreprocessType = Literal["gray", "otsu", "adaptive"]
 
 
 # pylint: disable=too-few-public-methods,no-member
@@ -76,20 +79,33 @@ class ImagePreprocessor:
         if image.ndim not in (2, 3):
             raise ValueError("Image must be 2D (gray) or 3D (BGR)")
 
+        if image.ndim == 3 and image.shape[2] not in (1, 3, 4):
+            raise ValueError("3D image must have 1, 3 or 4 channels")
+
         if image.dtype != np.uint8:
             raise TypeError("Input image must be uint8")
 
     @staticmethod
     def _to_gray(image: UInt8Image) -> UInt8Image:
         """
-        Convert BGR image to grayscale if needed.
+        Convert image to grayscale if needed.
 
         Idempotent for grayscale input.
         """
-        if image.ndim == 3:
-            gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+        if image.ndim == 2:
+            return image
+        if image.shape[2] == 1:
+            return image[:, :, 0].astype(np.uint8, copy=False)
+        if image.shape[2] == 4:
+            gray = cv2.cvtColor(image, cv2.COLOR_BGRA2GRAY)
             return gray.astype(np.uint8, copy=False)
-        return image
+
+        gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+        return gray.astype(np.uint8, copy=False)
+
+    @staticmethod
+    def _normalize_pre_type(pre_type: str) -> str:
+        return str(pre_type).strip().lower()
 
     # ------------------------------------------------------------------
     # Public API
@@ -129,16 +145,17 @@ class ImagePreprocessor:
             - "otsu": Grayscale + global Otsu binarization
             - "adaptive": Grayscale + adaptive Gaussian threshold
             - Unknown:
-                - strict=False → returns original image
+                - strict=False → returns grayscale fallback
                 - strict=True → raises ValueError
         """
 
         ImagePreprocessor._validate(image)
+        normalized_pre_type = ImagePreprocessor._normalize_pre_type(pre_type)
 
-        if pre_type == "gray":
+        if normalized_pre_type == "gray":
             return ImagePreprocessor._to_gray(image)
 
-        if pre_type == "otsu":
+        if normalized_pre_type == "otsu":
             gray = ImagePreprocessor._to_gray(image)
 
             _, bin_img = cv2.threshold(
@@ -150,7 +167,7 @@ class ImagePreprocessor:
 
             return bin_img.astype(np.uint8, copy=False)
 
-        if pre_type == "adaptive":
+        if normalized_pre_type == "adaptive":
             if adaptive_block_size <= 1 or adaptive_block_size % 2 == 0:
                 raise ValueError("adaptive_block_size must be odd and > 1")
 
@@ -170,8 +187,8 @@ class ImagePreprocessor:
         if strict:
             raise ValueError(f"Unknown preprocessing type: {pre_type}")
 
-        # Fallback with dtype normalization
-        return image.astype(np.uint8, copy=False)
+        # Fallback to grayscale to preserve method contract
+        return ImagePreprocessor._to_gray(image)
 
     @staticmethod
     def upscale(
@@ -206,10 +223,12 @@ class ImagePreprocessor:
             return image
 
         h, w = image.shape[:2]
+        new_w = max(1, int(round(w * scale)))
+        new_h = max(1, int(round(h * scale)))
 
         resized = cv2.resize(
             image,
-            (int(w * scale), int(h * scale)),
+            (new_w, new_h),
             interpolation=cv2.INTER_CUBIC,
         )
 
