@@ -4,20 +4,23 @@
 
 from __future__ import annotations
 
+from typing import Any, Mapping
+
 import pytest
 
 np = pytest.importorskip("numpy")
 pytest.importorskip("cv2")
 
-from glyphar.optimization.config_optimizer import ConfigOptimizer
+from glyphar.optimization.config_optimizer import ConfigOptimizer, UInt8Image
 
 
 class _EngineWithInvalidPrimaryResult:
     def __init__(self) -> None:
         self.calls = 0
 
-    def recognize(self, _image, _config):
+    def recognize(self, image: UInt8Image, config: Mapping[str, Any]) -> dict[str, Any]:
         """Simulate invalid first response and valid fallback response."""
+        _ = (image, config)
         self.calls += 1
         if self.calls == 1:
             return {"text": "only text"}
@@ -25,8 +28,9 @@ class _EngineWithInvalidPrimaryResult:
 
 
 class _EngineAlwaysOk:
-    def recognize(self, _image, _config):
+    def recognize(self, image: UInt8Image, config: Mapping[str, Any]) -> dict[str, Any]:
         """Simulate invalid first response and valid fallback response."""
+        _ = (image, config)
         return {"text": "ok", "confidence": 96.5, "words": []}
 
 

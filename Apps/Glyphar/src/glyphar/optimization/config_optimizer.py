@@ -31,7 +31,7 @@ class OCREngineProtocol(Protocol):
 
     def recognize(self, image: UInt8Image, config: Mapping[str, Any]) -> Dict[str, Any]:
         """Run OCR and return a normalized result dictionary."""
-        pass
+        raise NotImplementedError
 
 
 class ConfigOptimizer:
