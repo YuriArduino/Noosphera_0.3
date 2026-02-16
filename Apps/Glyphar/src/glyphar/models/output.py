@@ -9,7 +9,7 @@ Designed for seamless integration with:
 """
 
 from typing import List, Dict, Any, cast
-from datetime import datetime
+from datetime import datetime, timezone
 from pydantic import BaseModel, Field, ConfigDict
 from .file import FileMetadata
 from .page import PageResult
@@ -56,7 +56,7 @@ class OCROutput(BaseModel):
         default_factory=dict, description="Free-form metadata"
     )
     created_at: datetime = Field(
-        default_factory=lambda: datetime.now(datetime.timezone.utc)
+        default_factory=lambda: datetime.now(timezone.utc)
     )
 
     model_config = ConfigDict(extra="ignore", frozen=True)

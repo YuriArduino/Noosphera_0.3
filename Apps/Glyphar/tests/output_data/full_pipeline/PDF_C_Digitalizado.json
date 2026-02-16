@@ -20,7 +20,7 @@
           "confidence": 73.5,
           "word_count": 16,
           "char_count": 93,
-          "processing_time_s": 1.2511009639993063,
+          "processing_time_s": 1.0095395030002692,
           "bbox": {
             "left": 137,
             "top": 82,
@@ -33,7 +33,7 @@
       ],
       "page_quality": "poor",
       "page_confidence_mean": 73.5,
-      "processing_time_s": 1.2886011709997547,
+      "processing_time_s": 1.0588538769998195,
       "config_used": null,
       "warnings": []
     },
@@ -47,7 +47,7 @@
           "confidence": 95.325,
           "word_count": 40,
           "char_count": 289,
-          "processing_time_s": 1.2280064779997701,
+          "processing_time_s": 0.8062126119993991,
           "bbox": {
             "left": 224,
             "top": 115,
@@ -60,7 +60,7 @@
       ],
       "page_quality": "excellent",
       "page_confidence_mean": 95.325,
-      "processing_time_s": 1.2729903129993545,
+      "processing_time_s": 0.8505972879993351,
       "config_used": null,
       "warnings": []
     },
@@ -74,7 +74,7 @@
           "confidence": 90.45348837209302,
           "word_count": 172,
           "char_count": 1168,
-          "processing_time_s": 2.5054496700004165,
+          "processing_time_s": 2.196926500999325,
           "bbox": {
             "left": 275,
             "top": 547,
@@ -87,7 +87,7 @@
       ],
       "page_quality": "excellent",
       "page_confidence_mean": 90.45348837209302,
-      "processing_time_s": 2.5532176980004806,
+      "processing_time_s": 2.2356382779998967,
       "config_used": null,
       "warnings": []
     },
@@ -101,7 +101,7 @@
           "confidence": 85.76923076923077,
           "word_count": 260,
           "char_count": 1558,
-          "processing_time_s": 3.620997387999523,
+          "processing_time_s": 2.7853906919999645,
           "bbox": {
             "left": 7,
             "top": 100,
@@ -117,7 +117,7 @@
           "confidence": 87.6259842519685,
           "word_count": 254,
           "char_count": 1563,
-          "processing_time_s": 2.742766608999773,
+          "processing_time_s": 2.7271650920001775,
           "bbox": {
             "left": 478,
             "top": 106,
@@ -130,7 +130,7 @@
       ],
       "page_quality": "excellent",
       "page_confidence_mean": 86.69760751059964,
-      "processing_time_s": 6.415723560000515,
+      "processing_time_s": 5.561984084999494,
       "config_used": null,
       "warnings": []
     },
@@ -144,7 +144,7 @@
           "confidence": 92.58364312267658,
           "word_count": 269,
           "char_count": 1656,
-          "processing_time_s": 3.2979410360003385,
+          "processing_time_s": 2.683223726000506,
           "bbox": {
             "left": 12,
             "top": 430,
@@ -160,7 +160,7 @@
           "confidence": 92.60079051383399,
           "word_count": 253,
           "char_count": 1587,
-          "processing_time_s": 2.4454794800003583,
+          "processing_time_s": 2.4683991590000005,
           "bbox": {
             "left": 557,
             "top": 435,
@@ -173,7 +173,7 @@
       ],
       "page_quality": "excellent",
       "page_confidence_mean": 92.59221681825528,
-      "processing_time_s": 5.795097782000084,
+      "processing_time_s": 5.200917439000477,
       "config_used": null,
       "warnings": []
     }
@@ -186,8 +186,8 @@
     "total_words": 1264,
     "total_characters": 7914,
     "average_confidence": 87.71366254018959,
-    "total_processing_time_s": 7.069203840999762,
-    "pages_per_second": 0.7072932274213322,
+    "total_processing_time_s": 6.052711879000526,
+    "pages_per_second": 0.8260759970001482,
     "quality_distribution": {
       "poor": 1,
       "excellent": 4
@@ -210,5 +210,5 @@
     "mode": "parallel",
     "llm_ready": true
   },
-  "created_at": "2026-02-16T19:47:09.735585"
+  "created_at": "2026-02-16T20:08:39.405385Z"
 }

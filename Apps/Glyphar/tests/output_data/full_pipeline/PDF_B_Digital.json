@@ -20,7 +20,7 @@
           "confidence": 71.53846153846153,
           "word_count": 13,
           "char_count": 78,
-          "processing_time_s": 1.3784889580001618,
+          "processing_time_s": 1.041386364000573,
           "bbox": {
             "left": 53,
             "top": 22,
@@ -33,7 +33,7 @@
       ],
       "page_quality": "excellent",
       "page_confidence_mean": 71.53846153846153,
-      "processing_time_s": 1.4564603220005665,
+      "processing_time_s": 1.0893957110001793,
       "config_used": null,
       "warnings": []
     },
@@ -47,7 +47,7 @@
           "confidence": 94.35593220338983,
           "word_count": 59,
           "char_count": 396,
-          "processing_time_s": 1.3918852189999598,
+          "processing_time_s": 1.0111299569998664,
           "bbox": {
             "left": 660,
             "top": 524,
@@ -60,7 +60,7 @@
       ],
       "page_quality": "excellent",
       "page_confidence_mean": 94.35593220338983,
-      "processing_time_s": 1.4898849050005083,
+      "processing_time_s": 1.1122274039998956,
       "config_used": null,
       "warnings": []
     },
@@ -74,7 +74,7 @@
           "confidence": 93.85714285714286,
           "word_count": 238,
           "char_count": 1638,
-          "processing_time_s": 3.1020290939995903,
+          "processing_time_s": 2.6409321959999943,
           "bbox": {
             "left": 623,
             "top": 700,
@@ -87,7 +87,7 @@
       ],
       "page_quality": "excellent",
       "page_confidence_mean": 93.85714285714286,
-      "processing_time_s": 3.2461040769994725,
+      "processing_time_s": 2.746367024000392,
       "config_used": null,
       "warnings": []
     },
@@ -101,7 +101,7 @@
           "confidence": 90.13636363636364,
           "word_count": 44,
           "char_count": 271,
-          "processing_time_s": 1.4121746290002193,
+          "processing_time_s": 0.9399918059998527,
           "bbox": {
             "left": 763,
             "top": 523,
@@ -114,7 +114,7 @@
       ],
       "page_quality": "excellent",
       "page_confidence_mean": 90.13636363636364,
-      "processing_time_s": 1.5885362889994212,
+      "processing_time_s": 1.0344992609998371,
       "config_used": null,
       "warnings": []
     },
@@ -128,7 +128,7 @@
           "confidence": 94.51890756302521,
           "word_count": 476,
           "char_count": 2992,
-          "processing_time_s": 4.4184550290001425,
+          "processing_time_s": 4.334692121000444,
           "bbox": {
             "left": 487,
             "top": 523,
@@ -141,7 +141,7 @@
       ],
       "page_quality": "excellent",
       "page_confidence_mean": 94.51890756302521,
-      "processing_time_s": 4.486395165000431,
+      "processing_time_s": 4.3949159889998555,
       "config_used": null,
       "warnings": []
     },
@@ -155,7 +155,7 @@
           "confidence": 94.11785714285715,
           "word_count": 280,
           "char_count": 1803,
-          "processing_time_s": 2.340541067000231,
+          "processing_time_s": 2.4266882689998965,
           "bbox": {
             "left": 421,
             "top": 839,
@@ -171,7 +171,7 @@
           "confidence": 91.77173913043478,
           "word_count": 276,
           "char_count": 1834,
-          "processing_time_s": 2.5540029219991993,
+          "processing_time_s": 2.5935758010000427,
           "bbox": {
             "left": 902,
             "top": 840,
@@ -184,7 +184,7 @@
       ],
       "page_quality": "excellent",
       "page_confidence_mean": 92.94479813664597,
-      "processing_time_s": 4.955381777000184,
+      "processing_time_s": 5.074259165000512,
       "config_used": null,
       "warnings": []
     }
@@ -197,8 +197,8 @@
     "total_words": 1386,
     "total_characters": 9012,
     "average_confidence": 89.55860098917151,
-    "total_processing_time_s": 10.89946925500044,
-    "pages_per_second": 0.5504855199483525,
+    "total_processing_time_s": 10.508532771999853,
+    "pages_per_second": 0.5709645799446991,
     "quality_distribution": {
       "excellent": 6
     },
@@ -220,5 +220,5 @@
     "mode": "parallel",
     "llm_ready": true
   },
-  "created_at": "2026-02-16T19:47:02.214104"
+  "created_at": "2026-02-16T20:08:32.943144Z"
 }

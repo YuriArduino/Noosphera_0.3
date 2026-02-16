@@ -20,7 +20,7 @@
           "confidence": 88.0,
           "word_count": 6,
           "char_count": 58,
-          "processing_time_s": 0.510911852999925,
+          "processing_time_s": 0.48442208400047093,
           "bbox": {
             "left": 365,
             "top": 270,
@@ -33,7 +33,7 @@
       ],
       "page_quality": "fair",
       "page_confidence_mean": 88.0,
-      "processing_time_s": 0.590463546999672,
+      "processing_time_s": 0.5733861480002815,
       "config_used": null,
       "warnings": []
     },
@@ -47,7 +47,7 @@
           "confidence": 94.20670391061452,
           "word_count": 358,
           "char_count": 2124,
-          "processing_time_s": 3.4089499259998775,
+          "processing_time_s": 3.475296214000082,
           "bbox": {
             "left": 237,
             "top": 202,
@@ -60,7 +60,7 @@
       ],
       "page_quality": "excellent",
       "page_confidence_mean": 94.20670391061452,
-      "processing_time_s": 3.4934018479998485,
+      "processing_time_s": 3.543674990999534,
       "config_used": null,
       "warnings": []
     },
@@ -74,7 +74,7 @@
           "confidence": 95.01659751037344,
           "word_count": 482,
           "char_count": 3046,
-          "processing_time_s": 4.484007210000527,
+          "processing_time_s": 4.544538664000356,
           "bbox": {
             "left": 237,
             "top": 196,
@@ -87,7 +87,7 @@
       ],
       "page_quality": "excellent",
       "page_confidence_mean": 95.01659751037344,
-      "processing_time_s": 4.571518046000165,
+      "processing_time_s": 4.627637052999489,
       "config_used": null,
       "warnings": []
     }
@@ -100,8 +100,8 @@
     "total_words": 846,
     "total_characters": 5228,
     "average_confidence": 92.40776714032933,
-    "total_processing_time_s": 4.573714318000384,
-    "pages_per_second": 0.6559220343503204,
+    "total_processing_time_s": 4.631991051000114,
+    "pages_per_second": 0.647669645076766,
     "quality_distribution": {
       "fair": 1,
       "excellent": 2
@@ -124,5 +124,5 @@
     "mode": "parallel",
     "llm_ready": true
   },
-  "created_at": "2026-02-16T19:46:50.455532"
+  "created_at": "2026-02-16T20:08:21.683751Z"
 }

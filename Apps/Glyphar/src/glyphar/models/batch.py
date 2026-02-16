@@ -9,7 +9,7 @@ Enables:
 """
 
 from typing import List, Optional
-from datetime import datetime
+from datetime import datetime, timezone
 from pydantic import BaseModel, Field, ConfigDict
 from .config import OCRConfig
 from .output import OCROutput
@@ -56,7 +56,7 @@ class BatchTask(BaseModel):
     error: Optional[str] = Field(None, description="Error message on failure")
 
     created_at: datetime = Field(
-        default_factory=lambda: datetime.now(datetime.timezone.utc)
+        default_factory=lambda: datetime.now(timezone.utc)
     )
     started_at: Optional[datetime] = None
     finished_at: Optional[datetime] = None
