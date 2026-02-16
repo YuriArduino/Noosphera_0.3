@@ -14,8 +14,8 @@ Design constraints:
 import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from typing import List, Any, Tuple, Callable
-from models.page import PageResult
-from core.fallback import create_fallback_page
+from ..models.page import PageResult
+from .fallback import create_fallback_page
 
 
 def run_sequential(
@@ -52,7 +52,7 @@ def run_sequential(
         try:
             result = page_processor.process(img, i)
             results.append(result)
-        except RuntimeError as e:
+        except Exception as e:  # pylint: disable=broad-exception-caught
             print(f"      ⚠️  Página {i} falhou: {str(e)[:80]}...")
             results.append(create_fallback_page(i))
 
@@ -119,7 +119,7 @@ def run_parallel(
                 try:
                     result = future.result()
                     batch_results.append(result)
-                except BrokenPipeError as e:
+                except Exception as e:  # pylint: disable=broad-exception-caught
                     print(f"      ❌ Página {page_number} falhou: {str(e)[:80]}...")
                     batch_results.append(create_fallback_page(page_number))
 

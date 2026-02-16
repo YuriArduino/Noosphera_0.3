@@ -7,7 +7,7 @@ Enables format-agnostic pipeline consumption (PDFs, images treated identically).
 
 from pathlib import Path
 from typing import List, Any
-from file_io.readers import PDFReader, ImageReader
+from ..file_io.readers import PDFReader, ImageReader
 
 
 def read_pages(file_reader, path: Path) -> List[Any]:

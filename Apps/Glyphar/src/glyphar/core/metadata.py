@@ -7,7 +7,7 @@ No heavy processing — pure metadata extraction.
 
 from pathlib import Path
 from datetime import datetime
-from models.file import FileMetadata
+from ..models.file import FileMetadata
 
 
 def extract_file_metadata(path: Path, pages_count: int | None = None) -> FileMetadata:

@@ -7,16 +7,16 @@ Encapsulates complete pipeline configuration and execution.
 
 from typing import List, Optional
 
-from engines.base import OCREngine
-from layout.base import LayoutDetector
-from preprocessing.base import PreprocessingStrategy
-from file_io.base import FileReader
+from ..engines.base import OCREngine
+from ..layout.base import LayoutDetector
+from ..preprocessing.base import PreprocessingStrategy
+from ..file_io.base import FileReader
 
-from models.config import OCRConfig
-from models.output import OCROutput
+from ..models.config import OCRConfig
+from ..models.output import OCROutput
 
-from core.page_processor import PageProcessor
-from core.file_processor import FileProcessor
+from .page_processor import PageProcessor
+from .file_processor import FileProcessor
 
 
 class OCRPipeline:

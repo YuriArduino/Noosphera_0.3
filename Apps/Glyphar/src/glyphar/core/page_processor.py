@@ -6,14 +6,14 @@ execution for a single document page. Stateless design enables parallelization.
 """
 
 import time
-from typing import Any, List
+from typing import Any, List, Mapping
 import numpy as np
 
-from models.page import PageResult
-from models.column import ColumnResult
+from ..models.page import PageResult
+from ..models.column import ColumnResult
 
-from analysis.quality_assessor import QualityAssessor
-from optimization.config_optimizer import ConfigOptimizer
+from ..analysis.quality_assessor import QualityAssessor
+from ..optimization.config_optimizer import ConfigOptimizer
 
 
 class PageProcessor:
@@ -42,7 +42,7 @@ class PageProcessor:
         layout_detector,
         preprocessing_strategies=None,  # pylint: disable=unused-argument
         min_confidence: float = 30.0,
-    ):
+    ) -> None:
         """
         Initialize page processor with required dependencies.
 
@@ -97,7 +97,7 @@ class PageProcessor:
                 )
                 columns.append(column)
                 confidences.append(column.confidence)
-            except RuntimeError:
+            except (RuntimeError, ValueError, TypeError, KeyError):
                 # Isolated region failure — continue processing other regions
                 columns.append(
                     ColumnResult(
@@ -127,9 +127,9 @@ class PageProcessor:
     def _process_region(
         self,
         image: Any,
-        region: dict,
+        region: Mapping[str, Any],
         layout_type: str,
-        quality_metrics: dict,
+        quality_metrics: Mapping[str, Any],
     ) -> ColumnResult:
         """Process single region with optimal OCR configuration."""
         region_img = self._extract_region(image, region)
@@ -140,30 +140,40 @@ class PageProcessor:
             quality_metrics=quality_metrics,
         )
 
+        text = str(ocr_result.get("text", ""))
+        confidence = float(ocr_result.get("confidence", 0.0))
+        words = ocr_result.get("words", [])
+        if not isinstance(words, list):
+            words = []
+
         config_used = ocr_result.get("config_used")
         if not isinstance(config_used, str):
             config_used = str(config_used) if config_used is not None else "unknown"
 
+        word_count = int(ocr_result.get("word_count", len(words)))
+        char_count = int(ocr_result.get("char_count", len(text)))
+        processing_time_s = float(ocr_result.get("time_s", 0.0))
+
         return ColumnResult(
             col_index=region["col_index"],
-            text=ocr_result["text"],
-            confidence=ocr_result["confidence"],
-            word_count=ocr_result["word_count"],
-            char_count=ocr_result["char_count"],
-            processing_time_s=ocr_result["time_s"],
+            text=text,
+            confidence=confidence,
+            word_count=word_count,
+            char_count=char_count,
+            processing_time_s=processing_time_s,
             bbox=self._safe_bbox(region),
             region_id=region.get("id"),
-            config_used=ocr_result.get("config_used"),
+            config_used=config_used,
         )
 
     @staticmethod
-    def _extract_region(image: Any, region: dict) -> Any:
+    def _extract_region(image: Any, region: Mapping[str, Any]) -> Any:
         """Extract region subimage using bounding box coordinates."""
         x, y, w, h = region["x"], region["y"], region["w"], region["h"]
         return image[y : y + h, x : x + w]
 
     @staticmethod
-    def _safe_bbox(region: dict):
+    def _safe_bbox(region: Mapping[str, Any]):
         """Return valid bbox dict or None if dimensions invalid."""
         if region.get("w", 0) > 0 and region.get("h", 0) > 0:
             return {

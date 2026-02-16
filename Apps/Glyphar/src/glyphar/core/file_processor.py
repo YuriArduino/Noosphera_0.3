@@ -6,14 +6,13 @@ Handles file I/O, parallelization strategy selection, and result aggregation.
 """
 
 from pathlib import Path
-from typing import Optional
+from typing import Any, Optional
 import time
 
-
-from core.metadata import extract_file_metadata
-from core.io_manager import make_default_reader, read_pages
-from models.config import OCRConfig
-from models.output import OCROutput
+from .metadata import extract_file_metadata
+from .io_manager import make_default_reader, read_pages
+from ..models.config import OCRConfig
+from ..models.output import OCROutput
 from .stats import calculate_statistics
 
 from .runner import run_sequential, run_parallel
@@ -43,11 +42,11 @@ class FileProcessor:
 
     def __init__(
         self,
-        page_processor,
-        file_reader=None,
+        page_processor: Any,
+        file_reader: Any = None,
         config: Optional[OCRConfig] = None,
         include_llm_input: bool = False,
-    ):
+    ) -> None:
         """
         Initialize file processor with dependencies.
 

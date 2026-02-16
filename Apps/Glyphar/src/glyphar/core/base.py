@@ -6,8 +6,8 @@ All other core modules are implementation details — consumers should
 import ONLY from this module or top-level glyphar package.
 """
 
-from core.file_processor import FileProcessor
-from core.page_processor import PageProcessor
+from .file_processor import FileProcessor
+from .page_processor import PageProcessor
 from .pipeline import OCRPipeline
 
 
