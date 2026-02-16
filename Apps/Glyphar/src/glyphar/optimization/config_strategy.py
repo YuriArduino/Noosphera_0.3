@@ -24,7 +24,6 @@ while preserving deterministic behavior.
 
 from dataclasses import dataclass
 from typing import Any, Mapping
-from typing import Any, Mapping
 
 
 @dataclass(frozen=True)
@@ -134,7 +133,6 @@ class ConfigStrategy:
 
     @staticmethod
     def decide(layout_type: Any, quality: Mapping[str, Any]) -> EngineConfig:
-    def decide(layout_type: Any, quality: Mapping[str, Any]) -> EngineConfig:
         """
         Select optimal engine configuration based on document characteristics.
 
@@ -172,7 +170,6 @@ class ConfigStrategy:
         ):
             return EngineConfig(
                 pre_type="gray",
-                psm=3 if normalized_layout == "single" else 4,
                 psm=3 if normalized_layout == "single" else 4,
                 scale=1.0,
                 oem=1,  # Fast mode (clean PDFs)
@@ -212,7 +209,6 @@ class ConfigStrategy:
             return EngineConfig(
                 pre_type="otsu",
                 psm=11 if normalized_layout != "single" else 3,
-                psm=11 if normalized_layout != "single" else 3,
                 scale=1.2,
                 oem=2,  # Balanced
             )
@@ -222,7 +218,6 @@ class ConfigStrategy:
         # ------------------------------------------------------------------
         return EngineConfig(
             pre_type="gray",
-            psm=3 if normalized_layout == "single" else 4,
             psm=3 if normalized_layout == "single" else 4,
             scale=1.0,
             oem=2,
