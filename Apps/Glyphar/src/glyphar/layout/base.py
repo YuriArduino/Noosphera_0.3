@@ -8,6 +8,11 @@ reuse across pipeline stages without side effects.
 from abc import ABC, abstractmethod
 from typing import Any, Dict
 
+import numpy as np
+import numpy.typing as npt
+
+UInt8Image = npt.NDArray[np.uint8]
+
 
 class LayoutDetector(ABC):
     """
@@ -26,12 +31,12 @@ class LayoutDetector(ABC):
     """
 
     @abstractmethod
-    def detect(self, image: Any) -> Dict[str, Any]:
+    def detect(self, image: UInt8Image) -> Dict[str, Any]:
         """
         Analyze document image and return layout structure.
 
         Args:
-            image: Input image (numpy array, BGR or grayscale).
+            image: Input image in `numpy.ndarray[np.uint8]` format (BGR or grayscale).
 
         Returns:
             Dict with keys:
