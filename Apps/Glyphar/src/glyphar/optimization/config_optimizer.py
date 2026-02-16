@@ -14,7 +14,7 @@ Critical constraint:
 from __future__ import annotations
 
 import time
-from typing import Dict, Any
+from typing import Any, Dict, Mapping, Protocol
 
 import numpy as np
 import numpy.typing as npt
@@ -26,6 +26,13 @@ from .image_preprocessor import ImagePreprocessor
 UInt8Image = npt.NDArray[np.uint8]
 
 
+class OCREngineProtocol(Protocol):
+    """Structural OCR engine contract used by ConfigOptimizer."""
+
+    def recognize(self, image: UInt8Image, config: Mapping[str, Any]) -> Dict[str, Any]:
+        """Run OCR and return a normalized result dictionary."""
+
+
 class ConfigOptimizer:
     """
     Adaptive OCR execution orchestrator.
@@ -34,7 +41,7 @@ class ConfigOptimizer:
     to maximize accuracy while respecting quality constraints.
     """
 
-    def __init__(self, engine) -> None:
+    def __init__(self, engine: OCREngineProtocol) -> None:
         """
         Args:
             engine:
@@ -75,7 +82,7 @@ class ConfigOptimizer:
         self,
         image: UInt8Image,
         layout_type: str,
-        quality_metrics: Dict[str, float | bool],
+        quality_metrics: Mapping[str, Any],
     ) -> Dict[str, Any]:
         """
         Execute OCR with context-aware optimal configuration.
@@ -199,7 +206,7 @@ class ConfigOptimizer:
                 "config_used": self._serialize_config(engine_config),
             }
 
-        except RuntimeError as error:
+        except (RuntimeError, ValueError, TypeError) as error:
             # Fallback using original image copy
             fallback_result = self.engine.recognize(
                 original_image.copy(),
