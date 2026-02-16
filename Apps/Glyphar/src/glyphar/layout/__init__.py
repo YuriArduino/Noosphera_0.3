@@ -8,8 +8,8 @@ Public API:
     - LayoutType: Enum (SINGLE, DOUBLE, MULTI, COMPLEX)
 """
 
-from layout.base import LayoutDetector
-from models.enums import LayoutType
+from glyphar.layout.base import LayoutDetector
+from glyphar.models.enums import LayoutType
 from .column_detector import ColumnLayoutDetector
 from .advanced_detector import AdvancedLayoutDetector
 

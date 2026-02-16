@@ -18,8 +18,8 @@ when initial OCR shows column merging artifacts.
 from typing import Any, Dict, List
 import cv2
 import numpy as np
-from layout.base import LayoutDetector
-from models.enums import LayoutType
+from glyphar.layout.base import LayoutDetector
+from glyphar.models.enums import LayoutType
 
 
 class AdvancedLayoutDetector(LayoutDetector):

@@ -21,8 +21,8 @@ Performance: 1.8ms ± 0.3ms per page (2000px width, Intel i7)
 from typing import Any, Dict, Tuple
 import cv2
 import numpy as np
-from layout.base import LayoutDetector
-from models.enums import LayoutType
+from glyphar.layout.base import LayoutDetector
+from glyphar.models.enums import LayoutType
 
 
 class ColumnLayoutDetector(LayoutDetector):
