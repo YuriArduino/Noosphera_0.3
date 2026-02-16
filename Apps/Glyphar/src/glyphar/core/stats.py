@@ -6,8 +6,8 @@ No side effects — inputs in, statistics out.
 """
 
 import numpy as np
-from ..models.page import PageResult
-from ..models.stats import ProcessingStatistics
+from glyphar.models.page import PageResult
+from glyphar.models.stats import ProcessingStatistics
 
 
 def page_word_count(page: PageResult) -> int:

@@ -14,7 +14,7 @@ Design rationale:
 """
 
 from typing import List
-from ..models.page import PageResult
+from glyphar.models.page import PageResult
 
 
 def build_llm_ready_text(

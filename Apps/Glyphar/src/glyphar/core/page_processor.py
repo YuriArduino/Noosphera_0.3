@@ -9,11 +9,11 @@ import time
 from typing import Any, List, Mapping
 import numpy as np
 
-from ..models.page import PageResult
-from ..models.column import ColumnResult
+from glyphar.models.page import PageResult
+from glyphar.models.column import ColumnResult
 
-from ..analysis.quality_assessor import QualityAssessor
-from ..optimization.config_optimizer import ConfigOptimizer
+from glyphar.analysis.quality_assessor import QualityAssessor
+from glyphar.optimization.config_optimizer import ConfigOptimizer
 
 
 class PageProcessor:

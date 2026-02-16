@@ -14,8 +14,8 @@ Design constraints:
 import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from typing import List, Any, Tuple, Callable
-from ..models.page import PageResult
-from .fallback import create_fallback_page
+from glyphar.models.page import PageResult
+from glyphar.core.fallback import create_fallback_page
 
 
 def run_sequential(

@@ -5,8 +5,8 @@ Provides safe defaults when page processing encounters unrecoverable errors.
 Ensures pipeline always returns valid (though degraded) output for LLM correction.
 """
 
-from ..models.page import PageResult
-from ..models.enums import LayoutType
+from glyphar.models.page import PageResult
+from glyphar.models.enums import LayoutType
 
 
 def create_fallback_page(page_number: int) -> PageResult:

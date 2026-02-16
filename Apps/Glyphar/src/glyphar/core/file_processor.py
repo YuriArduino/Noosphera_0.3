@@ -11,8 +11,8 @@ import time
 
 from .metadata import extract_file_metadata
 from .io_manager import make_default_reader, read_pages
-from ..models.config import OCRConfig
-from ..models.output import OCROutput
+from glyphar.models.config import OCRConfig
+from glyphar.models.output import OCROutput
 from .stats import calculate_statistics
 
 from .runner import run_sequential, run_parallel

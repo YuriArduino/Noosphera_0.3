@@ -7,13 +7,13 @@ Encapsulates complete pipeline configuration and execution.
 
 from typing import List, Optional
 
-from ..engines.base import OCREngine
-from ..layout.base import LayoutDetector
-from ..preprocessing.base import PreprocessingStrategy
-from ..file_io.base import FileReader
+from glyphar.engines.base import OCREngine
+from glyphar.layout.base import LayoutDetector
+from glyphar.preprocessing.base import PreprocessingStrategy
+from glyphar.file_io.base import FileReader
 
-from ..models.config import OCRConfig
-from ..models.output import OCROutput
+from glyphar.models.config import OCRConfig
+from glyphar.models.output import OCROutput
 
 from .page_processor import PageProcessor
 from .file_processor import FileProcessor
