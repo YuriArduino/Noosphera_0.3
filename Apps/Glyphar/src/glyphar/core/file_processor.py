@@ -6,11 +6,13 @@ Handles file I/O, parallelization strategy selection, and result aggregation.
 """
 
 from pathlib import Path
+from collections import Counter
 from typing import Any, Optional
 import time
 
 from glyphar.models.config import OCRConfig
 from glyphar.models.output import OCROutput
+from glyphar.models.enums import PageQuality
 from .metadata import extract_file_metadata
 from .io_manager import make_default_reader, read_pages
 from .stats import calculate_statistics
@@ -116,10 +118,17 @@ class FileProcessor:
 
         # Compute statistics
         confidences = [p.page_confidence_mean for p in pages_results]
+        quality_distribution = {
+            quality: count
+            for quality, count in Counter(
+                page.page_quality for page in pages_results
+            ).items()
+            if isinstance(quality, PageQuality)
+        }
         stats = calculate_statistics(
             pages_results=pages_results,
             confidences=confidences,
-            quality_distribution={},
+            quality_distribution=quality_distribution,
             _start_time=start_time,
             elapsed=elapsed,
             min_confidence=self.config.min_confidence,

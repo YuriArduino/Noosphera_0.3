@@ -20,19 +20,19 @@
           "confidence": 71.53846153846153,
           "word_count": 13,
           "char_count": 78,
-          "processing_time_s": 1.0788085619997219,
+          "processing_time_s": 0.9995872509998662,
           "bbox": {
-            "x": 0,
-            "y": 0,
-            "w": 1267,
-            "h": 1812
+            "left": 53,
+            "top": 22,
+            "width": 1148,
+            "height": 1764
           },
-          "region_id": null,
+          "region_id": "col1_0_0_1267_1812",
           "config_used": "gray_psm3_scale1.0_oem1"
         }
       ],
       "page_confidence_mean": 71.53846153846153,
-      "processing_time_s": 1.1101040849998753,
+      "processing_time_s": 1.0386972979995335,
       "config_used": null,
       "warnings": []
     },
@@ -46,19 +46,19 @@
           "confidence": 94.35593220338983,
           "word_count": 59,
           "char_count": 396,
-          "processing_time_s": 1.0250997530001769,
+          "processing_time_s": 1.1047030429999722,
           "bbox": {
-            "x": 0,
-            "y": 0,
-            "w": 1856,
-            "h": 2539
+            "left": 660,
+            "top": 524,
+            "width": 537,
+            "height": 1831
           },
-          "region_id": null,
+          "region_id": "col1_0_0_1856_2539",
           "config_used": "gray_psm3_scale1.0_oem1"
         }
       ],
       "page_confidence_mean": 94.35593220338983,
-      "processing_time_s": 1.1090292069993666,
+      "processing_time_s": 1.1904390259996944,
       "config_used": null,
       "warnings": []
     },
@@ -72,19 +72,19 @@
           "confidence": 93.85714285714286,
           "word_count": 238,
           "char_count": 1638,
-          "processing_time_s": 2.6160597370007963,
+          "processing_time_s": 2.734322835999592,
           "bbox": {
-            "x": 0,
-            "y": 0,
-            "w": 1856,
-            "h": 2539
+            "left": 623,
+            "top": 700,
+            "width": 611,
+            "height": 1655
           },
-          "region_id": null,
+          "region_id": "col1_0_0_1856_2539",
           "config_used": "gray_psm3_scale1.0_oem1"
         }
       ],
       "page_confidence_mean": 93.85714285714286,
-      "processing_time_s": 2.7234491259996503,
+      "processing_time_s": 2.836684791999687,
       "config_used": null,
       "warnings": []
     },
@@ -98,19 +98,19 @@
           "confidence": 90.13636363636364,
           "word_count": 44,
           "char_count": 271,
-          "processing_time_s": 0.9381625199994232,
+          "processing_time_s": 1.0939635139993698,
           "bbox": {
-            "x": 0,
-            "y": 0,
-            "w": 1856,
-            "h": 2539
+            "left": 763,
+            "top": 523,
+            "width": 459,
+            "height": 1832
           },
-          "region_id": null,
+          "region_id": "col1_0_0_1856_2539",
           "config_used": "gray_psm3_scale1.0_oem1"
         }
       ],
       "page_confidence_mean": 90.13636363636364,
-      "processing_time_s": 1.0423029779994977,
+      "processing_time_s": 1.2030456100001174,
       "config_used": null,
       "warnings": []
     },
@@ -124,19 +124,19 @@
           "confidence": 94.51890756302521,
           "word_count": 476,
           "char_count": 2992,
-          "processing_time_s": 4.321415705000618,
+          "processing_time_s": 4.175262343000213,
           "bbox": {
-            "x": 0,
-            "y": 0,
-            "w": 1856,
-            "h": 2539
+            "left": 487,
+            "top": 523,
+            "width": 882,
+            "height": 1832
           },
-          "region_id": null,
+          "region_id": "col1_0_0_1856_2539",
           "config_used": "gray_psm3_scale1.0_oem1"
         }
       ],
       "page_confidence_mean": 94.51890756302521,
-      "processing_time_s": 4.382460351999725,
+      "processing_time_s": 4.236309666000125,
       "config_used": null,
       "warnings": []
     },
@@ -150,14 +150,14 @@
           "confidence": 94.11785714285715,
           "word_count": 280,
           "char_count": 1803,
-          "processing_time_s": 2.2729428569991796,
+          "processing_time_s": 2.378874955000356,
           "bbox": {
-            "x": 0,
-            "y": 0,
-            "w": 902,
-            "h": 2539
+            "left": 421,
+            "top": 839,
+            "width": 481,
+            "height": 1516
           },
-          "region_id": null,
+          "region_id": "col1_0_0_902_2539",
           "config_used": "gray_psm4_scale1.0_oem1"
         },
         {
@@ -166,19 +166,19 @@
           "confidence": 91.77173913043478,
           "word_count": 276,
           "char_count": 1834,
-          "processing_time_s": 2.452237511000021,
+          "processing_time_s": 2.663642582000648,
           "bbox": {
-            "x": 902,
-            "y": 0,
-            "w": 954,
-            "h": 2539
+            "left": 902,
+            "top": 840,
+            "width": 533,
+            "height": 1515
           },
-          "region_id": null,
+          "region_id": "col2_902_0_954_2539",
           "config_used": "gray_psm4_scale1.0_oem1"
         }
       ],
       "page_confidence_mean": 92.94479813664597,
-      "processing_time_s": 4.77890483200008,
+      "processing_time_s": 5.0920956300005855,
       "config_used": null,
       "warnings": []
     }
@@ -191,8 +191,8 @@
     "total_words": 1386,
     "total_characters": 9012,
     "average_confidence": 89.55860098917151,
-    "total_processing_time_s": 10.207406972000172,
-    "pages_per_second": 0.5878084430706579,
+    "total_processing_time_s": 10.368202363999444,
+    "pages_per_second": 0.5786924087084998,
     "quality_distribution": {},
     "low_confidence_pages": []
   },
@@ -212,5 +212,5 @@
     "mode": "parallel",
     "llm_ready": true
   },
-  "created_at": "2026-02-16T19:30:50.104964"
+  "created_at": "2026-02-16T19:43:02.136315"
 }

@@ -20,19 +20,19 @@
           "confidence": 88.0,
           "word_count": 6,
           "char_count": 58,
-          "processing_time_s": 0.6743511399999988,
+          "processing_time_s": 0.562556351999774,
           "bbox": {
-            "x": 0,
-            "y": 0,
-            "w": 1700,
-            "h": 2200
+            "left": 365,
+            "top": 270,
+            "width": 970,
+            "height": 904
           },
-          "region_id": null,
+          "region_id": "col1_0_0_1700_2200",
           "config_used": "gray_psm3_scale1.0_oem2"
         }
       ],
       "page_confidence_mean": 88.0,
-      "processing_time_s": 0.7809535360001973,
+      "processing_time_s": 0.6353338469998562,
       "config_used": null,
       "warnings": []
     },
@@ -46,19 +46,19 @@
           "confidence": 94.20670391061452,
           "word_count": 358,
           "char_count": 2124,
-          "processing_time_s": 3.4791194039999027,
+          "processing_time_s": 3.449181304999911,
           "bbox": {
-            "x": 0,
-            "y": 0,
-            "w": 1700,
-            "h": 2200
+            "left": 237,
+            "top": 202,
+            "width": 1226,
+            "height": 1757
           },
-          "region_id": null,
+          "region_id": "col1_0_0_1700_2200",
           "config_used": "gray_psm3_scale1.0_oem1"
         }
       ],
       "page_confidence_mean": 94.20670391061452,
-      "processing_time_s": 3.5907758589992227,
+      "processing_time_s": 3.529931647000012,
       "config_used": null,
       "warnings": []
     },
@@ -72,19 +72,19 @@
           "confidence": 95.01659751037344,
           "word_count": 482,
           "char_count": 3046,
-          "processing_time_s": 4.526171453000643,
+          "processing_time_s": 4.574308373000349,
           "bbox": {
-            "x": 0,
-            "y": 0,
-            "w": 1700,
-            "h": 2200
+            "left": 237,
+            "top": 196,
+            "width": 1229,
+            "height": 1805
           },
-          "region_id": null,
+          "region_id": "col1_0_0_1700_2200",
           "config_used": "gray_psm3_scale1.0_oem1"
         }
       ],
       "page_confidence_mean": 95.01659751037344,
-      "processing_time_s": 4.644937028999266,
+      "processing_time_s": 4.663521415999639,
       "config_used": null,
       "warnings": []
     }
@@ -97,8 +97,8 @@
     "total_words": 846,
     "total_characters": 5228,
     "average_confidence": 92.40776714032933,
-    "total_processing_time_s": 4.647194932000275,
-    "pages_per_second": 0.6455507126120748,
+    "total_processing_time_s": 4.665904204000071,
+    "pages_per_second": 0.642962193143208,
     "quality_distribution": {},
     "low_confidence_pages": []
   },
@@ -118,5 +118,5 @@
     "mode": "parallel",
     "llm_ready": true
   },
-  "created_at": "2026-02-16T19:30:39.135234"
+  "created_at": "2026-02-16T19:42:50.984587"
 }

@@ -11,6 +11,7 @@ import numpy as np
 
 from glyphar.models.page import PageResult
 from glyphar.models.column import ColumnResult
+from glyphar.models.enums import PageQuality
 
 from glyphar.analysis.quality_assessor import QualityAssessor
 from glyphar.optimization.config_optimizer import ConfigOptimizer
@@ -77,6 +78,7 @@ class PageProcessor:
 
         # Stage 1: Quality assessment
         quality_metrics = self.quality_assessor.assess(image)
+        page_quality = self._classify_page_quality(quality_metrics)
 
         # Stage 2: Layout detection
         layout = self.layout_detector.detect(image)
@@ -119,6 +121,7 @@ class PageProcessor:
             page_number=page_number,
             layout_type=layout_type,
             columns=columns,
+            page_quality=page_quality,
             page_confidence_mean=float(np.mean(confidences)) if confidences else 0.0,
             processing_time_s=time.perf_counter() - t0,
             config_used=None,
@@ -161,7 +164,7 @@ class PageProcessor:
             word_count=word_count,
             char_count=char_count,
             processing_time_s=processing_time_s,
-            bbox=self._safe_bbox(region),
+            bbox=self._resolve_bbox(region, words),
             region_id=self._region_id(region),
             config_used=config_used,
         )
@@ -173,7 +176,7 @@ class PageProcessor:
         return image[y : y + h, x : x + w]
 
     @staticmethod
-    def _safe_bbox(region: Mapping[str, Any]):
+    def _safe_bbox(region: Mapping[str, Any]) -> dict[str, int] | None:
         """Return valid bbox dict or None if dimensions invalid."""
         if region.get("w", 0) > 0 and region.get("h", 0) > 0:
             x = int(region["x"])
@@ -181,16 +184,10 @@ class PageProcessor:
             w = int(region["w"])
             h = int(region["h"])
             return {
-                # Canonical keys aligned with engine word bbox format.
                 "left": x,
                 "top": y,
                 "width": w,
                 "height": h,
-                # Backward-compatible aliases used by existing layout modules.
-                "x": x,
-                "y": y,
-                "w": w,
-                "h": h,
             }
         return None
 
@@ -207,3 +204,88 @@ class PageProcessor:
         w = int(region.get("w", 0))
         h = int(region.get("h", 0))
         return f"col{col}_{x}_{y}_{w}_{h}"
+
+    @staticmethod
+    def _resolve_bbox(
+        region: Mapping[str, Any],
+        words: List[Any],
+    ) -> dict[str, int] | None:
+        """
+        Resolve output bbox using OCR content when available.
+
+        Priority:
+            1) Union of word boxes (absolute page coordinates)
+            2) Region bounding box fallback
+        """
+        if words:
+            x0 = int(region.get("x", 0))
+            y0 = int(region.get("y", 0))
+
+            abs_lefts: List[int] = []
+            abs_tops: List[int] = []
+            abs_rights: List[int] = []
+            abs_bottoms: List[int] = []
+
+            for item in words:
+                if not isinstance(item, Mapping):
+                    continue
+                bbox = item.get("bbox")
+                if not isinstance(bbox, Mapping):
+                    continue
+
+                left = bbox.get("left", bbox.get("x"))
+                top = bbox.get("top", bbox.get("y"))
+                width = bbox.get("width", bbox.get("w"))
+                height = bbox.get("height", bbox.get("h"))
+                if left is None or top is None or width is None or height is None:
+                    continue
+
+                left_i = int(left)
+                top_i = int(top)
+                width_i = int(width)
+                height_i = int(height)
+                if width_i <= 0 or height_i <= 0:
+                    continue
+
+                abs_left = x0 + left_i
+                abs_top = y0 + top_i
+                abs_right = abs_left + width_i
+                abs_bottom = abs_top + height_i
+
+                abs_lefts.append(abs_left)
+                abs_tops.append(abs_top)
+                abs_rights.append(abs_right)
+                abs_bottoms.append(abs_bottom)
+
+            if abs_lefts:
+                min_left = min(abs_lefts)
+                min_top = min(abs_tops)
+                max_right = max(abs_rights)
+                max_bottom = max(abs_bottoms)
+                return {
+                    "left": min_left,
+                    "top": min_top,
+                    "width": max_right - min_left,
+                    "height": max_bottom - min_top,
+                }
+
+        return PageProcessor._safe_bbox(region)
+
+    @staticmethod
+    def _classify_page_quality(metrics: Mapping[str, Any]) -> PageQuality:
+        """
+        Classify page quality using canonical thresholds from PageQuality docs.
+        """
+        try:
+            sharpness = float(metrics.get("sharpness", 0.0))
+            contrast = float(metrics.get("contrast", 0.0))
+        except (TypeError, ValueError):
+            return PageQuality.UNKNOWN
+
+        if sharpness > 250.0 and contrast > 0.6:
+            return PageQuality.EXCELLENT
+        if sharpness > 150.0 and contrast > 0.4:
+            return PageQuality.GOOD
+        if sharpness > 80.0 and contrast > 0.25:
+            return PageQuality.FAIR
+        return PageQuality.POOR

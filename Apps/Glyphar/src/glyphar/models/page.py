@@ -8,7 +8,7 @@ Represents complete OCR output for a single document page.
 from typing import List, Optional
 from pydantic import BaseModel, Field, ConfigDict
 from .column import ColumnResult
-from .enums import LayoutType
+from .enums import LayoutType, PageQuality
 
 
 class PageResult(BaseModel):
@@ -40,6 +40,7 @@ class PageResult(BaseModel):
     page_number: int = Field(..., ge=1, description="1-based page number")
     layout_type: LayoutType = Field(default=LayoutType.UNKNOWN)
     columns: List[ColumnResult] = Field(default_factory=list)
+    page_quality: PageQuality = Field(default=PageQuality.UNKNOWN)
 
     page_confidence_mean: float = Field(..., ge=0.0, le=100.0)
     processing_time_s: float = Field(..., ge=0.0)
