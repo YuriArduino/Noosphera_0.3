@@ -39,7 +39,11 @@ class ColumnResult(BaseModel):
 
     bbox: Optional[Dict[str, int]] = Field(
         default=None,
-        description="Absolute bounding box {x, y, w, h} in page coordinates",
+        description=(
+            "Absolute bounding box in page coordinates. "
+            "Canonical keys: {left, top, width, height}; "
+            "legacy aliases {x, y, w, h} may be included for compatibility."
+        ),
     )
 
     region_id: Optional[str] = Field(

@@ -1,0 +1,216 @@
+{
+  "file_metadata": {
+    "path": "/media/yuri/Noosphera/Noosphera_0.3/Test/Data/PDF_B_Digital.pdf",
+    "name": "PDF_B_Digital.pdf",
+    "extension": "pdf",
+    "size_bytes": 957465,
+    "created_at": "2026-02-06T16:50:01.322998",
+    "modified_at": "2026-02-06T16:50:01.320006",
+    "hash_sha256": "",
+    "pages_count": 6
+  },
+  "pages": [
+    {
+      "page_number": 1,
+      "layout_type": "single",
+      "columns": [
+        {
+          "col_index": 1,
+          "text": "ELISABETH ROUDINESCO E MICHEL PLON DICIONÁRIO DE PSICANÁLISE Ws Jo eg Àb ZAHAR",
+          "confidence": 71.53846153846153,
+          "word_count": 13,
+          "char_count": 78,
+          "processing_time_s": 1.0788085619997219,
+          "bbox": {
+            "x": 0,
+            "y": 0,
+            "w": 1267,
+            "h": 1812
+          },
+          "region_id": null,
+          "config_used": "gray_psm3_scale1.0_oem1"
+        }
+      ],
+      "page_confidence_mean": 71.53846153846153,
+      "processing_time_s": 1.1101040849998753,
+      "config_used": null,
+      "warnings": []
+    },
+    {
+      "page_number": 2,
+      "layout_type": "single",
+      "columns": [
+        {
+          "col_index": 1,
+          "text": "Elisabeth Roudinesco Michel Plon DICIONÁRIO DE PSICANÁLISE TRADUÇÃO: Vera Ribeiro psicanalista Lucy Magalhães letras neolatinas SUPERVISÃO DA EDIÇÃO BRASILEIRA: Marco Antonio Coutinho Jorge psiquiatra e psicanalista 4 & ZAHAR Dicionário de Psicanálise (PSI) 1º revisão — 13.08.98 2º revisão — 31.08.98 3º revisão — 24.09.98 4º revisão — 29.09.98 — Cad. O Produção: Textos & Formas Para: Ed. Zahar",
+          "confidence": 94.35593220338983,
+          "word_count": 59,
+          "char_count": 396,
+          "processing_time_s": 1.0250997530001769,
+          "bbox": {
+            "x": 0,
+            "y": 0,
+            "w": 1856,
+            "h": 2539
+          },
+          "region_id": null,
+          "config_used": "gray_psm3_scale1.0_oem1"
+        }
+      ],
+      "page_confidence_mean": 94.35593220338983,
+      "processing_time_s": 1.1090292069993666,
+      "config_used": null,
+      "warnings": []
+    },
+    {
+      "page_number": 3,
+      "layout_type": "single",
+      "columns": [
+        {
+          "col_index": 1,
+          "text": "Titulo original: Dictionnaire de la psychanalyse Tradução autorizada da primeira edição francesa publicada em 1997 por Librairie Arthême Fayard, de Paris, França Copyright O 1997, Libraire Arthême Fayard Copyright da edição em língua portuguesa O 1998: Jorge Zahar Editor Ltda. rua México 31 sobreloja 20031-144 Rio de Janeiro, RJ tel.: (21) 2108-0808 / fax: (21) 2108-0800 editora@zahar.com.br www.zahar.com br Nao pode circular em Portugal. Todos os direitos reservados. A reprodução ndo-autorizada desta publicação, no todo ou em parte, constitui violação de direitos autorais (Lei 9.610/98) Este livro, publicado no âmbito do programa de auxílio a publicação, contou com o apoio do Ministério francés das Relações Exteriores, da Embaixada da França no Brasil e da Maison francaise do Rio de Janeiro. Revisão de texto: André Telles Revisão tipográfica: Lincoln Natal Jr. Preparação de bibliografia: Marcela Boechat Preparação de índice: Nelly Telles Capa: Carol Sá CIP-Brasil. Catalogação-na fonte Sindicato Nacional dos Editores de Livros, RJ Roudinesco, Elisabeth, 1944 — R765d Dicionário de psicanálise/Elisabeth Roudinesco, Michel Plon; tradução Vera Ribeiro, Lucy Magalhães; supervisão da edição brasileira Marco Antonio Couti- nho Jorge. — Rio de Janeiro: Zahar, 1998. Tradução de: Dictionnaire de la psychanalyse Inclui bibliografia ISBN 978-85-7110-444-0 1. Psicanálise — Dicionários. I. Plon, Michel. II. Título. CDD: 150.19503 98-1608 CDU: 159.964.2(038) Dicionário de Psicanálise (PSI) 1º revisão — 13.08.98 2º revisão — 31.08.98 3º revisão — 24.09.98 4º revisão — 29.09.98 — Cad. 0 Produção: Textos & Formas Para: Ed. Zahar",
+          "confidence": 93.85714285714286,
+          "word_count": 238,
+          "char_count": 1638,
+          "processing_time_s": 2.6160597370007963,
+          "bbox": {
+            "x": 0,
+            "y": 0,
+            "w": 1856,
+            "h": 2539
+          },
+          "region_id": null,
+          "config_used": "gray_psm3_scale1.0_oem1"
+        }
+      ],
+      "page_confidence_mean": 93.85714285714286,
+      "processing_time_s": 2.7234491259996503,
+      "config_used": null,
+      "warnings": []
+    },
+    {
+      "page_number": 4,
+      "layout_type": "single",
+      "columns": [
+        {
+          "col_index": 1,
+          "text": "SUMÁRIO Prefácio vii Sobre os autores x Agradecimentos xi Nota à edição brasileira xiii Abreviaturas bibliográficas xiii VERBETES — A-Z 1 Cronologia 795 Índice onomástico 831 Índice dos verbetes 865 4º revisão — 29.09.98 — Cad. O Produção: Textos & Formas Para: Ed. Zahar",
+          "confidence": 90.13636363636364,
+          "word_count": 44,
+          "char_count": 271,
+          "processing_time_s": 0.9381625199994232,
+          "bbox": {
+            "x": 0,
+            "y": 0,
+            "w": 1856,
+            "h": 2539
+          },
+          "region_id": null,
+          "config_used": "gray_psm3_scale1.0_oem1"
+        }
+      ],
+      "page_confidence_mean": 90.13636363636364,
+      "processing_time_s": 1.0423029779994977,
+      "config_used": null,
+      "warnings": []
+    },
+    {
+      "page_number": 5,
+      "layout_type": "single",
+      "columns": [
+        {
+          "col_index": 1,
+          "text": "PREFÁCIO O primeiro dicionário de psicanálise, intitulado Handwôrterbuch der Psychoana- lyse, foi elaborado por Richard Sterba, entre 1931 e 1938. Foram publicados cinco fascículos, até o momento em que a ocupação da Áustria pelos nazistas pôs fim ao empreendimento. A intenção era compor um léxico geral dos termos freudianos, um vocabulário mais do que um recenseamento dos conceitos: “Não desconheço, escreveu Freud em uma carta a seu discípulo, que o caminho que parte da letra A e passa por todo o alfabeto é muito longo, e que percorrê-lo significaria para você uma enorme carga de trabalho. Assim, não o faça, a menos que se sinta interna- mente levado a isso. Apenas sob o efeito desse impulso, mas certamente não a partir de uma incitação externa !”! Sem dúvida, Freud sabia melhor que ninguém que um dicionário pode respon- der a um impulso interno, a um desejo, a uma pulsão. Em sua famosa análise do caso Dora (Ida Bauer), ele frisava que um dicionário é sempre objeto de um prazer solitário e proibido, no qual a criança descobre, à revelia dos adultos, a verdade das palavras, a história do mundo ou a geografia do sexo.? Obrigado a se exilar nos Estados Unidos, como a quase totalidade dos psicana- listas europeus de língua alemã, Sterba interrompeu a redação do seu Handwôr- terbuch na letra L, e a impressão do último volume na palavra Grôssenwahn: “Não sei, declarou vinte anos depois em uma carta a Daniel Lagache, se esse termo se refere à minha megalomania ou à de Hitler.” De qualquer forma, o Handwôrterbuch inacabado serviu de modelo para as obras do gênero, todas publicadas na mesma data (1967-1968), em uma época em que o movimento psicanalítico internacional, envolvido em rupturas e dúvidas, experimentava a necessidade de fazer um balanço e recompor, através de um saber comum, a sua unidade perdida. Diversas denominações foram utilizadas: glossário, dicionário, enciclopédia, vocabulário. O Glossary of Psychoanalytic Terms and Concepts (180 verbetes, 70 colabora- dores), obra coletiva publicada sob a égide da poderosa American Psychoanalytic Association (APsaA), expressava a ortodoxia de um freudismo pragmático e medicalizado. Na mesma perspectiva, a Encyclopedia of Psychoanalysis — rea- lizada sob a direção de Ludwig Eidelberg (1898-1970), psicanalista americano nascido na parte polonesa do antigo Império Austro-Húngaro e radicado em Nova York depois de escapar do nazismo — se mostrava mais ambiciosa, ampliando a 1. Sigmund Freud, \"Prefácio ao Dicionário de psicanálise, de Richard Sterba“ (1936), ESB, XXIII, 309; OC, XIX, 287-9; GW, Nachtragsband, 761; SE, XXII, 253. Richard Sterba, Han- dworterbuch der Psychoanalyse, 5 vols., Viena, Intern. Psychoanalytischer Verlag, 1936-1938. 2. Sigmund Freud, “Fragmento da análise de um caso de histeria” (1905), ESB, VII, 5-128. vii Dicionário de Psicanálise (PSI) 1º revisão — 13.08.98 2º revisão — 31.08.98 3º revisão — 24.09.98 4º revisão — 29.09.98 — Cad. O Produção: Textos & Formas Para: Ed. Zahar",
+          "confidence": 94.51890756302521,
+          "word_count": 476,
+          "char_count": 2992,
+          "processing_time_s": 4.321415705000618,
+          "bbox": {
+            "x": 0,
+            "y": 0,
+            "w": 1856,
+            "h": 2539
+          },
+          "region_id": null,
+          "config_used": "gray_psm3_scale1.0_oem1"
+        }
+      ],
+      "page_confidence_mean": 94.51890756302521,
+      "processing_time_s": 4.382460351999725,
+      "config_used": null,
+      "warnings": []
+    },
+    {
+      "page_number": 6,
+      "layout_type": "double",
+      "columns": [
+        {
+          "col_index": 1,
+          "text": "Aberastury, Arminda (1910-1972) psicanalista argentina Pioneira do movimento psicanalítico argen- tino, Arminda Aberastury nasceu em Buenos Aires, em uma família de comerciantes pelo la- do paterno, e de intelectuais pelo lado materno. Seu tio, Maximiliano Aberastury, era um médi- co de renome e seu irmão, Frederico, estudou psiquiatria com Enrique Pichon-Riviêre”, cujos pais se radicaram na Argentina” em 1911 e que se tornou o seu amigo mais próximo. Frederico sofria de psicose” e teve, por várias vezes, surtos delirantes. Sofrendo de melancolia desde a ju- ventude, sua irmã Arminda era uma mulher de grande beleza. Através de Frederico, ficou co- nhecendo Pichon-Riviêre, com quem se casou em 1937. Como este, desejava oferecer à psica- nálise uma nova terra prometida, a fim de sal- vá-la do fascismo que assolava a Europa. Assim, integrou-se ao grupo formado em Buenos Aires por Arnaldo Rascovsky”, Angel Garma”, Marie Langer” e Celes Cárcamo”. Cin- co anos depois, fez sua formação didática com Garma e tornou-se uma das principais figuras da Asociación Psicoanalitica Argentina (APA). Na linha do ensino de Melanie Klein\" (de quem foi a primeira tradutora em língua espanhola) e inspirando-se nos métodos de Sophie Morgen- stern”, desenvolveu a psicanálise de crianças”. Entre 1948 e 1952, dirigiu, no quadro do Ins- tituto de Psicanálise da APA, um seminário sobre esse tema. Formaria uma geração” de analistas de crianças. No congresso de 1957 da International Psychoanalytical Association” (IPA), em Paris, apresentou uma comunicação notável sobre a sucessão dos “estádios” durante os primeiros anos de vida, definindo uma “fase genital primitiva” anterior, no desenvolvimento libidinal, à fase anal. Dicionário ¢ 12 revisão - 2º revisão - 3º revisão - 4º revisão - Produção: Para: Ed. Z",
+          "confidence": 94.11785714285715,
+          "word_count": 280,
+          "char_count": 1803,
+          "processing_time_s": 2.2729428569991796,
+          "bbox": {
+            "x": 0,
+            "y": 0,
+            "w": 902,
+            "h": 2539
+          },
+          "region_id": null,
+          "config_used": "gray_psm4_scale1.0_oem1"
+        },
+        {
+          "col_index": 2,
+          "text": "Com a idade de 62 anos, atingida por uma doença de pele que a desfigurou, Arminda Abe- rastury decidiu dar fim aos seus dias. Seu suici- dio”, como vários outros na história da psicanálise”, suscitou relatos contraditórios e foi considerado uma “morte trágica” pela historiografia” oficial. * Arminda Aberastury, Psicanálise da criança — teoria e técnica (B. Aires, 1962), P. Alegre, Artes Médicas, 1992 + Antonio Cucurullo, Haydée Faimberg e Leonar- do Wender, “La Psychanalyse en Argentine”, in Roland Jaccard (org.), Histoire de la psychanalyse, vol.2, Pa- ris, Hachette, 1982, 395-444 + Elfriede S.L. de Ferrer, “Profesora Arminda Aberastury”, Revista de Psicoand- lisis, 4, t.XXIX, outubro-dezembro de 1972, 679-82 + Jorge Balan, Cuéntame tu vida. Una biografia colectiva del psicoandlisis argentino, B. Aires, Planeta, 1991 + Elisabeth Roudinesco, entrevistacom Emilio Rodrigué, 12 de outubro de 1995, e com Claudia Fernandes, 27 de margo de 1996. > ESTADIO; KLEINISMO; MELANCOLIA. Abraham, Karl (1877-1925) psiquiatra e psicanalista alemao O nome de Karl Abraham é indissociável da história da grande saga freudiana. Membro da geração” dos discípulos do fundador, desempe- nhou um papel pioneiro no desenvolvimento da psicandlise” em Berlim. Implantou a clinica freudiana no campo do saber psiquidtrico, transformando assim o tratamento das psi- coses”: esquizofrenia” e psicose manfaco-de- pressiva” (melancolia”). Elaborou também uma teoria dos estádios” da organização sexual, na qual se inspirou Melanie Klein”, que foi sua aluna. Formou muitos analistas, entre os quais Helene Deutsch”, Edward Glover”, Karen Hor- ney” Sandor Rado”, Ernst Simmel”. Nascido em Bremen, a 3 de maio de 1877, em uma familia de comerciantes judeus es- le Psicanálise (PSI) - 06.05.98 -22.07.98 -11.09.98 -22.09.98 — Letra A Textos & Formas ahar",
+          "confidence": 91.77173913043478,
+          "word_count": 276,
+          "char_count": 1834,
+          "processing_time_s": 2.452237511000021,
+          "bbox": {
+            "x": 902,
+            "y": 0,
+            "w": 954,
+            "h": 2539
+          },
+          "region_id": null,
+          "config_used": "gray_psm4_scale1.0_oem1"
+        }
+      ],
+      "page_confidence_mean": 92.94479813664597,
+      "processing_time_s": 4.77890483200008,
+      "config_used": null,
+      "warnings": []
+    }
+  ],
+  "full_text": "=== OCR RESULTS - 6 PAGES ===\n\n\n=== PAGE 1 | Confidence: 71.5% ===\n\nELISABETH ROUDINESCO E MICHEL PLON DICIONÁRIO DE PSICANÁLISE Ws Jo eg Àb ZAHAR\n\n\n=== PAGE 2 | Confidence: 94.4% ===\n\nElisabeth Roudinesco Michel Plon DICIONÁRIO DE PSICANÁLISE TRADUÇÃO: Vera Ribeiro psicanalista Lucy Magalhães letras neolatinas SUPERVISÃO DA EDIÇÃO BRASILEIRA: Marco Antonio Coutinho Jorge psiquiatra e psicanalista 4 & ZAHAR Dicionário de Psicanálise (PSI) 1º revisão — 13.08.98 2º revisão — 31.08.98 3º revisão — 24.09.98 4º revisão — 29.09.98 — Cad. O Produção: Textos & Formas Para: Ed. Zahar\n\n\n=== PAGE 3 | Confidence: 93.9% ===\n\nTitulo original: Dictionnaire de la psychanalyse Tradução autorizada da primeira edição francesa publicada em 1997 por Librairie Arthême Fayard, de Paris, França Copyright O 1997, Libraire Arthême Fayard Copyright da edição em língua portuguesa O 1998: Jorge Zahar Editor Ltda. rua México 31 sobreloja 20031-144 Rio de Janeiro, RJ tel.: (21) 2108-0808 / fax: (21) 2108-0800 editora@zahar.com.br www.zahar.com br Nao pode circular em Portugal. Todos os direitos reservados. A reprodução ndo-autorizada desta publicação, no todo ou em parte, constitui violação de direitos autorais (Lei 9.610/98) Este livro, publicado no âmbito do programa de auxílio a publicação, contou com o apoio do Ministério francés das Relações Exteriores, da Embaixada da França no Brasil e da Maison francaise do Rio de Janeiro. Revisão de texto: André Telles Revisão tipográfica: Lincoln Natal Jr. Preparação de bibliografia: Marcela Boechat Preparação de índice: Nelly Telles Capa: Carol Sá CIP-Brasil. Catalogação-na fonte Sindicato Nacional dos Editores de Livros, RJ Roudinesco, Elisabeth, 1944 — R765d Dicionário de psicanálise/Elisabeth Roudinesco, Michel Plon; tradução Vera Ribeiro, Lucy Magalhães; supervisão da edição brasileira Marco Antonio Couti- nho Jorge. — Rio de Janeiro: Zahar, 1998. Tradução de: Dictionnaire de la psychanalyse Inclui bibliografia ISBN 978-85-7110-444-0 1. Psicanálise — Dicionários. I. Plon, Michel. II. Título. CDD: 150.19503 98-1608 CDU: 159.964.2(038) Dicionário de Psicanálise (PSI) 1º revisão — 13.08.98 2º revisão — 31.08.98 3º revisão — 24.09.98 4º revisão — 29.09.98 — Cad. 0 Produção: Textos & Formas Para: Ed. Zahar\n\n\n=== PAGE 4 | Confidence: 90.1% ===\n\nSUMÁRIO Prefácio vii Sobre os autores x Agradecimentos xi Nota à edição brasileira xiii Abreviaturas bibliográficas xiii VERBETES — A-Z 1 Cronologia 795 Índice onomástico 831 Índice dos verbetes 865 4º revisão — 29.09.98 — Cad. O Produção: Textos & Formas Para: Ed. Zahar\n\n\n=== PAGE 5 | Confidence: 94.5% ===\n\nPREFÁCIO O primeiro dicionário de psicanálise, intitulado Handwôrterbuch der Psychoana- lyse, foi elaborado por Richard Sterba, entre 1931 e 1938. Foram publicados cinco fascículos, até o momento em que a ocupação da Áustria pelos nazistas pôs fim ao empreendimento. A intenção era compor um léxico geral dos termos freudianos, um vocabulário mais do que um recenseamento dos conceitos: “Não desconheço, escreveu Freud em uma carta a seu discípulo, que o caminho que parte da letra A e passa por todo o alfabeto é muito longo, e que percorrê-lo significaria para você uma enorme carga de trabalho. Assim, não o faça, a menos que se sinta interna- mente levado a isso. Apenas sob o efeito desse impulso, mas certamente não a partir de uma incitação externa !”! Sem dúvida, Freud sabia melhor que ninguém que um dicionário pode respon- der a um impulso interno, a um desejo, a uma pulsão. Em sua famosa análise do caso Dora (Ida Bauer), ele frisava que um dicionário é sempre objeto de um prazer solitário e proibido, no qual a criança descobre, à revelia dos adultos, a verdade das palavras, a história do mundo ou a geografia do sexo.? Obrigado a se exilar nos Estados Unidos, como a quase totalidade dos psicana- listas europeus de língua alemã, Sterba interrompeu a redação do seu Handwôr- terbuch na letra L, e a impressão do último volume na palavra Grôssenwahn: “Não sei, declarou vinte anos depois em uma carta a Daniel Lagache, se esse termo se refere à minha megalomania ou à de Hitler.” De qualquer forma, o Handwôrterbuch inacabado serviu de modelo para as obras do gênero, todas publicadas na mesma data (1967-1968), em uma época em que o movimento psicanalítico internacional, envolvido em rupturas e dúvidas, experimentava a necessidade de fazer um balanço e recompor, através de um saber comum, a sua unidade perdida. Diversas denominações foram utilizadas: glossário, dicionário, enciclopédia, vocabulário. O Glossary of Psychoanalytic Terms and Concepts (180 verbetes, 70 colabora- dores), obra coletiva publicada sob a égide da poderosa American Psychoanalytic Association (APsaA), expressava a ortodoxia de um freudismo pragmático e medicalizado. Na mesma perspectiva, a Encyclopedia of Psychoanalysis — rea- lizada sob a direção de Ludwig Eidelberg (1898-1970), psicanalista americano nascido na parte polonesa do antigo Império Austro-Húngaro e radicado em Nova York depois de escapar do nazismo — se mostrava mais ambiciosa, ampliando a 1. Sigmund Freud, \"Prefácio ao Dicionário de psicanálise, de Richard Sterba“ (1936), ESB, XXIII, 309; OC, XIX, 287-9; GW, Nachtragsband, 761; SE, XXII, 253. Richard Sterba, Han- dworterbuch der Psychoanalyse, 5 vols., Viena, Intern. Psychoanalytischer Verlag, 1936-1938. 2. Sigmund Freud, “Fragmento da análise de um caso de histeria” (1905), ESB, VII, 5-128. vii Dicionário de Psicanálise (PSI) 1º revisão — 13.08.98 2º revisão — 31.08.98 3º revisão — 24.09.98 4º revisão — 29.09.98 — Cad. O Produção: Textos & Formas Para: Ed. Zahar\n\n\n=== PAGE 6 | Confidence: 92.9% ===\n\nAberastury, Arminda (1910-1972) psicanalista argentina Pioneira do movimento psicanalítico argen- tino, Arminda Aberastury nasceu em Buenos Aires, em uma família de comerciantes pelo la- do paterno, e de intelectuais pelo lado materno. Seu tio, Maximiliano Aberastury, era um médi- co de renome e seu irmão, Frederico, estudou psiquiatria com Enrique Pichon-Riviêre”, cujos pais se radicaram na Argentina” em 1911 e que se tornou o seu amigo mais próximo. Frederico sofria de psicose” e teve, por várias vezes, surtos delirantes. Sofrendo de melancolia desde a ju- ventude, sua irmã Arminda era uma mulher de grande beleza. Através de Frederico, ficou co- nhecendo Pichon-Riviêre, com quem se casou em 1937. Como este, desejava oferecer à psica- nálise uma nova terra prometida, a fim de sal- vá-la do fascismo que assolava a Europa. Assim, integrou-se ao grupo formado em Buenos Aires por Arnaldo Rascovsky”, Angel Garma”, Marie Langer” e Celes Cárcamo”. Cin- co anos depois, fez sua formação didática com Garma e tornou-se uma das principais figuras da Asociación Psicoanalitica Argentina (APA). Na linha do ensino de Melanie Klein\" (de quem foi a primeira tradutora em língua espanhola) e inspirando-se nos métodos de Sophie Morgen- stern”, desenvolveu a psicanálise de crianças”. Entre 1948 e 1952, dirigiu, no quadro do Ins- tituto de Psicanálise da APA, um seminário sobre esse tema. Formaria uma geração” de analistas de crianças. No congresso de 1957 da International Psychoanalytical Association” (IPA), em Paris, apresentou uma comunicação notável sobre a sucessão dos “estádios” durante os primeiros anos de vida, definindo uma “fase genital primitiva” anterior, no desenvolvimento libidinal, à fase anal. Dicionário ¢ 12 revisão - 2º revisão - 3º revisão - 4º revisão - Produção: Para: Ed. Z\n\nCom a idade de 62 anos, atingida por uma doença de pele que a desfigurou, Arminda Abe- rastury decidiu dar fim aos seus dias. Seu suici- dio”, como vários outros na história da psicanálise”, suscitou relatos contraditórios e foi considerado uma “morte trágica” pela historiografia” oficial. * Arminda Aberastury, Psicanálise da criança — teoria e técnica (B. Aires, 1962), P. Alegre, Artes Médicas, 1992 + Antonio Cucurullo, Haydée Faimberg e Leonar- do Wender, “La Psychanalyse en Argentine”, in Roland Jaccard (org.), Histoire de la psychanalyse, vol.2, Pa- ris, Hachette, 1982, 395-444 + Elfriede S.L. de Ferrer, “Profesora Arminda Aberastury”, Revista de Psicoand- lisis, 4, t.XXIX, outubro-dezembro de 1972, 679-82 + Jorge Balan, Cuéntame tu vida. Una biografia colectiva del psicoandlisis argentino, B. Aires, Planeta, 1991 + Elisabeth Roudinesco, entrevistacom Emilio Rodrigué, 12 de outubro de 1995, e com Claudia Fernandes, 27 de margo de 1996. > ESTADIO; KLEINISMO; MELANCOLIA. Abraham, Karl (1877-1925) psiquiatra e psicanalista alemao O nome de Karl Abraham é indissociável da história da grande saga freudiana. Membro da geração” dos discípulos do fundador, desempe- nhou um papel pioneiro no desenvolvimento da psicandlise” em Berlim. Implantou a clinica freudiana no campo do saber psiquidtrico, transformando assim o tratamento das psi- coses”: esquizofrenia” e psicose manfaco-de- pressiva” (melancolia”). Elaborou também uma teoria dos estádios” da organização sexual, na qual se inspirou Melanie Klein”, que foi sua aluna. Formou muitos analistas, entre os quais Helene Deutsch”, Edward Glover”, Karen Hor- ney” Sandor Rado”, Ernst Simmel”. Nascido em Bremen, a 3 de maio de 1877, em uma familia de comerciantes judeus es- le Psicanálise (PSI) - 06.05.98 -22.07.98 -11.09.98 -22.09.98 — Letra A Textos & Formas ahar\n\n=== END OF DOCUMENT ===",
+  "statistics": {
+    "total_pages": 6,
+    "successful_pages": 6,
+    "failed_pages": 0,
+    "total_words": 1386,
+    "total_characters": 9012,
+    "average_confidence": 89.55860098917151,
+    "total_processing_time_s": 10.207406972000172,
+    "pages_per_second": 0.5878084430706579,
+    "quality_distribution": {},
+    "low_confidence_pages": []
+  },
+  "config": {
+    "engine": "tesseract",
+    "languages": "por+eng",
+    "dpi": 200,
+    "min_confidence": 20.0,
+    "parallel": true,
+    "max_workers": 4,
+    "timeout_per_page_s": 30,
+    "enable_quality_assessment": true,
+    "preprocessing_strategies": []
+  },
+  "metadata": {
+    "processor": "FileProcessor",
+    "mode": "parallel",
+    "llm_ready": true
+  },
+  "created_at": "2026-02-16T19:30:50.104964"
+}

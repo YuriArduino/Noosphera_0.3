@@ -108,7 +108,7 @@ class PageProcessor:
                         char_count=0,
                         processing_time_s=0.0,
                         bbox=self._safe_bbox(region),
-                        region_id=region.get("id"),
+                        region_id=self._region_id(region),
                         config_used=None,
                     )
                 )
@@ -162,7 +162,7 @@ class PageProcessor:
             char_count=char_count,
             processing_time_s=processing_time_s,
             bbox=self._safe_bbox(region),
-            region_id=region.get("id"),
+            region_id=self._region_id(region),
             config_used=config_used,
         )
 
@@ -176,10 +176,34 @@ class PageProcessor:
     def _safe_bbox(region: Mapping[str, Any]):
         """Return valid bbox dict or None if dimensions invalid."""
         if region.get("w", 0) > 0 and region.get("h", 0) > 0:
+            x = int(region["x"])
+            y = int(region["y"])
+            w = int(region["w"])
+            h = int(region["h"])
             return {
-                "x": region["x"],
-                "y": region["y"],
-                "w": region["w"],
-                "h": region["h"],
+                # Canonical keys aligned with engine word bbox format.
+                "left": x,
+                "top": y,
+                "width": w,
+                "height": h,
+                # Backward-compatible aliases used by existing layout modules.
+                "x": x,
+                "y": y,
+                "w": w,
+                "h": h,
             }
         return None
+
+    @staticmethod
+    def _region_id(region: Mapping[str, Any]) -> str:
+        """Return region id from detector or deterministic synthesized id."""
+        detector_id = region.get("id")
+        if isinstance(detector_id, str) and detector_id.strip():
+            return detector_id
+
+        col = int(region.get("col_index", 0))
+        x = int(region.get("x", 0))
+        y = int(region.get("y", 0))
+        w = int(region.get("w", 0))
+        h = int(region.get("h", 0))
+        return f"col{col}_{x}_{y}_{w}_{h}"

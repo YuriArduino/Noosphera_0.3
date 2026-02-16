@@ -1,0 +1,206 @@
+{
+  "file_metadata": {
+    "path": "/media/yuri/Noosphera/Noosphera_0.3/Test/Data/PDF_C_Digitalizado.pdf",
+    "name": "PDF_C_Digitalizado.pdf",
+    "extension": "pdf",
+    "size_bytes": 380733,
+    "created_at": "2026-02-06T16:51:24.586802",
+    "modified_at": "2026-02-06T16:51:24.581801",
+    "hash_sha256": "",
+    "pages_count": 5
+  },
+  "pages": [
+    {
+      "page_number": 1,
+      "layout_type": "single",
+      "columns": [
+        {
+          "col_index": 1,
+          "text": ": / DICIONARIO ENCICLOP E pico EE o» DSICANÁLISE | PRIMEIRO GRANDE DICIONA JORGE ZAHAR EDITOR",
+          "confidence": 73.5,
+          "word_count": 16,
+          "char_count": 93,
+          "processing_time_s": 1.0400038349998795,
+          "bbox": {
+            "x": 0,
+            "y": 0,
+            "w": 1137,
+            "h": 1769
+          },
+          "region_id": null,
+          "config_used": "gray_psm3_scale1.0_oem2"
+        }
+      ],
+      "page_confidence_mean": 73.5,
+      "processing_time_s": 1.079073910000261,
+      "config_used": null,
+      "warnings": []
+    },
+    {
+      "page_number": 2,
+      "layout_type": "single",
+      "columns": [
+        {
+          "col_index": 1,
+          "text": "DICIONÁRIO ENCICLOPÉDICO DE PSICANÁLISE O legado de Freud e Lacan editado por PIERRE KAUFMANN Tradução: VERA RIBEIRO MARIA LUIZA X. DE A. BORGES Supervisão da edição brasileira: MARCO ANTONIO COUTINHO JORGE psiquiatra, psicanalista JORGE ZAHAR EDITOR Rio de Janeiro facebook.com/lacanempdf",
+          "confidence": 95.325,
+          "word_count": 40,
+          "char_count": 289,
+          "processing_time_s": 0.8118119800001296,
+          "bbox": {
+            "x": 0,
+            "y": 0,
+            "w": 1146,
+            "h": 1775
+          },
+          "region_id": null,
+          "config_used": "gray_psm3_scale1.0_oem1"
+        }
+      ],
+      "page_confidence_mean": 95.325,
+      "processing_time_s": 0.8517131540002083,
+      "config_used": null,
+      "warnings": []
+    },
+    {
+      "page_number": 3,
+      "layout_type": "single",
+      "columns": [
+        {
+          "col_index": 1,
+          "text": "Título original: L'apport freudien: Eléments pour une encyclopédie de la psychanalyse Tradução autorizada da edição francesa publicada em 1993 por Editions Bordas, de Paris, França Copyright © 1993. Editions Bordas Copyright © 1996 da edição em lingua portuguesa: Jorge Zahar Editor Lida. rua México 31 sobreloja 2003 1-144 Rio de Janeiro, RJ tel.: (21) 240-0226 / fax: (21) 262-5123 e-mail: jze@ zahar.com.br Todos os direitos reservados. A reprodução nio-autorizada desta publicação, no todo ou em parte, constitui violação do copyright. (Lei 5.988) Capa: Carol Sá Ilustração da capa: Infanta, óleo sobre tela de Antonio Saura, 1960 CIP-Brasil. Catalogagdo-na-fonte Sindicato Nacional dos Editores de Livros, RJ. D542 96-1424 Dicionário enciclopédico de psicanálise: o legado de Freude Lacan / editado por Pierre Kaufmann; tradução, Vera Ribeiro. Maria Luiza X. de A. Borges: consultoria, Marco Antonio Coutinho Jorge — Rio de Janeiro: Jorge Zahar Ed., 1996 Contém dados bibliográficos ISBN: 85-7110-360-7 I. Freud, Sigmund, 1856-1939 — Dicionários. 2. Lacan Jacques, 1901-1981. 3. Psicanálise — Dicionários. L Kaufmann, Pierre. CDD — 150.19503 CDU — 159.964.2 (038)",
+          "confidence": 90.45348837209302,
+          "word_count": 172,
+          "char_count": 1168,
+          "processing_time_s": 2.3107187900004647,
+          "bbox": {
+            "x": 0,
+            "y": 0,
+            "w": 1142,
+            "h": 1772
+          },
+          "region_id": null,
+          "config_used": "gray_psm3_scale1.0_oem1"
+        }
+      ],
+      "page_confidence_mean": 90.45348837209302,
+      "processing_time_s": 2.3518233650002003,
+      "config_used": null,
+      "warnings": []
+    },
+    {
+      "page_number": 4,
+      "layout_type": "double",
+      "columns": [
+        {
+          "col_index": 1,
+          "text": "“O tema dos três escrínios”, publica- do em Im., til. ESB, v.XII. “A disposição à neurose obsessiva”. Comunicação ao Congresso Psicana- lítico de Milão, publicado em Int. Z. f. Ps.. tl. ESB, v. XII. UI, SEGUNDA TOPICA E TEORIA DA CIVILIZAÇÃO 14 Jung deixa a presidência da Associa- ção Internacional. “A história do movimento psicanali- tico”, ESB. v.XIY. “Sobre o narcisismo: uma introdu- ção”, publicado em Jahrb. £. ps. u. ps. F. LIL ESB, v. XIV. “O Moisés de Michelangelo”, publi- cado em Im, CHI. ESB, v. XIII. 15 “Um caso de paranóia que contraria a teoria psicanalítica da doença”, pu- blicado em Int. Z. f. Ps. tQIII, ESB, v. XIV. “As pulsões e suas vicissitudes”, pu- blicado em Zbl. [. Ps. ESB [“Os ins- tintos e suas vicissitudes], v.XIV. \"Observações sobre o amor transfe- rencial (Novas recomendações sobre a técnica da psicanálise HI)”, publi- cado em Z. f. Ps.. LH. ESB, v.XII. “Reflexões para os tempos de guerra e morte”, publicado em Im., t.IV. ESB. v.XIV. “O inconsciente”. publicado em Z. I. Ps. ESB, v XIV. “Recalcamento”. publicado em Z. f. Ps. ESB [\"Repressão”], v. XIV. 16 “Alguns tipos de caráter encontrados no trabalho psicanalítico”, publicado em Im., t. IV. ESB, v.XIV. “Sobre a transitoriedade” (Vergding- lichkeir), escrito em 1915 para a As- sociagdo Goethe de Berlim. ESB, v.XIV. 16-17 Conferências introdutérias sobre psicanálise. ESB, v.XV e XVI. 17 “Luto e melancolia”, publicado em Z. f. Ps., t.1. ESB, v XIV. “As transformações da pulsão exem- plificadas no erotismo anal”, publica- doem Z. f. Ps., t.IV. ESB [“As trans-",
+          "confidence": 85.76923076923077,
+          "word_count": 260,
+          "char_count": 1558,
+          "processing_time_s": 2.9456082919996334,
+          "bbox": {
+            "x": 0,
+            "y": 0,
+            "w": 473,
+            "h": 1777
+          },
+          "region_id": null,
+          "config_used": "gray_psm4_scale1.0_oem1"
+        },
+        {
+          "col_index": 2,
+          "text": "formações do instinto exemplificadas no erotismo anal”], v. XVII, “Suplemento metapsicológico à teo- ria dos sonhos”, publicado em Z. f. Ps. ESB, v XIV, “Uma dificuldade no caminho da psi- candlise”. ESB, v XVII. “O tabu da virgindade”, ESB, v.XI. 1918 “História de uma neurose infantil” (Homem dos Lobos), publicado em Sammlung kleiner Scriften zur Neurosenlehre. ESB, v XVII. 1919 “O “estranho”, publicado em Im., t.V. ESB, v.XVIL “Bate-se numa criança”, publicado em Int. Z. f. (ii). Ps. ESB [“Uma criança é espancada”), v.X VII. “Sobre o ensino da psicanálise nas universidades”. Original em húnga- ro. ESB, v. XVII. “Introdução a A psicanálise e as neu- roses de guerra”. ESB, v XVII. 1920 Gan.) Morte da filha Sophie. “Memorando sobre o tratamento elé- trico dos neuróticos de guerra”, escri- to para o processo movido contra Wagner-Jauregg. ESB, v. XVII. “Mais-além do princípio de prazer”. ESB [\"Além do principio de pra- zer\"], v XVIII. 1921 “Psicologia das massas e análise do cu”. ESB [“Psicologia de grupo e a análise do ego”], v.XVIIL. 1922 “Obscrvações sobre a teoria e a prati- ca da interpretação de sonhos”, publi- cado em 1923 em Int. Z. f. (à). Ps. ESB, v XIX. “Dois verbetes de enciclopédia” (“Psicanálise” e “Teoria da libi- do”), publicados em 1923. ESB, v.XVHE 1923 “Oeuecoisso”. ESB [“Ocgoeoid\"], v XIX. “Uma breve descrição da psicanáli- se”, publicado em inglês em 1923 pela Encyclopaedia Britannica. ESB, v.XIX. “A dissolução do complexo de Edi- po”. ESB, v.XIX. 1924 “O problema econômico do maso- quismo”, publicado em Sanunlung aviil",
+          "confidence": 87.6259842519685,
+          "word_count": 254,
+          "char_count": 1563,
+          "processing_time_s": 2.606069653999839,
+          "bbox": {
+            "x": 473,
+            "y": 0,
+            "w": 676,
+            "h": 1777
+          },
+          "region_id": null,
+          "config_used": "gray_psm4_scale1.0_oem1"
+        }
+      ],
+      "page_confidence_mean": 86.69760751059964,
+      "processing_time_s": 5.601244260000385,
+      "config_used": null,
+      "warnings": []
+    },
+    {
+      "page_number": 5,
+      "layout_type": "double",
+      "columns": [
+        {
+          "col_index": 1,
+          "text": "ABSTINÊNCIA A regra de abstinência prescreve ao analista incitar o paciente a se privar das satisfações substitutivas que eventualmente se apresen- tem durante o tratamento como paliativo às suas frustrações. Seu histórico foi apresenta- do por Ferenczi no artigo “Prolongamentos da “técnica ativa' em psicanálise” (1920). Na origem (por volta de 1918), encontra- mos uma sugestão oral de Freud a propósito da histeria de angústia. “Os pacientes, a des- peito de uma observância rigorosa da “regra fundamental” e de uma visão profunda de seus complexos inconscientes, não chega- vam a superar certos pontos cegos da análise enquanto não os estimulávamos à ou air do refúgio seguro constituído por sua fobia e a se expor, a título de experiência, à situa- ção de que haviam fugido com angústia em razão de seu caráter penoso.” Ora, observava Freud, “ao se expor a esse afeto, os pacientes superam a resistência contra uma parte do material inconsciente até esse momento recalcado, que se torna à partir de então acessível à análise sob forma de idéias e de lembrança: “A partir de então. foi esse processo que pretendi desienar, pela expr o ‘técnica ativa”, que significava portanto uma inter- venção ativa menos da parte do médico que da parte do paciente, ao qual se passava a impor, além da observância da regra funda- mental. uma tarefa particular. Nos casos de fobia, essa tarefa consistia em realizar certas ações desagradáveis. Logo tive a oportuni- dade de impor a uma paciente tarefas que consistiam nisso: ela devia renunciar a cer- tas ações agradáveis que até então haviam passado desapercebidas (exc batória das partes genitais, estereotipias e",
+          "confidence": 92.58364312267658,
+          "word_count": 269,
+          "char_count": 1656,
+          "processing_time_s": 2.7224389390003125,
+          "bbox": {
+            "x": 0,
+            "y": 0,
+            "w": 512,
+            "h": 1772
+          },
+          "region_id": null,
+          "config_used": "gray_psm4_scale1.0_oem1"
+        },
+        {
+          "col_index": 2,
+          "text": "tiques, ou excitações de outras partes do cor- po), dominar seu impulso de realizar esses atos. O resultado foi o seguinte: um novo material mnêmico tornou-se acessível, o que acelerou visivelmente o curso da análise.” “O professor Freud”, diz Ferenczi, “ex- traiu a conseqliéncia dessas experiências e de outras similares no relatório ao congresso de Budapeste; sentiu-se até em condições de generalizar o ensinamento derivado dessas observações e de impor-lhe regras: o trata- mento deve se desenrolar em geral na situa- ção da abstinência.” Mas Freud continua: “Não creio ter esgo- tado o assunto da atividade requerida do mé- dico ao dizer que, durante o tratamento, ele deve manter a privação.” Existe assim uma conjunção a especificar entre esses dois aspectos da abstinência: por um lado, que ela se apresente como uma “privação” no sentido de uma situação que resulta da proibição; por outro, que essa proibição seja uma exigência da situação transferencial. À regra de abstinência deverá pois inter- vir desse duplo ponto de vista, como aplica- ção do princípio de realidade. Nos termos de Freud, essa formulação traduz o princípio de uma despersonalização do analista, que é ilustrada em “O futuro de uma tlusão” (assi- milação do terapeuta ao deus benfeitor) e que subordina definitivamente a estratégia analítica à pulsão de morte. Nela se encontra implicada a crítica à preocupação junguiana com a formação “moral” do paciente, pro- longada pelo seminário de Lacan, A ética da psicandlise, em sua critica de uma ideologia da boa vontade. > CATÁRTICO, TRATAMENTO. P. KAUFMANN",
+          "confidence": 92.60079051383399,
+          "word_count": 253,
+          "char_count": 1587,
+          "processing_time_s": 2.3590463159998762,
+          "bbox": {
+            "x": 512,
+            "y": 0,
+            "w": 630,
+            "h": 1772
+          },
+          "region_id": null,
+          "config_used": "gray_psm4_scale1.0_oem1"
+        }
+      ],
+      "page_confidence_mean": 92.59221681825528,
+      "processing_time_s": 5.122866265999619,
+      "config_used": null,
+      "warnings": []
+    }
+  ],
+  "full_text": "=== OCR RESULTS - 5 PAGES ===\n\n\n=== PAGE 1 | Confidence: 73.5% ===\n\n: / DICIONARIO ENCICLOP E pico EE o» DSICANÁLISE | PRIMEIRO GRANDE DICIONA JORGE ZAHAR EDITOR\n\n\n=== PAGE 2 | Confidence: 95.3% ===\n\nDICIONÁRIO ENCICLOPÉDICO DE PSICANÁLISE O legado de Freud e Lacan editado por PIERRE KAUFMANN Tradução: VERA RIBEIRO MARIA LUIZA X. DE A. BORGES Supervisão da edição brasileira: MARCO ANTONIO COUTINHO JORGE psiquiatra, psicanalista JORGE ZAHAR EDITOR Rio de Janeiro facebook.com/lacanempdf\n\n\n=== PAGE 3 | Confidence: 90.5% ===\n\nTítulo original: L'apport freudien: Eléments pour une encyclopédie de la psychanalyse Tradução autorizada da edição francesa publicada em 1993 por Editions Bordas, de Paris, França Copyright © 1993. Editions Bordas Copyright © 1996 da edição em lingua portuguesa: Jorge Zahar Editor Lida. rua México 31 sobreloja 2003 1-144 Rio de Janeiro, RJ tel.: (21) 240-0226 / fax: (21) 262-5123 e-mail: jze@ zahar.com.br Todos os direitos reservados. A reprodução nio-autorizada desta publicação, no todo ou em parte, constitui violação do copyright. (Lei 5.988) Capa: Carol Sá Ilustração da capa: Infanta, óleo sobre tela de Antonio Saura, 1960 CIP-Brasil. Catalogagdo-na-fonte Sindicato Nacional dos Editores de Livros, RJ. D542 96-1424 Dicionário enciclopédico de psicanálise: o legado de Freude Lacan / editado por Pierre Kaufmann; tradução, Vera Ribeiro. Maria Luiza X. de A. Borges: consultoria, Marco Antonio Coutinho Jorge — Rio de Janeiro: Jorge Zahar Ed., 1996 Contém dados bibliográficos ISBN: 85-7110-360-7 I. Freud, Sigmund, 1856-1939 — Dicionários. 2. Lacan Jacques, 1901-1981. 3. Psicanálise — Dicionários. L Kaufmann, Pierre. CDD — 150.19503 CDU — 159.964.2 (038)\n\n\n=== PAGE 4 | Confidence: 86.7% ===\n\n“O tema dos três escrínios”, publica- do em Im., til. ESB, v.XII. “A disposição à neurose obsessiva”. Comunicação ao Congresso Psicana- lítico de Milão, publicado em Int. Z. f. Ps.. tl. ESB, v. XII. UI, SEGUNDA TOPICA E TEORIA DA CIVILIZAÇÃO 14 Jung deixa a presidência da Associa- ção Internacional. “A história do movimento psicanali- tico”, ESB. v.XIY. “Sobre o narcisismo: uma introdu- ção”, publicado em Jahrb. £. ps. u. ps. F. LIL ESB, v. XIV. “O Moisés de Michelangelo”, publi- cado em Im, CHI. ESB, v. XIII. 15 “Um caso de paranóia que contraria a teoria psicanalítica da doença”, pu- blicado em Int. Z. f. Ps. tQIII, ESB, v. XIV. “As pulsões e suas vicissitudes”, pu- blicado em Zbl. [. Ps. ESB [“Os ins- tintos e suas vicissitudes], v.XIV. \"Observações sobre o amor transfe- rencial (Novas recomendações sobre a técnica da psicanálise HI)”, publi- cado em Z. f. Ps.. LH. ESB, v.XII. “Reflexões para os tempos de guerra e morte”, publicado em Im., t.IV. ESB. v.XIV. “O inconsciente”. publicado em Z. I. Ps. ESB, v XIV. “Recalcamento”. publicado em Z. f. Ps. ESB [\"Repressão”], v. XIV. 16 “Alguns tipos de caráter encontrados no trabalho psicanalítico”, publicado em Im., t. IV. ESB, v.XIV. “Sobre a transitoriedade” (Vergding- lichkeir), escrito em 1915 para a As- sociagdo Goethe de Berlim. ESB, v.XIV. 16-17 Conferências introdutérias sobre psicanálise. ESB, v.XV e XVI. 17 “Luto e melancolia”, publicado em Z. f. Ps., t.1. ESB, v XIV. “As transformações da pulsão exem- plificadas no erotismo anal”, publica- doem Z. f. Ps., t.IV. ESB [“As trans-\n\nformações do instinto exemplificadas no erotismo anal”], v. XVII, “Suplemento metapsicológico à teo- ria dos sonhos”, publicado em Z. f. Ps. ESB, v XIV, “Uma dificuldade no caminho da psi- candlise”. ESB, v XVII. “O tabu da virgindade”, ESB, v.XI. 1918 “História de uma neurose infantil” (Homem dos Lobos), publicado em Sammlung kleiner Scriften zur Neurosenlehre. ESB, v XVII. 1919 “O “estranho”, publicado em Im., t.V. ESB, v.XVIL “Bate-se numa criança”, publicado em Int. Z. f. (ii). Ps. ESB [“Uma criança é espancada”), v.X VII. “Sobre o ensino da psicanálise nas universidades”. Original em húnga- ro. ESB, v. XVII. “Introdução a A psicanálise e as neu- roses de guerra”. ESB, v XVII. 1920 Gan.) Morte da filha Sophie. “Memorando sobre o tratamento elé- trico dos neuróticos de guerra”, escri- to para o processo movido contra Wagner-Jauregg. ESB, v. XVII. “Mais-além do princípio de prazer”. ESB [\"Além do principio de pra- zer\"], v XVIII. 1921 “Psicologia das massas e análise do cu”. ESB [“Psicologia de grupo e a análise do ego”], v.XVIIL. 1922 “Obscrvações sobre a teoria e a prati- ca da interpretação de sonhos”, publi- cado em 1923 em Int. Z. f. (à). Ps. ESB, v XIX. “Dois verbetes de enciclopédia” (“Psicanálise” e “Teoria da libi- do”), publicados em 1923. ESB, v.XVHE 1923 “Oeuecoisso”. ESB [“Ocgoeoid\"], v XIX. “Uma breve descrição da psicanáli- se”, publicado em inglês em 1923 pela Encyclopaedia Britannica. ESB, v.XIX. “A dissolução do complexo de Edi- po”. ESB, v.XIX. 1924 “O problema econômico do maso- quismo”, publicado em Sanunlung aviil\n\n\n=== PAGE 5 | Confidence: 92.6% ===\n\nABSTINÊNCIA A regra de abstinência prescreve ao analista incitar o paciente a se privar das satisfações substitutivas que eventualmente se apresen- tem durante o tratamento como paliativo às suas frustrações. Seu histórico foi apresenta- do por Ferenczi no artigo “Prolongamentos da “técnica ativa' em psicanálise” (1920). Na origem (por volta de 1918), encontra- mos uma sugestão oral de Freud a propósito da histeria de angústia. “Os pacientes, a des- peito de uma observância rigorosa da “regra fundamental” e de uma visão profunda de seus complexos inconscientes, não chega- vam a superar certos pontos cegos da análise enquanto não os estimulávamos à ou air do refúgio seguro constituído por sua fobia e a se expor, a título de experiência, à situa- ção de que haviam fugido com angústia em razão de seu caráter penoso.” Ora, observava Freud, “ao se expor a esse afeto, os pacientes superam a resistência contra uma parte do material inconsciente até esse momento recalcado, que se torna à partir de então acessível à análise sob forma de idéias e de lembrança: “A partir de então. foi esse processo que pretendi desienar, pela expr o ‘técnica ativa”, que significava portanto uma inter- venção ativa menos da parte do médico que da parte do paciente, ao qual se passava a impor, além da observância da regra funda- mental. uma tarefa particular. Nos casos de fobia, essa tarefa consistia em realizar certas ações desagradáveis. Logo tive a oportuni- dade de impor a uma paciente tarefas que consistiam nisso: ela devia renunciar a cer- tas ações agradáveis que até então haviam passado desapercebidas (exc batória das partes genitais, estereotipias e\n\ntiques, ou excitações de outras partes do cor- po), dominar seu impulso de realizar esses atos. O resultado foi o seguinte: um novo material mnêmico tornou-se acessível, o que acelerou visivelmente o curso da análise.” “O professor Freud”, diz Ferenczi, “ex- traiu a conseqliéncia dessas experiências e de outras similares no relatório ao congresso de Budapeste; sentiu-se até em condições de generalizar o ensinamento derivado dessas observações e de impor-lhe regras: o trata- mento deve se desenrolar em geral na situa- ção da abstinência.” Mas Freud continua: “Não creio ter esgo- tado o assunto da atividade requerida do mé- dico ao dizer que, durante o tratamento, ele deve manter a privação.” Existe assim uma conjunção a especificar entre esses dois aspectos da abstinência: por um lado, que ela se apresente como uma “privação” no sentido de uma situação que resulta da proibição; por outro, que essa proibição seja uma exigência da situação transferencial. À regra de abstinência deverá pois inter- vir desse duplo ponto de vista, como aplica- ção do princípio de realidade. Nos termos de Freud, essa formulação traduz o princípio de uma despersonalização do analista, que é ilustrada em “O futuro de uma tlusão” (assi- milação do terapeuta ao deus benfeitor) e que subordina definitivamente a estratégia analítica à pulsão de morte. Nela se encontra implicada a crítica à preocupação junguiana com a formação “moral” do paciente, pro- longada pelo seminário de Lacan, A ética da psicandlise, em sua critica de uma ideologia da boa vontade. > CATÁRTICO, TRATAMENTO. P. KAUFMANN\n\n=== END OF DOCUMENT ===",
+  "statistics": {
+    "total_pages": 5,
+    "successful_pages": 5,
+    "failed_pages": 0,
+    "total_words": 1264,
+    "total_characters": 7914,
+    "average_confidence": 87.71366254018959,
+    "total_processing_time_s": 5.975794203999612,
+    "pages_per_second": 0.8367088673591686,
+    "quality_distribution": {},
+    "low_confidence_pages": []
+  },
+  "config": {
+    "engine": "tesseract",
+    "languages": "por+eng",
+    "dpi": 200,
+    "min_confidence": 20.0,
+    "parallel": true,
+    "max_workers": 4,
+    "timeout_per_page_s": 30,
+    "enable_quality_assessment": true,
+    "preprocessing_strategies": []
+  },
+  "metadata": {
+    "processor": "FileProcessor",
+    "mode": "parallel",
+    "llm_ready": true
+  },
+  "created_at": "2026-02-16T19:30:56.506552"
+}
