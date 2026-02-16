@@ -93,29 +93,6 @@ class ConfigStrategy:
             if candidate in ConfigStrategy.VALID_LAYOUT_TYPES:
                 return candidate
 
-        if hasattr(layout_type, "value") and isinstance(layout_type.value, str):
-            candidate = layout_type.value.lower().strip()
-            if candidate in ConfigStrategy.VALID_LAYOUT_TYPES:
-                return candidate
-
-        return "single"
-
-    @staticmethod
-    def _safe_float(value: Any, default: float = 0.0) -> float:
-        try:
-            return float(value)
-        except (TypeError, ValueError):
-            return default
-
-    VALID_LAYOUT_TYPES = {"single", "double", "multi", "complex", "unknown"}
-
-    @staticmethod
-    def _normalize_layout_type(layout_type: Any) -> str:
-        if isinstance(layout_type, str):
-            candidate = layout_type.lower().strip()
-            if candidate in ConfigStrategy.VALID_LAYOUT_TYPES:
-                return candidate
-
         enum_like_value = getattr(layout_type, "value", None)
         if isinstance(enum_like_value, str):
             candidate = enum_like_value.lower().strip()
@@ -150,10 +127,6 @@ class ConfigStrategy:
             Same (layout_type, quality) → same EngineConfig
         """
 
-        normalized_layout = ConfigStrategy._normalize_layout_type(layout_type)
-        is_clean = bool(quality.get("is_clean_digital", False))
-        sharpness = ConfigStrategy._safe_float(quality.get("sharpness", 0.0))
-        contrast = ConfigStrategy._safe_float(quality.get("contrast", 0.0))
         normalized_layout = ConfigStrategy._normalize_layout_type(layout_type)
         is_clean = bool(quality.get("is_clean_digital", False))
         sharpness = ConfigStrategy._safe_float(quality.get("sharpness", 0.0))
