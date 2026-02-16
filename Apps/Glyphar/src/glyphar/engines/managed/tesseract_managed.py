@@ -107,6 +107,7 @@ class TesseractManagedEngine(OCREngine):
                 error=str(error),
                 timeout=int(optimized_config.get("timeout", 10)),
             )
+            result["config_used"] = config_used
 
         result["processing_time_ms"] = (time.perf_counter() - start_time) * 1000
         self.stats.update(float(result.get("confidence", 0.0)), result["processing_time_ms"])
