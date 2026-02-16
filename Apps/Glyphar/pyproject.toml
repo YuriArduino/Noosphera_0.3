@@ -1,0 +1,15 @@
+[project]
+name = "glyphar"
+version = "0.1.0"
+description = "OCR Engine for Noosphera"
+requires-python = ">=3.10"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["glyphar*"]
+
+
+[tool.pytest.ini_options]
+markers = [
+    "integration: slower integration tests",
+]
