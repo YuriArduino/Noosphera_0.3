@@ -55,9 +55,7 @@ class BatchTask(BaseModel):
     status: str = Field(default=BatchStatus.PENDING, description="Current task state")
     error: Optional[str] = Field(None, description="Error message on failure")
 
-    created_at: datetime = Field(
-        default_factory=lambda: datetime.now(timezone.utc)
-    )
+    created_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
     started_at: Optional[datetime] = None
     finished_at: Optional[datetime] = None
 

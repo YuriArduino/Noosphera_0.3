@@ -55,9 +55,7 @@ class OCROutput(BaseModel):
     metadata: Dict[str, Any] = Field(
         default_factory=dict, description="Free-form metadata"
     )
-    created_at: datetime = Field(
-        default_factory=lambda: datetime.now(timezone.utc)
-    )
+    created_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
 
     model_config = ConfigDict(extra="ignore", frozen=True)
 
