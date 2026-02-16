@@ -1,5 +1,7 @@
 """Unit tests for optimization config optimizer."""
 
+# pylint: disable=wrong-import-position
+
 from __future__ import annotations
 
 import pytest
@@ -14,7 +16,8 @@ class _EngineWithInvalidPrimaryResult:
     def __init__(self) -> None:
         self.calls = 0
 
-    def recognize(self, image, config):
+    def recognize(self, _image, _config):
+        """Simulate invalid first response and valid fallback response."""
         self.calls += 1
         if self.calls == 1:
             return {"text": "only text"}
@@ -22,7 +25,8 @@ class _EngineWithInvalidPrimaryResult:
 
 
 class _EngineAlwaysOk:
-    def recognize(self, image, config):
+    def recognize(self, _image, _config):
+        """Simulate invalid first response and valid fallback response."""
         return {"text": "ok", "confidence": 96.5, "words": []}
 
 

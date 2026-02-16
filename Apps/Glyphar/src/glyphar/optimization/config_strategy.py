@@ -24,6 +24,7 @@ while preserving deterministic behavior.
 
 from dataclasses import dataclass
 from typing import Any, Mapping
+from typing import Any, Mapping
 
 
 @dataclass(frozen=True)
@@ -107,7 +108,32 @@ class ConfigStrategy:
         except (TypeError, ValueError):
             return default
 
+    VALID_LAYOUT_TYPES = {"single", "double", "multi", "complex", "unknown"}
+
     @staticmethod
+    def _normalize_layout_type(layout_type: Any) -> str:
+        if isinstance(layout_type, str):
+            candidate = layout_type.lower().strip()
+            if candidate in ConfigStrategy.VALID_LAYOUT_TYPES:
+                return candidate
+
+        enum_like_value = getattr(layout_type, "value", None)
+        if isinstance(enum_like_value, str):
+            candidate = enum_like_value.lower().strip()
+            if candidate in ConfigStrategy.VALID_LAYOUT_TYPES:
+                return candidate
+
+        return "single"
+
+    @staticmethod
+    def _safe_float(value: Any, default: float = 0.0) -> float:
+        try:
+            return float(value)
+        except (TypeError, ValueError):
+            return default
+
+    @staticmethod
+    def decide(layout_type: Any, quality: Mapping[str, Any]) -> EngineConfig:
     def decide(layout_type: Any, quality: Mapping[str, Any]) -> EngineConfig:
         """
         Select optimal engine configuration based on document characteristics.
@@ -130,6 +156,10 @@ class ConfigStrategy:
         is_clean = bool(quality.get("is_clean_digital", False))
         sharpness = ConfigStrategy._safe_float(quality.get("sharpness", 0.0))
         contrast = ConfigStrategy._safe_float(quality.get("contrast", 0.0))
+        normalized_layout = ConfigStrategy._normalize_layout_type(layout_type)
+        is_clean = bool(quality.get("is_clean_digital", False))
+        sharpness = ConfigStrategy._safe_float(quality.get("sharpness", 0.0))
+        contrast = ConfigStrategy._safe_float(quality.get("contrast", 0.0))
 
         # ------------------------------------------------------------------
         # 1. STRONG CLEAN DIGITAL OVERRIDE
@@ -142,6 +172,7 @@ class ConfigStrategy:
         ):
             return EngineConfig(
                 pre_type="gray",
+                psm=3 if normalized_layout == "single" else 4,
                 psm=3 if normalized_layout == "single" else 4,
                 scale=1.0,
                 oem=1,  # Fast mode (clean PDFs)
@@ -181,6 +212,7 @@ class ConfigStrategy:
             return EngineConfig(
                 pre_type="otsu",
                 psm=11 if normalized_layout != "single" else 3,
+                psm=11 if normalized_layout != "single" else 3,
                 scale=1.2,
                 oem=2,  # Balanced
             )
@@ -190,6 +222,7 @@ class ConfigStrategy:
         # ------------------------------------------------------------------
         return EngineConfig(
             pre_type="gray",
+            psm=3 if normalized_layout == "single" else 4,
             psm=3 if normalized_layout == "single" else 4,
             scale=1.0,
             oem=2,
