@@ -1,7 +1,8 @@
 """Batch processing strategies for Tesseract OCR engine."""
 
 from typing import List, Any, Dict
-from .core.tesseract_core import TesseractCoreEngine
+
+from glyphar.engines.base import OCREngine
 
 
 class TesseractBatchProcessor:
@@ -25,12 +26,12 @@ class TesseractBatchProcessor:
         - Not optimal for strictly uniform documents
     """
 
-    def __init__(self, engine: TesseractCoreEngine):
+    def __init__(self, engine: OCREngine):
         """
         Initialize the batch processor.
 
         Args:
-            engine (TesseractCoreEngine):
+            engine (OCREngine):
                 Configured engine instance used for recognition.
         """
         self.engine = engine
