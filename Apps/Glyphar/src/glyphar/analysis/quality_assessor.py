@@ -32,10 +32,11 @@ Example usage:
 """
 
 from typing import Dict, Any, Union
-import cv2  # pylint: disable=no-member
+import cv2
 import numpy as np
 
 
+# pylint: disable=too-few-public-methods,no-member
 class QualityAssessor:
     """
     Assesses document image quality to determine optimal OCR preprocessing strategy.
@@ -109,15 +110,13 @@ class QualityAssessor:
         """
         # Convert to grayscale if color image provided
         if len(image.shape) == 3:
-            gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)  # pylint: disable=no-member
+            gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
         else:
             gray = image
 
         # Sharpness assessment via Laplacian variance
         # Higher values indicate crisper text edges (ideal for OCR)
-        laplacian_var = cv2.Laplacian(  # pylint: disable=no-member
-            gray, cv2.CV_64F  # pylint: disable=no-member
-        ).var()
+        laplacian_var = cv2.Laplacian(gray, cv2.CV_64F).var()
 
         # Contrast assessment via Michelson formula
         # Robust to absolute intensity shifts, focuses on relative differences
