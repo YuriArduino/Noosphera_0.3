@@ -62,7 +62,9 @@ class TesseractManagedEngine(OCREngine):
         config = config or {}
 
         psm = config.get("psm", 3)
-        quality_hint = self._normalize_quality(config.get("quality_hint", PageQuality.UNKNOWN))
+        quality_hint = self._normalize_quality(
+            config.get("quality_hint", PageQuality.UNKNOWN)
+        )
         min_confidence = float(config.get("min_confidence", 0.0))
 
         optimized_config = optimize_ocr_config(psm, quality_hint, self.model_type)
@@ -110,7 +112,9 @@ class TesseractManagedEngine(OCREngine):
             result["config_used"] = config_used
 
         result["processing_time_ms"] = (time.perf_counter() - start_time) * 1000
-        self.stats.update(float(result.get("confidence", 0.0)), result["processing_time_ms"])
+        self.stats.update(
+            float(result.get("confidence", 0.0)), result["processing_time_ms"]
+        )
 
         if len(self.cache) < 1000:
             self.cache[cache_key] = dict(result)
