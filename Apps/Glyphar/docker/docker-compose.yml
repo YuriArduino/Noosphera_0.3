@@ -2,30 +2,30 @@ version: "3.9"
 
 services:
 
-  api:
+  tool:
     build:
       context: ..
-      dockerfile: docker/Dockerfile
-    container_name: glyphar_api
-    command: uvicorn glyphar.api.main:app --host 0.0.0.0 --port 8000
+      dockerfile: services/tool/Dockerfile
+    container_name: glyphar_tool
+    command: uvicorn glyphar.api:app --host 0.0.0.0 --port 8001
     ports:
-      - "8000:8000"
+      - "8001:8001"
     volumes:
       - ../config:/app/config
       - ../docs:/app/docs
     restart: unless-stopped
 
-  agent:
+  thoth:
     build:
       context: ..
-      dockerfile: docker/Dockerfile
+      dockerfile: services/thoth/Dockerfile
     container_name: thoth_agent
-    command: python -m glyphar.agent.main
+    command: python -m thoth.main
     volumes:
       - ../config:/app/config
       - ../docs:/app/docs
     depends_on:
-      - api
+      - tool
     restart: unless-stopped
 
   prefect:
