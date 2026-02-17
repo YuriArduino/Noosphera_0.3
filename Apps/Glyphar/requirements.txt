@@ -1,0 +1,13 @@
+# OCR
+pytesseract
+opencv-python-headless
+pillow
+pdf2image
+
+# Core
+numpy
+pydantic>=2
+
+# API
+fastapi
+uvicorn[standard]

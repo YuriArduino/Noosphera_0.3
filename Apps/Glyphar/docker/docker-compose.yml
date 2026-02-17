@@ -1,0 +1,37 @@
+version: "3.9"
+
+services:
+
+  api:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    container_name: glyphar_api
+    command: uvicorn glyphar.api.main:app --host 0.0.0.0 --port 8000
+    ports:
+      - "8000:8000"
+    volumes:
+      - ../config:/app/config
+      - ../docs:/app/docs
+    restart: unless-stopped
+
+  agent:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    container_name: thoth_agent
+    command: python -m glyphar.agent.main
+    volumes:
+      - ../config:/app/config
+      - ../docs:/app/docs
+    depends_on:
+      - api
+    restart: unless-stopped
+
+  prefect:
+    image: prefecthq/prefect:2-latest
+    container_name: prefect_server
+    command: prefect server start
+    ports:
+      - "4200:4200"
+    restart: unless-stopped

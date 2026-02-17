@@ -1,6 +1,0 @@
-pytesseract
-opencv-python-headless
-pillow
-pydantic
-numpy
-pdf2image
