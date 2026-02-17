@@ -19,15 +19,22 @@ from glyphar.core.fallback import create_fallback_page
 
 
 def run_sequential(
-    pages_images: List[Any], page_processor: Callable, show_progress: bool = True
+    pages_images: List[Any],
+    page_processor: Callable,
+    show_progress: bool = True,
+    doc_prefix: str = "doc",
+    doc_date: str = "20260101",
 ) -> Tuple[List[PageResult], float]:
     """
     Process pages sequentially with optional progress display.
 
     Args:
         pages_images: List of page images (numpy arrays).
-        page_processor: Callable with signature process(image, page_number) -> PageResult.
+        page_processor: Callable with signature process(image, page_number,
+        doc_prefix, doc_date) -> PageResult.
         show_progress: Display progress every 5% of pages.
+        doc_prefix: Document prefix for canonical ID generation.
+        doc_date: Date string for canonical ID generation (YYYYMMDD).
 
     Returns:
         Tuple of (page_results, total_processing_time_seconds).
@@ -50,11 +57,11 @@ def run_sequential(
             print(f"    📄 Página {i}/{len(pages_images)}")
 
         try:
-            result = page_processor.process(img, i)
+            result = page_processor.process(img, i, doc_prefix, doc_date)
             results.append(result)
         except Exception as e:  # pylint: disable=broad-exception-caught
             print(f"      ⚠️  Página {i} falhou: {str(e)[:80]}...")
-            results.append(create_fallback_page(i))
+            results.append(create_fallback_page(i, doc_prefix, doc_date))
 
     return results, time.perf_counter() - t0
 
@@ -65,6 +72,8 @@ def run_parallel(
     max_workers: int = 4,
     batch_size: int = 10,
     _show_progress: bool = True,
+    doc_prefix: str = "doc",
+    doc_date: str = "20260101",
 ) -> Tuple[List[PageResult], float]:
     """
     Process pages in parallel batches using thread pool.
@@ -75,6 +84,8 @@ def run_parallel(
         max_workers: Thread pool size (default 4).
         batch_size: Pages per batch (controls memory usage).
         show_progress: Display batch completion progress.
+        doc_prefix: Document prefix for canonical ID generation.
+        doc_date: Date string for canonical ID generation (YYYYMMDD).
 
     Returns:
         Tuple of (page_results, total_processing_time_seconds).
@@ -108,7 +119,9 @@ def run_parallel(
         with ThreadPoolExecutor(max_workers=max_workers) as executor:
             # Submit batch tasks
             future_to_page = {
-                executor.submit(page_processor.process, img, idx): idx
+                executor.submit(
+                    page_processor.process, img, idx, doc_prefix, doc_date
+                ): idx
                 for idx, img in batch
             }
 
@@ -121,7 +134,9 @@ def run_parallel(
                     batch_results.append(result)
                 except Exception as e:  # pylint: disable=broad-exception-caught
                     print(f"      ❌ Página {page_number} falhou: {str(e)[:80]}...")
-                    batch_results.append(create_fallback_page(page_number))
+                    batch_results.append(
+                        create_fallback_page(page_number, doc_prefix, doc_date)
+                    )
 
         results.extend(batch_results)
 

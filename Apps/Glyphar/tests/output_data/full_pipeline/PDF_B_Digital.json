@@ -6,11 +6,12 @@
     "size_bytes": 957465,
     "created_at": "2026-02-06T16:50:01.322998",
     "modified_at": "2026-02-06T16:50:01.320006",
-    "hash_sha256": "",
+    "hash_sha256": "6c34a38cfbabca415159ecba800f2de5412056fb79dbd590d6bb77974fefc4bb",
     "pages_count": 6
   },
   "pages": [
     {
+      "id": "pdf_b_digital_20260206_001",
       "page_number": 1,
       "layout_type": "single",
       "columns": [
@@ -20,7 +21,7 @@
           "confidence": 71.53846153846153,
           "word_count": 13,
           "char_count": 78,
-          "processing_time_s": 0.9269684419998612,
+          "processing_time_s": 0.9849976430004972,
           "bbox": {
             "left": 53,
             "top": 22,
@@ -33,12 +34,13 @@
       ],
       "page_quality": "excellent",
       "page_confidence_mean": 71.53846153846153,
-      "processing_time_s": 0.9655960169998252,
+      "processing_time_s": 1.0244636569996146,
       "config_used": null,
       "warnings": [],
       "page_text_hash": "e6b65e6ba9a28171ef5005fac30fd76e07959d4c78d0de47e1a68db353f7f902"
     },
     {
+      "id": "pdf_b_digital_20260206_002",
       "page_number": 2,
       "layout_type": "single",
       "columns": [
@@ -48,7 +50,7 @@
           "confidence": 94.35593220338983,
           "word_count": 59,
           "char_count": 396,
-          "processing_time_s": 1.0152989389998766,
+          "processing_time_s": 0.9415384960002484,
           "bbox": {
             "left": 660,
             "top": 524,
@@ -61,12 +63,13 @@
       ],
       "page_quality": "excellent",
       "page_confidence_mean": 94.35593220338983,
-      "processing_time_s": 1.1160492369999702,
+      "processing_time_s": 1.0349684319999142,
       "config_used": null,
       "warnings": [],
       "page_text_hash": "45bcc6ae8b1dcb391ebfd51718560546983fa5dc6d3758d5f84e3543940e9bad"
     },
     {
+      "id": "pdf_b_digital_20260206_003",
       "page_number": 3,
       "layout_type": "single",
       "columns": [
@@ -76,7 +79,7 @@
           "confidence": 93.85714285714286,
           "word_count": 238,
           "char_count": 1638,
-          "processing_time_s": 2.546685640000078,
+          "processing_time_s": 2.540454396000314,
           "bbox": {
             "left": 623,
             "top": 700,
@@ -89,12 +92,13 @@
       ],
       "page_quality": "excellent",
       "page_confidence_mean": 93.85714285714286,
-      "processing_time_s": 2.6345375549999517,
+      "processing_time_s": 2.6369089410000015,
       "config_used": null,
       "warnings": [],
       "page_text_hash": "b2904ae333003d5157a588e41137c3adf5c81397f43a403f3c9a49047284a9ac"
     },
     {
+      "id": "pdf_b_digital_20260206_004",
       "page_number": 4,
       "layout_type": "single",
       "columns": [
@@ -104,7 +108,7 @@
           "confidence": 90.13636363636364,
           "word_count": 44,
           "char_count": 271,
-          "processing_time_s": 0.9110081059998265,
+          "processing_time_s": 0.887057507999998,
           "bbox": {
             "left": 763,
             "top": 523,
@@ -117,12 +121,13 @@
       ],
       "page_quality": "excellent",
       "page_confidence_mean": 90.13636363636364,
-      "processing_time_s": 1.0059388480001417,
+      "processing_time_s": 0.9861710479999601,
       "config_used": null,
       "warnings": [],
       "page_text_hash": "7c61868a069d59389a76b7b8c8544a948f7ab77026d579b1e11d8809078ccca3"
     },
     {
+      "id": "pdf_b_digital_20260206_005",
       "page_number": 5,
       "layout_type": "single",
       "columns": [
@@ -132,7 +137,7 @@
           "confidence": 94.51890756302521,
           "word_count": 476,
           "char_count": 2992,
-          "processing_time_s": 4.016524540000091,
+          "processing_time_s": 4.268528028999754,
           "bbox": {
             "left": 487,
             "top": 523,
@@ -145,12 +150,13 @@
       ],
       "page_quality": "excellent",
       "page_confidence_mean": 94.51890756302521,
-      "processing_time_s": 4.0691740360000495,
+      "processing_time_s": 4.3239987919996565,
       "config_used": null,
       "warnings": [],
       "page_text_hash": "1c11078b8907b9233e92f5a739d76a9d16b3b457ab589e1685ee70e158b2ec3f"
     },
     {
+      "id": "pdf_b_digital_20260206_006",
       "page_number": 6,
       "layout_type": "double",
       "columns": [
@@ -160,7 +166,7 @@
           "confidence": 94.11785714285715,
           "word_count": 280,
           "char_count": 1803,
-          "processing_time_s": 2.248005034999778,
+          "processing_time_s": 2.346590277999894,
           "bbox": {
             "left": 421,
             "top": 839,
@@ -176,7 +182,7 @@
           "confidence": 91.77173913043478,
           "word_count": 276,
           "char_count": 1834,
-          "processing_time_s": 2.404754129999901,
+          "processing_time_s": 2.428982004000318,
           "bbox": {
             "left": 902,
             "top": 840,
@@ -189,7 +195,7 @@
       ],
       "page_quality": "excellent",
       "page_confidence_mean": 92.94479813664597,
-      "processing_time_s": 4.703333202000067,
+      "processing_time_s": 4.824455955999838,
       "config_used": null,
       "warnings": [],
       "page_text_hash": "27120502714874236ba1a00753774e3bf708dc96fac371e94d074e204b945518"
@@ -203,8 +209,8 @@
     "total_words": 1386,
     "total_characters": 9012,
     "average_confidence": 89.55860098917151,
-    "total_processing_time_s": 9.739385196000057,
-    "pages_per_second": 0.6160553134775063,
+    "total_processing_time_s": 10.136997970000266,
+    "pages_per_second": 0.5918912105691033,
     "quality_distribution": {
       "excellent": 6
     },
@@ -224,7 +230,9 @@
   "metadata": {
     "processor": "FileProcessor",
     "mode": "parallel",
-    "llm_ready": true
+    "llm_ready": true,
+    "doc_prefix": "pdf_b_digital",
+    "doc_date": "20260206"
   },
-  "created_at": "2026-02-17T16:11:15.175484Z"
+  "created_at": "2026-02-17T17:11:27.386238Z"
 }

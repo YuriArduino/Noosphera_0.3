@@ -60,16 +60,25 @@ class PageProcessor:
         self.quality_assessor = QualityAssessor()
         self.config_optimizer = ConfigOptimizer(engine)
 
-    def process(self, image: Any, page_number: int) -> PageResult:
+    def process(
+        self,
+        image: Any,
+        page_number: int,
+        doc_prefix: str,
+        doc_date: str,
+    ) -> PageResult:
         """
         Process single page through complete OCR pipeline.
 
         Args:
             image: Page image as numpy array (BGR format).
             page_number: 1-based page number for metadata.
+            doc_prefix: Document prefix for ID generation (e.g., 'pdf_A').
+            doc_date: Date string for ID generation (e.g., '20260216').
 
         Returns:
-            PageResult with OCR text, confidence metrics, and layout metadata.
+            PageResult with OCR text, confidence metrics, layout metadata,
+            and canonical ID.
 
         Error handling:
             Individual region failures do NOT abort page processing —
@@ -118,8 +127,12 @@ class PageProcessor:
                 )
                 confidences.append(0.0)
 
+        # Generate Canonical ID
+        page_id = Identity.canonical_id(doc_prefix, doc_date, page_number)
+
         # Stage 4: Result aggregation
         return PageResult(
+            id=page_id,
             page_number=page_number,
             layout_type=layout_type,
             columns=columns,
@@ -129,9 +142,13 @@ class PageProcessor:
             config_used=None,
             page_text_hash=self._compute_page_text_hash(columns),
         )
+
     @staticmethod
-    def _compute_page_text_hash(columns):
-        text = "\n\n".join(c.text for c in columns if hasattr(c, 'text') and c.text.strip())
+    def _compute_page_text_hash(columns: List[ColumnResult]) -> str | None:
+        """Compute SHA256 hash of concatenated column texts."""
+        text = "\n\n".join(
+            c.text for c in columns if hasattr(c, "text") and c.text.strip()
+        )
         return Identity.sha256_hash(text) if text else None
 
     def _process_region(

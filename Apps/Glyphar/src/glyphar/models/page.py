@@ -16,18 +16,21 @@ class PageResult(BaseModel):
     Consolidated OCR result for a single document page.
 
     Aggregates:
+        - Unique Canonical ID (prefix_date_number)
         - Multiple ColumnResult instances (one per detected region)
         - Layout classification (SINGLE/DOUBLE/MULTI)
         - Page-level confidence (mean of column confidences)
         - Processing metadata (duration, warnings)
 
     Design principles:
+        - ID is globally unique per pipeline run (derived from doc prefix + date)
         - Columns preserve spatial order (left→right, top→bottom)
         - Confidence is arithmetic mean (simple, interpretable)
         - Warnings are non-blocking (pipeline continues on recoverable errors)
 
     Example:
         >>> page = PageResult(
+        ...     id="pdf_A_20260216_001",
         ...     page_number=1,
         ...     layout_type=LayoutType.DOUBLE,
         ...     columns=[col_left, col_right],
@@ -37,6 +40,7 @@ class PageResult(BaseModel):
         >>> full_text = page.get_text(separator="\n\n")
     """
 
+    id: str = Field(..., description="Canonical page ID (e.g., prefix_YYYYMMDD_001)")
     page_number: int = Field(..., ge=1, description="1-based page number")
     layout_type: LayoutType = Field(default=LayoutType.UNKNOWN)
     columns: List[ColumnResult] = Field(default_factory=list)
@@ -56,6 +60,7 @@ class PageResult(BaseModel):
         frozen=True,
         json_schema_extra={
             "example": {
+                "id": "pdf_A_20260216_001",
                 "page_number": 1,
                 "layout_type": "double",
                 "columns": 2,

@@ -9,6 +9,7 @@ from pathlib import Path
 from collections import Counter
 from typing import Any, Optional
 import time
+from datetime import datetime
 
 from glyphar.models.config import OCRConfig
 from glyphar.models.output import OCROutput
@@ -31,6 +32,7 @@ class FileProcessor:
         - Parallelization strategy selection (sequential vs parallel)
         - Page result aggregation into OCROutput
         - Statistics computation and metadata enrichment
+        - Canonical ID generation context (prefix + date)
 
     Non-responsibilities:
         - Page-level OCR logic (delegated to PageProcessor)
@@ -90,18 +92,15 @@ class FileProcessor:
             - Sequential: 2.5s/page (300 DPI)
             - Parallel (4 workers): 0.8s/page (3.1x speedup)
             - Memory: ~200MB for 100-page PDF at 300 DPI
-
-        Example:
-            >>> processor = FileProcessor(page_processor, config=OCRConfig(dpi=200))
-            >>> result = processor.process("book.pdf", parallel=True, max_workers=8)
-            >>> print(f"Processed {result.total_pages} pages")
         """
         path = Path(file_path)
         file_reader = self.file_reader or make_default_reader(path, dpi=self.config.dpi)
         pages_images = read_pages(file_reader, path)
-        file_meta = extract_file_metadata(path, pages_count=len(pages_images))
-        # Compute SHA256 hash for file
 
+        # Extract base metadata
+        file_meta = extract_file_metadata(path, pages_count=len(pages_images))
+
+        # Compute SHA256 hash for file
         try:
             with open(path, "rb") as f:
                 file_bytes = f.read()
@@ -109,10 +108,23 @@ class FileProcessor:
         except OSError as e:
             print(f"[ERROR] Failed to compute SHA256 for file '{path}': {e}")
             hash_sha256 = ""
+
         file_meta = file_meta.model_copy(update={"hash_sha256": hash_sha256})
+
+        # Generate Canonical ID components for pages
+        # Prefix: Stem of filename (e.g., "report_v1" from "report_v1.pdf")
+        doc_prefix = path.stem.replace(" ", "_").lower()
+        # Date: Use file modification date for reproducibility, or current date
+        try:
+            mtime = path.stat().st_mtime
+            doc_date = datetime.fromtimestamp(mtime).strftime("%Y%m%d")
+        except OSError:
+            doc_date = datetime.now().strftime("%Y%m%d")
 
         # Execute processing strategy
         start_time = time.perf_counter()
+
+        # Pass ID context to runners
         if parallel:
             pages_results, _ = run_parallel(
                 pages_images,
@@ -120,11 +132,18 @@ class FileProcessor:
                 max_workers=max_workers,
                 batch_size=batch_size,
                 _show_progress=show_progress,
+                doc_prefix=doc_prefix,
+                doc_date=doc_date,
             )
         else:
             pages_results, _ = run_sequential(
-                pages_images, self.page_processor, show_progress=show_progress
+                pages_images,
+                self.page_processor,
+                show_progress=show_progress,
+                doc_prefix=doc_prefix,
+                doc_date=doc_date,
             )
+
         elapsed = time.perf_counter() - start_time
 
         # Compute statistics
@@ -160,5 +179,7 @@ class FileProcessor:
                 "processor": "FileProcessor",
                 "mode": "parallel" if parallel else "sequential",
                 "llm_ready": bool(self.include_llm_input),
+                "doc_prefix": doc_prefix,
+                "doc_date": doc_date,
             },
         )
