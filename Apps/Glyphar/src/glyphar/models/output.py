@@ -124,7 +124,9 @@ class OCROutput(BaseModel):
 
         Returns dict with:
             - file: Filename only (not full path)
+            - file_hash: SHA256 hash of source file
             - pages: Total page count
+            - page_hashes: List of SHA256 hashes per page text
             - words: Total word count
             - average_confidence: Rounded to 1 decimal
             - processing_time_s: Rounded to 2 decimals
@@ -133,10 +135,11 @@ class OCROutput(BaseModel):
         stats = self._statistics()
         return {
             "file": self._file_metadata().name,
+            "file_hash": self._file_metadata().hash_sha256,
             "pages": self.total_pages,
+            "page_hashes": [p.page_text_hash for p in self.pages],
             "words": stats.total_words,
             "average_confidence": round(self.average_confidence, 1),
             "processing_time_s": round(stats.total_processing_time_s, 2),
             "needs_llm_correction": self.needs_llm_correction,
-            "hash_sha256": self._file_metadata().hash_sha256,
         }

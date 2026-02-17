@@ -85,6 +85,8 @@ def test_full_pipeline_diagnostic_real() -> None:
             batch_size=5,
             show_progress=False,
         )
+
+        # Use the summary() method which already includes hash information
         result_summary = result.summary()
 
         payload = result.model_dump(mode="json")
@@ -94,12 +96,17 @@ def test_full_pipeline_diagnostic_real() -> None:
             encoding="utf-8",
         )
 
+        # Build summary with hash information from result.summary()
         summary.append(
             {
-                "file": pdf_path.name,
-                "pages": result.total_pages,
-                "avg_confidence": round(result.average_confidence, 2),
+                "file": result_summary["file"],
+                "file_hash": result_summary["file_hash"],
+                "pages": result_summary["pages"],
+                "page_hashes": result_summary["page_hashes"],
+                "words": result_summary["words"],
+                "avg_confidence": result_summary["average_confidence"],
                 "processing_time_s": result_summary["processing_time_s"],
+                "needs_llm_correction": result_summary["needs_llm_correction"],
             }
         )
 
