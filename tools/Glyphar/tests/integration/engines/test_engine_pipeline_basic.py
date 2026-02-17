@@ -10,11 +10,10 @@ Resultado estruturado consistente
 stats
 """
 
-# tests/integration/engines/test_engine_pipeline_basic.py
+from collections import defaultdict
 from pathlib import Path
 import time
 import pytest
-from collections import defaultdict
 import numpy as np
 from pdf2image import convert_from_path
 
@@ -67,6 +66,8 @@ def _enrich_core_result(core_result: dict) -> dict:
 
 
 def group_words_by_line(words, tolerance=10):
+    """Utility to group words into lines
+    based on their vertical position (top coordinate)."""
     lines = defaultdict(list)
 
     for w in words:
