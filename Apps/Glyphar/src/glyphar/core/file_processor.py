@@ -13,6 +13,7 @@ import time
 from glyphar.models.config import OCRConfig
 from glyphar.models.output import OCROutput
 from glyphar.models.enums import PageQuality
+from glyphar.core.identity import Identity
 from .metadata import extract_file_metadata
 from .io_manager import make_default_reader, read_pages
 from .stats import calculate_statistics
@@ -99,6 +100,16 @@ class FileProcessor:
         file_reader = self.file_reader or make_default_reader(path, dpi=self.config.dpi)
         pages_images = read_pages(file_reader, path)
         file_meta = extract_file_metadata(path, pages_count=len(pages_images))
+        # Compute SHA256 hash for file
+
+        try:
+            with open(path, "rb") as f:
+                file_bytes = f.read()
+            hash_sha256 = Identity.sha256_hash(file_bytes)
+        except OSError as e:
+            print(f"[ERROR] Failed to compute SHA256 for file '{path}': {e}")
+            hash_sha256 = ""
+        file_meta = file_meta.model_copy(update={"hash_sha256": hash_sha256})
 
         # Execute processing strategy
         start_time = time.perf_counter()
