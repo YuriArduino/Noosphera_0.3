@@ -1,0 +1,12 @@
+environment: "production"   # development | staging | production
+
+overrides:
+
+  pipeline:
+    max_workers: 8
+
+  analysis:
+    confidence_threshold: 88.0
+
+  limits:
+    timeout_seconds: 240

@@ -1,0 +1,217 @@
+# ================================================================
+# PREPROCESSING PIPELINE CAPABILITIES
+# Glyphar OCR Pipeline — Module: Image Preprocessing
+# ================================================================
+
+version: "1.0.0"
+module: "preprocessing"
+description: "Adaptive image enhancement strategies for OCR optimization"
+
+# ---------------------------------------------------------------
+# EXECUTION ORDER (CRITICAL - DO NOT REORDER)
+# ---------------------------------------------------------------
+execution_order:
+  - "polarity_correction"
+  - "grayscale"
+  - "shadow_removal"
+  - "denoise"
+  - "deskew"
+  - "smart_crop"
+  - "threshold"
+
+# ---------------------------------------------------------------
+# 1. POLARITY CORRECTION (Always First)
+# ---------------------------------------------------------------
+polarity_correction:
+  enabled: true
+  execution_order: 1
+  description: "Detect and correct inverted polarity (white text on dark background)"
+
+  parameters:
+    dark_threshold: 128           # 100-150 (pixel value for "dark")
+    dark_ratio_threshold: 0.60    # 0.50-0.75 (proportion to trigger inversion)
+    auto_detect: true
+
+  performance:
+    execution_time_ms: 1
+    memory_overhead: "negligible"
+
+# ---------------------------------------------------------------
+# 2. GRAYSCALE CONVERSION (Base for Thresholds)
+# ---------------------------------------------------------------
+grayscale:
+  enabled: true
+  execution_order: 2
+  description: "Convert color to luminance-based grayscale"
+
+  parameters:
+    method: "luminosity"          # Only supported method
+    skip_if_grayscale: true       # Idempotency
+    input_dtype: "uint8"          # Contract validation
+
+  performance:
+    execution_time_ms: 0.5        # ~0.5ms for 2000px width
+    memory_overhead: "in-place"
+
+# ---------------------------------------------------------------
+# 3. SHADOW REMOVAL (Conditional)
+# ---------------------------------------------------------------
+shadow_removal:
+  enabled: false                  # Enable only if shadows detected
+  execution_order: 3
+  description: "Remove shadows and illumination gradients (CLAHE + background division)"
+
+  parameters:
+    clip_limit: 3.7               # 1.0-4.0 (higher = more aggressive)
+    tile_grid_size: [8, 8]        # [4-16, 4-16]
+    blur_kernel: 40               # 15-60 (odd, larger = broader gradients)
+    adaptive_kernel: true
+
+  presets:
+    light_shadows:
+      clip_limit: 1.5
+      blur_kernel: 15
+    heavy_spine_shadows:
+      clip_limit: 3.0
+      blur_kernel: 31
+
+  performance:
+    execution_time_ms: 15-20
+    memory_overhead: "moderate"
+    recommended_for: "book scans with spine shadows"
+
+# ---------------------------------------------------------------
+# 4. DENOISE (Conditional)
+# ---------------------------------------------------------------
+denoise:
+  enabled: false                  # Enable only if noise detected
+  execution_order: 4
+  description: "Reduce noise while preserving text stroke integrity"
+
+  methods:
+    nlm:
+      description: "Non-local means (best quality)"
+      strength: 10.0              # 5-20
+      execution_time_ms: 12
+      recommended_for: "scanned books/documents"
+    bilateral:
+      description: "Edge-preserving bilateral filter"
+      strength: 15.0
+      execution_time_ms: 8
+      recommended_for: "mixed content"
+    median:
+      description: "Median blur (fastest)"
+      strength: null              # Fixed 3x3 kernel
+      execution_time_ms: 2
+      recommended_for: "fax/low-res scans"
+
+  auto_select:
+    enabled: true
+    noise_threshold: 50.0         # Laplacian variance below = noise detected
+
+# ---------------------------------------------------------------
+# 5. DESKEW (Conditional)
+# ---------------------------------------------------------------
+deskew:
+  enabled: false                  # Enable only if skew > threshold
+  execution_order: 5
+  description: "Correct document skew angle via contour analysis"
+
+  parameters:
+    max_angle: 15.0               # 10-20 (correction limit in degrees)
+    min_angle_threshold: 0.5      # 0.3-1.0 (ignore below this)
+
+  auto_select:
+    enabled: true
+    skew_threshold: 2.0           # Degrees - enable above this
+
+  fallback_behavior:
+    return_original_on_failure: true
+    skip_on_extreme_noise: true
+    skip_on_uniform_page: true
+
+  performance:
+    execution_time_ms: 5-10
+    handles_skew_range: "±15°"
+
+# ---------------------------------------------------------------
+# 6. SMART CROP (Conditional)
+# ---------------------------------------------------------------
+smart_crop:
+  enabled: false                  # Enable only if margins detected
+  execution_order: 6
+  description: "Crop vertical margins based on structural text density"
+
+  parameters:
+    padding: 10                   # 5-20 (extra pixels on crop boundaries)
+    percentile: 20.0              # 10-30 (dark pixel threshold)
+    min_content_ratio: 0.05       # 0.02-0.10 (min fraction of content rows)
+    min_crop_gain: 0.03           # 0.01-0.10 (min vertical reduction)
+
+  safety:
+    never_crop_if_sparse: true
+    never_crop_if_negligible: true
+    preserve_uint8_contract: true
+
+  performance:
+    execution_time_ms: 3-5
+    complexity: "O(n)"
+
+# ---------------------------------------------------------------
+# 7. THRESHOLD STRATEGIES (Final Binarization)
+# ---------------------------------------------------------------
+threshold:
+  execution_order: 7
+  auto_select: true
+
+  otsu:
+    enabled: true
+    description: "Global thresholding for clean/high-contrast documents"
+    parameters:
+      pre_blur: true
+      blur_kernel: 3              # 1-7 (odd: 3=light, 5=medium, 7=strong)
+      fallback_threshold: 127
+    performance:
+      execution_time_ms: 1.2
+    recommended_for: "digital PDFs, clean scans"
+
+  adaptive:
+    enabled: true
+    description: "Local thresholding for documents with shadows/gradients"
+    parameters:
+      block_size: 29              # Odd, 11-41 recommended
+      c_offset: 11                # 5-20 (higher = fewer false positives)
+      method: "gaussian_c"
+      threshold_type: "binary"
+    downscale:
+      enabled: true
+      threshold_px: 3000
+      target_px: 2000
+    performance:
+      execution_time_ms: 2.5
+    recommended_for: "scanned documents with uneven lighting"
+
+# ---------------------------------------------------------------
+# AUTO-SELECTION BASED ON QUALITY METRICS
+# ---------------------------------------------------------------
+strategy_selection:
+  enabled: true
+
+  quality_thresholds:
+    sharpness_min: 100.0          # Below → use adaptive/shadow
+    contrast_min: 0.3             # Below → use adaptive/shadow
+    noise_variance_max: 50.0      # Above → enable denoise
+    is_clean_digital: true        # If true → skip heavy preprocessing
+    polarity_dark_ratio: 0.60     # Above → invert
+    skew_angle_threshold: 2.0     # Above → enable deskew
+    margin_ratio_min: 0.10        # Above → enable crop
+
+  fallback_chain:
+    - "polarity_correction"
+    - "grayscale"
+    - "otsu_threshold"
+    - "adaptive_threshold"
+    - "shadow_removal"
+    - "denoise"
+    - "deskew"
+    - "smart_crop"

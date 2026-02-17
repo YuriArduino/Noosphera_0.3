@@ -1,0 +1,148 @@
+# ================================================================
+# PERFORMANCE TRADE-OFFS
+# Glyphar OCR Pipeline — Module: Performance Characteristics
+# ================================================================
+
+version: "1.0.0"
+module: "performance"
+description: "Performance targets, benchmarks, and optimization guidelines"
+
+# ---------------------------------------------------------------
+# EXECUTION STRATEGIES
+# ---------------------------------------------------------------
+execution_strategies:
+  sequential:
+    enabled: true
+    memory_overhead: "O(1)"
+    speed: "1.0x baseline"
+    use_case: "Small documents (<10 pages), debugging"
+    progress_interval: "5%"
+    failure_handling: "create_fallback_page"
+
+  parallel_threaded:
+    enabled: true
+    memory_overhead: "O(batch_size)"
+    speedup: "2.5-3.5x vs sequential (8-core CPU)"
+    use_case: "Large documents (>20 pages), multi-core systems"
+    thread_safety_required: true
+    deterministic_output_order: true
+    batch_processing: true
+
+  parallel_multiprocess:
+    enabled: true
+    memory_overhead: "~200MB per worker"
+    speedup: "3.1x vs sequential (8-core CPU)"
+    use_case: "CPU-intensive preprocessing, >100 pages"
+    startup_overhead_s: 2
+    timeout_per_page_s: 120
+    environment_variable: "OMP_THREAD_LIMIT=1"
+
+# ---------------------------------------------------------------
+# PERFORMANCE TARGETS (Intel i7, 200 DPI)
+# ---------------------------------------------------------------
+performance_targets:
+  clean_digital_page:
+    total_time_s: 1.5
+    breakdown:
+      quality_assessment_ms: 3
+      preprocessing_ms: 5
+      engine_execution_ms: 1200
+      post_processing_ms: 50
+
+  standard_scan:
+    total_time_s: 2.8
+    breakdown:
+      quality_assessment_ms: 3
+      preprocessing_ms: 15
+      engine_execution_ms: 2500
+      post_processing_ms: 80
+
+  poor_scan_with_upscaling:
+    total_time_s: 4.2
+    breakdown:
+      quality_assessment_ms: 3
+      preprocessing_ms: 35
+      upscaling_ms: 50
+      engine_execution_ms: 3800
+      post_processing_ms: 100
+
+# ---------------------------------------------------------------
+# BENCHMARK SCENARIOS
+# ---------------------------------------------------------------
+benchmarks:
+  book_500_pages:
+    time_minutes: 2
+    workers: 8
+    confidence_range: "85-92%"
+    memory_peak_mb: 300
+    disk_io_mb_per_second: 50
+
+  article_10_pages:
+    time_seconds: 15
+    workers: 4
+    confidence_range: "88-94%"
+    memory_peak_mb: 50
+
+  degraded_document_50_pages:
+    time_minutes: 3
+    workers: 4
+    confidence_range: "75-85%"
+    memory_peak_mb: 150
+    preprocessing_overhead_percent: 25
+
+# ---------------------------------------------------------------
+# PREPROCESSING PERFORMANCE (2000px width image)
+# ---------------------------------------------------------------
+preprocessing_performance:
+  grayscale_ms: 0.5
+  otsu_ms: 1.2
+  adaptive_ms: 2.5
+  upscale_1_5x_ms: 3.0
+  denoise_nlm_ms: 12
+  denoise_bilateral_ms: 8
+  denoise_median_ms: 2
+  deskew_ms: 7.5
+  shadow_removal_ms: 17.5
+  smart_crop_ms: 4
+
+# ---------------------------------------------------------------
+# LAYOUT DETECTION PERFORMANCE
+# ---------------------------------------------------------------
+layout_detection_performance:
+  column_detector:
+    avg_time_ms: 2
+    precision_single: 0.987
+    precision_double: 0.963
+
+  advanced_detector:
+    avg_time_ms: 15
+    false_positive_rate: 0.12
+    recommended_use: "fallback"
+
+# ---------------------------------------------------------------
+# CACHING STRATEGY
+# ---------------------------------------------------------------
+caching:
+  enabled: true
+  max_size: 1000
+  eviction_policy: "lru"
+  key_components:
+    - "image_hash (MD5 first 16 chars)"
+    - "languages"
+    - "model_type"
+    - "psm"
+    - "oem"
+    - "timeout"
+    - "min_confidence"
+
+  hit_rate_target: 0.3            # 30% cache hit rate for batch processing
+  memory_per_entry_kb: 50
+
+# ---------------------------------------------------------------
+# OPTIMIZATION PHILOSOPHY
+# ---------------------------------------------------------------
+philosophy:
+  priority: "Good enough for LLM correction > Perfect OCR"
+  focus: "Speed and robustness over marginal accuracy gains"
+  target_confidence: "85-92% (sufficient for LLM post-processing)"
+  design_principle: "Adaptive preprocessing based on quality metrics"

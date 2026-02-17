@@ -1,0 +1,194 @@
+# ================================================================
+# TESSERACT ENGINE MODES
+# Glyphar OCR Pipeline — Module: Engine Configuration
+# ---------------------------------------------------------------
+# Three pre-configured profiles for different use cases
+# ================================================================
+
+version: "1.0.0"
+module: "engine_modes"
+description: "Tesseract OCR engine profiles with optimized configurations"
+
+# ---------------------------------------------------------------
+# MODEL TYPE PROFILES
+# ---------------------------------------------------------------
+model_profiles:
+  # -----------------------------------------------------------
+  # FAST (Lightweight)
+  # -----------------------------------------------------------
+  fast:
+    description: "High-speed processing for digital/clean documents"
+
+    engine:
+      oem: 1                          # LSTM only
+      base_timeout: 15                # seconds
+
+    config_flags:
+      - "--user-words /tmp/tesseract_user_words.txt"
+
+    performance:
+      expected_accuracy: "85-90%"
+      expected_speed_s_per_page: 1.5
+      memory_mb_per_page: 3
+      recommended_for:
+        - "High-volume processing"
+        - "Digital PDFs"
+        - "Clean scans (quality > 0.4)"
+
+    use_cases:
+      - "Batch processing >1000 pages"
+      - "Real-time OCR requirements"
+      - "Resource-constrained environments"
+
+    trade_offs:
+      pros:
+        - "Fastest processing speed"
+        - "Lowest memory footprint"
+        - "Good for clean documents"
+      cons:
+        - "Lower accuracy on degraded scans"
+        - "May miss complex layouts"
+
+  # -----------------------------------------------------------
+  # STANDARD (Balanced)
+  # -----------------------------------------------------------
+  standard:
+    description: "Balanced accuracy and speed for general use"
+
+    engine:
+      oem: 2                          # LSTM + legacy
+      base_timeout: 30                # seconds
+
+    config_flags: []
+
+    performance:
+      expected_accuracy: "88-92%"
+      expected_speed_s_per_page: 2.0
+      memory_mb_per_page: 4
+      recommended_for:
+        - "General document processing"
+        - "Mixed quality scans"
+        - "Production environments"
+
+    use_cases:
+      - "Default production configuration"
+      - "Unknown document quality"
+      - "Balanced throughput/accuracy needs"
+
+    trade_offs:
+      pros:
+        - "Good balance of speed and accuracy"
+        - "Handles moderate degradation"
+        - "Reliable for most documents"
+      cons:
+        - "Not optimal for extreme cases"
+        - "Moderate resource usage"
+
+  # -----------------------------------------------------------
+  # BEST (Maximum Accuracy)
+  # -----------------------------------------------------------
+  best:
+    description: "Maximum accuracy for difficult/degraded documents"
+
+    engine:
+      oem: 3                          # Default (all available engines)
+      base_timeout: 45                # seconds
+
+    config_flags:
+      - "--user-patterns /tmp/tesseract_user_patterns.txt"
+
+    performance:
+      expected_accuracy: "90-95%"
+      expected_speed_s_per_page: 2.8
+      memory_mb_per_page: 5
+      recommended_for:
+        - "Degraded/poor quality scans"
+        - "Critical accuracy requirements"
+        - "Historical documents"
+
+    use_cases:
+      - "Legal/compliance documents"
+      - "Historical archives"
+      - "Poor quality scans (quality < 0.25)"
+
+    trade_offs:
+      pros:
+        - "Highest accuracy available"
+        - "Best for degraded documents"
+        - "Handles complex layouts better"
+      cons:
+        - "Slowest processing speed"
+        - "Highest memory footprint"
+        - "Overkill for clean documents"
+
+# ---------------------------------------------------------------
+# STABILITY TUNING PARAMETERS (Applied to All Profiles)
+# ---------------------------------------------------------------
+stability_tuning:
+  - "-c preserve_interword_spaces=1"
+  - "-c textord_min_linesize=2.5"
+  - "-c textord_initialx_ile=1.0"
+
+# ---------------------------------------------------------------
+# PSYCHOANALYTIC DOMAIN DICTIONARIES
+# ---------------------------------------------------------------
+user_files:
+  psychoanalytic_terms:
+    - "psicanálise"
+    - "Freud"
+    - "Lacan"
+    - "inconsciente"
+    - "transferência"
+    - "recalque"
+    - "sintoma"
+    - "gozo"
+    - "objeto a"
+    - "Édipo"
+    - "Jacques"
+    - "Sigmund"
+    - "Winnicott"
+    - "Bion"
+
+  citation_patterns:
+    - r"\d{4}[a-z]?"           # Years with optional letter (1998a)
+    - r"[A-Z]\.[A-Z]\."        # Initials (S.F.)
+    - r"\d+-\d+"               # Page ranges (45-67)
+    - r"p\. \d+"               # Page references (p. 123)
+
+  file_paths:
+    words: "/tmp/tesseract_user_words.txt"
+    patterns: "/tmp/tesseract_user_patterns.txt"
+
+  cleanup:
+    on_exit: true
+    context_manager: true
+
+# ---------------------------------------------------------------
+# FALLBACK HIERARCHY (On Engine Failure)
+# ---------------------------------------------------------------
+fallback:
+  enabled: true
+  hierarchy:
+    - psm: 6
+      oem: 1
+      confidence_cap: 30.0
+      description: "Dense text recovery"
+    - psm: 11
+      oem: 1
+      confidence_cap: 20.0
+      description: "Sparse text handling"
+    - psm: 3
+      oem: 0
+      confidence_cap: 10.0
+      description: "Legacy engine fallback"
+
+  ultimate_failure:
+    text: "[OCR FAILED: {error}]"
+    confidence: 0.0
+    config_used: "failed_all_fallbacks"
+
+  timeout: 10
+  captured_exceptions:
+    - "TesseractError"
+    - "RuntimeError"
+    - "subprocess.TimeoutExpired"

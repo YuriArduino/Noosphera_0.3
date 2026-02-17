@@ -1,0 +1,118 @@
+# ================================================================
+# QUALITY ASSESSMENT CAPABILITIES
+# Glyphar OCR Pipeline — Module: Image Analysis
+# ================================================================
+
+version: "1.0.0"
+module: "analysis"
+description: "Quantitative image quality metrics for adaptive OCR strategy selection"
+
+# ---------------------------------------------------------------
+# QUALITY ASSESSOR
+# ---------------------------------------------------------------
+quality_assessor:
+  enabled: true
+  stateless: true
+  thread_safe: true
+
+  performance:
+    execution_time_ms: 3          # < 3ms per page (2000px width)
+    memory_overhead: "negligible"
+    validation_sample: "10k+ Portuguese documents"
+
+  # -------------------------------------------------------------
+  # METRICS
+  # -------------------------------------------------------------
+  metrics:
+    sharpness:
+      method: "laplacian_variance"
+      dtype: "float64"
+      range: [0, "inf"]
+      interpretation:
+        low: "< 50 = blurry, needs denoising/sharpening"
+        medium: "50-150 = acceptable"
+        high: "> 150 = sharp text suitable for direct OCR"
+
+    contrast:
+      method: "michelson_ratio"
+      formula: "(max - min) / (max + min + epsilon)"
+      epsilon: 1e-6               # Prevents division by zero
+      dtype: "float"
+      range: [0.0, 1.0]
+      interpretation:
+        low: "< 0.2 = poor scan, needs enhancement"
+        medium: "0.2-0.4 = acceptable"
+        high: "> 0.4 = high contrast (digital documents)"
+
+    is_clean_digital:
+      type: "boolean"
+      classification_rule: "sharpness > 150 AND contrast > 0.4"
+      impact: "Skip heavy preprocessing (60-70% of modern docs)"
+
+    quality_score:
+      type: "composite"
+      formula: "sharpness × contrast"
+      purpose: "Page difficulty ranking in batch processing"
+      range: [0, "inf"]
+
+# ---------------------------------------------------------------
+# PAGE QUALITY CLASSIFICATION
+# ---------------------------------------------------------------
+page_quality_thresholds:
+  excellent:
+    sharpness_min: 250
+    contrast_min: 0.6
+    preprocessing: "grayscale_only"
+    expected_ocr_accuracy: "92-95%"
+
+  good:
+    sharpness_min: 150
+    contrast_min: 0.4
+    preprocessing: "light_denoise"
+    expected_ocr_accuracy: "88-92%"
+
+  fair:
+    sharpness_min: 80
+    contrast_min: 0.25
+    preprocessing: "shadow_removal"
+    expected_ocr_accuracy: "82-88%"
+
+  poor:
+    sharpness_max: 80
+    contrast_max: 0.25
+    preprocessing: "full_stack"
+    expected_ocr_accuracy: "75-82%"
+
+# ---------------------------------------------------------------
+# CONFIDENCE THRESHOLDS
+# ---------------------------------------------------------------
+confidence:
+  thresholds:
+    llm_correction_recommended: 90.0   # Below → LLM correction beneficial
+    llm_correction_required: 70.0      # Below → LLM correction necessary
+    low_quality_flag: 60.0             # Below → flag for review
+    critical_quality: 50.0             # Below → manual review recommended
+
+  aggregation:
+    method: "mean"                     # Mean of word-level confidences
+    per_page: true
+    per_document: true
+
+# ---------------------------------------------------------------
+# LLM INTEGRATION
+# ---------------------------------------------------------------
+llm_integration:
+  needs_correction_threshold: 90.0
+  format: "llm_ready_text()"
+  structure:
+    - "DOCUMENT: filename"
+    - "PAGES: N"
+    - "AVERAGE CONFIDENCE: XX.X%"
+    - "----------------------------------------"
+    - "[full text]"
+
+  benefits:
+    - "Page boundaries preserved during correction"
+    - "Low-confidence pages receive priority attention"
+    - "Context maintained across page boundaries"
+    - "Easy post-correction parsing"

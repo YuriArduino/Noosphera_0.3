@@ -1,0 +1,141 @@
+# ================================================================
+# HIGH ACCURACY STRATEGY
+# Glyphar OCR Pipeline — Module: Processing Strategy
+# ================================================================
+
+version: "1.0.0"
+strategy: "high_accuracy"
+description: "Optimized for maximum accuracy — suitable for critical documents"
+priority: "accuracy > speed"
+
+# ---------------------------------------------------------------
+# USE CASES
+# ---------------------------------------------------------------
+use_cases:
+  - "Legal/compliance documents"
+  - "Historical archives"
+  - "Poor quality scans (quality < 0.25)"
+  - "Documents requiring >95% accuracy"
+  - "One-time processing (speed not critical)"
+
+# ---------------------------------------------------------------
+# ENGINE CONFIGURATION
+# ---------------------------------------------------------------
+engine:
+  model_type: "best"
+  oem: 3                          # All available engines
+  base_timeout: 45
+
+  config_flags:
+    - "--user-patterns /tmp/tesseract_user_patterns.txt"
+
+# ---------------------------------------------------------------
+# PIPELINE CONFIGURATION
+# ---------------------------------------------------------------
+pipeline:
+  parallel: true
+  max_workers: 4                  # Fewer workers for memory
+  batch_size: 5                   # Smaller batches
+  show_progress: true
+
+# ---------------------------------------------------------------
+# PREPROCESSING (Full Stack)
+# ---------------------------------------------------------------
+preprocessing:
+  enabled_strategies:
+    - "polarity_correction"
+    - "grayscale"
+    - "shadow_removal"
+    - "denoise"
+    - "deskew"
+    - "smart_crop"
+
+  threshold:
+    method: "adaptive"
+    block_size: 29
+    c_offset: 11
+
+  auto_select:
+    enabled: true                 # Use quality assessment
+
+  expected_overhead_ms: 50
+
+# ---------------------------------------------------------------
+# LAYOUT DETECTION
+# ---------------------------------------------------------------
+layout:
+  primary_detector: "column"
+  fallback_detector: "advanced"   # Enable fallback
+  confidence_threshold: 0.7       # Higher threshold
+
+  cache:
+    enabled: true
+    max_size: 1000
+
+# ---------------------------------------------------------------
+# ANALYSIS
+# ---------------------------------------------------------------
+analysis:
+  quality_assessment:
+    enabled: true
+
+  confidence_threshold: 90.0      # Higher threshold
+  llm_correction_threshold: 95.0  # Only lowest quality to LLM
+
+# ---------------------------------------------------------------
+# PERFORMANCE EXPECTATIONS
+# ---------------------------------------------------------------
+performance:
+  expected_speed_s_per_page: 2.8
+  expected_accuracy: "90-95%"
+  memory_mb_per_page: 5
+
+  benchmark_500_pages:
+    time_minutes: 4
+    workers: 4
+    confidence_range: "90-95%"
+
+# ---------------------------------------------------------------
+# TRADE-OFFS
+# ---------------------------------------------------------------
+trade_offs:
+  pros:
+    - "Highest accuracy available"
+    - "Best for degraded documents"
+    - "Handles complex layouts better"
+    - "Minimal LLM correction needed"
+
+  cons:
+    - "Slowest processing speed (2x vs fast_scan)"
+    - "Highest memory footprint"
+    - "Overkill for clean documents"
+
+  recommendations:
+    - "Use for critical/archival documents only"
+    - "Ensure sufficient memory (2GB+ recommended)"
+    - "Consider fast_scan for initial pass"
+
+# ---------------------------------------------------------------
+# RUNTIME OVERRIDES
+# ---------------------------------------------------------------
+runtime_overrides:
+  engine:
+    model_type: "best"
+
+  pipeline:
+    max_workers: 4
+    batch_size: 5
+
+  preprocessing:
+    auto_select:
+      enabled: true
+
+  analysis:
+    confidence_threshold: 90.0
+    llm_correction_threshold: 95.0
+    quality_assessment:
+      enabled: true
+
+  layout:
+    fallback_detector: "advanced"
+    detector_confidence_threshold: 0.7

@@ -1,0 +1,56 @@
+version: "1.1.0"
+
+engine:
+  model_type: "standard"        # standard | best | fast | lightweight
+  language: "pt"
+  enable_layout_analysis: true
+  enable_preprocessing: true
+
+pipeline:
+  max_workers: 4
+  batch_size: 8
+  enable_parallelism: true
+
+layout:
+  detect_columns: true
+  detect_tables: true
+  detect_headers: true
+  preserve_reading_order: true
+
+  primary_detector: "column"     # column | advanced
+  fallback_detector: "none"      # none | advanced
+  detector_confidence_threshold: 0.6
+
+preprocessing:
+  remove_noise: true
+  deskew: true
+  binarization: true
+  normalize_unicode: true
+
+  auto_select:
+    enabled: false               # Quality-based preprocessing selection
+
+analysis:
+  confidence_threshold: 85.0
+  llm_correction_threshold: 92.0
+  enable_semantic_grouping: true
+
+  quality_assessment:
+    enabled: false
+
+output:
+  include_confidence: true
+  include_layout_blocks: true
+  include_metadata: true
+  generate_hash_per_page: true
+  generate_document_hash: true
+
+identity:
+  generate_document_id: true
+  id_strategy: "uuid4"           # uuid4 | content_hash | hybrid
+  hash_algorithm: "sha256"
+
+limits:
+  max_pages: 500
+  max_file_size_mb: 100
+  timeout_seconds: 300

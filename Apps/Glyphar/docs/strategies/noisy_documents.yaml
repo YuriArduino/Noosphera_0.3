@@ -1,0 +1,181 @@
+# ================================================================
+# NOISY DOCUMENTS STRATEGY
+# Glyphar OCR Pipeline — Module: Processing Strategy
+# ================================================================
+
+version: "1.0.0"
+strategy: "noisy_documents"
+description: "Optimized for degraded/scanned documents with noise, shadows, skew"
+priority: "robustness > speed"
+
+# ---------------------------------------------------------------
+# USE CASES
+# ---------------------------------------------------------------
+use_cases:
+  - "Scanned books with spine shadows"
+  - "Fax documents with salt-and-pepper noise"
+  - "Old documents with degradation"
+  - "Skewed scans from automatic feeders"
+  - "Low-contrast photocopies"
+
+# ---------------------------------------------------------------
+# ENGINE CONFIGURATION
+# ---------------------------------------------------------------
+engine:
+  model_type: "standard"
+  oem: 2                          # LSTM + legacy
+  base_timeout: 30
+
+  config_flags: []
+
+# ---------------------------------------------------------------
+# PIPELINE CONFIGURATION
+# ---------------------------------------------------------------
+pipeline:
+  parallel: true
+  max_workers: 4
+  batch_size: 8
+  show_progress: true
+
+# ---------------------------------------------------------------
+# PREPROCESSING (Aggressive)
+# ---------------------------------------------------------------
+preprocessing:
+  enabled_strategies:
+    - "polarity_correction"
+    - "grayscale"
+    - "shadow_removal"
+    - "denoise"
+    - "deskew"
+    - "smart_crop"
+
+  # Shadow Removal (Always Enabled)
+  shadow_removal:
+    enabled: true
+    clip_limit: 3.7
+    tile_grid_size: [8, 8]
+    blur_kernel: 40
+    adaptive_kernel: true
+
+  # Denoise (Aggressive)
+  denoise:
+    enabled: true
+    method: "nlm"
+    strength: 15.0                # Higher than default
+
+  # Deskew (Always Enabled)
+  deskew:
+    enabled: true
+    max_angle: 15.0
+    min_angle_threshold: 0.5
+
+  # Threshold (Adaptive)
+  threshold:
+    method: "adaptive"
+    block_size: 35                # Larger for noisy documents
+    c_offset: 15                  # Higher to reduce noise
+
+  auto_select:
+    enabled: true
+
+  expected_overhead_ms: 60
+
+# ---------------------------------------------------------------
+# LAYOUT DETECTION
+# ---------------------------------------------------------------
+layout:
+  primary_detector: "column"
+  fallback_detector: "advanced"
+  confidence_threshold: 0.6       # Lower threshold for noisy docs
+
+  cache:
+    enabled: true
+    max_size: 1000
+
+# ---------------------------------------------------------------
+# ANALYSIS
+# ---------------------------------------------------------------
+analysis:
+  quality_assessment:
+    enabled: true
+
+  quality_thresholds:
+    sharpness_min: 80.0           # Lower threshold
+    contrast_min: 0.25            # Lower threshold
+    noise_variance_max: 80.0      # Higher tolerance
+
+  confidence_threshold: 75.0
+  llm_correction_threshold: 88.0
+
+# ---------------------------------------------------------------
+# UPSCALING (For Low-Resolution Scans)
+# ---------------------------------------------------------------
+upscaling:
+  enabled: true
+  auto_select: true
+  sharpness_based:
+    below_35: 1.5
+    below_50: 1.3
+    below_80: 1.2
+    default: 1.0
+
+# ---------------------------------------------------------------
+# PERFORMANCE EXPECTATIONS
+# ---------------------------------------------------------------
+performance:
+  expected_speed_s_per_page: 3.5
+  expected_accuracy: "82-90%"
+  memory_mb_per_page: 6
+
+  benchmark_500_pages:
+    time_minutes: 5
+    workers: 4
+    confidence_range: "82-90%"
+
+# ---------------------------------------------------------------
+# TRADE-OFFS
+# ---------------------------------------------------------------
+trade_offs:
+  pros:
+    - "Best for degraded/scanned documents"
+    - "Handles shadows, noise, and skew"
+    - "Recovers text from difficult sources"
+
+  cons:
+    - "Slowest processing speed"
+    - "Highest memory footprint"
+    - "May over-process clean documents"
+
+  recommendations:
+    - "Use only for genuinely noisy documents"
+    - "Consider fast_scan for clean pages"
+    - "Apply LLM correction for best results"
+
+# ---------------------------------------------------------------
+# RUNTIME OVERRIDES
+# ---------------------------------------------------------------
+runtime_overrides:
+  engine:
+    model_type: "standard"
+
+  pipeline:
+    max_workers: 4
+    batch_size: 8
+
+  preprocessing:
+    shadow_removal:
+      enabled: true
+
+    denoise:
+      enabled: true
+      strength: 15.0
+
+    deskew:
+      enabled: true
+
+    threshold:
+      block_size: 35
+      c_offset: 15
+
+  upscaling:
+    enabled: true

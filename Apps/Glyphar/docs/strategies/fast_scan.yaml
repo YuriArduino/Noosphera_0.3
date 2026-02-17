@@ -1,0 +1,136 @@
+# ================================================================
+# FAST SCAN STRATEGY
+# Glyphar OCR Pipeline — Module: Processing Strategy
+# ================================================================
+
+version: "1.0.0"
+strategy: "fast_scan"
+description: "Optimized for speed — suitable for high-volume digital documents"
+priority: "speed > accuracy"
+
+# ---------------------------------------------------------------
+# USE CASES
+# ---------------------------------------------------------------
+use_cases:
+  - "Batch processing >1000 pages"
+  - "Real-time OCR requirements"
+  - "Digital-born PDFs (native, not scanned)"
+  - "Resource-constrained environments"
+  - "Documents where LLM correction will be applied"
+
+# ---------------------------------------------------------------
+# ENGINE CONFIGURATION
+# ---------------------------------------------------------------
+engine:
+  model_type: "fast"
+  oem: 1                          # LSTM only
+  base_timeout: 15
+
+  config_flags:
+    - "--user-words /tmp/tesseract_user_words.txt"
+
+# ---------------------------------------------------------------
+# PIPELINE CONFIGURATION
+# ---------------------------------------------------------------
+pipeline:
+  parallel: true
+  max_workers: 8
+  batch_size: 20
+  show_progress: true
+
+# ---------------------------------------------------------------
+# PREPROCESSING (Minimal)
+# ---------------------------------------------------------------
+preprocessing:
+  enabled_strategies:
+    - "polarity_correction"
+    - "grayscale"
+
+  disabled_strategies:
+    - "shadow_removal"
+    - "denoise"
+    - "deskew"
+    - "smart_crop"
+
+  threshold:
+    method: "otsu"
+    pre_blur: false
+
+  auto_select:
+    enabled: false                # Skip quality assessment overhead
+
+  expected_overhead_ms: 5
+
+# ---------------------------------------------------------------
+# LAYOUT DETECTION
+# ---------------------------------------------------------------
+layout:
+  primary_detector: "column"
+  fallback_detector: null         # Skip fallback for speed
+  confidence_threshold: 0.5       # Lower threshold for faster decision
+
+  cache:
+    enabled: true
+    max_size: 1000
+
+# ---------------------------------------------------------------
+# ANALYSIS
+# ---------------------------------------------------------------
+analysis:
+  quality_assessment:
+    enabled: false                # Skip for speed
+
+  confidence_threshold: 70.0      # Lower threshold
+  llm_correction_threshold: 85.0  # Assume LLM will correct
+
+# ---------------------------------------------------------------
+# PERFORMANCE EXPECTATIONS
+# ---------------------------------------------------------------
+performance:
+  expected_speed_s_per_page: 1.5
+  expected_accuracy: "85-90%"
+  memory_mb_per_page: 3
+
+  benchmark_500_pages:
+    time_minutes: 1.5
+    workers: 8
+    confidence_range: "85-90%"
+
+# ---------------------------------------------------------------
+# TRADE-OFFS
+# ---------------------------------------------------------------
+trade_offs:
+  pros:
+    - "Fastest processing speed (3x vs high_accuracy)"
+    - "Lowest memory footprint"
+    - "Good for clean digital documents"
+    - "Sufficient when LLM correction follows"
+
+  cons:
+    - "Lower accuracy on degraded scans"
+    - "May miss complex layouts"
+    - "Not suitable for archival/historical documents"
+
+  recommendations:
+    - "Use for digital-born PDFs only"
+    - "Always apply LLM correction post-OCR"
+    - "Not recommended for scanned documents <300 DPI"
+
+# ---------------------------------------------------------------
+# RUNTIME OVERRIDES
+# ---------------------------------------------------------------
+runtime_overrides:
+  engine:
+    model_type: "fast"
+
+  pipeline:
+    max_workers: 8
+    batch_size: 20
+
+  preprocessing:
+    auto_select:
+      enabled: false
+
+  analysis:
+    quality_assessment:
+      enabled: false

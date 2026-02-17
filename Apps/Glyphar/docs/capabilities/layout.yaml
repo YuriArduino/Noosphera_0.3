@@ -1,0 +1,101 @@
+# ================================================================
+# LAYOUT DETECTION CAPABILITIES
+# Glyphar OCR Pipeline — Module: Layout Analysis
+# ================================================================
+
+version: "1.0.0"
+module: "layout"
+description: "Document layout structure detection and region segmentation"
+
+# ---------------------------------------------------------------
+# DETECTOR SELECTION
+# ---------------------------------------------------------------
+detectors:
+  primary: "column"              # column | advanced
+  fallback: "advanced"
+  confidence_threshold: 0.7      # Below this, try fallback detector
+
+# ---------------------------------------------------------------
+# COLUMN LAYOUT DETECTOR (Primary - 95% of documents)
+# ---------------------------------------------------------------
+column_detector:
+  enabled: true
+  performance:
+    avg_time_ms: 2
+    precision_single: 0.987
+    precision_double: 0.963
+    false_positive_rate: 0.015
+
+  parameters:
+    min_column_width_ratio: 0.25    # 0.20-0.35
+    min_text_components: 10         # 5-20
+    confidence_threshold: 0.7       # 0.5-0.9
+
+  detection:
+    search_range: [0.3, 0.7]        # Central region for valley search
+    valley_ratio_threshold: 0.3     # Max valley depth
+    valley_position_range: [0.35, 0.65]
+    min_page_dimensions: [400, 200] # Below → trivial single column
+
+  cache:
+    enabled: true
+    max_size: 1000
+    eviction_policy: "lru"
+
+# ---------------------------------------------------------------
+# ADVANCED LAYOUT DETECTOR (Fallback - complex layouts)
+# ---------------------------------------------------------------
+advanced_detector:
+  enabled: true
+  use_as_primary: false
+
+  performance:
+    avg_time_ms: 15
+    false_positive_rate: 0.12
+    recommended_use: "fallback"
+
+  parameters:
+    min_depth_ratio: 0.3          # 0.2-0.4
+    symmetry_threshold: 0.6       # 0.5-0.8
+
+  classification:
+    double:
+      min_vert_valleys: 1
+      min_symmetry: 0.6
+    multi:
+      min_vert_valleys: 2
+    complex:
+      min_horz_valleys: 1
+    single:
+      default: true
+
+  confidence:
+    base: 0.7
+    bonus_symmetry: 0.2
+    bonus_valleys: 0.1
+
+# ---------------------------------------------------------------
+# LAYOUT → PSM/OEM MAPPING
+# ---------------------------------------------------------------
+psm_mapping:
+  single: 3                       # Fully automatic page segmentation
+  double: 4                       # Assume single column of text
+  multi: 4                        # Also for multi-column
+  complex: 6                      # Assume single uniform block
+  unknown: 3                      # Default to single
+
+oem_mapping:
+  single: 2                       # LSTM + legacy (balanced)
+  double: 2
+  multi: 2
+  complex: 3                      # Default based on availability
+  unknown: 2
+
+# ---------------------------------------------------------------
+# REGION GENERATION
+# ---------------------------------------------------------------
+region_generation:
+  split_method: "equal"           # equal | proportional
+  overlap_pixels: 0               # Avoid cutting words
+  min_region_width: 100           # Minimum width in pixels
+  merge_small_regions: true

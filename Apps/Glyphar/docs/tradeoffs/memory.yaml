@@ -1,0 +1,126 @@
+# ================================================================
+# MEMORY MANAGEMENT TRADE-OFFS
+# Glyphar OCR Pipeline — Module: Memory Optimization
+# ================================================================
+
+version: "1.0.0"
+module: "memory"
+description: "Memory usage patterns, limits, and optimization strategies"
+
+# ---------------------------------------------------------------
+# MEMORY USAGE BY COMPONENT (Per Page, 300 DPI)
+# ---------------------------------------------------------------
+component_memory:
+  file_io:
+    pdf_reader_mb_per_page: 5
+    image_reader_mb_per_page: 3
+    notes: "PDF rasterization is most memory-intensive"
+
+  preprocessing:
+    grayscale_mb: 0               # In-place operation
+    threshold_mb: 2               # Creates new buffer
+    upscale_1_5x_mb: 4            # Larger buffer for upscaled image
+    shadow_removal_mb: 8          # Multiple intermediate buffers
+    denoise_mb: 6                 # NLM requires neighborhood storage
+
+  engine:
+    tesseract_working_mb: 10
+    model_memory_mb: 50           # LSTM models loaded once
+    temporary_buffers_mb: 5
+
+  output:
+    page_result_mb: 2
+    word_boxes_mb: 1              # If include_word_boxes=true
+    full_text_mb: 0.5
+
+# ---------------------------------------------------------------
+# MEMORY BY EXECUTION MODE
+# ---------------------------------------------------------------
+execution_mode_memory:
+  sequential:
+    peak_memory_mb: 50
+    description: "O(1) overhead — processes one page at a time"
+    recommended_for: "Memory-constrained environments"
+
+  parallel_threaded:
+    peak_memory_mb: 200           # For 100-page PDF
+    batch_size: 10
+    description: "O(batch_size) — processes batch_size pages concurrently"
+    recommended_for: "Balanced throughput/memory"
+
+  parallel_multiprocess:
+    peak_memory_mb: 400           # For 4 workers
+    memory_per_worker_mb: 100
+    description: "Process duplication overhead"
+    recommended_for: "CPU-bound workloads with sufficient RAM"
+
+# ---------------------------------------------------------------
+# MEMORY LIMITS
+# ---------------------------------------------------------------
+limits:
+  max_file_size_mb: 100
+  max_pages: 500
+  max_workers: 16
+  max_batch_size: 20
+  max_image_dimension_px: 4000    # Auto-downscale above this
+
+  container:
+    memory_limit: "2GB"
+    memory_reservation: "1GB"
+    swap_enabled: false
+
+# ---------------------------------------------------------------
+# MEMORY OPTIMIZATION STRATEGIES
+# ---------------------------------------------------------------
+optimization_strategies:
+  image_downscale:
+    enabled: true
+    threshold_px: 3000
+    target_px: 2000
+    memory_savings_percent: 55
+
+  batch_processing:
+    enabled: true
+    batch_size: 10
+    description: "Process in batches to control peak memory"
+
+  lazy_loading:
+    enabled: true
+    description: "Load pages on-demand for very large documents"
+
+  garbage_collection:
+    enabled: true
+    frequency: "per_batch"
+    description: "Force GC after each batch completes"
+
+  buffer_reuse:
+    enabled: true
+    description: "Reuse preprocessing buffers when possible"
+
+# ---------------------------------------------------------------
+# MEMORY MONITORING
+# ---------------------------------------------------------------
+monitoring:
+  metrics:
+    - "peak_memory_mb"
+    - "avg_memory_per_page_mb"
+    - "gc_frequency"
+    - "buffer_reuse_ratio"
+
+  alerts:
+    memory_threshold_percent: 80  # Alert at 80% of limit
+    action: "reduce_batch_size"
+
+# ---------------------------------------------------------------
+# DOCKER CONTAINER MEMORY
+# ---------------------------------------------------------------
+container_memory:
+  hard_limit: "2GB"
+  soft_limit: "1.5GB"
+  oom_kill_avoidance:
+    enabled: true
+    strategy: "graceful_degradation"
+    actions:
+      - "reduce_batch_size"
+      - "switch_to_sequential"
+      - "skip_preprocessing"
