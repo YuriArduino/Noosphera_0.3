@@ -138,4 +138,5 @@ class OCROutput(BaseModel):
             "average_confidence": round(self.average_confidence, 1),
             "processing_time_s": round(stats.total_processing_time_s, 2),
             "needs_llm_correction": self.needs_llm_correction,
+            "hash_sha256": self._file_metadata().hash_sha256,
         }

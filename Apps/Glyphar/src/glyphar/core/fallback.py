@@ -7,6 +7,7 @@ Ensures pipeline always returns valid (though degraded) output for LLM correctio
 
 from glyphar.models.page import PageResult
 from glyphar.models.enums import LayoutType
+from glyphar.core.identity import Identity
 
 
 def create_fallback_page(page_number: int) -> PageResult:
@@ -30,6 +31,7 @@ def create_fallback_page(page_number: int) -> PageResult:
         >>> assert page.page_confidence_mean == 0.0
         >>> assert "processing_failed" in page.warnings
     """
+
     return PageResult(
         page_number=page_number,
         layout_type=LayoutType.UNKNOWN,
@@ -38,4 +40,5 @@ def create_fallback_page(page_number: int) -> PageResult:
         processing_time_s=0.0,
         warnings=["processing_failed"],
         config_used=None,
+        page_text_hash=Identity.sha256_hash(""),
     )

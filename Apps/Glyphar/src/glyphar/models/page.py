@@ -49,6 +49,7 @@ class PageResult(BaseModel):
     warnings: List[str] = Field(
         default_factory=list, description="Non-critical warnings"
     )
+    page_text_hash: Optional[str] = Field(None, description="SHA256 hash of page text")
 
     model_config = ConfigDict(
         extra="ignore",

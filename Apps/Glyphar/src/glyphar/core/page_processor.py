@@ -9,6 +9,8 @@ import time
 from typing import Any, List, Mapping
 import numpy as np
 
+from glyphar.core.identity import Identity
+
 from glyphar.models.page import PageResult
 from glyphar.models.column import ColumnResult
 from glyphar.models.enums import PageQuality
@@ -125,7 +127,12 @@ class PageProcessor:
             page_confidence_mean=float(np.mean(confidences)) if confidences else 0.0,
             processing_time_s=time.perf_counter() - t0,
             config_used=None,
+            page_text_hash=self._compute_page_text_hash(columns),
         )
+    @staticmethod
+    def _compute_page_text_hash(columns):
+        text = "\n\n".join(c.text for c in columns if hasattr(c, 'text') and c.text.strip())
+        return Identity.sha256_hash(text) if text else None
 
     def _process_region(
         self,
