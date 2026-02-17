@@ -1,4 +1,3 @@
-# src/glyphar/engines/core/tesseract_core.py
 """
 Minimal Tesseract OCR engine (pure engine layer).
 
