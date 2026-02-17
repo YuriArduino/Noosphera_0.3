@@ -19,6 +19,7 @@ from pdf2image.exceptions import PDFInfoNotInstalledError, PDFPageCountError
 from .base import FileReader
 
 
+# pylint: disable=too-few-public-methods no-member
 class PDFReader(FileReader):
     """
     PDF document reader using pdf2image (Poppler backend).
@@ -56,7 +57,7 @@ class PDFReader(FileReader):
         Raises:
             ValueError: If dpi outside valid range (72-600)
         """
-        if not (72 <= dpi <= 600):
+        if not 72 <= dpi <= 600:
             raise ValueError(f"DPI must be between 72 and 600, got {dpi}")
         self.dpi = dpi
 
