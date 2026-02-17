@@ -3,21 +3,50 @@
   "results": [
     {
       "file": "PDF_A_Digital.pdf",
+      "file_hash": "337f7ee9c65e39d29abd7610b48ad61465fb873b415f86fdce3ce93c66bf44c5",
       "pages": 3,
-      "avg_confidence": 92.41,
-      "processing_time_s": 4.51
+      "page_hashes": [
+        "eba4f439197bdbea6cbf76301fe88d56f6a7f54849eb0211b40c233beae7e808",
+        "2838c74686473ad392d91fd8e5ca9ba0cd8aa410a6d2690e91118e9d960d4d5b",
+        "a15f9c8acce69ec222109e1f1bfbe9045852c9c7e074d38ff60ace80d9e00a7e"
+      ],
+      "words": 846,
+      "avg_confidence": 92.4,
+      "processing_time_s": 4.36,
+      "needs_llm_correction": false
     },
     {
       "file": "PDF_B_Digital.pdf",
+      "file_hash": "6c34a38cfbabca415159ecba800f2de5412056fb79dbd590d6bb77974fefc4bb",
       "pages": 6,
-      "avg_confidence": 89.56,
-      "processing_time_s": 10.14
+      "page_hashes": [
+        "e6b65e6ba9a28171ef5005fac30fd76e07959d4c78d0de47e1a68db353f7f902",
+        "45bcc6ae8b1dcb391ebfd51718560546983fa5dc6d3758d5f84e3543940e9bad",
+        "b2904ae333003d5157a588e41137c3adf5c81397f43a403f3c9a49047284a9ac",
+        "7c61868a069d59389a76b7b8c8544a948f7ab77026d579b1e11d8809078ccca3",
+        "1c11078b8907b9233e92f5a739d76a9d16b3b457ab589e1685ee70e158b2ec3f",
+        "27120502714874236ba1a00753774e3bf708dc96fac371e94d074e204b945518"
+      ],
+      "words": 1386,
+      "avg_confidence": 89.6,
+      "processing_time_s": 9.81,
+      "needs_llm_correction": true
     },
     {
       "file": "PDF_C_Digitalizado.pdf",
+      "file_hash": "e9a361948b4859ea5f466d3bf361d366390cb2cce5830a437c9ac968a2b15d08",
       "pages": 5,
-      "avg_confidence": 87.71,
-      "processing_time_s": 6.15
+      "page_hashes": [
+        "5c31c050c3ee10ccd0bef900fb9acc2995713271caa19bfbda677d19c4b6cd9f",
+        "505569af06b93d1b61c5b3d9004d62c8676197dd0216cade0f74e1f69ddd5ab4",
+        "782e67a04fbdc73d53bba3363b0e17664d6bd92c9e3bd2db048952d1fadcfb02",
+        "3480a5bd85a528320b03ad3122e0bf4af2f9856cd11c31f7beb9367c2eabcc70",
+        "5d9a0eefee1d956ebf36d1166a531d95f9a4fefccf7bb7e8d963c1a13485a4c3"
+      ],
+      "words": 1264,
+      "avg_confidence": 87.7,
+      "processing_time_s": 5.82,
+      "needs_llm_correction": true
     }
   ]
 }

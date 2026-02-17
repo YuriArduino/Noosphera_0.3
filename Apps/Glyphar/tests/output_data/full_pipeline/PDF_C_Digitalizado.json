@@ -21,7 +21,7 @@
           "confidence": 73.5,
           "word_count": 16,
           "char_count": 93,
-          "processing_time_s": 1.2401623449995895,
+          "processing_time_s": 0.9619132560001162,
           "bbox": {
             "left": 137,
             "top": 82,
@@ -34,7 +34,7 @@
       ],
       "page_quality": "poor",
       "page_confidence_mean": 73.5,
-      "processing_time_s": 1.26826840800004,
+      "processing_time_s": 1.0006486900001619,
       "config_used": null,
       "warnings": [],
       "page_text_hash": "5c31c050c3ee10ccd0bef900fb9acc2995713271caa19bfbda677d19c4b6cd9f"
@@ -50,7 +50,7 @@
           "confidence": 95.325,
           "word_count": 40,
           "char_count": 289,
-          "processing_time_s": 0.9022679130002871,
+          "processing_time_s": 0.8080746120003823,
           "bbox": {
             "left": 224,
             "top": 115,
@@ -63,7 +63,7 @@
       ],
       "page_quality": "excellent",
       "page_confidence_mean": 95.325,
-      "processing_time_s": 0.9535188990003007,
+      "processing_time_s": 0.8590990820002844,
       "config_used": null,
       "warnings": [],
       "page_text_hash": "505569af06b93d1b61c5b3d9004d62c8676197dd0216cade0f74e1f69ddd5ab4"
@@ -79,7 +79,7 @@
           "confidence": 90.45348837209302,
           "word_count": 172,
           "char_count": 1168,
-          "processing_time_s": 2.483502529999896,
+          "processing_time_s": 2.1950473619999684,
           "bbox": {
             "left": 275,
             "top": 547,
@@ -92,7 +92,7 @@
       ],
       "page_quality": "excellent",
       "page_confidence_mean": 90.45348837209302,
-      "processing_time_s": 2.5265529739999693,
+      "processing_time_s": 2.240741552000145,
       "config_used": null,
       "warnings": [],
       "page_text_hash": "782e67a04fbdc73d53bba3363b0e17664d6bd92c9e3bd2db048952d1fadcfb02"
@@ -108,7 +108,7 @@
           "confidence": 85.76923076923077,
           "word_count": 260,
           "char_count": 1558,
-          "processing_time_s": 3.0028725350002787,
+          "processing_time_s": 2.7803436590002093,
           "bbox": {
             "left": 7,
             "top": 100,
@@ -124,7 +124,7 @@
           "confidence": 87.6259842519685,
           "word_count": 254,
           "char_count": 1563,
-          "processing_time_s": 2.6959502789995895,
+          "processing_time_s": 2.5602769580000313,
           "bbox": {
             "left": 478,
             "top": 106,
@@ -137,7 +137,7 @@
       ],
       "page_quality": "excellent",
       "page_confidence_mean": 86.69760751059964,
-      "processing_time_s": 5.75483822499973,
+      "processing_time_s": 5.3854994459998125,
       "config_used": null,
       "warnings": [],
       "page_text_hash": "3480a5bd85a528320b03ad3122e0bf4af2f9856cd11c31f7beb9367c2eabcc70"
@@ -153,7 +153,7 @@
           "confidence": 92.58364312267658,
           "word_count": 269,
           "char_count": 1656,
-          "processing_time_s": 2.7264271860003646,
+          "processing_time_s": 2.6368938380001055,
           "bbox": {
             "left": 12,
             "top": 430,
@@ -169,7 +169,7 @@
           "confidence": 92.60079051383399,
           "word_count": 253,
           "char_count": 1587,
-          "processing_time_s": 2.426063132999843,
+          "processing_time_s": 2.291935927999475,
           "bbox": {
             "left": 557,
             "top": 435,
@@ -182,7 +182,7 @@
       ],
       "page_quality": "excellent",
       "page_confidence_mean": 92.59221681825528,
-      "processing_time_s": 5.195474150999871,
+      "processing_time_s": 4.957617229999414,
       "config_used": null,
       "warnings": [],
       "page_text_hash": "5d9a0eefee1d956ebf36d1166a531d95f9a4fefccf7bb7e8d963c1a13485a4c3"
@@ -196,8 +196,8 @@
     "total_words": 1264,
     "total_characters": 7914,
     "average_confidence": 87.71366254018959,
-    "total_processing_time_s": 6.150080745000196,
-    "pages_per_second": 0.8129974560195535,
+    "total_processing_time_s": 5.817987438999808,
+    "pages_per_second": 0.8594037117514934,
     "quality_distribution": {
       "poor": 1,
       "excellent": 4
@@ -222,5 +222,5 @@
     "doc_prefix": "pdf_c_digitalizado",
     "doc_date": "20260206"
   },
-  "created_at": "2026-02-17T17:11:33.964370Z"
+  "created_at": "2026-02-17T17:25:07.132984Z"
 }

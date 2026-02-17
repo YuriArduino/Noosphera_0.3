@@ -21,7 +21,7 @@
           "confidence": 88.0,
           "word_count": 6,
           "char_count": 58,
-          "processing_time_s": 0.5118329959996117,
+          "processing_time_s": 0.4922314039995399,
           "bbox": {
             "left": 365,
             "top": 270,
@@ -34,7 +34,7 @@
       ],
       "page_quality": "fair",
       "page_confidence_mean": 88.0,
-      "processing_time_s": 0.5940236759997788,
+      "processing_time_s": 0.5689117330002773,
       "config_used": null,
       "warnings": [],
       "page_text_hash": "eba4f439197bdbea6cbf76301fe88d56f6a7f54849eb0211b40c233beae7e808"
@@ -50,7 +50,7 @@
           "confidence": 94.20670391061452,
           "word_count": 358,
           "char_count": 2124,
-          "processing_time_s": 3.4391248270003416,
+          "processing_time_s": 3.301286037999489,
           "bbox": {
             "left": 237,
             "top": 202,
@@ -63,7 +63,7 @@
       ],
       "page_quality": "excellent",
       "page_confidence_mean": 94.20670391061452,
-      "processing_time_s": 3.5124186539997027,
+      "processing_time_s": 3.380253902999357,
       "config_used": null,
       "warnings": [],
       "page_text_hash": "2838c74686473ad392d91fd8e5ca9ba0cd8aa410a6d2690e91118e9d960d4d5b"
@@ -79,7 +79,7 @@
           "confidence": 95.01659751037344,
           "word_count": 482,
           "char_count": 3046,
-          "processing_time_s": 4.417343063999397,
+          "processing_time_s": 4.269063489000473,
           "bbox": {
             "left": 237,
             "top": 196,
@@ -92,7 +92,7 @@
       ],
       "page_quality": "excellent",
       "page_confidence_mean": 95.01659751037344,
-      "processing_time_s": 4.503236413000195,
+      "processing_time_s": 4.353800552999928,
       "config_used": null,
       "warnings": [],
       "page_text_hash": "a15f9c8acce69ec222109e1f1bfbe9045852c9c7e074d38ff60ace80d9e00a7e"
@@ -106,8 +106,8 @@
     "total_words": 846,
     "total_characters": 5228,
     "average_confidence": 92.40776714032933,
-    "total_processing_time_s": 4.505557565999879,
-    "pages_per_second": 0.665844339142127,
+    "total_processing_time_s": 4.358991405999404,
+    "pages_per_second": 0.6882326025857758,
     "quality_distribution": {
       "fair": 1,
       "excellent": 2
@@ -132,5 +132,5 @@
     "doc_prefix": "pdf_a_digital",
     "doc_date": "20260206"
   },
-  "created_at": "2026-02-17T17:11:16.517230Z"
+  "created_at": "2026-02-17T17:24:50.339143Z"
 }

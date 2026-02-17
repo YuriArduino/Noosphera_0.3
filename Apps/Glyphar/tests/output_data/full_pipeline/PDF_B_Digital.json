@@ -21,7 +21,7 @@
           "confidence": 71.53846153846153,
           "word_count": 13,
           "char_count": 78,
-          "processing_time_s": 0.9849976430004972,
+          "processing_time_s": 0.9574636369998188,
           "bbox": {
             "left": 53,
             "top": 22,
@@ -34,7 +34,7 @@
       ],
       "page_quality": "excellent",
       "page_confidence_mean": 71.53846153846153,
-      "processing_time_s": 1.0244636569996146,
+      "processing_time_s": 1.0107446339998205,
       "config_used": null,
       "warnings": [],
       "page_text_hash": "e6b65e6ba9a28171ef5005fac30fd76e07959d4c78d0de47e1a68db353f7f902"
@@ -50,7 +50,7 @@
           "confidence": 94.35593220338983,
           "word_count": 59,
           "char_count": 396,
-          "processing_time_s": 0.9415384960002484,
+          "processing_time_s": 0.9758053349996771,
           "bbox": {
             "left": 660,
             "top": 524,
@@ -63,7 +63,7 @@
       ],
       "page_quality": "excellent",
       "page_confidence_mean": 94.35593220338983,
-      "processing_time_s": 1.0349684319999142,
+      "processing_time_s": 1.0615329899992503,
       "config_used": null,
       "warnings": [],
       "page_text_hash": "45bcc6ae8b1dcb391ebfd51718560546983fa5dc6d3758d5f84e3543940e9bad"
@@ -79,7 +79,7 @@
           "confidence": 93.85714285714286,
           "word_count": 238,
           "char_count": 1638,
-          "processing_time_s": 2.540454396000314,
+          "processing_time_s": 2.496794280999893,
           "bbox": {
             "left": 623,
             "top": 700,
@@ -92,7 +92,7 @@
       ],
       "page_quality": "excellent",
       "page_confidence_mean": 93.85714285714286,
-      "processing_time_s": 2.6369089410000015,
+      "processing_time_s": 2.601455132999945,
       "config_used": null,
       "warnings": [],
       "page_text_hash": "b2904ae333003d5157a588e41137c3adf5c81397f43a403f3c9a49047284a9ac"
@@ -108,7 +108,7 @@
           "confidence": 90.13636363636364,
           "word_count": 44,
           "char_count": 271,
-          "processing_time_s": 0.887057507999998,
+          "processing_time_s": 0.916510093999932,
           "bbox": {
             "left": 763,
             "top": 523,
@@ -121,7 +121,7 @@
       ],
       "page_quality": "excellent",
       "page_confidence_mean": 90.13636363636364,
-      "processing_time_s": 0.9861710479999601,
+      "processing_time_s": 1.007323900999836,
       "config_used": null,
       "warnings": [],
       "page_text_hash": "7c61868a069d59389a76b7b8c8544a948f7ab77026d579b1e11d8809078ccca3"
@@ -137,7 +137,7 @@
           "confidence": 94.51890756302521,
           "word_count": 476,
           "char_count": 2992,
-          "processing_time_s": 4.268528028999754,
+          "processing_time_s": 4.0493298399997,
           "bbox": {
             "left": 487,
             "top": 523,
@@ -150,7 +150,7 @@
       ],
       "page_quality": "excellent",
       "page_confidence_mean": 94.51890756302521,
-      "processing_time_s": 4.3239987919996565,
+      "processing_time_s": 4.09686688399961,
       "config_used": null,
       "warnings": [],
       "page_text_hash": "1c11078b8907b9233e92f5a739d76a9d16b3b457ab589e1685ee70e158b2ec3f"
@@ -166,7 +166,7 @@
           "confidence": 94.11785714285715,
           "word_count": 280,
           "char_count": 1803,
-          "processing_time_s": 2.346590277999894,
+          "processing_time_s": 2.2509293339999203,
           "bbox": {
             "left": 421,
             "top": 839,
@@ -182,7 +182,7 @@
           "confidence": 91.77173913043478,
           "word_count": 276,
           "char_count": 1834,
-          "processing_time_s": 2.428982004000318,
+          "processing_time_s": 2.403759288999936,
           "bbox": {
             "left": 902,
             "top": 840,
@@ -195,7 +195,7 @@
       ],
       "page_quality": "excellent",
       "page_confidence_mean": 92.94479813664597,
-      "processing_time_s": 4.824455955999838,
+      "processing_time_s": 4.70353631099988,
       "config_used": null,
       "warnings": [],
       "page_text_hash": "27120502714874236ba1a00753774e3bf708dc96fac371e94d074e204b945518"
@@ -209,8 +209,8 @@
     "total_words": 1386,
     "total_characters": 9012,
     "average_confidence": 89.55860098917151,
-    "total_processing_time_s": 10.136997970000266,
-    "pages_per_second": 0.5918912105691033,
+    "total_processing_time_s": 9.811651545000132,
+    "pages_per_second": 0.6115178441143794,
     "quality_distribution": {
       "excellent": 6
     },
@@ -234,5 +234,5 @@
     "doc_prefix": "pdf_b_digital",
     "doc_date": "20260206"
   },
-  "created_at": "2026-02-17T17:11:27.386238Z"
+  "created_at": "2026-02-17T17:25:00.883692Z"
 }
