@@ -128,7 +128,7 @@ class UserFilesManager:
         if self._cleanup_registered:
             try:
                 atexit.unregister(self.cleanup)
-            except Exception:
+            except AttributeError:
                 # Best-effort unregister. Non-critical across Python versions.
                 pass
             self._cleanup_registered = False
