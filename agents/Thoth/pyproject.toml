@@ -1,0 +1,71 @@
+# ================================================================
+# THOTH AGENT — PROJECT CONFIGURATION
+# ================================================================
+
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "thoth"
+version = "0.1.0"
+description = "Agente OCR autônomo para documentos psicanalíticos"
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.12"
+
+keywords = [
+    "ocr",
+    "agent",
+    "langgraph",
+    "psychoanalysis",
+    "llm",
+    "automation"
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["thoth*"]
+
+[tool.black]
+line-length = 100
+include = '\.pyi?$'
+
+[tool.isort]
+profile = "black"
+line_length = 100
+src_paths = ["src", "tests"]
+
+[tool.mypy]
+python_version = "3.12"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = false
+disallow_incomplete_defs = false
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+addopts = "-v --cov=thoth --cov-report=term-missing"
+
+[tool.coverage.run]
+source = ["src/thoth"]
+branch = true
+
+[tool.coverage.report]
+exclude_lines = [
+    "pragma: no cover",
+    "def __repr__",
+    "raise AssertionError",
+    "raise NotImplementedError",
+    "if __name__ == .__main__.:",
+    "if TYPE_CHECKING:",
+]

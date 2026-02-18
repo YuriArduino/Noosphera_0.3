@@ -1,0 +1,13 @@
+Metadata-Version: 2.4
+Name: thoth
+Version: 0.1.0
+Summary: Agente OCR autônomo para documentos psicanalíticos
+License: MIT
+Keywords: ocr,agent,langgraph,psychoanalysis,llm,automation
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Requires-Python: >=3.12
+Description-Content-Type: text/markdown
