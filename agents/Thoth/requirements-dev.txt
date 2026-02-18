@@ -1,0 +1,14 @@
+-r requirements.txt
+
+# --- Testing ---
+pytest
+pytest-asyncio
+pytest-cov
+
+# --- Code Quality ---
+black
+isort
+mypy
+pre-commit
+pylint
+pylint-pydantic

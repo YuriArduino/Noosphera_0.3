@@ -3,31 +3,27 @@ Thoth Domain Model — Pure Business Entities.
 
 Pydantic V2 models representing core business concepts.
 No infrastructure dependencies — pure domain logic.
-
-Usage:
-    >>> from thoth.domain import OCROutput, ThothState, ThothDecision
-    >>> from thoth.domain.common import PageQuality, ThothAction
-
-Submodules:
-    - common: Enums and shared types
-    - ocr: OCR output models (Glyphar integration)
-    - state: LangGraph state models
-    - decision: Agent decision models
-    - correction: LLM correction models
 """
 
+# ================================================================
+# COMMON
+# ================================================================
 from .common import (
     PageQuality,
     LayoutType,
     GlypharStrategy,
     ThothAction,
     ExecutionStep,
+    CorrectionUrgency,
     HashSHA256,
     PageID,
     DocumentID,
     BoundingBox,
 )
 
+# ================================================================
+# OCR
+# ================================================================
 from .ocr import (
     FileMetadata,
     ColumnResult,
@@ -38,13 +34,19 @@ from .ocr import (
     OCROutput,
 )
 
+# ================================================================
+# STATE (execution layer)
+# ================================================================
 from .state import (
     ThothState,
-    DecisionRecord,
-    CorrectionMetadata,
+    DecisionProjection,
+    CorrectionProjection,
     ExecutionMetadata,
 )
 
+# ================================================================
+# DECISION (domain layer)
+# ================================================================
 from .decision import (
     QualityMetrics,
     DecisionContext,
@@ -52,10 +54,14 @@ from .decision import (
     DecisionHistory,
 )
 
+# ================================================================
+# CORRECTION (domain layer)
+# ================================================================
 from .correction import (
     CorrectionRequest,
     CorrectionResponse,
     CorrectionRecord,
+    CorrectionMetadata,
 )
 
 __all__ = [
@@ -65,6 +71,7 @@ __all__ = [
     "GlypharStrategy",
     "ThothAction",
     "ExecutionStep",
+    "CorrectionUrgency",
     "HashSHA256",
     "PageID",
     "DocumentID",
@@ -79,8 +86,8 @@ __all__ = [
     "OCROutput",
     # State
     "ThothState",
-    "DecisionRecord",
-    "CorrectionMetadata",
+    "DecisionProjection",
+    "CorrectionProjection",
     "ExecutionMetadata",
     # Decision
     "QualityMetrics",
@@ -91,4 +98,5 @@ __all__ = [
     "CorrectionRequest",
     "CorrectionResponse",
     "CorrectionRecord",
+    "CorrectionMetadata",
 ]

@@ -1,7 +1,10 @@
 """
 Memory and learning configuration for Thoth Agent.
 
-LangMem, VectorStore, and checkpoint persistence settings.
+Supports:
+    - LangGraph checkpoint persistence (operational state)
+    - Separate SQLite Ledger (learning memory)
+    - VectorStore embeddings (semantic memory)
 """
 
 from pathlib import Path
@@ -12,88 +15,100 @@ from .base import ThothBaseSettings, PathMixin
 
 class MemorySettings(ThothBaseSettings, PathMixin):
     """
-    Configuration for agent memory and learning.
+    Configuration for Thoth hybrid memory system.
 
-    Supports:
-        - LangMem for conversation memory
-        - ChromaDB/FAISS for vector embeddings
-        - SQLite for checkpoint persistence
-
-    Example:
-        >>> from thoth.config import memory_settings
-        >>> if memory_settings.MEMORY_ENABLED:
-        ...     store = ChromaDB(memory_settings.MEMORY_PERSISTENCE_PATH)
+    Layers:
+        1. Checkpoint DB → Operational graph state (LangGraph)
+        2. Ledger DB → Cognitive learning records (decisions/corrections)
+        3. VectorStore → Semantic embedding memory
     """
 
-    # ---------------------------------------------------------------
-    # MEMORY ENABLED
-    # ---------------------------------------------------------------
+    # ===============================================================
+    # GLOBAL MEMORY SWITCH
+    # ===============================================================
+
     MEMORY_ENABLED: bool = Field(
         default=True,
-        description="Enable long-term memory with vectorstore",
+        description="Enable long-term memory system",
     )
 
-    MEMORY_PERSISTENCE_PATH: Path = Field(
-        default=Path("./data/memory"),
-        description="Path for memory persistence",
-    )
-
-    @field_validator("MEMORY_PERSISTENCE_PATH", mode="before")
-    @classmethod
-    def ensure_path(cls, v):
-        """Ensure persistence path is a Path object."""
-        return Path(v) if isinstance(v, (str, Path)) else v
-
-    # ---------------------------------------------------------------
-    # EMBEDDINGS
-    # ---------------------------------------------------------------
-    EMBEDDING_MODEL: str = Field(
-        default="text-embedding-nomic-embed-text-v1.5@q8_0",
-        description="Model for generating embeddings",
-    )
-
-    EMBEDDING_COLLECTION_NAME: str = Field(
-        default="thoth_documents",
-        description="ChromaDB collection name for document embeddings",
-    )
-
-    # ---------------------------------------------------------------
-    # CHECKPOINTING (LangGraph)
-    # ---------------------------------------------------------------
-    CHECKPOINT_DB_PATH: Path = Field(
-        default=Path("./data/checkpoints/thoth.db"),
-        description="SQLite path for LangGraph checkpoint persistence",
-    )
+    # ===============================================================
+    # CHECKPOINTING (Operational Memory - LangGraph)
+    # ===============================================================
 
     CHECKPOINT_ENABLED: bool = Field(
         default=True,
         description="Enable checkpoint persistence for graph state",
     )
 
+    CHECKPOINT_DB_PATH: Path = Field(
+        default=Path("./data/checkpoints/thoth_checkpoint.db"),
+        description="SQLite path for LangGraph checkpoint persistence",
+    )
+
     @field_validator("CHECKPOINT_DB_PATH", mode="before")
     @classmethod
     def ensure_checkpoint_dir(cls, v):
-        """Ensure checkpoint directory exists."""
+        """Ensure checkpoint persistence directory exists."""
         path = Path(v) if isinstance(v, (str, Path)) else v
         path.parent.mkdir(parents=True, exist_ok=True)
         return path
 
-    # ---------------------------------------------------------------
-    # HUMAN-IN-THE-LOOP
-    # ---------------------------------------------------------------
-    HITL_ENABLED: bool = Field(
+    # ===============================================================
+    # LEDGER (Cognitive Learning Memory - Separate SQLite)
+    # ===============================================================
+
+    LEDGER_ENABLED: bool = Field(
         default=True,
-        description="Enable Human-in-the-Loop for edge cases",
+        description="Enable cognitive ledger for decisions and corrections",
     )
 
-    HITL_THRESHOLD: float = Field(
-        default=50.0,
-        description="Confidence threshold for HITL intervention",
+    LEDGER_DB_PATH: Path = Field(
+        default=Path("./data/ledger/thoth_ledger.db"),
+        description="SQLite path for cognitive learning ledger",
     )
 
-    # ---------------------------------------------------------------
-    # VECTORSTORE
-    # ---------------------------------------------------------------
+    LEDGER_AUTO_MIGRATE: bool = Field(
+        default=True,
+        description="Automatically create ledger tables if missing",
+    )
+
+    @field_validator("LEDGER_DB_PATH", mode="before")
+    @classmethod
+    def ensure_ledger_dir(cls, v):
+        """Ensure ledger persistence directory exists."""
+        path = Path(v) if isinstance(v, (str, Path)) else v
+        path.parent.mkdir(parents=True, exist_ok=True)
+        return path
+
+    # ===============================================================
+    # EMBEDDINGS (Semantic Memory)
+    # ===============================================================
+
+    EMBEDDING_MODEL: str = Field(
+        default="text-embedding-nomic-embed-text-v1.5@q8_0",
+        description="Model used for generating embeddings",
+    )
+
+    EMBEDDING_COLLECTION_NAME: str = Field(
+        default="thoth_semantic_memory",
+        description="Collection name for document embeddings",
+    )
+
+    EMBEDDING_DIMENSIONS: int = Field(
+        default=768,
+        description="Embedding vector dimensions",
+    )
+
+    # ===============================================================
+    # VECTORSTORE BACKEND
+    # ===============================================================
+
+    VECTORSTORE_ENABLED: bool = Field(
+        default=True,
+        description="Enable vectorstore semantic memory",
+    )
+
     VECTORSTORE_TYPE: str = Field(
         default="chromadb",
         description="VectorStore backend: chromadb | faiss",
@@ -101,11 +116,39 @@ class MemorySettings(ThothBaseSettings, PathMixin):
 
     VECTORSTORE_MAX_DOCUMENTS: int = Field(
         default=10000,
-        description="Maximum documents in vector store",
+        description="Maximum documents stored in vector memory",
+    )
+
+    MEMORY_PERSISTENCE_PATH: Path = Field(
+        default=Path("./data/memory"),
+        description="Path for vectorstore persistence",
+    )
+
+    @field_validator("MEMORY_PERSISTENCE_PATH", mode="before")
+    @classmethod
+    def ensure_memory_path(cls, v):
+        """Ensure memory persistence directory exists."""
+        path = Path(v) if isinstance(v, (str, Path)) else v
+        path.mkdir(parents=True, exist_ok=True)
+        return path
+
+    # ===============================================================
+    # HUMAN-IN-THE-LOOP
+    # ===============================================================
+
+    HITL_ENABLED: bool = Field(
+        default=True,
+        description="Enable Human-in-the-Loop for low confidence cases",
+    )
+
+    HITL_THRESHOLD: float = Field(
+        default=50.0,
+        description="Confidence threshold for HITL intervention",
     )
 
 
 # ================================================================
 # GLOBAL INSTANCE
 # ================================================================
+
 memory_settings = MemorySettings()

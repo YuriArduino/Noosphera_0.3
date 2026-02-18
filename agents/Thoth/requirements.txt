@@ -1,6 +1,5 @@
 # ================================================================
-# THOTH AGENT — DEPENDENCIES
-# OCR Autonomous Agent for Psychoanalytic Documents
+# THOTH AGENT — PRODUCTION DEPENDENCIES
 # ================================================================
 
 # --- Core LangGraph ---
@@ -9,13 +8,13 @@ langchain-core
 langchain-community
 langchain-mcp-adapters
 
-# --- LLM Integration (LLMStudio Compatible) ---
+# --- LLM Integration ---
 httpx
-openai          # Compatible with LLMStudio API
+openai
 
 # --- Memory & Learning ---
 langmem
-chromadb         # VectorStore para embeddings
+chromadb
 faiss-cpu
 aiosqlite
 langgraph-checkpoint-sqlite
@@ -23,7 +22,6 @@ langgraph-checkpoint-sqlite
 # --- State Management ---
 pydantic
 pydantic-settings
-
 
 # --- API Layer ---
 fastapi
@@ -33,19 +31,5 @@ python-multipart
 # --- Utilities ---
 python-dotenv
 pyyaml
-rich            # Terminal formatting
-structlog       # Structured logging
-
-# --- Testing ---
-pytest
-pytest-asyncio
-pytest-cov
-
-# --- Development ---
-black
-isort
-mypy
-pre-commit
-
-# --- Glyphar (Local) ---
-# Instalado via: pip install -e ../../tools/Glyphar
+rich
+structlog
