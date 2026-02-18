@@ -12,7 +12,7 @@ This layer is:
 
 from __future__ import annotations
 
-from typing import List, Dict, Optional
+from typing import List, Optional
 
 from langchain.chat_models import init_chat_model
 from langgraph.store.memory import InMemoryStore
