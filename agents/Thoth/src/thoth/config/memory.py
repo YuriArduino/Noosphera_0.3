@@ -146,6 +146,44 @@ class MemorySettings(ThothBaseSettings, PathMixin):
         description="Confidence threshold for HITL intervention",
     )
 
+    # ===============================================================
+    # OPERATIONAL MEMORY WINDOW (Cognitive Focus Layer)
+    # ===============================================================
+
+    MEMORY_WINDOW_ENABLED: bool = Field(
+        default=True,
+        description="Enable operational memory window control",
+    )
+
+    MEMORY_WINDOW_SIZE: int = Field(
+        default=20,
+        description="Maximum number of recent ledger events in active memory window",
+    )
+
+    MEMORY_REFLECTION_ENABLED: bool = Field(
+        default=True,
+        description="Allow triage node to perform periodic reflective consolidation",
+    )
+
+    MEMORY_REFLECTION_MIN_CONFIDENCE: float = Field(
+        default=60.0,
+        description="Minimum average confidence required before triggering reflection",
+    )
+
+    # ===============================================================
+    # SEMANTIC SEARCH PARAMETERS
+    # ===============================================================
+
+    SEMANTIC_SEARCH_TOP_K: int = Field(
+        default=5,
+        description="Number of semantic memory items retrieved during triage",
+    )
+
+    SEMANTIC_SEARCH_MIN_SCORE: float = Field(
+        default=0.0,
+        description="Minimum similarity score required for semantic memory retrieval",
+    )
+
 
 # ================================================================
 # GLOBAL INSTANCE

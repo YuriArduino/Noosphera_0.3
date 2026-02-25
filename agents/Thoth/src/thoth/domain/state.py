@@ -69,14 +69,15 @@ class ExecutionMetadata(TypedDict, total=False):
 
 
 # ================================================================
-# THOTH STATE
+# THOTH STATE (UPDATED)
 # ================================================================
 class ThothState(TypedDict):
     """
     Complete execution state for Thoth LangGraph agent.
 
     Flow:
-        ingest → assess → decide → {reprocess | correct} → finalize
+        ingest → triage → ocr → analysis → decide
+        → {reprocess | correct} → finalize → memory_maintenance
     """
 
     # === INPUT ===
@@ -86,13 +87,20 @@ class ThothState(TypedDict):
     # === PERCEPTION ===
     ocr_results: List[OCROutput]
 
-    # === DECISION MEMORY ===
+    # === DECISION MEMORY (Operational) ===
     decisions: List[DecisionProjection]
-    reprocess_attempts: Dict[str, int]  # doc_hash → attempts
+    reprocess_attempts: Dict[str, int]
     max_reprocess_attempts: int
 
     # === LLM CORRECTIONS ===
-    llm_corrections: Dict[str, CorrectionProjection]  # doc_hash → correction
+    llm_corrections: Dict[str, CorrectionProjection]
+
+    # === MEMORY CONTEXT (Cognitive Layer) ===
+    memory_summary_version: Optional[int]
+    memory_window_ids: List[str]
+    memory_reflection_required: bool
+    memory_reflection_performed: bool
+    memory_influence_notes: Optional[str]
 
     # === OUTPUT ===
     approved_results: List[OCROutput]
