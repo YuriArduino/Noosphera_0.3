@@ -1,0 +1,136 @@
+{
+  "file_metadata": {
+    "path": "/data/input/PDF_A_Digital.pdf",
+    "name": "PDF_A_Digital.pdf",
+    "extension": "pdf",
+    "size_bytes": 120834,
+    "created_at": "2026-02-06T19:48:37.042218",
+    "modified_at": "2026-02-06T19:48:37.041218",
+    "hash_sha256": "337f7ee9c65e39d29abd7610b48ad61465fb873b415f86fdce3ce93c66bf44c5",
+    "pages_count": 3
+  },
+  "pages": [
+    {
+      "id": "pdf_a_digital_20260206_001",
+      "page_number": 1,
+      "layout_type": "single",
+      "columns": [
+        {
+          "col_index": 1,
+          "text": "Primeiras Publicações Psicanalíticas VOLUME I (1893-1899)",
+          "confidence": 76.0,
+          "word_count": 6,
+          "char_count": 57,
+          "processing_time_s": 0.9535029520002354,
+          "bbox": {
+            "left": 549,
+            "top": 401,
+            "width": 1450,
+            "height": 1356
+          },
+          "region_id": "col1_0_0_2550_3300",
+          "config_used": "gray_psm3_scale1.0_oem2"
+        }
+      ],
+      "page_quality": "fair",
+      "page_confidence_mean": 76.0,
+      "processing_time_s": 1.113244477999615,
+      "config_used": null,
+      "warnings": [],
+      "page_text_hash": "03faa4d0d0fd927856a32439bc5503bb158df24df8e34951bd427f94843d7d92"
+    },
+    {
+      "id": "pdf_a_digital_20260206_002",
+      "page_number": 2,
+      "layout_type": "single",
+      "columns": [
+        {
+          "col_index": 1,
+          "text": "Dr. Sigmund Freud A SEXUALIDADE NA ETIOLOGIA DAS NEUROSES (1898) DIE SEXUALITAET IN DER AETIOLOGIE DER NEUROSEN (a)EDICOES ALEMAS: 1898 Wien. klin. Rdsch., 12 (2), 21-2, (4), 55-7, (5), 70-2, (7), 103-5. (9, 23 e 30 de janeiro e 13 de fevereiro.) 1906 S.K.S.N., 1, 181-204. (1911, 22 ed.; 1922, 42 ed.) 1925G.S., 1, 439-64. 1952 G.W., 1, 491-516. (b)TRADUCAO INGLESA: “Sexuality in the Aetiology of the Neuroses” 1924 C.P., 1, 220-48. (Trad. de J . Bernays.) A presente traducdo é uma versao modificada da publicada em 1924, Este artigo foi concluido em 9 de fevereiro de 1898, como nos informa uma carta a Fliess (Freud, 1950a, Carta 83.) J á fora iniciado um més antes (ibid., Carta 81) e, em ambas as cartas, Freud o trata desdenhosamente como um artigo “Gartenlaube”. Este era o titulo (literalmente, “caramanchão”) de uma revista de assuntos domésticos cujo nome se tornara proverbial por suas histérias sentimentais. Mas ele acrescenta que o artigo “é bastante impudente e basicamente destinado a criar caso, no que sem dúvida terd éxito. Breuer dirá que me causei muitos prejuizos.” Dois anos se haviam passado desde o ultimo artigo de Freud sobre psicopatologia, “A Etiologia da Histeria” (1896c¢), e durante esses dois anos muita coisa acontecera para ocupar sua mente. Talvez a menos importante (pelo menos do nosso ponto de vista) tenha sido a conclusao, em inicios de 1897, de seu tratado de trezentas paginas sobre as paralisias infantis para a grande enciclopédia de medicina de Nothnagel, no qual estivera ocupado por varios anos, muito a contragosto, e que foi seu Ultimo trabalho neurolégico. Cf., por exemplo, as cartas a Fliess de 20 e 31 de outubro e 8 de novembro de 1895, 4 de julho e 2 de novembro de 1896, e 24 de janeiro de 1897 (Freud, 1950a, Cartas 32, 33, 35, 47, 50 e 57). Uma vez ultrapassada essa tarefa, ele podia devotar-se mais completamente a psicologia, e logo se envolveu num evento que se revelaria um marco memoravel - sua prépria auto-analise.Esta comecou no verao de 1897 e, ja pelo outono, conduzira a algumas descobertas fundamentais: o abandono da teoria traumatica da etiologia das",
+          "confidence": 89.86629526462396,
+          "word_count": 359,
+          "char_count": 2126,
+          "processing_time_s": 4.509449729999687,
+          "bbox": {
+            "left": 356,
+            "top": 302,
+            "width": 1838,
+            "height": 2637
+          },
+          "region_id": "col1_0_0_2550_3300",
+          "config_used": "gray_psm3_scale1.0_oem1"
+        }
+      ],
+      "page_quality": "excellent",
+      "page_confidence_mean": 89.86629526462396,
+      "processing_time_s": 4.729324783000266,
+      "config_used": null,
+      "warnings": [],
+      "page_text_hash": "28961ed6e19cf41bbe057b6ad7469db940c51bfaff6c7c8145606aac9d2c6290"
+    },
+    {
+      "id": "pdf_a_digital_20260206_003",
+      "page_number": 3,
+      "layout_type": "single",
+      "columns": [
+        {
+          "col_index": 1,
+          "text": "neuroses (21 de setembro, Carta 69), a descoberta do complexo de Édipo (15 de outubro, Carta 71) e o reconhecimento gradual da sexualidade infantil como um fato normal e universal (p.ex. 14 de novembro, Carta 75.) De todos esses desenvolvimentos (e dos avanços paralelos na compreensão de Freud da psicologia do sonho) não há praticamente nenhum vestígio no presente artigo, o que sem dúvida explica o desdém de seu autor por ele. Quanto aos aspectos fundamentais, ele nao vai além do ponto atingido dois anos antes: Freud se reservava para seu grande esforço subsequente, que ocorreria dali a mais dois anos, em A Interpretação dos Sonhos (1900a). Mas, se a primeira parte do trabalho contém pouco mais que uma reafirmação das concepções anteriores de Freud sobre a etiologia das neuroses, a argumentação também nos apresenta algo de novo - uma abordagem de problemas sociológicos. A crítica sem rodeios aqui feita à atitude da profissão médica em relação aos assuntos sexuais, particularmente à masturbação, ao uso de anticoncepcionais e às dificuldades da vida conjugal, prenuncia toda uma série de restrições posteriores de Freud às convenções sociais da civilização - começando com o artigo sobre “Moral Sexual ‘Civilizada™ (1908d) e findando com O Mal-Estar na Cultura (1930a). A SEXUALIDADE NA ETIOLOGIA DAS NEUROSES Pesquisas exaustivas durante os Ultimos anos levaram-me a reconhecer que as causas mais imediatas e, para fins praticos, mais importantes de todos os casos de doenca neurética são encontradas em fatores emergentes da vida sexual. Essa teoria não é inteiramente nova. Uma certa dose de importancia tem sido concedida aos fatores sexuais na etiologia das neuroses desde tempos imemoriais e por todos os autores que trataram do assunto. Em certas areas marginais da medicina sempre se prometeu, simultaneamente, a cura das “queixas sexuais” e da “fraqueza nervosa”. Uma vez que a validade da teoria deixe de ser negada, portanto, ndo sera dificil contestar sua originalidade. Em alguns artigos sucintos que apareceram nos Ultimos anos no Neurologisches Zentralblatt |1894a, 1895b e 1896b), na Revue Neurologique [1895c e 1896a| e na Wiener Klinische Rundschau|1895f e 1896¢| tentei dar uma indicação do material e dos pontos de vista que oferecem apoio cientifico a teoria da “etiologia sexual das neuroses”. Falta ainda, entretanto, uma apresentacao completa, principalmente porque, no esforco de lancar luz sobre o que se reconhece como a situagao atual, deparamos sempre com novos problemas para cuja solucao ainda não se realizou o trabalho preliminar necessario. Não me parece nada prematuro, porém, tentar dirigir a atenção dos profissionais da medicina para o que acredito serem os fatos, de modo que eles possam convencer-se da verdade de minhas asserc0es e, ao mesmo tempo, dos beneficios que podem extrair, na pratica, do conhecimento delas. Bem sei que se farão esforcos, pelo uso de argumentos com um colorido ético, para impedir o médico de levar o assunto adiante. Quem quer que pretenda certificar-se de que as",
+          "confidence": 90.44190871369294,
+          "word_count": 482,
+          "char_count": 3046,
+          "processing_time_s": 6.14503740300006,
+          "bbox": {
+            "left": 355,
+            "top": 294,
+            "width": 1841,
+            "height": 2708
+          },
+          "region_id": "col1_0_0_2550_3300",
+          "config_used": "gray_psm3_scale1.0_oem1"
+        }
+      ],
+      "page_quality": "excellent",
+      "page_confidence_mean": 90.44190871369294,
+      "processing_time_s": 6.381892243999573,
+      "config_used": null,
+      "warnings": [],
+      "page_text_hash": "dfe7bc3613a7634de08d5369eb9f45546cd7649f3eefb3df0ae23c1f6850e58e"
+    }
+  ],
+  "full_text": "=== OCR RESULTS - 3 PAGES ===\n\n\n=== PAGE 1 | Confidence: 76.0% ===\n\nPrimeiras Publicações Psicanalíticas VOLUME I (1893-1899)\n\n\n=== PAGE 2 | Confidence: 89.9% ===\n\nDr. Sigmund Freud A SEXUALIDADE NA ETIOLOGIA DAS NEUROSES (1898) DIE SEXUALITAET IN DER AETIOLOGIE DER NEUROSEN (a)EDICOES ALEMAS: 1898 Wien. klin. Rdsch., 12 (2), 21-2, (4), 55-7, (5), 70-2, (7), 103-5. (9, 23 e 30 de janeiro e 13 de fevereiro.) 1906 S.K.S.N., 1, 181-204. (1911, 22 ed.; 1922, 42 ed.) 1925G.S., 1, 439-64. 1952 G.W., 1, 491-516. (b)TRADUCAO INGLESA: “Sexuality in the Aetiology of the Neuroses” 1924 C.P., 1, 220-48. (Trad. de J . Bernays.) A presente traducdo é uma versao modificada da publicada em 1924, Este artigo foi concluido em 9 de fevereiro de 1898, como nos informa uma carta a Fliess (Freud, 1950a, Carta 83.) J á fora iniciado um més antes (ibid., Carta 81) e, em ambas as cartas, Freud o trata desdenhosamente como um artigo “Gartenlaube”. Este era o titulo (literalmente, “caramanchão”) de uma revista de assuntos domésticos cujo nome se tornara proverbial por suas histérias sentimentais. Mas ele acrescenta que o artigo “é bastante impudente e basicamente destinado a criar caso, no que sem dúvida terd éxito. Breuer dirá que me causei muitos prejuizos.” Dois anos se haviam passado desde o ultimo artigo de Freud sobre psicopatologia, “A Etiologia da Histeria” (1896c¢), e durante esses dois anos muita coisa acontecera para ocupar sua mente. Talvez a menos importante (pelo menos do nosso ponto de vista) tenha sido a conclusao, em inicios de 1897, de seu tratado de trezentas paginas sobre as paralisias infantis para a grande enciclopédia de medicina de Nothnagel, no qual estivera ocupado por varios anos, muito a contragosto, e que foi seu Ultimo trabalho neurolégico. Cf., por exemplo, as cartas a Fliess de 20 e 31 de outubro e 8 de novembro de 1895, 4 de julho e 2 de novembro de 1896, e 24 de janeiro de 1897 (Freud, 1950a, Cartas 32, 33, 35, 47, 50 e 57). Uma vez ultrapassada essa tarefa, ele podia devotar-se mais completamente a psicologia, e logo se envolveu num evento que se revelaria um marco memoravel - sua prépria auto-analise.Esta comecou no verao de 1897 e, ja pelo outono, conduzira a algumas descobertas fundamentais: o abandono da teoria traumatica da etiologia das\n\n\n=== PAGE 3 | Confidence: 90.4% ===\n\nneuroses (21 de setembro, Carta 69), a descoberta do complexo de Édipo (15 de outubro, Carta 71) e o reconhecimento gradual da sexualidade infantil como um fato normal e universal (p.ex. 14 de novembro, Carta 75.) De todos esses desenvolvimentos (e dos avanços paralelos na compreensão de Freud da psicologia do sonho) não há praticamente nenhum vestígio no presente artigo, o que sem dúvida explica o desdém de seu autor por ele. Quanto aos aspectos fundamentais, ele nao vai além do ponto atingido dois anos antes: Freud se reservava para seu grande esforço subsequente, que ocorreria dali a mais dois anos, em A Interpretação dos Sonhos (1900a). Mas, se a primeira parte do trabalho contém pouco mais que uma reafirmação das concepções anteriores de Freud sobre a etiologia das neuroses, a argumentação também nos apresenta algo de novo - uma abordagem de problemas sociológicos. A crítica sem rodeios aqui feita à atitude da profissão médica em relação aos assuntos sexuais, particularmente à masturbação, ao uso de anticoncepcionais e às dificuldades da vida conjugal, prenuncia toda uma série de restrições posteriores de Freud às convenções sociais da civilização - começando com o artigo sobre “Moral Sexual ‘Civilizada™ (1908d) e findando com O Mal-Estar na Cultura (1930a). A SEXUALIDADE NA ETIOLOGIA DAS NEUROSES Pesquisas exaustivas durante os Ultimos anos levaram-me a reconhecer que as causas mais imediatas e, para fins praticos, mais importantes de todos os casos de doenca neurética são encontradas em fatores emergentes da vida sexual. Essa teoria não é inteiramente nova. Uma certa dose de importancia tem sido concedida aos fatores sexuais na etiologia das neuroses desde tempos imemoriais e por todos os autores que trataram do assunto. Em certas areas marginais da medicina sempre se prometeu, simultaneamente, a cura das “queixas sexuais” e da “fraqueza nervosa”. Uma vez que a validade da teoria deixe de ser negada, portanto, ndo sera dificil contestar sua originalidade. Em alguns artigos sucintos que apareceram nos Ultimos anos no Neurologisches Zentralblatt |1894a, 1895b e 1896b), na Revue Neurologique [1895c e 1896a| e na Wiener Klinische Rundschau|1895f e 1896¢| tentei dar uma indicação do material e dos pontos de vista que oferecem apoio cientifico a teoria da “etiologia sexual das neuroses”. Falta ainda, entretanto, uma apresentacao completa, principalmente porque, no esforco de lancar luz sobre o que se reconhece como a situagao atual, deparamos sempre com novos problemas para cuja solucao ainda não se realizou o trabalho preliminar necessario. Não me parece nada prematuro, porém, tentar dirigir a atenção dos profissionais da medicina para o que acredito serem os fatos, de modo que eles possam convencer-se da verdade de minhas asserc0es e, ao mesmo tempo, dos beneficios que podem extrair, na pratica, do conhecimento delas. Bem sei que se farão esforcos, pelo uso de argumentos com um colorido ético, para impedir o médico de levar o assunto adiante. Quem quer que pretenda certificar-se de que as\n\n=== END OF DOCUMENT ===",
+  "statistics": {
+    "total_pages": 3,
+    "successful_pages": 2,
+    "failed_pages": 1,
+    "total_words": 847,
+    "total_characters": 5229,
+    "average_confidence": 85.4360679927723,
+    "total_processing_time_s": 6.385533968000345,
+    "pages_per_second": 0.46981192411375766,
+    "quality_distribution": {
+      "fair": 1,
+      "excellent": 2
+    },
+    "low_confidence_pages": []
+  },
+  "config": {
+    "engine": "tesseract",
+    "languages": "pt",
+    "dpi": 300,
+    "min_confidence": 88.0,
+    "parallel": true,
+    "max_workers": 8,
+    "timeout_per_page_s": 240,
+    "enable_quality_assessment": false,
+    "preprocessing_strategies": []
+  },
+  "metadata": {
+    "processor": "FileProcessor",
+    "mode": "parallel",
+    "llm_ready": true,
+    "doc_prefix": "pdf_a_digital",
+    "doc_date": "20260206"
+  },
+  "created_at": "2026-03-06T02:58:30.350074Z"
+}

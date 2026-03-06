@@ -1,0 +1,14 @@
+{
+  "file": "PDF_A_Digital.pdf",
+  "file_hash": "337f7ee9c65e39d29abd7610b48ad61465fb873b415f86fdce3ce93c66bf44c5",
+  "pages": 3,
+  "page_hashes": [
+    "03faa4d0d0fd927856a32439bc5503bb158df24df8e34951bd427f94843d7d92",
+    "28961ed6e19cf41bbe057b6ad7469db940c51bfaff6c7c8145606aac9d2c6290",
+    "dfe7bc3613a7634de08d5369eb9f45546cd7649f3eefb3df0ae23c1f6850e58e"
+  ],
+  "words": 847,
+  "average_confidence": 85.4,
+  "processing_time_s": 6.39,
+  "needs_llm_correction": true
+}
