@@ -1,0 +1,28 @@
+FROM python:3.12-slim
+
+ENV DEBIAN_FRONTEND=noninteractive \
+    PYTHONDONTWRITEBYTECODE=1 \
+    PYTHONUNBUFFERED=1 \
+    PIP_NO_CACHE_DIR=1
+
+WORKDIR /workspace
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    tesseract-ocr \
+    tesseract-ocr-por \
+    tesseract-ocr-eng \
+    poppler-utils \
+    libglib2.0-0 \
+    libsm6 \
+    libxext6 \
+    libxrender1 \
+    && rm -rf /var/lib/apt/lists/*
+
+COPY tools/Glyphar /workspace/tools/Glyphar
+COPY docker/glyphar_runner.py /workspace/docker/glyphar_runner.py
+
+RUN python -m pip install --upgrade pip && \
+    python -m pip install -r /workspace/tools/Glyphar/requirements.txt pyyaml && \
+    python -m pip install -e /workspace/tools/Glyphar
+
+ENTRYPOINT ["python", "/workspace/docker/glyphar_runner.py"]
