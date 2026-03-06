@@ -1,15 +1,69 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
 [project]
 name = "glyphar"
 version = "0.1.0"
-description = "OCR Engine for Noosphera"
+description = "Adaptive OCR pipeline for Noosphera documents"
+readme = "README.md"
 requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [
+  { name = "Noosphera" }
+]
+keywords = ["ocr", "tesseract", "pdf", "document-processing", "noosphera"]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Topic :: Scientific/Engineering :: Image Processing",
+  "Topic :: Text Processing",
+]
+dependencies = [
+  "numpy",
+  "pydantic>=2",
+  "pillow",
+  "pdf2image",
+  "pytesseract",
+  "opencv-python-headless",
+  "fastapi",
+  "uvicorn[standard]",
+]
+
+[project.optional-dependencies]
+test = [
+  "pytest>=8",
+  "pytest-cov>=5",
+]
+dev = [
+  "black>=24",
+  "mypy>=1.10",
+  "ruff>=0.5",
+]
+
+[project.urls]
+Homepage = "https://github.com/noosphera"
+Repository = "https://github.com/noosphera"
+
+[tool.setuptools]
+include-package-data = true
 
 [tool.setuptools.packages.find]
 where = ["src"]
 include = ["glyphar*"]
 
+[tool.setuptools.package-data]
+glyphar = [
+  "resources/**/*.traineddata",
+]
 
 [tool.pytest.ini_options]
 markers = [
-    "integration: slower integration tests",
+  "integration: slower integration tests",
 ]
