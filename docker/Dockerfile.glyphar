@@ -18,11 +18,17 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     libxrender1 \
     && rm -rf /var/lib/apt/lists/*
 
-COPY tools/Glyphar /workspace/tools/Glyphar
-COPY docker/glyphar_runner.py /workspace/docker/glyphar_runner.py
+# Copy dependency manifests first (including pyproject.toml explicitly)
+COPY tools/Glyphar/requirements.txt /workspace/tools/Glyphar/requirements.txt
+COPY tools/Glyphar/pyproject.toml /workspace/tools/Glyphar/pyproject.toml
 
 RUN python -m pip install --upgrade pip && \
-    python -m pip install -r /workspace/tools/Glyphar/requirements.txt pyyaml && \
-    python -m pip install -e /workspace/tools/Glyphar
+    python -m pip install -r /workspace/tools/Glyphar/requirements.txt pyyaml
+
+# Copy source code and runner
+COPY tools/Glyphar/src /workspace/tools/Glyphar/src
+COPY docker/glyphar_runner.py /workspace/docker/glyphar_runner.py
+
+RUN python -m pip install -e /workspace/tools/Glyphar
 
 ENTRYPOINT ["python", "/workspace/docker/glyphar_runner.py"]
