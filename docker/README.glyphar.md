@@ -26,3 +26,11 @@ Artifacts are written to `docker/glyphar-output/`:
 The runner loads and merges:
 1. `tools/Glyphar/config/runtime.yaml`
 2. `tools/Glyphar/config/environment.yaml` (`overrides` section)
+<<<<<<< ours
+=======
+
+
+## Notas de empacotamento
+- A imagem instala o Glyphar a partir do `pyproject.toml` (fonte de verdade das dependências).
+- `requirements.txt` pode continuar útil para ambientes legados, mas o container segue o empacotamento moderno do projeto.
+>>>>>>> theirs

@@ -18,6 +18,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     libxrender1 \
     && rm -rf /var/lib/apt/lists/*
 
+<<<<<<< ours
 # Copy dependency manifests first (including pyproject.toml explicitly)
 COPY tools/Glyphar/requirements.txt /workspace/tools/Glyphar/requirements.txt
 COPY tools/Glyphar/pyproject.toml /workspace/tools/Glyphar/pyproject.toml
@@ -31,4 +32,17 @@ COPY docker/glyphar_runner.py /workspace/docker/glyphar_runner.py
 
 RUN python -m pip install -e /workspace/tools/Glyphar
 
+=======
+# Copy packaging metadata first so dependency layer follows pyproject.toml
+COPY tools/Glyphar/pyproject.toml /workspace/tools/Glyphar/pyproject.toml
+COPY tools/Glyphar/README.md /workspace/tools/Glyphar/README.md
+COPY tools/Glyphar/src /workspace/tools/Glyphar/src
+
+RUN python -m pip install --upgrade pip && \
+    python -m pip install pyyaml && \
+    python -m pip install /workspace/tools/Glyphar
+
+COPY docker/glyphar_runner.py /workspace/docker/glyphar_runner.py
+
+>>>>>>> theirs
 ENTRYPOINT ["python", "/workspace/docker/glyphar_runner.py"]
