@@ -39,6 +39,7 @@ def _merge(base: dict[str, Any], patch: dict[str, Any]) -> dict[str, Any]:
 
 
 def _build_config(runtime: dict[str, Any]) -> OCRConfig:
+    """Construct OCRConfig from merged runtime and environment configurations."""
     pipeline_cfg = runtime.get("pipeline", {})
     analysis_cfg = runtime.get("analysis", {})
     quality_cfg = analysis_cfg.get("quality_assessment", {})
@@ -55,6 +56,7 @@ def _build_config(runtime: dict[str, Any]) -> OCRConfig:
 
 
 def main() -> None:
+    """Main entry point for the Glyphar runner."""
     input_path = Path(os.environ.get("GLYPHAR_INPUT", "/data/input/document.pdf"))
     output_dir = Path(os.environ.get("GLYPHAR_OUTPUT_DIR", "/data/output"))
 
