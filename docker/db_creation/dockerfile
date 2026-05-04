@@ -1,0 +1,14 @@
+FROM postgres:18
+
+LABEL maintainer="yuri@noosphera"
+LABEL description="PostgreSQL 18 com pgvector via apt"
+
+# Instalar pgvector via repositório oficial (Debian)
+RUN apt-get update \
+    && apt-get install -y postgresql-18-pgvector \
+    && rm -rf /var/lib/apt/lists/*
+
+# Copiar configurações customizadas
+COPY config/postgresql.conf /etc/postgresql/postgresql.conf
+
+CMD ["postgres", "-c", "config_file=/etc/postgresql/postgresql.conf"]

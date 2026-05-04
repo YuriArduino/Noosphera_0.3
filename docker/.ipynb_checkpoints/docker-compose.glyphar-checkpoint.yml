@@ -1,0 +1,19 @@
+services:
+  glyphar:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile.glyphar
+    image: noosphera/glyphar:ephemeral
+    environment:
+      GLYPHAR_INPUT: ${GLYPHAR_INPUT:-/data/input/PDF_A_Digital.pdf}
+      GLYPHAR_OUTPUT_DIR: ${GLYPHAR_OUTPUT_DIR:-/data/output}
+      GLYPHAR_RUNTIME_CONFIG: ${GLYPHAR_RUNTIME_CONFIG:-/workspace/tools/Glyphar/config/runtime.yaml}
+      GLYPHAR_ENV_CONFIG: ${GLYPHAR_ENV_CONFIG:-/workspace/tools/Glyphar/config/environment.yaml}
+      GLYPHAR_MODEL_TYPE: ${GLYPHAR_MODEL_TYPE:-standard}
+    volumes:
+      - ../Test/Data:/data/input:ro
+      - ../tools/Glyphar/docs:/workspace/tools/Glyphar/docs:ro
+      - ../tools/Glyphar/config:/workspace/tools/Glyphar/config:ro
+      - ./glyphar-output:/data/output
+    working_dir: /workspace
+    restart: "no"

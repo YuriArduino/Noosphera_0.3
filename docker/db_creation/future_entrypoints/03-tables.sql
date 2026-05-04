@@ -1,0 +1,26 @@
+-- -- Tabela de embeddings para LangChain  sample
+-- CREATE TABLE IF NOT EXISTS ai.embeddings (
+--     id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+--     source_type VARCHAR(50) NOT NULL,
+--     source_id VARCHAR(255),
+--     text TEXT,
+--     embedding vector(1536),  -- OpenAI ada-002
+--     metadata JSONB DEFAULT '{}'::jsonb,
+--     created_at TIMESTAMPTZ DEFAULT NOW(),
+--     updated_at TIMESTAMPTZ DEFAULT NOW()
+-- );
+
+-- -- Índices para busca vetorial
+-- CREATE INDEX IF NOT EXISTS idx_embeddings_source ON ai.embeddings(source_type, source_id);
+-- CREATE INDEX IF NOT EXISTS idx_embeddings_metadata ON ai.embeddings USING gin(metadata);
+-- CREATE INDEX IF NOT EXISTS idx_embeddings_text_trgm ON ai.embeddings USING gin(text gin_trgm_ops);
+
+-- -- Função para similaridade de cosseno
+-- CREATE OR REPLACE FUNCTION ai.cosine_similarity(a vector, b vector)
+-- RETURNS float
+-- LANGUAGE plpgsql
+-- AS $$
+-- BEGIN
+--     RETURN 1 - (a <=> b);
+-- END;
+-- $$;

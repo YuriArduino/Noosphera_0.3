@@ -1,0 +1,70 @@
+services:
+  db:
+    build:
+      context: .
+      dockerfile: dockerfile
+    image: noosphera-postgres:18-ai
+    container_name: ${CONTAINER_NAME}
+    restart: always
+    shm_size: ${SHM_SIZE}
+    env_file:
+      - .env
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      OPENAI_API_KEY: ${OPENAI_API_KEY}
+      OPENAI_API_BASE: http://192.168.15.3:1234/v1
+      # POSTGRES_DB comentado = sem banco padrão
+    ports:
+      - "${POSTGRES_PORT}:5432"
+    volumes:
+      - ${DATA_DIR}:/var/lib/postgresql
+      - ./init/01-extensions.sql:/docker-entrypoint-initdb.d/01-extensions.sql:ro
+      # Scripts comentados para ativar depois
+      # - ./init/02-schemas.sql:/docker-entrypoint-initdb.d/02-schemas.sql:ro
+      # - ./init/03-tables.sql:/docker-entrypoint-initdb.d/03-tables.sql:ro
+      - ./config/postgresql.conf:/etc/postgresql/postgresql.conf:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER} -d postgres"]
+      interval: 5s
+      timeout: 10s
+      retries: 10
+    networks:
+      - noosphera_network
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+  pgadmin:
+    image: dpage/pgadmin4:latest
+    container_name: ${PGADMIN_CONTAINER_NAME}
+    restart: always
+    env_file:
+      - .env
+    environment:
+      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_EMAIL}
+      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_PASSWORD}
+      PGADMIN_CONFIG_SERVER_MODE: 'False'
+    ports:
+      - "${PGADMIN_PORT}:80"
+    volumes:
+      - pgadmin_data:/var/lib/pgadmin
+      - ./servers.json:/pgadmin4/servers.json:ro
+      - ./reload-servers.sh:/reload-servers.sh:ro
+      - ./backups:/storage
+    entrypoint: ["/bin/sh", "/reload-servers.sh"]
+    depends_on:
+      db:
+        condition: service_healthy
+    networks:
+      - noosphera_network
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+networks:
+  noosphera_network:
+    name: ${NETWORK_NAME:-noosphera_db_network}
+    driver: bridge
+    
+
+volumes:
+  pgadmin_data:
+    name: noosphera_pgadmin_data

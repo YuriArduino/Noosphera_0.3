@@ -1,0 +1,23 @@
+# Secrets
+.env
+*.key
+*.pem
+
+# Backups
+backups/*.sql
+backups/*.dump
+
+# Docker volumes
+pgadmin_data/
+
+# Logs
+*.log
+log/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
