@@ -10,7 +10,7 @@ Responsible for:
 This version preserves 100% of the original logic while upgrading to SQLModel.
 """
 
-from typing import Optional, List
+from typing import Optional, List, cast
 from datetime import datetime, timezone
 from sqlmodel import SQLModel, Field, Session, select, create_engine
 from pgvector.sqlalchemy import Vector
@@ -27,7 +27,7 @@ from thoth.config import memory_settings
 # ==========================================================
 
 
-class DecisionLedger(SQLModel, table=True):
+class DecisionLedger(SQLModel, table=True):  # type: ignore[call-arg]
     """Logs every high-level decision made by Thoth."""
 
     __tablename__ = "thoth_decision_ledger"
@@ -44,7 +44,7 @@ class DecisionLedger(SQLModel, table=True):
     created_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
 
 
-class CorrectionLedger(SQLModel, table=True):
+class CorrectionLedger(SQLModel, table=True):  # type: ignore[call-arg]
     """Tracks LLM-based corrections and their perceived quality gain."""
 
     __tablename__ = "thoth_correction_ledger"
@@ -61,7 +61,7 @@ class CorrectionLedger(SQLModel, table=True):
     created_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
 
 
-class SemanticExperience(SQLModel, table=True):
+class SemanticExperience(SQLModel, table=True):  # type: ignore[call-arg]
     """
     The 'Learning' table.
     Stores results indexed by vectors for similarity search.
@@ -208,7 +208,7 @@ class ThothLedger:
         with Session(self.engine) as session:
             statement = (
                 select(SemanticExperience)
-                .order_by(SemanticExperience.embedding.l2_distance(query_embedding))
+                .order_by(cast(Vector, SemanticExperience.embedding).l2_distance(query_embedding))
                 .limit(limit)
             )
             return session.exec(statement).all()

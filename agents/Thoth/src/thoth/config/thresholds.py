@@ -1,111 +1,103 @@
 """
-Decision thresholds configuration for Thoth Agent.
+Decision Thresholds Configuration — Thoth Agent.
 
-Confidence thresholds for OCR quality assessment and action triggers.
+Defines the confidence boundaries used to trigger specific Agent actions
+such as LLM correction, reprocessing, or human escalation.
 """
 
-from pydantic import Field, model_validator
-
+from pydantic import Field, model_validator, ConfigDict
 from .base import ThothBaseSettings
+from ..domain.common import ThothAction
 
 
 class ThresholdSettings(ThothBaseSettings):
     """
-    Configuration for decision thresholds.
+    Configuration for OCR quality decision boundaries.
 
-    All thresholds are confidence percentages (0.0 - 100.0).
-
-    Threshold hierarchy (must satisfy):
-        CRITICAL <= MIN_ACCEPT <= REPROCESS <= LLM_CORRECTION
-
-    Example:
-        >>> from thoth.config import threshold_settings
-        >>> if confidence < threshold_settings.REPROCESS_THRESHOLD:
-        ...     action = "reprocess"
+    All values represent confidence percentages (0.0 to 100.0).
+    These values are the internal representation of the doctrine defined
+    in Glyphar's analysis.yaml.
     """
 
     # ---------------------------------------------------------------
     # CONFIDENCE THRESHOLDS
     # ---------------------------------------------------------------
-    LLM_CORRECTION_THRESHOLD: float = Field(
-        default=92.0,
+
+    # Above this: OCR is near-perfect, no action needed.
+    # Below this: LLM correction is recommended to reach 99%+ fidelity.
+    ACCEPTANCE_CEILING: float = Field(
+        default=90.0,
         ge=0.0,
         le=100.0,
-        description="Confidence threshold for LLM correction",
+        description="Confidence threshold for automatic approval without correction",
     )
 
-    REPROCESS_THRESHOLD: float = Field(
-        default=88.0,
+    # Above this: Text is clear enough for the LLM to refine safely.
+    # Below this: OCR is too garbled; LLM correction might hallucinate.
+    CORRECTION_FLOOR: float = Field(
+        default=70.0,
         ge=0.0,
         le=100.0,
-        description="Confidence threshold for reprocessing",
+        description="Minimum confidence required for reliable LLM correction",
     )
 
-    MIN_CONFIDENCE_ACCEPT: float = Field(
-        default=85.0,
-        ge=0.0,
-        le=100.0,
-        description="Minimum acceptable confidence without action",
-    )
-
-    CRITICAL_QUALITY_THRESHOLD: float = Field(
+    # Below this: The document is likely illegible or severely corrupted.
+    # Reprocessing with aggressive strategies is bypassed in favor of human review.
+    CRITICAL_QUALITY_LIMIT: float = Field(
         default=50.0,
         ge=0.0,
         le=100.0,
-        description="Below this → manual review required",
+        description="Below this threshold, the result is flagged as critical/unusable",
     )
 
     # ---------------------------------------------------------------
     # VALIDATION
     # ---------------------------------------------------------------
     @model_validator(mode="after")
-    def validate_threshold_order(self):
+    def validate_threshold_order(self) -> "ThresholdSettings":
         """
-        Ensure thresholds maintain logical order.
-
-        Required order:
-            CRITICAL <= MIN_ACCEPT <= REPROCESS <= LLM_CORRECTION
+        Ensures that thresholds follow a logical progression:
+        CRITICAL < CORRECTION < ACCEPTANCE
         """
-        if not (
-            self.CRITICAL_QUALITY_THRESHOLD
-            <= self.MIN_CONFIDENCE_ACCEPT
-            <= self.REPROCESS_THRESHOLD
-            <= self.LLM_CORRECTION_THRESHOLD
-        ):
+        if not (self.CRITICAL_QUALITY_LIMIT <= self.CORRECTION_FLOOR <= self.ACCEPTANCE_CEILING):
             raise ValueError(
-                "Thresholds must satisfy: "
-                f"CRITICAL ({self.CRITICAL_QUALITY_THRESHOLD}) <= "
-                f"MIN_ACCEPT ({self.MIN_CONFIDENCE_ACCEPT}) <= "
-                f"REPROCESS ({self.REPROCESS_THRESHOLD}) <= "
-                f"LLM_CORRECTION ({self.LLM_CORRECTION_THRESHOLD})"
+                "Threshold hierarchy violation. Required: "
+                f"CRITICAL ({self.CRITICAL_QUALITY_LIMIT}) <= "
+                f"CORRECTION ({self.CORRECTION_FLOOR}) <= "
+                f"ACCEPTANCE ({self.ACCEPTANCE_CEILING})"
             )
         return self
 
     # ---------------------------------------------------------------
-    # HELPER METHODS
+    # HEURISTIC HELPERS
     # ---------------------------------------------------------------
-    def get_action(self, confidence: float) -> str:
+    def get_recommended_action(self, confidence: float, attempt: int = 1) -> ThothAction:
         """
-        Determine action based on confidence score.
+        Maps a confidence score to a formal ThothAction.
 
-        Args:
-            confidence: OCR confidence percentage (0-100)
-
-        Returns:
-            Action string: "reject", "reprocess", "correct", or "approve"
+        Logic:
+            1. < CRITICAL: ESCALATE (Human needed)
+            2. < CORRECTION: REPROCESS (Try better OCR)
+            3. < ACCEPTANCE: CORRECT (Refine with LLM)
+            4. >= ACCEPTANCE: ACCEPT (Done)
         """
-        if confidence < self.CRITICAL_QUALITY_THRESHOLD:
-            return "reject"
-        elif confidence < self.REPROCESS_THRESHOLD:
-            return "reprocess"
-        elif confidence < self.LLM_CORRECTION_THRESHOLD:
-            return "correct"
-        else:
-            return "approve"
+        if confidence < self.CRITICAL_QUALITY_LIMIT:
+            return ThothAction.ESCALATE
 
-    def needs_action(self, confidence: float) -> bool:
-        """Check if confidence requires any action."""
-        return confidence < self.LLM_CORRECTION_THRESHOLD
+        if confidence < self.CORRECTION_FLOOR:
+            # If we already tried reprocessing, escalate instead of looping forever
+            return ThothAction.REPROCESS if attempt < 2 else ThothAction.ESCALATE
+
+        if confidence < self.ACCEPTANCE_CEILING:
+            return ThothAction.CORRECT
+
+        return ThothAction.ACCEPT
+
+    def requires_intervention(self, confidence: float) -> bool:
+        """Determines if the document requires any step beyond immediate approval."""
+        return confidence < self.ACCEPTANCE_CEILING
+
+    model_config = ConfigDict(frozen=True)
 
 
 # ================================================================

@@ -1,10 +1,12 @@
 """
-Base configuration module for Thoth Agent.
+Base Configuration Infrastructure — Thoth Agent.
 
-Shared utilities and base classes for all config modules.
+Provides the core settings classes and utilities used by all configuration
+sub-modules. Built on top of Pydantic Settings for robust environment management.
 """
 
 from pathlib import Path
+from typing import Optional, Union
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
@@ -12,11 +14,11 @@ class ThothBaseSettings(BaseSettings):
     """
     Base class for all Thoth configuration modules.
 
-    Provides common settings:
-        - Environment file loading (.env)
-        - THOTH_ prefix for env variables
-        - Case-insensitive matching
-        - UTF-8 encoding
+    Features:
+        - Automatic environment variable loading.
+        - Mandatory 'THOTH_' prefix for system overrides.
+        - Case-insensitive name matching.
+        - UTF-8 encoding support for configuration files.
     """
 
     model_config = SettingsConfigDict(
@@ -30,22 +32,27 @@ class ThothBaseSettings(BaseSettings):
 
 
 class PathMixin:
-    """Mixin for path validation and resolution."""
+    """
+    Utility mixin for standardizing path resolution across the Agent's filesystem.
+    """
 
     @staticmethod
-    def resolve_path(path: str | Path, base: Path | None = None) -> Path:
+    def resolve_path(path: Union[str, Path], base: Optional[Path] = None) -> Path:
         """
-        Resolve a path, optionally relative to a base directory.
+        Resolves a path, ensuring it is absolute and that the directory structure exists.
 
         Args:
-            path: Path to resolve (string or Path object)
-            base: Optional base directory for relative paths
+            path: The target path (string or Path object).
+            base: An optional base directory to resolve relative paths against.
 
         Returns:
-            Resolved Path object
+            A resolved, absolute Path object.
         """
         p = Path(path) if isinstance(path, str) else path
+
         if base and not p.is_absolute():
             p = base / p
+
+        # Ensure the directory exists to prevent I/O errors during Agent execution
         p.mkdir(parents=True, exist_ok=True)
         return p

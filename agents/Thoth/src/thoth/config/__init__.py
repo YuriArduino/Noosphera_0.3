@@ -1,17 +1,18 @@
 """
 Thoth Agent Configuration Module.
 
-Centralized, type-safe configuration via pydantic-settings.
-Modular design for maintainability and separation of concerns.
+Centralized, type-safe configuration via Pydantic Settings.
+This module acts as the single entry point for all operational parameters,
+merging environment variables, YAML defaults, and system constants.
 
 Usage:
     >>> from thoth.config import settings
-    >>> print(settings.llm.LLMSTUDIO_BASE_URL)
-    >>> print(settings.thresholds.LLM_CORRECTION_THRESHOLD)
+    >>> print(settings.llm.LLM_BASE_URL)
+    >>> print(settings.thresholds.ACCEPTANCE_CEILING)
 
-    # Or import specific modules:
+    # Or import specific modules directly:
     >>> from thoth.config import llm_settings
-    >>> print(llm_settings.LLMSTUDIO_MODEL)
+    >>> print(llm_settings.CHAT_MODEL)
 """
 
 from typing import TYPE_CHECKING
@@ -43,15 +44,10 @@ if TYPE_CHECKING:
 
 class ThothSettings:
     """
-    Unified settings object that aggregates all configuration modules.
+    Unified settings facade that aggregates all configuration modules.
 
-    Provides a single entry point for all Thoth configuration.
-
-    Example:
-        >>> from thoth.config import settings
-        >>> print(settings.llm.LLMSTUDIO_BASE_URL)
-        >>> print(settings.thresholds.REPROCESS_THRESHOLD)
-        >>> print(settings.pipeline.MAX_WORKERS)
+    Provides a clean, hierarchical interface to access any part of the
+    Agent's configuration without multiple imports.
     """
 
     def __init__(self) -> None:
@@ -64,46 +60,46 @@ class ThothSettings:
         self._environment = env_settings
 
     # ================================================================
-    # MODULE ACCESSORS (Primary Interface)
+    # MODULE ACCESSORS (Interface)
     # ================================================================
     @property
     def glyphar(self):
-        """Glyphar integration settings."""
+        """Glyphar tool integration and doctrine paths."""
         return self._glyphar
 
     @property
     def llm(self):
-        """LLMStudio connection settings."""
+        """Language Model and Embedding connection settings."""
         return self._llm
 
     @property
     def thresholds(self):
-        """Decision threshold settings."""
+        """Strategic decision boundaries and quality gates."""
         return self._thresholds
 
     @property
     def pipeline(self):
-        """OCR pipeline settings."""
+        """Operational execution limits and worker settings."""
         return self._pipeline
 
     @property
     def memory(self):
-        """Memory and learning settings."""
+        """SST persistence, pgvector, and cognitive learning settings."""
         return self._memory
 
     @property
     def api(self):
-        """FastAPI server settings."""
+        """Agent's FastAPI server and identity metadata."""
         return self._api
 
     @property
     def environment(self):
-        """Environment and logging settings."""
+        """Global switches, logging levels, and feature flags."""
         return self._environment
 
 
 # ================================================================
-# GLOBAL SETTINGS INSTANCE
+# GLOBAL SETTINGS INSTANCE (Singleton Pattern)
 # ================================================================
 settings = ThothSettings()
 
@@ -112,10 +108,10 @@ settings = ThothSettings()
 # EXPORTS
 # ================================================================
 __all__ = [
-    # Unified settings
+    # Unified entry point
     "settings",
     "ThothSettings",
-    # Module-specific settings (instances)
+    # Direct access to module instances
     "glyphar_settings",
     "llm_settings",
     "threshold_settings",
@@ -123,7 +119,7 @@ __all__ = [
     "memory_settings",
     "api_settings",
     "env_settings",
-    # Base classes
+    # Base utilities
     "ThothBaseSettings",
     "PathMixin",
 ]

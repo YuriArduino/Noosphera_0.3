@@ -1,81 +1,84 @@
 """
-Environment and logging configuration for Thoth Agent.
+Environment and Orchestration Configuration — Thoth Agent.
 
-Deployment environment, debug mode, and log levels.
+Defines the deployment context (dev/prod), logging verbosity, and
+high-level feature flags for MCP and Prefect integration.
 """
 
-from typing import Literal
-from pydantic import Field
+import os
+from typing import Literal, Optional
+from pydantic import Field, ConfigDict
 
 from .base import ThothBaseSettings
 
 
 class EnvironmentSettings(ThothBaseSettings):
     """
-    Configuration for deployment environment and logging.
+    Configuration for deployment environment, logging, and external orchestrators.
 
-    Example:
-        >>> from thoth.config import env_settings
-        >>> if env_settings.DEBUG:
-        ...     logging.basicConfig(level=logging.DEBUG)
+    This class acts as the master switchboard for Thoth's operational capabilities.
     """
 
     # ---------------------------------------------------------------
-    # ENVIRONMENT
+    # DEPLOYMENT CONTEXT
     # ---------------------------------------------------------------
     ENVIRONMENT: Literal["development", "staging", "production"] = Field(
         default="development",
-        description="Current deployment environment",
+        description="Current deployment tier",
     )
 
     DEBUG: bool = Field(
         default=False,
-        description="Enable debug logging and verbose output",
+        description="Enable verbose output and debug-level execution traces",
     )
 
     LOG_LEVEL: Literal["DEBUG", "INFO", "WARNING", "ERROR"] = Field(
         default="INFO",
-        description="Logging level",
+        description="Global logging threshold for the Thoth package",
     )
 
     # ---------------------------------------------------------------
-    # MCP CONFIGURATION
+    # MCP INTEGRATION (Model Context Protocol)
     # ---------------------------------------------------------------
+    # Enables communication with the Glyphar MCP server if used
     MCP_ENABLED: bool = Field(
         default=True,
-        description="Enable MCP integration with Glyphar",
+        description="Enable MCP bridge for tool-server communication",
     )
 
     # ---------------------------------------------------------------
-    # PREFECT ORCHESTRATION (Fase 2)
+    # PREFECT ORCHESTRATION (Phase 2 Integration)
     # ---------------------------------------------------------------
     PREFECT_ENABLED: bool = Field(
-        default=False,
-        description="Enable Prefect orchestration",
+        default=True,  # Activated for the current architecture phase
+        description="Enable remote flow triggering via Prefect API",
     )
 
     PREFECT_FLOW_NAME: str = Field(
         default="thoth-orchestration",
-        description="Prefect flow name",
+        description="Identifier for the main Agent orchestration flow",
     )
 
-    PREFECT_API_URL: str | None = Field(
-        default=None,
-        description="Prefect API URL (optional)",
+    # Essential for 'get_client()' calls in the Agent Tools
+    PREFECT_API_URL: Optional[str] = Field(
+        default=os.environ.get("PREFECT_API_URL"),
+        description="Remote Prefect Server API endpoint",
     )
 
     # ---------------------------------------------------------------
-    # HELPER METHODS
+    # OPERATIONAL HELPERS
     # ---------------------------------------------------------------
     @property
     def is_production(self) -> bool:
-        """Check if running in production environment."""
+        """Helper to check if the agent is in a restricted production state."""
         return self.ENVIRONMENT == "production"
 
     @property
     def is_development(self) -> bool:
-        """Check if running in development environment."""
+        """Helper to enable experimental features or local paths."""
         return self.ENVIRONMENT == "development"
+
+    model_config = ConfigDict(frozen=True, extra="ignore")
 
 
 # ================================================================

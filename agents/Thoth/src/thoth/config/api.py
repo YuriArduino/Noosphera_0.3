@@ -1,79 +1,80 @@
 """
-FastAPI configuration for Thoth Agent.
+FastAPI Server Configuration — Thoth Agent.
 
-Server settings, host, port, and API metadata.
+Defines the server networking parameters, CORS policies, and API
+metadata for the Thoth Agent's web interface.
 """
 
-from pydantic import Field, computed_field
-
+from pydantic import Field, computed_field, ConfigDict
 from .base import ThothBaseSettings
 
 
 class APISettings(ThothBaseSettings):
     """
-    Configuration for FastAPI server.
+    Configuration for the FastAPI REST interface.
 
-    Example:
-        >>> from thoth.config import api_settings
-        >>> uvicorn.run("app:app", host=api_settings.FASTAPI_HOST, port=api_settings.FASTAPI_PORT)
+    This interface serves as the primary gateway for external systems
+    to interact with the Thoth LangGraph.
     """
 
     # ---------------------------------------------------------------
-    # SERVER
+    # NETWORK SERVER
     # ---------------------------------------------------------------
     FASTAPI_HOST: str = Field(
         default="0.0.0.0",
-        description="FastAPI server host",
+        description="The network interface the server will bind to",
     )
 
     FASTAPI_PORT: int = Field(
-        default=8001,
+        default=8001,  # Isolated from Glyphar (usually 8000)
         ge=1,
         le=65535,
-        description="FastAPI server port",
+        description="The TCP port for the REST API",
     )
 
     # ---------------------------------------------------------------
-    # API METADATA
+    # API IDENTITY (English Standard)
     # ---------------------------------------------------------------
     FASTAPI_TITLE: str = Field(
-        default="Thoth OCR Agent",
-        description="API title for OpenAPI docs",
+        default="Thoth Agent",
+        description="Title displayed in the OpenAPI/Swagger documentation",
     )
 
     FASTAPI_VERSION: str = Field(
-        default="0.1.0",
-        description="API version",
+        default="0.3.0",  # Aligned with Noosphera 0.3
+        description="Current version of the Thoth Agent service",
     )
 
     FASTAPI_DESCRIPTION: str = Field(
-        default="Agente OCR autônomo para documentos psicanalíticos",
-        description="API description for OpenAPI docs",
+        default="Autonomous Agent for psychoanalytic document processing and OCR optimization.",
+        description="Extended description for the API documentation",
     )
 
     # ---------------------------------------------------------------
-    # CORS
+    # SECURITY & ACCESS
     # ---------------------------------------------------------------
     CORS_ORIGINS: list[str] = Field(
         default=["*"],
-        description="Allowed CORS origins",
+        description="List of origins allowed to perform Cross-Origin Resource Sharing",
     )
 
     # ---------------------------------------------------------------
-    # COMPUTED FIELDS
+    # COMPUTED PROPERTIES
     # ---------------------------------------------------------------
     @computed_field
     @property
     def api_base_url(self) -> str:
-        """Returns base URL for the FastAPI server."""
+        """Constructs the base URL for the server."""
         host = "localhost" if self.FASTAPI_HOST == "0.0.0.0" else self.FASTAPI_HOST
         return f"http://{host}:{self.FASTAPI_PORT}"
 
     @computed_field
     @property
     def docs_url(self) -> str:
-        """Returns URL for Swagger docs."""
+        """Generates the direct link to the Swagger UI."""
         return f"{self.api_base_url}/docs"
+
+    model_config = ConfigDict(frozen=True)
 
 
 # ================================================================

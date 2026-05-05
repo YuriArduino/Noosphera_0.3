@@ -1,122 +1,131 @@
 """
-LLMStudio integration configuration for Thoth Agent.
+LLM Integration Configuration — Thoth Agent.
 
-Connection settings, model selection, and API endpoints.
+Manages connection settings, model selection, and API endpoints for
+Large Language Models (LLM) and Embedding providers.
+
+Designed to interface with OpenAI-compatible APIs (LLM Studio, LM Studio, Ollama).
 """
 
+import os
 from typing import Literal
-from pydantic import Field, computed_field
+from pydantic import Field, computed_field, ConfigDict
 
 from .base import ThothBaseSettings
 
 
 class LLMSettings(ThothBaseSettings):
     """
-    Configuration for LLMStudio integration.
+    Configuration for LLM and Embedding integration.
 
-    Supports both chat completion and embedding models.
-
-    Example:
-        >>> from thoth.config.llm import llm_settings
-        >>> print(llm_settings.llm_full_endpoint)
-        'http://127.0.0.1:1234/v1/chat/completions'
+    This class enables Thoth to communicate with local or remote inference
+    servers for text correction and semantic indexing.
     """
 
     # ---------------------------------------------------------------
-    # CONNECTION
+    # CONNECTION & INFRASTRUCTURE
     # ---------------------------------------------------------------
-    LLMSTUDIO_BASE_URL: str = Field(
-        default="http://127.0.0.1:1234",
-        description="LLMStudio API base URL",
+
+    # Priority: Env Var 'OPENAI_API_BASE' from Noosphera Compose, then default
+    LLM_BASE_URL: str = Field(
+        default=os.environ.get("OPENAI_API_BASE", "http://127.0.0.1:1234/v1"),
+        description="Base URL for the OpenAI-compatible API (e.g., LLM Studio/Ollama)",
     )
 
-    # ✅ CORREÇÃO: Endpoints completos já no .env
-    LLMSTUDIO_CHAT_ENDPOINT: str = Field(
-        default="http://127.0.0.1:1234/v1/chat/completions",
-        description="Full chat completion endpoint URL",
+    LLM_API_KEY: str = Field(
+        default=os.environ.get("OPENAI_API_KEY", "sk-local"),
+        description="API Key for the LLM provider (use 'sk-local' for local servers)",
     )
 
-    LLMSTUDIO_EMBEDDING_ENDPOINT: str = Field(
-        default="http://127.0.0.1:1234/v1/embeddings",
-        description="Full embeddings endpoint URL",
-    )
-
-    LLMSTUDIO_TIMEOUT: int = Field(
-        default=120,
+    LLM_TIMEOUT: int = Field(
+        default=180,
         ge=10,
         le=600,
-        description="Request timeout in seconds",
+        description="Request timeout in seconds for long OCR correction tasks",
     )
 
-    LLMSTUDIO_MAX_RETRIES: int = Field(
+    LLM_MAX_RETRIES: int = Field(
         default=3,
         ge=0,
         le=10,
-        description="Maximum retry attempts for failed requests",
+        description="Maximum retry attempts for failed LLM requests",
     )
 
     # ---------------------------------------------------------------
-    # CHAT MODEL
+    # CHAT MODEL (Text Correction & Reasoning)
     # ---------------------------------------------------------------
-    LLMSTUDIO_MODEL: str = Field(
+
+    CHAT_MODEL: str = Field(
         default="meta-llama-3.1-8b-instruct",
-        description="Primary model for text correction",
+        description="Primary model used for OCR text refinement and correction",
     )
 
-    LLMSTUDIO_MODEL_TEMPERATURE: float = Field(
+    CHAT_TEMPERATURE: float = Field(
         default=0.1,
         ge=0.0,
         le=2.0,
-        description="Temperature for chat completions (low for OCR consistency)",
+        description="Temperature for completions (kept low for high OCR fidelity)",
     )
 
-    LLMSTUDIO_MAX_TOKENS: int = Field(
+    CHAT_MAX_TOKENS: int = Field(
         default=8000,
         ge=100,
-        le=32000,
-        description="Maximum tokens for chat completion",
+        le=128000,
+        description="Maximum tokens allowed for a single correction response",
     )
 
     # ---------------------------------------------------------------
-    # EMBEDDING MODEL (Local via LLMStudio)
+    # EMBEDDING MODEL (Semantic Memory)
     # ---------------------------------------------------------------
+
     EMBEDDING_MODEL: str = Field(
         default="text-embedding-nomic-embed-text-v1.5@q8_0",
-        description="Local embedding model via LLMStudio",
+        description="Model used to generate vectors for pgvector and memory recall",
     )
 
-    EMBEDDING_VIA_LLMSTUDIO: bool = Field(
-        default=True,
-        description="Use LLMStudio for embeddings instead of HuggingFace",
-    )
-
+    # Matches the dimension defined in memory.py (SST)
     EMBEDDING_DIMENSION: int = Field(
         default=768,
-        description="Embedding dimension (depends on model)",
+        description="Vector dimensions produced by the chosen embedding model",
     )
 
     # ---------------------------------------------------------------
-    # PROMPT LANGUAGE
+    # AGENT LOCALIZATION
     # ---------------------------------------------------------------
+
     PROMPT_LANGUAGE: Literal["pt-BR", "en-US"] = Field(
         default="pt-BR",
-        description="Language for agent prompts and responses",
+        description="Primary language for Agent system prompts and thought process",
     )
 
     # ---------------------------------------------------------------
-    # COMPUTED FIELDS — Apenas aliases para conveniência
+    # COMPUTED ENDPOINTS (Aliases)
     # ---------------------------------------------------------------
+
+    @computed_field
+    @property
+    def llm_chat_endpoint(self) -> str:
+        """Returns the full OpenAI-style chat completions endpoint."""
+        return f"{self.LLM_BASE_URL.rstrip('/')}/chat/completions"
+
+    @computed_field
+    @property
+    def llm_embedding_endpoint(self) -> str:
+        """Returns the full OpenAI-style embeddings endpoint."""
+        return f"{self.LLM_BASE_URL.rstrip('/')}/embeddings"
+
+    # Backward compatibility aliases
     @computed_field
     @property
     def llm_full_endpoint(self) -> str:
-        """Alias for LLMSTUDIO_CHAT_ENDPOINT (backward compatibility)."""
-        return self.LLMSTUDIO_CHAT_ENDPOINT
+        return self.llm_chat_endpoint
 
     @computed_field
     @property
     def embedding_full_endpoint(self) -> str:
-        """Alias for LLMSTUDIO_EMBEDDING_ENDPOINT (backward compatibility)."""
-        return self.LLMSTUDIO_EMBEDDING_ENDPOINT
+        return self.llm_embedding_endpoint
+
+    model_config = ConfigDict(frozen=True, extra="ignore")
 
 
 # ================================================================

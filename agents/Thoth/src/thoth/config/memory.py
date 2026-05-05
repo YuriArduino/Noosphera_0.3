@@ -1,192 +1,134 @@
 """
-Memory and learning configuration for Thoth Agent.
+Memory and Learning Configuration — Thoth Agent.
 
-Supports:
-    - LangGraph checkpoint persistence (operational state)
-    - Separate SQLite Ledger (learning memory)
-    - VectorStore embeddings (semantic memory)
+Configures the hybrid memory architecture:
+    1. Operational State: LangGraph Checkpoints (PostgreSQL).
+    2. Cognitive Ledger: Historical decisions and corrections (PostgreSQL).
+    3. Semantic Memory: Vectorized insights and patterns (pgvector).
+    4. Reflection Layer: LangMem background consolidation.
 """
 
+import os
 from pathlib import Path
-from pydantic import Field, field_validator
-
+from pydantic import Field, ConfigDict
 from .base import ThothBaseSettings, PathMixin
 
 
 class MemorySettings(ThothBaseSettings, PathMixin):
     """
-    Configuration for Thoth hybrid memory system.
-
-    Layers:
-        1. Checkpoint DB → Operational graph state (LangGraph)
-        2. Ledger DB → Cognitive learning records (decisions/corrections)
-        3. VectorStore → Semantic embedding memory
+    Configuration for Thoth's multi-layered persistent memory system.
+    Transitioned from local SQLite/files to centralized PostgreSQL (SST).
     """
 
     # ===============================================================
-    # GLOBAL MEMORY SWITCH
+    # PERSISTENCE BACKEND (PostgreSQL SST)
     # ===============================================================
+
+    # URL pointing to the Thoth-specific database (thoth_db)
+    THOTH_DATABASE_URL: str = Field(
+        default=os.environ.get(
+            "THOTH_DATABASE_URL", "postgresql://yuri:3759@localhost:5432/thoth_db"
+        ),
+        description="Main connection string for Agent state and memory",
+    )
 
     MEMORY_ENABLED: bool = Field(
         default=True,
-        description="Enable long-term memory system",
+        description="Master switch for the long-term memory system",
     )
 
     # ===============================================================
-    # CHECKPOINTING (Operational Memory - LangGraph)
+    # OPERATIONAL MEMORY (LangGraph Checkpoints)
     # ===============================================================
 
     CHECKPOINT_ENABLED: bool = Field(
         default=True,
-        description="Enable checkpoint persistence for graph state",
+        description="Enable persistence for LangGraph state transitions",
     )
-
-    CHECKPOINT_DB_PATH: Path = Field(
-        default=Path("./data/checkpoints/thoth_checkpoint.db"),
-        description="SQLite path for LangGraph checkpoint persistence",
-    )
-
-    @field_validator("CHECKPOINT_DB_PATH", mode="before")
-    @classmethod
-    def ensure_checkpoint_dir(cls, v):
-        """Ensure checkpoint persistence directory exists."""
-        path = Path(v) if isinstance(v, (str, Path)) else v
-        path.parent.mkdir(parents=True, exist_ok=True)
-        return path
 
     # ===============================================================
-    # LEDGER (Cognitive Learning Memory - Separate SQLite)
+    # COGNITIVE LEDGER (Audit & Learning)
     # ===============================================================
 
     LEDGER_ENABLED: bool = Field(
         default=True,
-        description="Enable cognitive ledger for decisions and corrections",
-    )
-
-    LEDGER_DB_PATH: Path = Field(
-        default=Path("./data/ledger/thoth_ledger.db"),
-        description="SQLite path for cognitive learning ledger",
+        description="Enable logging of every strategic decision and correction",
     )
 
     LEDGER_AUTO_MIGRATE: bool = Field(
         default=True,
-        description="Automatically create ledger tables if missing",
+        description="Automatically initialize SQLModel tables on startup",
     )
 
-    @field_validator("LEDGER_DB_PATH", mode="before")
-    @classmethod
-    def ensure_ledger_dir(cls, v):
-        """Ensure ledger persistence directory exists."""
-        path = Path(v) if isinstance(v, (str, Path)) else v
-        path.parent.mkdir(parents=True, exist_ok=True)
-        return path
-
     # ===============================================================
-    # EMBEDDINGS (Semantic Memory)
+    # SEMANTIC MEMORY (pgvector)
     # ===============================================================
 
     EMBEDDING_MODEL: str = Field(
-        default="text-embedding-nomic-embed-text-v1.5@q8_0",
-        description="Model used for generating embeddings",
+        default="nomic-embed-text-v1.5",
+        description="Model identifier for generating semantic vectors",
     )
 
-    EMBEDDING_COLLECTION_NAME: str = Field(
-        default="thoth_semantic_memory",
-        description="Collection name for document embeddings",
+    EMBEDDING_PROVIDER: str = Field(
+        default="ollama",  # or 'openai', 'anthropic'
+        description="LLM provider for the embedding model",
     )
 
     EMBEDDING_DIMENSIONS: int = Field(
-        default=768,
-        description="Embedding vector dimensions",
+        default=768,  # Nomic standard. Use 1536 for OpenAI.
+        description="Vector dimensions in pgvector",
     )
-
-    # ===============================================================
-    # VECTORSTORE BACKEND
-    # ===============================================================
 
     VECTORSTORE_ENABLED: bool = Field(
         default=True,
-        description="Enable vectorstore semantic memory",
+        description="Enable vectorized experience retrieval",
     )
-
-    VECTORSTORE_TYPE: str = Field(
-        default="chromadb",
-        description="VectorStore backend: chromadb | faiss",
-    )
-
-    VECTORSTORE_MAX_DOCUMENTS: int = Field(
-        default=10000,
-        description="Maximum documents stored in vector memory",
-    )
-
-    MEMORY_PERSISTENCE_PATH: Path = Field(
-        default=Path("./data/memory"),
-        description="Path for vectorstore persistence",
-    )
-
-    @field_validator("MEMORY_PERSISTENCE_PATH", mode="before")
-    @classmethod
-    def ensure_memory_path(cls, v):
-        """Ensure memory persistence directory exists."""
-        path = Path(v) if isinstance(v, (str, Path)) else v
-        path.mkdir(parents=True, exist_ok=True)
-        return path
 
     # ===============================================================
-    # HUMAN-IN-THE-LOOP
+    # REFLECTION LAYER (LangMem)
     # ===============================================================
 
-    HITL_ENABLED: bool = Field(
-        default=True,
-        description="Enable Human-in-the-Loop for low confidence cases",
+    REFLECTION_MODEL: str = Field(
+        default="claude-3-5-sonnet-latest",
+        description="Reasoning model used to extract insights from trajectories",
     )
+
+    REFLECTION_PROVIDER: str = Field(
+        default="anthropic", description="Provider for the reflection reasoning engine"
+    )
+
+    # ===============================================================
+    # OPERATIONAL PARAMETERS
+    # ===============================================================
 
     HITL_THRESHOLD: float = Field(
         default=50.0,
-        description="Confidence threshold for HITL intervention",
-    )
-
-    # ===============================================================
-    # OPERATIONAL MEMORY WINDOW (Cognitive Focus Layer)
-    # ===============================================================
-
-    MEMORY_WINDOW_ENABLED: bool = Field(
-        default=True,
-        description="Enable operational memory window control",
+        description="Confidence threshold that forces Human-in-the-Loop intervention",
     )
 
     MEMORY_WINDOW_SIZE: int = Field(
-        default=20,
-        description="Maximum number of recent ledger events in active memory window",
+        default=10,
+        description="Number of recent experiences to keep in immediate reasoning context",
     )
-
-    MEMORY_REFLECTION_ENABLED: bool = Field(
-        default=True,
-        description="Allow triage node to perform periodic reflective consolidation",
-    )
-
-    MEMORY_REFLECTION_MIN_CONFIDENCE: float = Field(
-        default=60.0,
-        description="Minimum average confidence required before triggering reflection",
-    )
-
-    # ===============================================================
-    # SEMANTIC SEARCH PARAMETERS
-    # ===============================================================
 
     SEMANTIC_SEARCH_TOP_K: int = Field(
-        default=5,
-        description="Number of semantic memory items retrieved during triage",
+        default=3,
+        description="Number of similar cases to retrieve during strategy selection",
     )
 
-    SEMANTIC_SEARCH_MIN_SCORE: float = Field(
-        default=0.0,
-        description="Minimum similarity score required for semantic memory retrieval",
+    # ===============================================================
+    # LEGACY / LOCAL PATHS (Optional Logging)
+    # ===============================================================
+
+    # Useful for local debugging or plain-text logs
+    LOCAL_DATA_DIR: Path = Field(
+        default=Path("./data"), description="Base path for local logs and cache"
     )
+
+    model_config = ConfigDict(frozen=True)
 
 
 # ================================================================
 # GLOBAL INSTANCE
 # ================================================================
-
 memory_settings = MemorySettings()

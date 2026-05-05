@@ -1,99 +1,97 @@
 """
-OCR pipeline configuration for Thoth Agent.
+OCR Pipeline Configuration — Thoth Agent.
 
-Worker settings, batch sizes, timeouts, and processing limits.
+Defines the operational parameters for OCR execution, including parallelism,
+resource limits, timeouts, and strategy fallback sequences.
 """
 
-from pydantic import Field
-
+from typing import List
+from pydantic import Field, ConfigDict
 from .base import ThothBaseSettings
+from ..domain.common import GlypharStrategy
 
 
 class PipelineSettings(ThothBaseSettings):
     """
-    Configuration for OCR pipeline execution.
+    Configuration for OCR pipeline execution and resource management.
 
-    Controls parallelism, batching, and resource limits.
-
-    Example:
-        >>> from thoth.config import pipeline_settings
-        >>> result = pipeline.process(
-        ...     doc,
-        ...     max_workers=pipeline_settings.MAX_WORKERS,
-        ...     batch_size=pipeline_settings.BATCH_SIZE,
-        ... )
+    This class controls how the Agent instructs the Prefect workers to
+    allocate hardware resources and manage time-to-completion.
     """
 
     # ---------------------------------------------------------------
-    # PARALLELISM
+    # PARALLELISM & CONCURRENCY
     # ---------------------------------------------------------------
     MAX_WORKERS: int = Field(
         default=8,
         ge=1,
         le=32,
-        description="Maximum parallel workers for OCR processing",
+        description="Maximum parallel threads/processes for OCR execution",
     )
 
     BATCH_SIZE: int = Field(
         default=8,
         ge=1,
         le=50,
-        description="Pages per processing batch",
+        description="Number of pages processed per atomic batch",
     )
 
     # ---------------------------------------------------------------
-    # TIMEOUTS
+    # EXECUTION TIMEOUTS
     # ---------------------------------------------------------------
     TIMEOUT_SECONDS: int = Field(
-        default=240,
+        default=300,
         ge=30,
-        le=600,
-        description="Timeout per document in seconds",
+        le=1200,
+        description="Global timeout for an entire document processing job",
     )
 
     TIMEOUT_PER_PAGE: int = Field(
-        default=30,
+        default=45,
         ge=5,
-        le=120,
-        description="Timeout per page in seconds",
+        le=180,
+        description="Maximum time allowed for a single page OCR run",
     )
 
     # ---------------------------------------------------------------
-    # LIMITS
+    # DATA LIMITS & RESOLUTION
     # ---------------------------------------------------------------
     MAX_PAGES: int = Field(
         default=500,
         ge=1,
         le=2000,
-        description="Maximum pages per document",
+        description="Hard limit on the number of pages allowed per document",
     )
 
     MAX_FILE_SIZE_MB: int = Field(
         default=100,
         ge=1,
         le=500,
-        description="Maximum file size in MB",
+        description="Maximum input file size in Megabytes",
     )
 
-    DPI: int = Field(
+    DEFAULT_DPI: int = Field(
         default=200,
         ge=72,
         le=600,
-        description="DPI for PDF rasterization",
+        description="Default rendering resolution for PDF rasterization",
     )
 
     # ---------------------------------------------------------------
-    # GLYPHAR STRATEGIES
+    # DOCTRINE STRATEGIES (SST Alignment)
     # ---------------------------------------------------------------
-    DEFAULT_STRATEGY: str = Field(
-        default="fast_scan",
-        description="Default Glyphar processing strategy",
+    # These must correspond to filenames in tools/Glyphar/docs/strategies/*.yaml
+    INITIAL_STRATEGY: GlypharStrategy = Field(
+        default=GlypharStrategy.FAST,
+        description="The starting doctrine used for unknown documents",
     )
 
-    STRATEGY_FALLBACK: list[str] = Field(
-        default=["fast_scan", "high_accuracy", "noisy_documents"],
-        description="Strategy fallback order",
+    STRATEGY_RETRIAL_SEQUENCE: List[GlypharStrategy] = Field(
+        default=[GlypharStrategy.FAST, GlypharStrategy.BALANCED, GlypharStrategy.AGGRESSIVE],
+        description="The order in which doctrines are attempted during reprocessing",
     )
+
+    model_config = ConfigDict(frozen=True, use_enum_values=False)
 
 
 # ================================================================
