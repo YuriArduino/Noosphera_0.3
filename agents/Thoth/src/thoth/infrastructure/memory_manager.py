@@ -1,37 +1,31 @@
 """
-Background memory management for Thoth Agent.
+Background memory management for the Thoth Agent.
 
 Uses LangMem to automatically extract long-term semantic memories
 from agent interactions and internal decision trajectories.
 
 This layer is:
-- Passive (does not influence decisions directly)
-- Background-driven
-- Cognitively oriented (pattern consolidation)
+- Persistent: Uses PostgreSQL + pgvector (SST).
+- Passive: Operates in background threads to consolidate patterns.
+- Cognitive: Focused on learning from failures and corrections.
 """
 
 from __future__ import annotations
 
 from typing import List, Optional
-
 from langchain.chat_models import init_chat_model
-from langgraph.store.memory import InMemoryStore
-from langmem import create_memory_store_manager
 from langchain_core.messages import AnyMessage, HumanMessage, AIMessage, SystemMessage
+from langgraph.store.postgres import PostgresStore  # Upgraded from InMemory
+from langmem import create_memory_store_manager
 
 from thoth.config import memory_settings
+from glyphar.database import DATABASE_URL  # Using our SST connection string
 
 
 class ThothMemoryManager:
     """
-    Extracts semantic knowledge from Thoth internal decisions
-    and interactions using LangMem.
-
-    Responsibilities:
-        • Consolidate semantic patterns from decisions
-        • Extract implicit behavioral knowledge
-        • Maintain long-term vector memory
-        • Operate fully in background (passive mode)
+    Extracts semantic knowledge from Thoth's internal decisions
+    and interactions using LangMem and persists it in PostgreSQL.
     """
 
     def __init__(self) -> None:
@@ -43,29 +37,32 @@ class ThothMemoryManager:
             return
 
         # -----------------------------------------------------
-        # Shared Vector Store (Semantic Memory Layer)
+        # Persistent Vector Store (PostgreSQL + pgvector)
         # -----------------------------------------------------
-        self.store = InMemoryStore(
-            index={
-                "dims": memory_settings.EMBEDDING_DIMENSIONS,
-                "embed": memory_settings.EMBEDDING_MODEL,
-            }
-        )
+        # This replaces InMemoryStore to ensure memory survives container restarts.
+        # It creates a 'langgraph_store' table in your glyphar_db.
+        self.store = PostgresStore.from_conn_string(DATABASE_URL)
+
+        # Ensure tables exist (In Noosphera 0.3, this can also be handled by Alembic)
+        self.store.setup()
 
         # -----------------------------------------------------
-        # LLM used for memory reflection extraction
-        # NOTE:
-        # This should ideally be a reasoning model, not embedding model.
-        # Adjust via config if desired.
+        # Reasoning LLM for Memory Reflection
         # -----------------------------------------------------
-        self.llm = init_chat_model("anthropic:claude-3-5-sonnet-latest")
+        # Used by LangMem to 'think' about the messages and extract insights.
+        self.llm = init_chat_model(
+            model=memory_settings.REFLECTION_MODEL,
+            model_provider=memory_settings.REFLECTION_PROVIDER,
+        )
 
         # -----------------------------------------------------
         # Background Memory Manager
         # -----------------------------------------------------
+        # Manages the 'Reflection' loop. Namespace isolates Thoth from other tools.
         self.memory_manager = create_memory_store_manager(
             self.llm,
-            namespace=("thoth", "background_memory"),
+            storage=self.store,
+            namespace=("thoth", "semantic_memory"),
         )
 
     # ==========================================================
@@ -84,36 +81,36 @@ class ThothMemoryManager:
         correction_summary: Optional[str] = None,
     ) -> None:
         """
-        Extract semantic patterns from an internal decision trajectory.
+        Converts internal reasoning logs into semantic patterns.
 
-        This method should be called only when:
-            • Confidence is low
-            • HITL is triggered
-            • A correction is applied
+        LangMem will analyze these messages to extract rules like:
+        'If document hash starts with X and confidence is Y, strategy Z fails'.
         """
         if not self.enabled or not self.memory_manager:
             return
 
         messages: List[AnyMessage] = [
-            SystemMessage(content="Thoth OCR agent internal reasoning log."),
+            SystemMessage(content="Thoth OCR agent internal reasoning trajectory."),
             HumanMessage(
                 content=(
-                    f"Document ID: {document_id}\n"
-                    f"Document Hash: {document_hash}\n"
-                    f"Average Confidence: {avg_confidence}"
+                    f"Context:\n- Doc ID: {document_id}\n"
+                    f"- Hash: {document_hash}\n"
+                    f"- Avg Confidence: {avg_confidence}"
                 )
             ),
             AIMessage(
                 content=(
-                    f"Decision Taken:\n- Action: {action}\n- Strategy: {strategy}\n"
-                    f"- Attempts: {attempts}\n- HITL Triggered: {hitl_triggered}"
+                    f"Decision logic:\n- Attempted Strategy: {strategy}\n"
+                    f"- Final Action: {action}\n- Total Attempts: {attempts}\n"
+                    f"- Human Intervention (HITL): {hitl_triggered}"
                 )
             ),
         ]
 
         if correction_summary:
-            messages.append(AIMessage(content=f"Correction Applied:\n{correction_summary}"))
+            messages.append(AIMessage(content=f"LLM Refinement Path:\n{correction_summary}"))
 
+        # LangMem reflects on this trajectory and saves insights to the PostgresStore
         await self.memory_manager.ainvoke(
             {
                 "messages": messages,
@@ -125,16 +122,8 @@ class ThothMemoryManager:
     # EXTERNAL INTERACTION MEMORY
     # ==========================================================
 
-    async def process_interaction(
-        self,
-        messages: List[AnyMessage],
-    ) -> None:
-        """
-        Extract semantic memory from conversational interactions.
-
-        This is optional and should be used only if Thoth
-        directly interacts with users.
-        """
+    async def process_interaction(self, messages: List[AnyMessage]) -> None:
+        """Extracts patterns from direct conversations with users/agents."""
         if not self.enabled or not self.memory_manager:
             return
 
@@ -146,21 +135,19 @@ class ThothMemoryManager:
         )
 
     # ==========================================================
-    # SEARCH
+    # RETRIEVAL (The 'Recall' Mechanism)
     # ==========================================================
 
     def search(self, query: str):
         """
-        Search background semantic memory.
-
-        Returns:
-            List of semantic memory items.
+        Queries the persistent semantic memory.
+        Uses pgvector for similarity search on extracted insights.
         """
         if not self.enabled or not self.store:
             return []
 
         return self.store.search(
-            ("thoth", "background_memory"),
+            ("thoth", "semantic_memory"),
             query=query,
         )
 
