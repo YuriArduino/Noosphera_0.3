@@ -1,10 +1,13 @@
 """
-Decision Models — Thoth Agent Autonomy.
+Decision Models — Thoth Agent Autonomy and Reasoning.
+
+This module defines the immutable domain entities and events used by the
+Agent to evaluate OCR results and determine the next course of action.
 """
 
-from datetime import datetime
-from typing import Optional, List
-from pydantic import BaseModel, Field, computed_field
+from datetime import datetime, timezone
+from typing import Optional, List, Any, Dict
+from pydantic import BaseModel, Field, computed_field, ConfigDict
 
 from .common import (
     ThothAction,
@@ -19,7 +22,10 @@ from .ocr import OCROutput
 # ================================================================
 class QualityMetrics(BaseModel):
     """
-    Immutable snapshot of quality statistics used for decision-making.
+    An analytical snapshot of quality statistics used for strategic evaluation.
+
+    This object flattens complex OCR statistics into a format optimized
+    for the Agent's decision logic and Neo4j causal mapping.
     """
 
     avg_confidence: float = Field(..., ge=0.0, le=100.0)
@@ -29,7 +35,7 @@ class QualityMetrics(BaseModel):
     min_confidence: float = Field(..., ge=0.0, le=100.0)
     max_confidence: float = Field(..., ge=0.0, le=100.0)
 
-    model_config = {"frozen": True}
+    model_config = ConfigDict(frozen=True)
 
 
 # ================================================================
@@ -37,7 +43,10 @@ class QualityMetrics(BaseModel):
 # ================================================================
 class DecisionContext(BaseModel):
     """
-    Immutable context snapshot for a Thoth decision.
+    The situational context surrounding a specific decision.
+
+    Binds the raw perceptual data (OCR Output) with the operational
+    state (Strategy and Attempt Number).
     """
 
     ocr_output: OCROutput
@@ -45,18 +54,18 @@ class DecisionContext(BaseModel):
     current_strategy: GlypharStrategy
     attempt_number: int = Field(..., ge=0)
 
-    model_config = {"frozen": True}
+    model_config = ConfigDict(frozen=True)
 
     @computed_field
     @property
     def doc_hash(self) -> HashSHA256:
-        """Hash of the document, used for tracking and idempotency."""
+        """SST reference for tracking and idempotency across Noosphera tools."""
         return self.ocr_output.file_metadata.hash_sha256
 
     @computed_field
     @property
     def doc_name(self) -> str:
-        """Original document name, for logging and user-friendly output."""
+        """The original filename for logging and trace visibility."""
         return self.ocr_output.file_metadata.name
 
 
@@ -65,7 +74,10 @@ class DecisionContext(BaseModel):
 # ================================================================
 class ThothDecision(BaseModel):
     """
-    Immutable domain event representing a Thoth decision.
+    An immutable Domain Event representing a specific conclusion reached by Thoth.
+
+    This event captures the 'Why' (reason) and the 'What' (action), serving
+    as the primary input for the Decision Ledger and Neo4j reflection.
     """
 
     context: DecisionContext
@@ -76,31 +88,32 @@ class ThothDecision(BaseModel):
     target_pages: Optional[List[int]] = None
     llm_input: Optional[str] = None
 
-    decided_at: datetime = Field(default_factory=datetime.utcnow)
+    decided_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
 
-    model_config = {"frozen": True}
+    model_config = ConfigDict(frozen=True)
 
     @computed_field
     @property
     def requires_reprocessing(self) -> bool:
-        """Indicates if this decision requires another OCR attempt."""
+        """Flag to trigger the Prefect worker for a new OCR run."""
         return self.action == ThothAction.REPROCESS
 
     @computed_field
     @property
     def requires_llm_correction(self) -> bool:
-        """Indicates if this decision requires an LLM correction."""
+        """Flag to trigger the LLM text refinement node."""
         return self.action == ThothAction.CORRECT
 
     @computed_field
     @property
     def is_final(self) -> bool:
-        """Indicates if this decision is a final action with no further steps."""
+        """Terminal state check for LangGraph flow control."""
         return self.action.is_terminal
 
-    def to_state_dict(self) -> dict:
+    def to_state_dict(self) -> Dict[str, Any]:
         """
-        Projection for workflow/state persistence.
+        Serializes the decision into a Projection suitable for
+        LangGraph state persistence and audit logging.
         """
         return {
             "doc_hash": self.context.doc_hash,
@@ -120,7 +133,10 @@ class ThothDecision(BaseModel):
 # ================================================================
 class DecisionHistory(BaseModel):
     """
-    Aggregate of all decisions made for a document.
+    An aggregate of the Agent's reasoning trajectory for a specific document.
+
+    Tracks the evolution of confidence and strategy shifts, providing the
+    full story of an extraction job.
     """
 
     doc_hash: HashSHA256
@@ -130,11 +146,13 @@ class DecisionHistory(BaseModel):
     total_reprocess_attempts: int = 0
     final_confidence: Optional[float] = None
 
-    model_config = {"frozen": True}
+    model_config = ConfigDict(frozen=True)
 
     def add_decision(self, decision: ThothDecision) -> "DecisionHistory":
         """
-        Return new immutable history with appended decision.
+        Returns a new immutable history instance with the appended decision.
+
+        Follows the functional state transition pattern used by LangGraph.
         """
         return DecisionHistory(
             doc_hash=self.doc_hash,

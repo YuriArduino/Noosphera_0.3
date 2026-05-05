@@ -1,5 +1,8 @@
 """
 Decision Policy — Thoth Agent Autonomy Logic.
+
+This module encapsulates the business rules and heuristics used by the Agent
+to interpret OCR quality metrics and select the next operational state.
 """
 
 from .decision import (
@@ -11,18 +14,22 @@ from .common import ThothAction, GlypharStrategy
 
 class ThothDecisionPolicy:
     """
-    Determines the next action for Thoth based on OCR quality metrics.
+    Heuristic engine that determines the next step in the extraction lifecycle.
+
+    This policy acts as the 'Controlled Freedom' guardrail, ensuring Thoth
+    follows the Noosphera quality doctrine while deciding between reprocessing,
+    LLM correction, or human escalation.
     """
 
-    # Threshold configuration (tunable during experimentation phase)
-    MIN_ACCEPTABLE_CONFIDENCE = 85.0
-    MIN_CORRECTABLE_CONFIDENCE = 70.0
+    # --- Doctrine Thresholds (To be dynamically injected via YAML in future phases) ---
+    MIN_ACCEPTABLE_CONFIDENCE = 88.0  # Threshold for direct approval
+    MIN_CORRECTABLE_CONFIDENCE = 70.0  # Below this, LLM correction is unreliable
     MAX_REPROCESS_ATTEMPTS = 2
 
     @classmethod
     def evaluate(cls, context: DecisionContext) -> ThothDecision:
         """
-        Evaluate current OCR output and decide next action.
+        Evaluates the current OCR context and returns a formal ThothDecision.
         """
 
         metrics = context.quality_metrics
@@ -31,17 +38,20 @@ class ThothDecisionPolicy:
         attempts = context.attempt_number
 
         # ------------------------------------------------------------
-        # 1️⃣ Accept if quality is excellent
+        # 1. APPROVAL: High confidence and no critical quality issues
         # ------------------------------------------------------------
         if avg_conf >= cls.MIN_ACCEPTABLE_CONFIDENCE and poor_pages == 0:
             return ThothDecision(
                 context=context,
                 action=ThothAction.ACCEPT,
-                reason=(f"High OCR confidence ({avg_conf:.2f}%) " "with no poor pages detected."),
+                reason=(
+                    f"OCR result approved: High confidence ({avg_conf:.2f}%) "
+                    "with no poor quality pages detected."
+                ),
             )
 
         # ------------------------------------------------------------
-        # 2️⃣ Reprocess if quality is low and attempts available
+        # 2. REPROCESS: Quality is too low for reliable LLM correction
         # ------------------------------------------------------------
         if avg_conf < cls.MIN_CORRECTABLE_CONFIDENCE:
             if attempts < cls.MAX_REPROCESS_ATTEMPTS:
@@ -49,29 +59,33 @@ class ThothDecisionPolicy:
                     context=context,
                     action=ThothAction.REPROCESS,
                     reason=(
-                        f"Low average confidence ({avg_conf:.2f}%). "
-                        "Reprocessing with alternative strategy."
+                        f"Low confidence ({avg_conf:.2f}%). "
+                        "Attempting recovery via aggressive preprocessing strategy."
                     ),
                     next_strategy=GlypharStrategy.AGGRESSIVE,
                 )
 
         # ------------------------------------------------------------
-        # 3️⃣ LLM correction if moderate confidence
+        # 3. CORRECT: Moderate confidence allows for LLM refinement
         # ------------------------------------------------------------
         if cls.MIN_CORRECTABLE_CONFIDENCE <= avg_conf < cls.MIN_ACCEPTABLE_CONFIDENCE:
             return ThothDecision(
                 context=context,
                 action=ThothAction.CORRECT,
                 reason=(
-                    f"Moderate confidence ({avg_conf:.2f}%). " "Applying LLM-based correction."
+                    f"Moderate confidence ({avg_conf:.2f}%). "
+                    "Deploying LLM correction to refine text fidelity."
                 ),
             )
 
         # ------------------------------------------------------------
-        # 4️⃣ Escalate to human review (HITL fallback)
+        # 4. ESCALATE: HITL fallback when automation fails
         # ------------------------------------------------------------
         return ThothDecision(
             context=context,
             action=ThothAction.ESCALATE,
-            reason=("Maximum reprocessing attempts reached or " "confidence remains insufficient."),
+            reason=(
+                "Automated recovery exhausted. Confidence remains below "
+                f"threshold ({avg_conf:.2f}%) or critical errors persist."
+            ),
         )

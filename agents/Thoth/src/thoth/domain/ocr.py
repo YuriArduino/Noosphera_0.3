@@ -2,12 +2,16 @@
 OCR Domain Models — Glyphar Output Structure.
 
 Pure business entities representing OCR processing results.
-These models describe perception only (no decision logic).
+These models describe perception only, providing the structured data
+necessary for the Agent's decision-making logic.
+
+This version strictly adheres to the original contract to ensure
+compatibility with metrics and downstream consumers.
 """
 
 from datetime import datetime
-from typing import List, Optional
-from pydantic import BaseModel, Field, computed_field
+from typing import List, Optional, Dict
+from pydantic import BaseModel, Field, computed_field, ConfigDict
 
 from .common import (
     PageQuality,
@@ -23,19 +27,20 @@ from .common import (
 # ================================================================
 class FileMetadata(BaseModel):
     """
-    Input file metadata and identification.
+    Input file metadata and identification properties.
+    Matches the Glyphar SST for file tracking.
     """
 
-    path: str = Field(..., description="Full path to the file")
-    name: str = Field(..., description="Filename with extension")
-    extension: str = Field(..., description="File extension (e.g., 'pdf')")
-    size_bytes: int = Field(..., ge=0)
+    path: str = Field(..., description="Full absolute path to the source file")
+    name: str = Field(..., description="Filename including extension")
+    extension: str = Field(..., description="File extension without dot")
+    size_bytes: int = Field(..., ge=0, description="File size in bytes")
     created_at: datetime = Field(...)
     modified_at: datetime = Field(...)
-    hash_sha256: HashSHA256 = Field(...)
+    hash_sha256: HashSHA256 = Field(..., description="Deduplication hash")
     pages_count: int = Field(..., ge=1)
 
-    model_config = {"extra": "ignore", "frozen": True}
+    model_config = ConfigDict(extra="ignore", frozen=True)
 
 
 # ================================================================
@@ -43,7 +48,7 @@ class FileMetadata(BaseModel):
 # ================================================================
 class ColumnResult(BaseModel):
     """
-    OCR result for a single column/region within a page.
+    OCR result for a single detected text region within a page.
     """
 
     col_index: int = Field(..., ge=1)
@@ -52,18 +57,16 @@ class ColumnResult(BaseModel):
     word_count: int = Field(..., ge=0)
     char_count: int = Field(..., ge=0)
     processing_time_s: float = Field(..., ge=0.0)
-    bbox: BoundingBox = Field(...)
+    bbox: BoundingBox = Field(..., description="Geometric box: (left, top, width, height)")
     region_id: str = Field(...)
     config_used: str = Field(...)
 
-    model_config = {"extra": "ignore", "frozen": True}
+    model_config = ConfigDict(extra="ignore", frozen=True)
 
     @computed_field
     @property
     def words_per_second(self) -> float:
-        """
-        Throughput metric.
-        """
+        """Throughput metric for this specific region."""
         if self.processing_time_s <= 0:
             return 0.0
         return self.word_count / self.processing_time_s
@@ -74,10 +77,10 @@ class ColumnResult(BaseModel):
 # ================================================================
 class PageResult(BaseModel):
     """
-    OCR result for a single page.
+    OCR result for a single document page.
     """
 
-    id: PageID = Field(...)
+    id: PageID = Field(..., description="Canonical Page ID")
     page_number: int = Field(..., ge=1)
     layout_type: LayoutType = Field(...)
     columns: List[ColumnResult] = Field(...)
@@ -86,29 +89,24 @@ class PageResult(BaseModel):
     processing_time_s: float = Field(..., ge=0.0)
     config_used: Optional[str] = Field(default=None)
     warnings: List[str] = Field(default_factory=list)
-    page_text_hash: HashSHA256 = Field(...)
+    # RESTORED: This field is now strictly required (Field(...))
+    page_text_hash: HashSHA256 = Field(..., description="SHA256 of the page text")
 
-    model_config = {"extra": "ignore", "frozen": True}
+    model_config = ConfigDict(extra="ignore", frozen=True)
 
     @computed_field
     @property
     def full_text(self) -> str:
         """
-        Docstring for full_text
-
-        :param self: Description
-        :return: Description
-        :rtype: str
+        Concatenates all column texts into a unified page string.
+        RESTORED: Preserves all columns, including empty ones, using simple join.
         """
-
         return "\n\n".join(col.text for col in self.columns)
 
     @computed_field
     @property
     def total_word_count(self) -> int:
-        """
-        Docstring for total_word_count"""
-
+        """Sum of words across all regions on the page."""
         return sum(col.word_count for col in self.columns)
 
 
@@ -117,7 +115,7 @@ class PageResult(BaseModel):
 # ================================================================
 class OCRStatistics(BaseModel):
     """
-    Aggregate statistics for the document.
+    Aggregate statistics for the entire document processing job.
     """
 
     total_pages: int = Field(..., ge=0)
@@ -128,15 +126,15 @@ class OCRStatistics(BaseModel):
     average_confidence: float = Field(..., ge=0.0, le=100.0)
     total_processing_time_s: float = Field(..., ge=0.0)
     pages_per_second: float = Field(..., ge=0.0)
-    quality_distribution: dict[PageQuality, int] = Field(...)
+    quality_distribution: Dict[PageQuality, int] = Field(...)
     low_confidence_pages: List[int] = Field(default_factory=list)
 
-    model_config = {"extra": "ignore", "frozen": True}
+    model_config = ConfigDict(extra="ignore", frozen=True)
 
     @computed_field
     @property
     def success_rate(self) -> float:
-        """Percentage of pages classified as successful (non-poor quality)."""
+        """Percentage of successfully processed pages."""
         if self.total_pages == 0:
             return 0.0
         return (self.successful_pages / self.total_pages) * 100.0
@@ -147,20 +145,21 @@ class OCRStatistics(BaseModel):
 # ================================================================
 class OCRConfig(BaseModel):
     """
-    Configuration used during OCR processing.
+    Configuration specification used during OCR processing.
     """
 
-    engine: str = Field(...)
-    languages: str = Field(...)
-    dpi: int = Field(..., ge=72, le=600)
-    min_confidence: float = Field(..., ge=0.0, le=100.0)
-    parallel: bool = Field(...)
-    max_workers: int = Field(..., ge=1, le=32)
-    timeout_per_page_s: int = Field(..., ge=1)
-    enable_quality_assessment: bool = Field(...)
+    engine: str = Field(default="tesseract")
+    languages: str = Field(default="por+eng")
+    dpi: int = Field(default=300, ge=72, le=600)
+    min_confidence: float = Field(default=30.0, ge=0.0, le=100.0)
+    parallel: bool = Field(default=True)
+    # RESTORED: Enforced as int, defaults to 4, rejects None.
+    max_workers: int = Field(default=4, ge=1, le=32)
+    timeout_per_page_s: int = Field(default=30, ge=1)
+    enable_quality_assessment: bool = Field(default=True)
     preprocessing_strategies: List[str] = Field(default_factory=list)
 
-    model_config = {"extra": "ignore", "frozen": True}
+    model_config = ConfigDict(extra="ignore", frozen=True)
 
 
 # ================================================================
@@ -168,7 +167,7 @@ class OCRConfig(BaseModel):
 # ================================================================
 class ProcessingMetadata(BaseModel):
     """
-    Technical processing metadata.
+    Technical and lineage metadata regarding the execution environment.
     """
 
     processor: str = Field(...)
@@ -176,8 +175,9 @@ class ProcessingMetadata(BaseModel):
     llm_ready: bool = Field(...)
     doc_prefix: str = Field(...)
     doc_date: str = Field(...)
+    batch_id: Optional[str] = Field(default=None)
 
-    model_config = {"extra": "ignore", "frozen": True}
+    model_config = ConfigDict(extra="ignore", frozen=True)
 
 
 # ================================================================
@@ -185,9 +185,8 @@ class ProcessingMetadata(BaseModel):
 # ================================================================
 class OCROutput(BaseModel):
     """
-    Complete OCR result.
-
-    Immutable perceptual snapshot produced by Glyphar.
+    Complete OCR Result aggregate.
+    An immutable perceptual snapshot produced by Glyphar.
     """
 
     file_metadata: FileMetadata
@@ -198,7 +197,7 @@ class OCROutput(BaseModel):
     metadata: ProcessingMetadata
     created_at: datetime
 
-    model_config = {"extra": "ignore", "frozen": True}
+    model_config = ConfigDict(extra="ignore", frozen=True)
 
     @computed_field
     @property
@@ -209,13 +208,14 @@ class OCROutput(BaseModel):
     @computed_field
     @property
     def poor_quality_pages(self) -> List[PageResult]:
-        """Pages with poor quality."""
+        """Pages with POOR quality classification."""
         return [p for p in self.pages if p.page_quality == PageQuality.POOR]
 
+    # RESTORED: Original computed fields for min/max confidence
     @computed_field
     @property
     def min_page_confidence(self) -> float:
-        """Minimum confidence across all pages."""
+        """Identification of the lowest page-level confidence."""
         if not self.pages:
             return 0.0
         return min(p.page_confidence_mean for p in self.pages)
@@ -223,7 +223,7 @@ class OCROutput(BaseModel):
     @computed_field
     @property
     def max_page_confidence(self) -> float:
-        """Maximum confidence across all pages."""
+        """Identification of the highest page-level confidence."""
         if not self.pages:
             return 0.0
         return max(p.page_confidence_mean for p in self.pages)
