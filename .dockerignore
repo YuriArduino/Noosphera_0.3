@@ -13,6 +13,7 @@ audio/
 models/
 embeddings/
 faiss/
+DB/
 
 # Outputs
 logs/

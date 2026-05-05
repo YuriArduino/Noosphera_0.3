@@ -28,12 +28,16 @@ classifiers = [
 dependencies = [
   "numpy",
   "pydantic>=2",
+  "pyyaml",
   "pillow",
   "pdf2image",
   "pytesseract",
   "opencv-python-headless",
   "fastapi",
   "uvicorn[standard]",
+  "sqlmodel",
+  "alembic",
+  "psycopg2-binary"
 ]
 
 [project.optional-dependencies]

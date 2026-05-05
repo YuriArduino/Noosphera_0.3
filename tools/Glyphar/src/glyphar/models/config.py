@@ -6,10 +6,11 @@ Enables reproducibility and API-driven pipeline control.
 """
 
 from typing import List, Optional
-from pydantic import BaseModel, Field, ConfigDict
+from pydantic import ConfigDict
+from sqlmodel import SQLModel, Field
 
 
-class OCRConfig(BaseModel):
+class OCRConfig(SQLModel):
     """
     Immutable pipeline configuration specification.
 

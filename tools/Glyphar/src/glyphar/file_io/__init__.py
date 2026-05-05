@@ -1,31 +1,24 @@
 """
-File I/O abstraction layer for OCR pipeline.
+File I/O abstraction layer for the OCR pipeline's ingestion stage.
 
-Provides format-agnostic document ingestion (PDF, images) and pluggable
-result export. All readers normalize output to OpenCV BGR format.
+Provides a format-agnostic way to read documents (PDFs, images) and
+normalizes them into a consistent format (OpenCV BGR images) for the core
+processing logic.
 
 Public API:
-    Base classes:
-        - FileReader: Abstract document ingestion interface
-        - FileWriter: Abstract result export interface
+    Base Class:
+        - FileReader: The abstract interface for all document readers.
 
-    Concrete readers:
-        - PDFReader: Multi-page PDF support via pdf2image
-        - ImageReader: Single-page raster images (PNG/JPG/TIFF)
-
-    Usage:
-        >>> from file_io import PDFReader
-        >>> reader = PDFReader(dpi=200)
-        >>> pages = reader.read(Path("book.pdf"))
-        >>> pipeline.process_pages(pages)
+    Concrete Readers:
+        - PDFReader: For multi-page PDFs, using the pdf2image library.
+        - ImageReader: For single-page raster images (PNG/JPG/TIFF).
 """
 
-from .base import FileReader, FileWriter
+from .base import FileReader
 from .readers import PDFReader, ImageReader
 
 __all__ = [
     "FileReader",
-    "FileWriter",
     "PDFReader",
     "ImageReader",
 ]

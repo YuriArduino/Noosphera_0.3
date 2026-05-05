@@ -13,7 +13,7 @@ from glyphar.core.identity import Identity
 
 from glyphar.models.page import PageResult
 from glyphar.models.column import ColumnResult
-from glyphar.models.enums import PageQuality
+from glyphar.core.types import PageQuality
 
 from glyphar.analysis.quality_assessor import QualityAssessor
 from glyphar.optimization.config_optimizer import ConfigOptimizer
@@ -235,13 +235,17 @@ class PageProcessor:
         words: List[Any],
     ) -> dict[str, int] | None:
         """
-        Resolve output bbox using OCR content when available.
+        Resolve output bounding box using OCR content when available.
+
+        This method calculates a tighter bounding box based on the union of
+        individual word boxes detected within the region.
 
         Priority:
             1) Union of word boxes (absolute page coordinates)
-            2) Region bounding box fallback
+            2) Original region bounding box as fallback
         """
         if words:
+            # Base offsets from the detected region
             x0 = int(region.get("x", 0))
             y0 = int(region.get("y", 0))
 
@@ -253,24 +257,30 @@ class PageProcessor:
             for item in words:
                 if not isinstance(item, Mapping):
                     continue
+
                 bbox = item.get("bbox")
                 if not isinstance(bbox, Mapping):
                     continue
 
+                # Handle alias keys for coordinates (left/x, top/y, etc.)
                 left = bbox.get("left", bbox.get("x"))
                 top = bbox.get("top", bbox.get("y"))
                 width = bbox.get("width", bbox.get("w"))
                 height = bbox.get("height", bbox.get("h"))
+
                 if left is None or top is None or width is None or height is None:
                     continue
 
+                # Explicit conversion to int to ensure database compatibility
                 left_i = int(left)
                 top_i = int(top)
                 width_i = int(width)
                 height_i = int(height)
+
                 if width_i <= 0 or height_i <= 0:
                     continue
 
+                # Transform relative region coordinates to absolute page coordinates
                 abs_left = x0 + left_i
                 abs_top = y0 + top_i
                 abs_right = abs_left + width_i
@@ -286,6 +296,7 @@ class PageProcessor:
                 min_top = min(abs_tops)
                 max_right = max(abs_rights)
                 max_bottom = max(abs_bottoms)
+
                 return {
                     "left": min_left,
                     "top": min_top,
@@ -293,6 +304,7 @@ class PageProcessor:
                     "height": max_bottom - min_top,
                 }
 
+        # Fallback to the region's safe bounding box
         return PageProcessor._safe_bbox(region)
 
     @staticmethod

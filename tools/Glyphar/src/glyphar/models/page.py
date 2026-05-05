@@ -6,12 +6,14 @@ Represents complete OCR output for a single document page.
 """
 
 from typing import List, Optional
-from pydantic import BaseModel, Field, ConfigDict
+from pydantic import ConfigDict
+from sqlmodel import SQLModel, Field
+
 from .column import ColumnResult
-from .enums import LayoutType, PageQuality
+from glyphar.core.types import PageQuality, LayoutType
 
 
-class PageResult(BaseModel):
+class PageResult(SQLModel):
     """
     Consolidated OCR result for a single document page.
 

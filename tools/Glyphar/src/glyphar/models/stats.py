@@ -8,11 +8,12 @@ Pure data carrier — no business logic. Enables:
 """
 
 from typing import Dict, List
-from pydantic import BaseModel, Field, ConfigDict
-from .enums import PageQuality
+from pydantic import ConfigDict
+from sqlmodel import SQLModel, Field
+from glyphar.core.types import PageQuality
 
 
-class ProcessingStatistics(BaseModel):
+class ProcessingStatistics(SQLModel):
     """
     Immutable aggregation of OCR processing metrics.
 

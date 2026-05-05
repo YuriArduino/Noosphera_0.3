@@ -1,15 +1,14 @@
 """
 Core pipeline public interface.
 
-This module exports the primary entry point for OCR processing.
-All other core modules are implementation details — consumers should
-import ONLY from this module or top-level glyphar package.
+This module serves as the primary entry point for document-level OCR processing.
+Consumers should prioritize importing from this module or the top-level
+glyphar package to ensure stability across version updates.
 """
 
 from .file_processor import FileProcessor
 from .page_processor import PageProcessor
 from .pipeline import OCRPipeline
-
 
 __all__ = [
     "OCRPipeline",

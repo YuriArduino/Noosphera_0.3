@@ -14,15 +14,14 @@ services:
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
       OPENAI_API_KEY: ${OPENAI_API_KEY}
       OPENAI_API_BASE: http://192.168.15.3:1234/v1
-      # POSTGRES_DB comentado = sem banco padrão
+      POSTGRES_DB: postgres
     ports:
       - "${POSTGRES_PORT}:5432"
     volumes:
       - ${DATA_DIR}:/var/lib/postgresql
+      # Scripts de inicialização por ordem alfabética
       - ./init/01-extensions.sql:/docker-entrypoint-initdb.d/01-extensions.sql:ro
-      # Scripts comentados para ativar depois
-      # - ./init/02-schemas.sql:/docker-entrypoint-initdb.d/02-schemas.sql:ro
-      # - ./init/03-tables.sql:/docker-entrypoint-initdb.d/03-tables.sql:ro
+      - ./init/02-tool-databases.sql:/docker-entrypoint-initdb.d/02-tool-databases.sql:ro
       - ./config/postgresql.conf:/etc/postgresql/postgresql.conf:ro
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER} -d postgres"]
@@ -63,7 +62,7 @@ networks:
   noosphera_network:
     name: ${NETWORK_NAME:-noosphera_db_network}
     driver: bridge
-    
+
 
 volumes:
   pgadmin_data:

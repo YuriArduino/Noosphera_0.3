@@ -6,10 +6,11 @@ Columns are aggregated into PageResult for document-level representation.
 """
 
 from typing import Optional, Dict
-from pydantic import BaseModel, Field, ConfigDict
+from pydantic import ConfigDict
+from sqlmodel import SQLModel, Field
 
 
-class ColumnResult(BaseModel):
+class ColumnResult(SQLModel):
     """
     Atomic OCR result for a single text region.
 

@@ -10,14 +10,16 @@ Designed for seamless integration with:
 
 from typing import List, Dict, Any, cast
 from datetime import datetime, timezone
-from pydantic import BaseModel, Field, ConfigDict
+from pydantic import ConfigDict
+from sqlmodel import SQLModel, Field
+
 from .file import FileMetadata
 from .page import PageResult
 from .stats import ProcessingStatistics
 from .config import OCRConfig
 
 
-class OCROutput(BaseModel):
+class OCROutput(SQLModel):
     """
     Immutable final output of OCR pipeline processing.
 
@@ -52,7 +54,7 @@ class OCROutput(BaseModel):
     full_text: str = Field(..., description="Complete concatenated document text")
     statistics: ProcessingStatistics = Field(..., description="Aggregate metrics")
     config: OCRConfig = Field(..., description="Configuration used for processing")
-    metadata: Dict[str, Any] = Field(
+    extra_metadata: Dict[str, Any] = Field(
         default_factory=dict, description="Free-form metadata"
     )
     created_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))

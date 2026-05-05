@@ -24,7 +24,7 @@ from glyphar.engines.stats import OCRStats
 from glyphar.engines.user_files import UserFilesManager
 from glyphar.engines.validation import validate_tessdata
 from glyphar.models.config import OCRConfig
-from glyphar.models.enums import PageQuality
+from glyphar.core.types import PageQuality
 
 UInt8Image = npt.NDArray[np.uint8]
 

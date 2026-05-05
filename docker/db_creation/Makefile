@@ -1,7 +1,14 @@
 include .env
 export
 
-.PHONY: help build up down restart logs status shell backup restore clean config
+# --- Path Configuration ---
+# Path to the Glyphar tool relative to this Makefile
+GLYPHAR_DIR = ../../tools/Glyphar
+# Database URL for host-side operations (Alembic runs on the host, DB runs in Docker)
+GLYPHAR_DB_URL = postgresql://$(POSTGRES_USER):$(POSTGRES_PASSWORD)@localhost:$(POSTGRES_PORT)/glyphar_db
+
+.PHONY: help build up down restart logs status shell backup restore clean config \
+        glyphar-migrate glyphar-upgrade glyphar-history
 
 help:
 	@echo "Noosphera Database Commands"
@@ -12,12 +19,20 @@ help:
 	@echo "make restart  - Restart services"
 	@echo "make logs     - View logs (all services)"
 	@echo "make logs-db  - View PostgreSQL logs only"
+	@echo ""
+	@echo "Glyphar Tool Migrations (Alembic):"
+	@echo "  make glyphar-migrate m=\"message\" - Generate new migration from models"
+	@echo "  make glyphar-upgrade             - Apply all pending migrations to DB"
+	@echo "  make glyphar-history             - Show migration history"
+	@echo ""
 	@echo "make status   - Check services status"
 	@echo "make shell    - Access psql shell"
 	@echo "make backup   - Create full database backup"
 	@echo "make restore  - Restore from backup"
 	@echo "make config   - Show current configuration"
 	@echo "make clean    - Remove everything (WARNING!)"
+
+# --- Infrastructure Targets ---
 
 build:
 	@echo "Building custom PostgreSQL 18 image..."
@@ -42,6 +57,29 @@ logs:
 logs-db:
 	docker logs -f $(CONTAINER_NAME)
 
+# --- Glyphar Migration Targets ---
+
+glyphar-migrate:
+	@echo "Generating Glyphar migration..."
+	@if [ -z "$(m)" ]; then echo "❌ Error: Use 'make glyphar-migrate m=\"your message\"'"; exit 1; fi
+	cd $(GLYPHAR_DIR) && \
+	PYTHONPATH=src DATABASE_URL=$(GLYPHAR_DB_URL) \
+	alembic -c alembic/alembic.ini revision --autogenerate -m "$(m)"
+
+glyphar-upgrade:
+	@echo "Applying Glyphar migrations..."
+	cd $(GLYPHAR_DIR) && \
+	PYTHONPATH=src DATABASE_URL=$(GLYPHAR_DB_URL) \
+	alembic -c alembic/alembic.ini upgrade head
+	@echo "✅ Glyphar database schema is up to date."
+
+glyphar-history:
+	cd $(GLYPHAR_DIR) && \
+	PYTHONPATH=src DATABASE_URL=$(GLYPHAR_DB_URL) \
+	alembic -c alembic/alembic.ini history --verbose
+
+# --- Maintenance Targets --
+
 status:
 	@docker-compose -f docker-compose.db.yml ps
 	@echo ""
@@ -53,7 +91,7 @@ status:
 	fi
 
 shell:
-	docker exec -it $(CONTAINER_NAME) psql -U $(POSTGRES_USER) -d $(POSTGRES_DB)
+	docker exec -it $(CONTAINER_NAME) psql -U $(POSTGRES_USER) -d glyphar_db
 
 backup:
 	@mkdir -p ./backups

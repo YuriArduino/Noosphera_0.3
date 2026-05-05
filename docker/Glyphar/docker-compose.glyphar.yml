@@ -1,0 +1,35 @@
+services:
+  glyphar:
+    build:
+      context: ../../
+      dockerfile: docker/Glyphar/Dockerfile.glyphar
+    image: noosphera/glyphar:ephemeral
+    container_name: glyphar_processor
+    environment:
+      # --- Input Configuration ---
+      - GLYPHAR_INPUT=${GLYPHAR_INPUT:-/data/input/document.pdf}
+      - GLYPHAR_RUNTIME_CONFIG=/workspace/tools/Glyphar/config/runtime.yaml
+      - GLYPHAR_ENV_CONFIG=/workspace/tools/Glyphar/config/environment.yaml
+      - GLYPHAR_MODEL_TYPE=${GLYPHAR_MODEL_TYPE:-standard}
+
+      # --- Persistence (The New Core) ---
+      # Points to the database container created in 'dbcreation'
+      - DATABASE_URL=postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@${CONTAINER_NAME}:5432/glyphar_db
+      - GLYPHAR_BATCH_ID=${GLYPHAR_BATCH_ID:-manual_run}
+
+    volumes:
+      # Only input is required now
+      - ../../Test/Data:/data/input:ro
+      - ../../tools/Glyphar/config:/workspace/tools/Glyphar/config:ro
+      # (Note: The output volume is gone. Results stay in the DB)
+
+    networks:
+      - noosphera_db_network # Connects to the database network
+
+    working_dir: /workspace
+    restart: "no"
+
+networks:
+  noosphera_db_network:
+    external: true # Assumes the network from 'dbcreation' already exists
+    name: ${NETWORK_NAME:-noosphera_db_network}

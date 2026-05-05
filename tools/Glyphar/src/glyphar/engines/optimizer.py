@@ -15,7 +15,7 @@ Design principles:
 
 from typing import Dict, Any, Optional
 
-from glyphar.models.enums import PageQuality
+from glyphar.core.types import PageQuality
 
 
 def optimize_ocr_config(

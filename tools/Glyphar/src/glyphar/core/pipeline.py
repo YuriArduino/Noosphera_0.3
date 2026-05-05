@@ -37,11 +37,6 @@ class OCRPipeline:
         - LLM-optimized output formatting (optional)
         - Fail-safe execution (never crashes on bad input)
 
-    Performance (Intel i7, 200 DPI):
-        - 500-page book: ~2 minutes (8 workers)
-        - Confidence: 85-92% (sufficient for LLM correction)
-        - Memory: ~300MB peak
-
     Design philosophy:
         "Good enough for LLM correction" > "Perfect OCR".
         Prioritizes speed and robustness over marginal accuracy gains.
@@ -121,9 +116,9 @@ class OCRPipeline:
 
         Example usage:
             >>> result = pipeline.process("book.pdf", parallel=True, max_workers=8)
-            >>> print(f"✅ {result.total_pages} pages processed")
-            >>> print(f"⏱️  {result.statistics.total_processing_time_s:.1f}s")
-            >>> print(f"📊 Avg confidence: {result.average_confidence:.1f}%")
+            >>> print(f" {result.total_pages} pages processed")
+            >>> print(f" {result.statistics.total_processing_time_s:.1f}s")
+            >>> print(f" Avg confidence: {result.average_confidence:.1f}%")
             >>> if result.needs_llm_correction:
             ...     corrected = llm.correct(result.llm_ready_text())
 

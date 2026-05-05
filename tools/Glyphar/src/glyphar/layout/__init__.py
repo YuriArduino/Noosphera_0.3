@@ -9,7 +9,7 @@ Public API:
 """
 
 from glyphar.layout.base import LayoutDetector
-from glyphar.models.enums import LayoutType
+from glyphar.core.types import LayoutType
 from .column_detector import ColumnLayoutDetector
 from .advanced_detector import AdvancedLayoutDetector
 

@@ -2,12 +2,12 @@
 Fallback utilities for graceful error handling.
 
 Provides safe default results when page processing fails.
-Ensures pipeline continues even on individual page errors.
+Ensures the pipeline continues even on individual page errors.
 """
 
 from glyphar.models.page import PageResult
 from glyphar.models.column import ColumnResult
-from glyphar.models.enums import LayoutType, PageQuality
+from glyphar.core.types import LayoutType, PageQuality  # Updated import path
 from glyphar.core.identity import Identity
 
 
@@ -25,17 +25,18 @@ def create_fallback_page(
         doc_date: Date string for ID generation (YYYYMMDD).
 
     Returns:
-        PageResult with empty text, 0.0 confidence, and error indicators.
+        PageResult with error indicators and zeroed metrics.
 
     Use cases:
-        - Page processing exceptions
-        - Corrupted image data
-        - Layout detection failures
+        - Page processing exceptions (e.g., timeout, engine crash)
+        - Corrupted image data that cannot be read
+        - Critical layout detection failures
 
-    Design:
-        - Always returns valid PageResult (never None)
-        - Confidence = 0.0 signals downstream to skip/flag
-        - ID is still generated for tracking/audit purposes
+    Design rationale:
+        - Always returns a valid PageResult instance (never None) to prevent
+          crashes in aggregation logic.
+        - Confidence = 0.0 signals downstream systems to skip or flag this page.
+        - A canonical ID is still generated for consistent tracking and audit.
     """
     page_id = Identity.canonical_id(doc_prefix, doc_date, page_number)
 

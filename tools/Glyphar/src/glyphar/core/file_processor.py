@@ -13,7 +13,7 @@ from datetime import datetime
 
 from glyphar.models.config import OCRConfig
 from glyphar.models.output import OCROutput
-from glyphar.models.enums import PageQuality
+from glyphar.core.types import PageQuality
 from glyphar.core.identity import Identity
 from .metadata import extract_file_metadata
 from .io_manager import make_default_reader, read_pages

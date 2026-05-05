@@ -10,21 +10,15 @@ Enables:
 
 from typing import List, Optional
 from datetime import datetime, timezone
-from pydantic import BaseModel, Field, ConfigDict
+from pydantic import ConfigDict
+from sqlmodel import SQLModel, Field
+
+from glyphar.core.types import BatchStatus
 from .config import OCRConfig
 from .output import OCROutput
 
 
-class BatchStatus(str):
-    """Valid states for batch task lifecycle."""
-
-    PENDING = "pending"
-    RUNNING = "running"
-    COMPLETED = "completed"
-    FAILED = "failed"
-
-
-class BatchTask(BaseModel):
+class BatchTask(SQLModel):
     """
     Individual OCR task within a batch processing job.
 
@@ -52,7 +46,9 @@ class BatchTask(BaseModel):
     priority: int = Field(
         default=0, ge=0, le=10, description="Processing priority (0-10)"
     )
-    status: str = Field(default=BatchStatus.PENDING, description="Current task state")
+    status: BatchStatus = Field(
+        default=BatchStatus.PENDING, description="Current task state"
+    )
     error: Optional[str] = Field(None, description="Error message on failure")
 
     created_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
@@ -62,7 +58,7 @@ class BatchTask(BaseModel):
     model_config = ConfigDict(extra="ignore", frozen=True)
 
 
-class BatchResult(BaseModel):
+class BatchResult(SQLModel):
     """
     Aggregated result of batch OCR processing job.
 

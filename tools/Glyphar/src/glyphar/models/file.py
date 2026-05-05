@@ -7,10 +7,11 @@ deduplication, and processing context. No business logic — pure data carrier.
 
 from datetime import datetime
 from typing import Optional
-from pydantic import BaseModel, Field, ConfigDict
+from pydantic import ConfigDict
+from sqlmodel import SQLModel, Field
 
 
-class FileMetadata(BaseModel):
+class FileMetadata(SQLModel):
     """
     Immutable metadata extracted from input file.
 

@@ -22,7 +22,7 @@ from typing import Any, Dict, Tuple
 import cv2
 import numpy as np
 from glyphar.layout.base import LayoutDetector
-from glyphar.models.enums import LayoutType
+from glyphar.core.types import LayoutType
 
 
 class ColumnLayoutDetector(LayoutDetector):

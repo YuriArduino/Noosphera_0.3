@@ -1,4 +1,11 @@
-"""Public API for the ``glyphar.core`` package."""
+# glyphar/core/__init__.py
+"""
+Public API for the glyphar.core package.
+
+This module provides the primary orchestration components for the OCR pipeline.
+It uses lazy import error handling to provide descriptive feedback if
+dependencies are missing at runtime.
+"""
 
 __all__ = [
     "PageProcessor",
@@ -12,33 +19,37 @@ __all__ = [
     "QualityAssessor",
 ]
 
-# Try eager imports; if anything fails we capture the error and raise lazily.
+# Capture import errors to raise them lazily with better context
 _IMPORT_ERROR = None
 
 try:
-    from .page_processor import PageProcessor  # noqa: F401
-    from .file_processor import FileProcessor  # noqa: F401
-    from .pipeline import OCRPipeline  # noqa: F401
-    from .parallel_processor import ParallelProcessor  # noqa: F401
+    from .page_processor import PageProcessor
+    from .file_processor import FileProcessor
+    from .pipeline import OCRPipeline
+    from .parallel_processor import ParallelProcessor
 
-    from glyphar.optimization.config_strategy import ConfigStrategy, EngineConfig  # noqa: F401
-    from glyphar.optimization.image_preprocessor import ImagePreprocessor  # noqa: F401
-    from glyphar.models.config import OCRConfig  # noqa: F401
+    # Optimization sub-package imports
+    from glyphar.optimization.config_strategy import ConfigStrategy, EngineConfig
+    from glyphar.optimization.image_preprocessor import ImagePreprocessor
 
-    from glyphar.analysis.quality_assessor import QualityAssessor  # noqa: F401
+    # Domain models
+    from glyphar.models.config import OCRConfig
 
-except ImportError as exc:  # pragma: no cover - keep runtime behavior
+    # Analysis sub-package imports
+    from glyphar.analysis.quality_assessor import QualityAssessor
+
+except ImportError as exc:
     _IMPORT_ERROR = exc
 
 
 def __getattr__(name: str):
-    """Raise lazy import errors with context."""
+    """Raise descriptive import errors when a component is accessed."""
     if _IMPORT_ERROR is not None:
         raise ImportError(
             f"Failed to import core submodules when accessing '{name}'. "
             f"Original error: {_IMPORT_ERROR!r}. "
-            "Check that all submodules (core.*, optimization.*, analysis.*, models.*) "
-            "are present and importable."
+            "Ensure all dependencies (core, optimization, analysis, models) "
+            "are correctly installed."
         ) from _IMPORT_ERROR
 
     raise AttributeError(f"module {__name__!r} has no attribute {name!r}")
