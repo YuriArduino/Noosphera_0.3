@@ -1,0 +1,9 @@
+{
+    "python.analysis.extraPaths": [
+        "./agents/Thoth/src/thoth"
+    ],
+    "python.terminal.useEnvFile": true,
+    "python.envFile": "${workspaceFolder}/agents/Nisaba/.env",
+    "python.terminal.activateEnvironment": true,
+    "python.defaultInterpreterPath": "/media/yuri/Noosphera/Noosphera_0.3/Venvs/nisaba/bin/python"
+}

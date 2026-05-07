@@ -1,51 +1,70 @@
 """
-Thoth Strategic Graph — Noosphera 0.3.
-Orchestrates Ingestion, Prefect Workers, and Quality Assessment.
+Nisaba Agent Graph — LangGraph Orchestration.
+Stage 2: Hybrid Memory (PostgreSQL checkpoints + pgvector semantic retrieval).
 """
 
-from typing import Dict, Any, Literal
-from langgraph.graph import StateGraph, START, END
-from langgraph.prebuilt import ToolNode
+from typing import TypedDict, List, Optional
+from langgraph.graph import StateGraph, END
+from langchain_core.messages import BaseMessage
 
-from thoth.domain.state import ThothState
-from thoth.agent.nodes import agent_node, router_logic, analysis_node, finalization_node
-from thoth.agent.tool import GlypharInfrastructureTool
+from nisaba.config.memory import memory_settings
+from nisaba.agent.node import (
+    ConversationState,
+    input_node,
+    memory_retrieval_node,
+    conversation_node,
+    memory_writer_node,
+)
+
+# =============================================================================
+# STATE DEFINITION
+# =============================================================================
 
 
-def build_thoth_graph():
-    # 1. Initialize State Graph
-    workflow = StateGraph(ThothState)
+class AgentState(TypedDict):
+    """Extended state for memory-aware conversation."""
 
-    # 2. Define Tools Node (The Hands)
-    infra_tool = GlypharInfrastructureTool()
-    # thoth_tools = [infra_tool.glyphar_ocr_task, search_semantic_memory, ...]
-    tool_node = ToolNode([infra_tool.glyphar_ocr_task])
+    messages: List[BaseMessage]
+    user_input: str
+    response: str
+    session_id: Optional[str]
+    memory_context: Optional[str]
+    should_write_memory: bool
 
-    # 3. Add Nodes (The Brain)
-    workflow.add_node("brain", agent_node)  # LLM Thinking
 
-    # 4. Define Edges (The Flow)
-    workflow.add_edge(START, "brain")
+# =============================================================================
+# GRAPH CONSTRUCTION
+# =============================================================================
 
-    # Conditional route: Tools or Assessment?
-    workflow.add_conditional_edges(
-        "brain", router_logic, {"call_tool": "infrastructure", "evaluate": "assessment"}
-    )
 
-    # After infra (Prefect), we always analyze the result in the SST
-    workflow.add_edge("infrastructure", "assessment")
+def build_conversation_graph():
+    """
+    Builds the conversation graph with optional memory nodes.
+    Checkpointer is injected at compile time via factory.
+    """
+    workflow = StateGraph(AgentState)
 
-    # Assessment decides: Reprocess (back to brain) or Finish?
-    def post_analysis_router(state: ThothState) -> Literal["retry", "end"]:
-        # Se a Policy recomendou REPROCESS, volta para o cérebro
-        if state["decisions"] and state["decisions"][-1]["action"] == "reprocess":
-            return "retry"
-        return "end"
+    # Add nodes
+    workflow.add_node("input", input_node)
+    workflow.add_node("memory_retrieve", memory_retrieval_node)
+    workflow.add_node("conversation", conversation_node)
+    workflow.add_node("memory_write", memory_writer_node)
 
-    workflow.add_conditional_edges(
-        "assessment", post_analysis_router, {"retry": "brain", "end": "finalize"}
-    )
+    # Define flow: Input → [Memory Retrieve] → Conversation → [Memory Write] → END
+    workflow.set_entry_point("input")
+    workflow.add_edge("input", "memory_retrieve")
 
-    workflow.add_edge("finalize", END)
+    # Conditional: skip memory retrieval for short queries or if disabled
+    def route_after_retrieve(state: AgentState) -> str:
+        if not memory_settings.MEMORY_ENABLED:
+            return "conversation"
+        if len(state.get("user_input", "").strip()) < 10:
+            return "conversation"
+        return "conversation"  # Always proceed, memory_context is optional
 
-    return workflow.compile(checkpointer=checkpointer)
+    workflow.add_conditional_edges("memory_retrieve", route_after_retrieve)
+    workflow.add_edge("conversation", "memory_write")
+    workflow.add_edge("memory_write", END)
+
+    # Note: checkpointer is injected at compile() time by factory
+    return workflow

@@ -7,6 +7,12 @@ GLYPHAR_DIR = ../../tools/Glyphar
 # Database URL for host-side operations (Alembic runs on the host, DB runs in Docker)
 GLYPHAR_DB_URL = postgresql://$(POSTGRES_USER):$(POSTGRES_PASSWORD)@localhost:$(POSTGRES_PORT)/glyphar_db
 
+# --- Nisaba Agent Configuration ---
+NISABA_DIR = ../../agents/Nisaba
+# Database URL pointing to shared agents_db with nisaba schema
+NISABA_DB_URL = postgresql://$(POSTGRES_USER):$(POSTGRES_PASSWORD)@localhost:$(POSTGRES_PORT)/noosphera_agents_db
+
+
 .PHONY: help build up down restart logs status shell backup restore clean config \
         glyphar-migrate glyphar-upgrade glyphar-history
 
@@ -25,8 +31,14 @@ help:
 	@echo "  make glyphar-upgrade             - Apply all pending migrations to DB"
 	@echo "  make glyphar-history             - Show migration history"
 	@echo ""
+	@echo "Nisaba Agent Migrations (Alembic):"
+	@echo "  make nisaba-migrate m=\"message\"  - Generate new migration from Nisaba models"
+	@echo "  make nisaba-upgrade              - Apply all pending Nisaba migrations"
+	@echo "  make nisaba-history              - Show Nisaba migration history"
+	@echo ""
 	@echo "make status   - Check services status"
 	@echo "make shell    - Access psql shell"
+	@echo "make shell-nisaba - Access psql shell (noosphera_agents_db)"
 	@echo "make backup   - Create full database backup"
 	@echo "make restore  - Restore from backup"
 	@echo "make config   - Show current configuration"
@@ -78,6 +90,21 @@ glyphar-history:
 	PYTHONPATH=src DATABASE_URL=$(GLYPHAR_DB_URL) \
 	alembic -c alembic/alembic.ini history --verbose
 
+nisaba-migrate:
+	@echo "Generating Nisaba migration..."
+	@if [ -z "$(m)" ]; then echo "❌ Error: Use 'make nisaba-migrate m=\"your message\"'"; exit 1; fi
+	cd $(NISABA_DIR) && PYTHONPATH=src NISABA_DATABASE_URL=$(NISABA_DB_URL) alembic -c alembic/alembic.ini revision --autogenerate -m "$(m)"
+
+nisaba-upgrade:
+	@echo "Applying Nisaba migrations..."
+	cd $(NISABA_DIR) && PYTHONPATH=src NISABA_DATABASE_URL=$(NISABA_DB_URL) alembic -c alembic/alembic.ini upgrade head
+	@echo "✅ Nisaba schema is up to date."
+
+nisaba-history:
+	cd $(NISABA_DIR) && \
+	PYTHONPATH=src NISABA_DATABASE_URL=$(NISABA_DB_URL) \
+	alembic -c alembic/alembic.ini history --verbose
+
 # --- Maintenance Targets --
 
 status:
@@ -92,6 +119,9 @@ status:
 
 shell:
 	docker exec -it $(CONTAINER_NAME) psql -U $(POSTGRES_USER) -d glyphar_db
+	
+shell-nisaba:
+	docker exec -it $(CONTAINER_NAME) psql -U $(POSTGRES_USER) -d noosphera_agents_db	
 
 backup:
 	@mkdir -p ./backups

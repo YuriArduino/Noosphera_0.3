@@ -4,3 +4,11 @@ langchain-openai
 langgraph
 python-dotenv
 langchain-community
+streamlit
+sqlmodel
+psycopg2-binary
+pgvector
+alembic
+neo4j
+pydantic
+httpx

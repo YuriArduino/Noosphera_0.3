@@ -60,7 +60,7 @@ class LLMSettings(NisabaBaseSettings):
     # ---------------------------------------------------------------
 
     CHAT_MODEL: str = Field(
-        default="nvidia/nemotron-3-nano-4b",
+        default="meta-llama-3.1-8b-instruct",
         description="Primary model used for OCR text refinement and correction",
     )
 

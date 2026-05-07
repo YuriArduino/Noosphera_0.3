@@ -1,0 +1,118 @@
+# ================================================================
+# NISABA AGENT — PROJECT CONFIGURATION (CORRIGIDO)
+# ================================================================
+
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "nisaba"
+version = "0.3.0"
+description = "Agente autônomo para gestão de ambiente psicanalítico e orquestração com HITL"
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.12"
+
+keywords = [
+    "agent", "langgraph", "psychoanalysis", "llm",
+    "memory", "pgvector", "neo4j", "streamlit"
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+
+dependencies = [
+    # Core LangChain/LangGraph
+    "langchain",
+    "openai",
+    "langchain-openai",
+    "langchain-community",
+    "langgraph",
+
+    # Config & Env
+    "pydantic-settings",
+    "python-dotenv",
+
+    # API & UI
+    "fastapi",
+    "uvicorn[standard]",
+    "streamlit",
+
+    # Memory & Persistence
+    "psycopg2-binary",
+    "pgvector",
+    "sqlmodel",
+    "neo4j",
+    "alembic",
+    "langgraph-checkpoint-postgres",
+
+    # Utilities
+    "pydantic",
+    "httpx",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.4.0",
+    "pytest-asyncio>=0.23.0",
+    "pytest-cov>=4.1.0",
+    "black>=23.12.0",
+    "isort>=5.13.0",
+    "mypy>=1.8.0",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["nisaba*"]
+
+[tool.black]
+line-length = 100
+include = '\.pyi?$'
+extend-exclude = '''
+/(
+  | \.venv
+  | data
+  | tests
+)/
+'''
+
+[tool.isort]
+profile = "black"
+line_length = 100
+src_paths = ["src"]
+skip = ["__init__.py", ".venv", "data"]
+
+[tool.mypy]
+python_version = "3.12"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = false
+ignore_missing_imports = true
+exclude = ["ui/", "tests/"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+addopts = "-v --cov=nisaba --cov-report=term-missing"
+pythonpath = ["src"]  # ← Importante para testes
+
+[tool.coverage.run]
+source = ["src/nisaba"]
+branch = true
+omit = ["*/__init__.py", "ui/*", "tests/*"]
+
+[tool.coverage.report]
+exclude_lines = [
+    "pragma: no cover",
+    "def __repr__",
+    "raise AssertionError",
+    "raise NotImplementedError",
+    "if __name__ == .__main__.:",
+    "if TYPE_CHECKING:",
+    "pass",
+]
