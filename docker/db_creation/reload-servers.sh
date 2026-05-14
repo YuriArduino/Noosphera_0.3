@@ -1,31 +1,38 @@
 #!/bin/sh
+
 set -e
 
-# Caminho do banco de configuração do pgAdmin
 PGADMIN_CONFIG_DB="/var/lib/pgadmin/pgadmin.db"
-# Caminho do script Python de importação
+SERVERS_FILE="/pgadmin4/servers.json"
 SETUP_SCRIPT="/pgadmin4/setup.py"
 
-echo "🔍 Verificando configuração de servidores do pgAdmin..."
+echo "[Noosphera] Checking pgAdmin server configuration..."
 
-if [ -f "/pgadmin4/servers.json" ]; then
-    echo "📂 servers.json encontrado."
+if [ -f "$SERVERS_FILE" ]; then
 
-    # Se o banco de configuração já existe, força a importação
+    echo "[Noosphera] servers.json found."
+
     if [ -f "$PGADMIN_CONFIG_DB" ]; then
-        echo "🔄 Banco de configuração existente. Forçando importação do servers.json..."
-        python3 "$SETUP_SCRIPT" load-servers /pgadmin4/servers.json --replace --sqlite-path "$PGADMIN_CONFIG_DB"
-        if [ $? -eq 0 ]; then
-            echo "✅ Servidores importados com sucesso (modo replace)."
-        else
-            echo "❌ Erro ao importar servidores."
-        fi
-    else
-        echo "🆕 Primeira inicialização detectada. pgAdmin carregará servers.json automaticamente."
-    fi
-else
-    echo "ℹ️ servers.json não encontrado. Nenhuma configuração automática será feita."
-fi
 
-# Executa o entrypoint original do pgAdmin
-exec /entrypoint.sh "$@"
+        echo "[Noosphera] Existing pgAdmin database detected."
+        echo "[Noosphera] Reloading server definitions..."
+
+        python3 "$SETUP_SCRIPT" \
+            load-servers "$SERVERS_FILE" \
+            --replace \
+            --sqlite-path "$PGADMIN_CONFIG_DB"
+
+        echo "[Noosphera] pgAdmin servers successfully reloaded."
+
+    else
+
+        echo "[Noosphera] First startup detected."
+        echo "[Noosphera] pgAdmin will auto-import servers.json."
+
+    fi
+
+else
+
+    echo "[Noosphera] No servers.json found."
+
+fi

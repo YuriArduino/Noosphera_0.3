@@ -3,18 +3,21 @@ Nisaba Agent Nodes — LangGraph Execution Units with Memory.
 Stage 2: Hybrid Memory Integration.
 """
 
-from typing import TypedDict, List, Optional, Dict, Any
+import logging
+import re
+import uuid
+from typing import List, Optional, TypedDict
 from datetime import datetime, timezone
-from langchain_core.messages import BaseMessage, HumanMessage, AIMessage, SystemMessage
+from functools import lru_cache
+
+from langchain_core.messages import BaseMessage, HumanMessage, SystemMessage
 from langchain_openai import ChatOpenAI
 
-# Config imports
 from nisaba.config.llm import llm_settings
 from nisaba.config.memory import memory_settings
-
-# Memory imports (SSOT)
-from nisaba.schema.tables import SemanticExperienceTable
 from nisaba.memory.vector_store import VectorStore
+
+logger = logging.getLogger(__name__)
 
 # =============================================================================
 # STATE DEFINITION
@@ -22,8 +25,6 @@ from nisaba.memory.vector_store import VectorStore
 
 
 class ConversationState(TypedDict):
-    """Core conversation state for LangGraph."""
-
     messages: List[BaseMessage]
     user_input: str
     response: str
@@ -33,21 +34,33 @@ class ConversationState(TypedDict):
 
 
 # =============================================================================
-# LLM INITIALIZATION
+# SINGLETON / CACHED INSTANCES
 # =============================================================================
 
+vector_store = VectorStore()
 
-def initialize_llm():
-    """Initialize LLM with configured settings."""
+
+@lru_cache(maxsize=1)
+def _get_llm():
     return ChatOpenAI(
         model=llm_settings.CHAT_MODEL,
-        openai_api_key=llm_settings.LLM_API_KEY,
-        openai_api_base=llm_settings.LLM_BASE_URL,
+        api_key=llm_settings.LLM_API_KEY,
+        base_url=llm_settings.LLM_BASE_URL,
         temperature=llm_settings.CHAT_TEMPERATURE,
-        max_tokens=llm_settings.CHAT_MAX_TOKENS,
+        max_completion_tokens=llm_settings.CHAT_MAX_TOKENS,
         timeout=llm_settings.LLM_TIMEOUT,
         max_retries=llm_settings.LLM_MAX_RETRIES,
     )
+
+
+# =============================================================================
+# UTILITY
+# =============================================================================
+
+
+def clean_reasoning(text: str) -> str:
+    """Remove o conteúdo dentro de tags <thought> ou <think>."""
+    return re.sub(r"<(thought|think)>.*?</\1>", "", text, flags=re.DOTALL).strip()
 
 
 # =============================================================================
@@ -55,122 +68,152 @@ def initialize_llm():
 # =============================================================================
 
 
-def input_node(state: ConversationState) -> ConversationState:
-    """Validate and prepare user input."""
+def input_node(state: ConversationState) -> dict:
     user_input = state.get("user_input", "").strip()
     if not user_input:
         return {"response": "Por favor, envie uma mensagem válida."}
-
-    # Ensure session_id exists
     if not state.get("session_id"):
-        import uuid
-
         state["session_id"] = str(uuid.uuid4())[:8]
-
     return {"user_input": user_input, "session_id": state["session_id"]}
 
 
-def memory_retrieval_node(state: ConversationState) -> ConversationState:
-    """
-    Retrieve similar past experiences to inform the response.
-    Uses pgvector similarity search with fallback safety.
-    """
+def memory_retrieval_node(state: ConversationState) -> dict:
     if not memory_settings.MEMORY_ENABLED or not memory_settings.VECTORSTORE_ENABLED:
-        return state
-
+        return {}
     query = state.get("user_input", "")
-    if len(query.strip()) < 10:  # Skip very short queries
-        return state
-
+    if len(query.strip()) < 10:
+        return {}
     try:
-        vector_store = VectorStore()
         similar = vector_store.search_similar(
-            query=query, limit=memory_settings.SEMANTIC_SEARCH_TOP_K, min_relevance=0.3
+            query=query,
+            limit=memory_settings.SEMANTIC_SEARCH_TOP_K,
+            min_relevance=0.3,
         )
-
         if similar:
             context_snippets = [
                 f"[Experiência #{i+1}] {exp.title or 'Sem título'}: {exp.content[:200]}..."
                 for i, exp in enumerate(similar[:3])
             ]
-            state["memory_context"] = "\n\n".join(context_snippets)
-
-            # Track usage for relevance ranking
-            for exp in similar[:1]:  # Only top result
-                vector_store.increment_usage(exp.id)
-
+            memory_context = "\n\n".join(context_snippets)
+            top_exp = similar[0]
+            if top_exp.id is not None:
+                vector_store.increment_usage(top_exp.id)
+            return {"memory_context": memory_context}
     except Exception as e:
-        # Fallback: log error but don't break the conversation
-        print(f"⚠️ Memory retrieval failed: {e}")
-        state["memory_context"] = None
-
-    return state
+        logger.warning("Memory retrieval failed: %s", e)
+    return {}
 
 
-def conversation_node(state: ConversationState) -> ConversationState:
-    """
-    Main conversation node: generates response using LLM.
-    Injects memory context if available.
-    """
-    llm = initialize_llm()
+def conversation_node(state: ConversationState) -> dict:
+    llm = _get_llm()
     messages = state.get("messages", [])
     user_input = state.get("user_input", "")
 
-    # Build prompt with optional memory context
-    system_prompt = "Você é Nisaba, um assistente conversacional com memória persistente."
+    system_prompt = (
+        "Você é Nisaba, um assistente pessoal com memória persistente. "
+        "Analise o contexto de memória antes de responder. "
+        "Pense passo a passo sobre como as informações passadas"
+        " se conectam com a pergunta atual. "
+        "Escreva seu raciocínio dentro de tags <thought>"
+        " e depois forneça a resposta final."
+    )
 
     memory_context = state.get("memory_context")
     if memory_context:
-        system_prompt += f"\n\n🧠 Contexto de experiências similares:\n{memory_context}"
+        system_prompt += f"\n\n🧠 Contexto:\n{memory_context}"
 
-    # Prepare messages for LLM
     llm_messages = (
         [SystemMessage(content=system_prompt)] + messages + [HumanMessage(content=user_input)]
     )
 
     try:
         response = llm.invoke(llm_messages)
-        state["messages"] = llm_messages + [response]
-        state["response"] = response.content
-        state["should_write_memory"] = True  # Flag for writer node
+        # Remove o raciocínio para exibição e armazenamento
+        clean_response = clean_reasoning(response.content)
+        return {
+            "messages": llm_messages + [response],
+            "response": clean_response,
+            "should_write_memory": True,
+        }
     except Exception as e:
-        state["response"] = f"⚠️ Erro ao processar: {type(e).__name__}"
-        state["should_write_memory"] = False
+        logger.error("LLM invocation failed: %s", e)
+        return {
+            "response": f"⚠️ Erro ao processar: {type(e).__name__}",
+            "should_write_memory": False,
+        }
 
-    return state
+
+# =============================================================================
+# REFLECTION NODE (desabilitado temporariamente)
+# =============================================================================
+# def reflection_node(state: ConversationState) -> dict:
+#     """
+#     Refina a resposta com base no contexto de memória, garantindo consistência.
+#     """
+#     draft = state.get("response", "")
+#     memory_context = state.get("memory_context")
+
+#     # Se não há contexto de memória, não precisa refinar
+#     if not memory_context:
+#         return {"response": draft, "should_write_memory": True}
+
+#     llm = _get_llm()
+
+#     system_prompt = (
+#         "Você é um revisor de respostas. Você receberá:\n"
+#         "1. Um contexto de memória com informações que o assistente já sabe.\n"
+#         "2. Um rascunho de resposta.\n\n"
+#         "Se o rascunho disser que não sabe ou que não pode acessar informações, "
+#         "mas o contexto contém a resposta, REWRITE a resposta fornecendo a informação correta. "
+#         "Exemplo: se o contexto diz que o usuário se chama Yuri e o rascunho diz 'não sei seu nome', "
+#         "a resposta final deve ser 'Você se chama Yuri, como me disse antes'.\n\n"
+#         "Seja direto. NÃO repita que não pode acessar dados quando o contexto já os fornece."
+#     )
+
+#     user_message = (
+#         f"Contexto (use estes dados):\n{memory_context}\n\n"
+#         f"Rascunho a revisar:\n{draft}\n\n"
+#         "Responda APENAS com a resposta final corrigida. "
+#         "Se o rascunho estiver OK, copie-o."
+#     )
+
+#     try:
+#         response = llm.invoke(
+#             [
+#                 SystemMessage(content=system_prompt),
+#                 HumanMessage(content=user_message),
+#             ]
+#         )
+#         final_response = response.content.strip()
+#         return {
+#             "response": final_response,
+#             "should_write_memory": True,  # já decidido no conversation_node
+#         }
+#     except Exception as e:
+#         logger.warning("Reflection failed, usando rascunho original: %s", e)
+#         return {"response": draft, "should_write_memory": True}
 
 
-def memory_writer_node(state: ConversationState) -> ConversationState:
-    """
-    Persist interaction to semantic memory for future retrieval.
-    Runs asynchronously to avoid blocking the conversation.
-    """
-    if not state.get("should_write_memory") or not memory_settings.MEMORY_ENABLED:
-        return state
-
+def memory_writer_node(state: ConversationState) -> dict:
+    if not state.get("should_write_memory"):
+        return {}
+    if not memory_settings.MEMORY_ENABLED or not memory_settings.VECTORSTORE_ENABLED:
+        return {}
     try:
-        vector_store = VectorStore()
-
-        # Extract content for embedding
         user_input = state.get("user_input", "")
         agent_response = state.get("response", "")
         content = f"Usuário: {user_input}\nNisaba: {agent_response}"
-
-        # Add to semantic memory
         vector_store.add_experience(
             content=content,
-            session_id=state.get("session_id", "unknown"),
+            session_id=state.get("session_id") or "unknown",
             title=f"Interação: {user_input[:50]}...",
             category="conversation",
             tags=["user_query", "agent_response"],
-            metadata_={
+            metadata={
                 "timestamp": datetime.now(timezone.utc).isoformat(),
                 "tokens_estimated": len(content.split()) * 1.3,
             },
         )
-
     except Exception as e:
-        # Fallback: log but don't break
-        print(f"⚠️ Memory write failed: {e}")
-
-    return state
+        logger.warning("Memory write failed: %s", e)
+    return {}

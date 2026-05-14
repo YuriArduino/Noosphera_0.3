@@ -7,25 +7,80 @@ from ui.state.manager import SessionStateManager
 
 
 def render_sidebar(state_mgr: SessionStateManager) -> None:
-    """Render the sidebar with configuration and controls."""
     with st.sidebar:
         st.header("⚙️ Configuração")
-
-        # LLM Configuration
         _render_llm_config()
-
         st.divider()
-
-        # Memory Status
         _render_memory_status(state_mgr)
-
         st.divider()
-
-        # Controls
         _render_controls(state_mgr)
-
         st.divider()
         st.caption("🔖 Nisaba v0.3.0")
+
+
+def _render_controls(state_mgr: SessionStateManager) -> None:
+    """Render action buttons."""
+    st.subheader("🎛️ Controles")
+
+    if st.button("🗑️ Limpar conversa", type="secondary", use_container_width=True):
+        state_mgr.clear()
+        st.rerun()
+
+    if st.button("🔄 Nova sessão", type="secondary", use_container_width=True):
+        state_mgr.new_session()
+        st.rerun()
+
+    # Toggle para visualização do grafo
+    if "show_graph" not in st.session_state:
+        st.session_state.show_graph = False
+
+    if st.button("🔍 Visualizar Grafo", type="secondary", use_container_width=True):
+        st.session_state.show_graph = not st.session_state.show_graph
+        st.rerun()
+
+    if st.session_state.show_graph:
+        _render_graph_visualization()
+
+    # Debug toggle
+    if st.checkbox("🔧 Modo debug", key="debug_mode", value=False):
+        st.caption("Debug ativado: mostre detalhes de memória e erros")
+
+
+def _render_graph_visualization():
+    """Gera e exibe o grafo de conversação usando Mermaid."""
+    try:
+        from nisaba.agent.graph import build_conversation_graph
+        from langgraph.checkpoint.memory import MemorySaver
+
+        # Construímos e compilamos com um MemorySaver temporário
+        graph_builder = build_conversation_graph()
+        compiled_graph = graph_builder.compile(checkpointer=MemorySaver())
+
+        # Obtém a definição Mermaid
+        mermaid_code = compiled_graph.get_graph().draw_mermaid()
+
+        # HTML que carrega a biblioteca Mermaid e renderiza o gráfico
+        mermaid_html = f"""
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+            <script>mermaid.initialize({{ startOnLoad: true }});</script>
+        </head>
+        <body>
+            <div class="mermaid">
+                {mermaid_code}
+            </div>
+        </body>
+        </html>
+        """
+        st.components.v1.html(mermaid_html, height=400, scrolling=True)
+
+        with st.expander("📝 Código Mermaid"):
+            st.code(mermaid_code, language="mermaid")
+
+    except Exception as e:
+        st.error(f"Erro ao gerar grafo: {e}")
 
 
 def _render_llm_config() -> None:
@@ -67,20 +122,3 @@ def _render_memory_status(state_mgr: SessionStateManager) -> None:
             """)
         except:
             pass
-
-
-def _render_controls(state_mgr: SessionStateManager) -> None:
-    """Render action buttons."""
-    st.subheader("🎛️ Controles")
-
-    if st.button("🗑️ Limpar conversa", type="secondary", use_container_width=True):
-        state_mgr.clear()
-        st.rerun()
-
-    if st.button("🔄 Nova sessão", type="secondary", use_container_width=True):
-        state_mgr.new_session()
-        st.rerun()
-
-    # Debug toggle (dev-only)
-    if st.checkbox("🔧 Modo debug", key="debug_mode", value=False):
-        st.caption("Debug ativado: mostre detalhes de memória e erros")

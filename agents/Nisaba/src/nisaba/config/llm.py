@@ -60,12 +60,12 @@ class LLMSettings(NisabaBaseSettings):
     # ---------------------------------------------------------------
 
     CHAT_MODEL: str = Field(
-        default="meta-llama-3.1-8b-instruct",
+        default="nvidia/nemotron-3-nano-4b",
         description="Primary model used for OCR text refinement and correction",
     )
 
     CHAT_TEMPERATURE: float = Field(
-        default=0.5,
+        default=0.2,
         ge=0.0,
         le=2.0,
         description="Temperature for reasoning and operational activities"
@@ -84,13 +84,13 @@ class LLMSettings(NisabaBaseSettings):
     # ---------------------------------------------------------------
 
     EMBEDDING_MODEL: str = Field(
-        default="text-embedding-nomic-embed-text-v1.5@q8_0",
+        default="text-embedding-all-minilm-l6-v2-embedding",
         description="Model used to generate vectors for pgvector and memory recall",
     )
 
     # Matches the dimension defined in memory.py (SST)
     EMBEDDING_DIMENSION: int = Field(
-        default=768,
+        default=384,
         description="Vector dimensions produced by the chosen embedding model",
     )
 

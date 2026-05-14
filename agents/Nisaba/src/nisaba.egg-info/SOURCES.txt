@@ -5,6 +5,7 @@ src/nisaba.egg-info/dependency_links.txt
 src/nisaba.egg-info/requires.txt
 src/nisaba.egg-info/top_level.txt
 src/nisaba/agent/__init__.py
+src/nisaba/agent/factory.py
 src/nisaba/agent/graph.py
 src/nisaba/agent/node.py
 src/nisaba/agent/prompt.py

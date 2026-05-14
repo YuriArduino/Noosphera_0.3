@@ -2,60 +2,65 @@
 Graph Runner — Safe invocation of LangGraph with proper context management.
 """
 
-from typing import Any, Dict
-from contextlib import contextmanager
-import streamlit as st
+import logging
+from typing import Any, Dict, Optional, List
+from langchain_core.messages import BaseMessage
+
+logger = logging.getLogger(__name__)
 
 
-@contextmanager
-def get_conversation_graph(session_id: str):
-    """
-    Context manager for conversation graph with proper checkpoint lifecycle.
-    Falls back to MemorySaver if PostgreSQL is unavailable.
-    """
+def invoke_conversation_graph(
+    user_input: str,
+    session_id: str,
+    messages: Optional[List[BaseMessage]] = None,
+) -> Dict[str, Any]:
+    """Invoke the conversation graph with proper error handling and context management."""
     try:
-        from nisaba.agent.factory import get_conversation_graph as factory_get_graph
+        # Nome real do seu arquivo: graph_factory.py
+        from nisaba.agent.graph_factory import get_conversation_graph
 
-        with factory_get_graph(session_id=session_id) as graph:
-            yield graph
-    except ImportError:
-        # Fallback for development: use graph without persistent checkpointer
-        from nisaba.agent.graph import conversation_graph
-
-        yield conversation_graph
-    except Exception as e:
-        st.warning(f"⚠️ Fallback para memória em memória: {e}")
-        from langgraph.checkpoint.memory import MemorySaver
-        from nisaba.agent.graph import build_conversation_graph
-
-        graph = build_conversation_graph().compile(checkpointer=MemorySaver())
-        yield graph
-
-
-def invoke_conversation_graph(user_input: str, session_id: str) -> Dict[str, Any]:
-    """
-    Invoke the conversation graph with proper error handling.
-
-    Args:
-        user_input: The user's message
-        session_id: Unique identifier for the conversation thread
-
-    Returns:
-        Dict with 'response', 'messages', and optional 'memory_context'
-    """
-    with get_conversation_graph(session_id) as graph:
-        result = graph.invoke(
-            {
-                "messages": [],  # Will be populated by graph state
+        with get_conversation_graph() as graph:
+            state = {
+                "messages": messages or [],
                 "user_input": user_input,
                 "session_id": session_id,
                 "response": "",
-            },
-            config={"configurable": {"thread_id": session_id}},
-        )
+                "memory_context": None,
+                "should_write_memory": False,
+            }
+            config = {"configurable": {"thread_id": session_id}}
+            result = graph.invoke(state, config)
 
-    return {
-        "response": result.get("response", ""),
-        "messages": result.get("messages", []),
-        "memory_context": result.get("memory_context"),
-    }
+            return {
+                "response": result.get("response", ""),
+                "messages": result.get("messages", []),
+                "memory_context": result.get("memory_context"),
+            }
+    except ImportError:
+        # Fallback – só será usado se graph_factory.py não existir
+        logger.warning("Factory unavailable, using MemorySaver fallback")
+        from nisaba.agent.graph import build_conversation_graph
+        from langgraph.checkpoint.memory import MemorySaver
+
+        graph = build_conversation_graph().compile(checkpointer=MemorySaver())
+        state = {
+            "messages": messages or [],
+            "user_input": user_input,
+            "session_id": session_id,
+            "response": "",
+            "memory_context": None,
+            "should_write_memory": False,
+        }
+        result = graph.invoke(state, {"configurable": {"thread_id": session_id}})
+        return {
+            "response": result.get("response", ""),
+            "messages": result.get("messages", []),
+            "memory_context": result.get("memory_context"),
+        }
+    except Exception as e:
+        logger.error("Graph invocation failed: %s", e)
+        return {
+            "response": f"⚠️ Erro no grafo: {type(e).__name__}",
+            "messages": messages or [],
+            "memory_context": None,
+        }

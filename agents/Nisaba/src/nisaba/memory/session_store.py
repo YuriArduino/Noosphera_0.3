@@ -3,11 +3,16 @@ Short-Term Memory: PostgreSQL JSONB Session Store.
 Manages conversation state with TTL-based cleanup.
 """
 
+import logging
 from typing import Optional, Dict, Any
-from datetime import datetime, timezone, timedelta
+from datetime import datetime, timezone
+
 from sqlmodel import Session, select, create_engine, update
+from sqlalchemy import text
 from nisaba.config.memory import memory_settings
-from nisaba.memory.models import SessionState
+from nisaba.schema.tables import SessionStateTable  # modelo físico correto
+
+logger = logging.getLogger(__name__)
 
 
 class SessionStore:
@@ -29,26 +34,28 @@ class SessionStore:
         state_data: Dict[str, Any],
         user_id: Optional[str] = None,
         ttl_seconds: Optional[int] = None,
-    ) -> int:
+    ) -> str:
         """Save or update session state. Returns session ID."""
         if not self.enabled or not self.engine:
             return session_id
 
         with Session(self.engine) as session:
-            existing = session.exec(
-                select(SessionState).where(SessionState.session_id == session_id)
-            ).first()
-
-            if existing:
-                # Update existing
-                existing.state_data = state_data
-                existing.updated_at = datetime.now(timezone.utc)
-                if ttl_seconds is not None:
-                    existing.ttl_seconds = ttl_seconds
-                session.add(existing)
-            else:
-                # Create new
-                new_state = SessionState(
+            # Tenta atualizar primeiro (mais performático)
+            stmt = (
+                update(SessionStateTable)
+                .where(SessionStateTable.session_id == session_id)
+                .values(
+                    state_data=state_data,
+                    updated_at=datetime.now(timezone.utc),
+                    ttl_seconds=(
+                        ttl_seconds if ttl_seconds is not None else SessionStateTable.ttl_seconds
+                    ),
+                )
+            )
+            result = session.exec(stmt)
+            # Se nenhuma linha foi afetada, insere uma nova
+            if result.rowcount == 0:
+                new_state = SessionStateTable(
                     session_id=session_id,
                     user_id=user_id,
                     state_data=state_data,
@@ -66,20 +73,28 @@ class SessionStore:
 
         with Session(self.engine) as session:
             record = session.exec(
-                select(SessionState).where(SessionState.session_id == session_id)
+                select(SessionStateTable).where(SessionStateTable.session_id == session_id)
             ).first()
 
             if not record:
                 return None
 
-            # Check TTL
-            if record.ttl_seconds:
-                expiry = record.created_at + timedelta(seconds=record.ttl_seconds)
-                if datetime.now(timezone.utc) > expiry:
-                    self.delete_state(session_id)
-                    return None
+            # Verifica TTL usando SQL nativo
+            if record.ttl_seconds and self._is_expired(record):
+                self.delete_state(session_id)
+                return None
 
             return record.state_data
+
+    def _is_expired(self, record: SessionStateTable) -> bool:
+        """Verifica se o registro expirou (consulta ao banco)."""
+        with Session(self.engine) as session:
+            stmt = text(
+                "SELECT 1 FROM nisaba.session_state WHERE session_id = :sid "
+                "AND created_at + (ttl_seconds * INTERVAL '1 second') < NOW()"
+            )
+            result = session.exec(stmt, {"sid": record.session_id}).first()
+            return result is not None
 
     def delete_state(self, session_id: str) -> bool:
         """Delete a session state."""
@@ -88,7 +103,7 @@ class SessionStore:
 
         with Session(self.engine) as session:
             record = session.exec(
-                select(SessionState).where(SessionState.session_id == session_id)
+                select(SessionStateTable).where(SessionStateTable.session_id == session_id)
             ).first()
             if record:
                 session.delete(record)
@@ -102,17 +117,11 @@ class SessionStore:
             return 0
 
         with Session(self.engine) as session:
-            # Find expired sessions
-            expired = session.exec(
-                select(SessionState).where(
-                    SessionState.ttl_seconds.is_not(None),
-                    SessionState.created_at + timedelta(seconds=SessionState.ttl_seconds)
-                    < datetime.now(timezone.utc),
-                )
-            ).all()
-
-            count = len(expired)
-            for record in expired:
-                session.delete(record)
+            stmt = text(
+                "DELETE FROM nisaba.session_state "
+                "WHERE ttl_seconds IS NOT NULL "
+                "AND created_at + (ttl_seconds * INTERVAL '1 second') < NOW()"
+            )
+            result = session.exec(stmt)
             session.commit()
-            return count
+            return result.rowcount

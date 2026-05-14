@@ -3,21 +3,23 @@ Chat Interface Components — Render chat UI with proper error handling.
 """
 
 import streamlit as st
-from typing import Callable, Any
+from typing import Callable, Any, List
+from langchain_core.messages import BaseMessage, HumanMessage, AIMessage
 from ui.state.manager import SessionStateManager
 
 
 def render_chat_interface(
-    state_mgr: SessionStateManager, graph_invoker: Callable[[str, str], Any]
+    state_mgr: SessionStateManager,
+    graph_invoker: Callable[[str, str, List[BaseMessage]], Any],  # aceita 3 args
 ) -> None:
     """
     Render the main chat interface.
 
     Args:
         state_mgr: Session state manager instance
-        graph_invoker: Function that invokes the LangGraph (user_input, session_id) -> result
+        graph_invoker: Function that invokes the LangGraph (user_input, session_id, messages) -> result
     """
-    # Display message history
+    # Display message history (from dict list, synchronized with graph_messages)
     for msg in state_mgr.messages:
         with st.chat_message(msg["role"]):
             st.markdown(msg["content"])
@@ -28,10 +30,12 @@ def render_chat_interface(
 
 
 def _handle_user_input(
-    state_mgr: SessionStateManager, graph_invoker: Callable[[str, str], Any], user_input: str
+    state_mgr: SessionStateManager,
+    graph_invoker: Callable[[str, str, List[BaseMessage]], Any],
+    user_input: str,
 ) -> None:
-    """Process user input and invoke the conversation graph."""
-    # Add user message to UI
+    """Process user input and invoke the conversation graph with full history."""
+    # Add user message to UI (also updates graph_messages)
     state_mgr.add_user_message(user_input)
     with st.chat_message("user"):
         st.markdown(user_input)
@@ -39,14 +43,33 @@ def _handle_user_input(
     # Generate and display assistant response
     with st.chat_message("assistant"), st.spinner("🤔 Pensando..."):
         try:
-            result = graph_invoker(user_input, state_mgr.session_id)
-            response = result.get("response", "⚠️ Não foi possível gerar uma resposta.")
+            # Obtém o histórico ATUAL (já inclui a nova mensagem do usuário)
+            current_history = state_mgr.graph_messages  # List[BaseMessage]
 
-            # Update state and display
-            state_mgr.add_assistant_message(response)
+            # Invoca o grafo com histórico completo
+            result = graph_invoker(user_input, state_mgr.session_id, current_history)
+
+            # Extrai a resposta
+            response = result.get("response", "⚠️ Não foi possível gerar uma resposta.")
             st.markdown(response)
 
-            # Show memory context if available (debug feature)
+            # Sincroniza os estados com o retorno do grafo
+            if "messages" in result:
+                new_messages: List[BaseMessage] = result["messages"]
+                state_mgr.chat.graph_messages = new_messages
+
+                # Reconstrói a lista de dicionários para exibição na UI
+                dict_messages = [
+                    {
+                        "role": "user" if isinstance(m, HumanMessage) else "assistant",
+                        "content": m.content,
+                    }
+                    for m in new_messages
+                    if isinstance(m, (HumanMessage, AIMessage))  # ignora mensagens de sistema
+                ]
+                state_mgr.chat.messages = dict_messages
+
+            # Show memory context if available
             if result.get("memory_context"):
                 with st.expander("🧠 Contexto de Memória", expanded=False):
                     st.markdown(f"```{result['memory_context']}```")
