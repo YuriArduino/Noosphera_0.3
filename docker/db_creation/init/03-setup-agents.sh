@@ -47,9 +47,20 @@ psql -v ON_ERROR_STOP=1 \
     -- EXTENSIONS
     -- =========================================================================
 
-    CREATE EXTENSION IF NOT EXISTS vector;
-    CREATE EXTENSION IF NOT EXISTS pg_search;
-    CREATE EXTENSION IF NOT EXISTS pgcrypto;
+    -- Vector embeddings
+    CREATE EXTENSION IF NOT EXISTS vector
+    SCHEMA public;
+
+    -- ParadeDB namespace
+    CREATE SCHEMA IF NOT EXISTS paradedb;
+
+    -- BM25 / hybrid semantic retrieval
+    CREATE EXTENSION IF NOT EXISTS pg_search
+    SCHEMA paradedb;
+
+    -- Cryptographic primitives
+    CREATE EXTENSION IF NOT EXISTS pgcrypto
+    SCHEMA public;
 
     -- =========================================================================
     -- CORE COGNITIVE PERSONAS
@@ -144,9 +155,20 @@ psql -v ON_ERROR_STOP=1 \
     -- EXTENSIONS
     -- =========================================================================
 
-    CREATE EXTENSION IF NOT EXISTS vector;
-    CREATE EXTENSION IF NOT EXISTS pg_search;
-    CREATE EXTENSION IF NOT EXISTS pgcrypto;
+    -- Vector embeddings
+    CREATE EXTENSION IF NOT EXISTS vector
+    SCHEMA public;
+
+    -- ParadeDB namespace
+    CREATE SCHEMA IF NOT EXISTS paradedb;
+
+    -- BM25 / hybrid semantic retrieval
+    CREATE EXTENSION IF NOT EXISTS pg_search
+    SCHEMA paradedb;
+
+    -- Cryptographic primitives
+    CREATE EXTENSION IF NOT EXISTS pgcrypto
+    SCHEMA public;
 
     -- =========================================================================
     -- SEMANTIC LAYERS

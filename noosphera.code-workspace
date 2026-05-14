@@ -1,0 +1,54 @@
+{
+    "folders": [
+        {
+            "name": "0-CORE-RAIZ",
+            "path": "."
+        },
+        {
+            "name": "1-SHARED-SST",
+            "path": "shared"
+        },
+        {
+            "name": "2-NISABA",
+            "path": "agents/Nisaba",
+            "settings": {
+                // Link direto para o Venv da Nisaba
+                "python.defaultInterpreterPath": "${workspaceFolder:0-CORE-RAIZ}/Venvs/nisaba/bin/python"
+            }
+        },
+        {
+            "name": "3-THOTH",
+            "path": "agents/Thoth",
+            "settings": {
+                // Link direto para o Venv do Thoth
+                "python.defaultInterpreterPath": "${workspaceFolder:0-CORE-RAIZ}/Venvs/thoth/bin/python"
+            }
+        },
+        {
+            "name": "4-TOOLS-GLYPHAR",
+            "path": "tools/Glyphar",
+            "settings": {
+                // Link direto para o Venv do Glyphar
+                "python.defaultInterpreterPath": "${workspaceFolder:0-CORE-RAIZ}/Venvs/glyphar/bin/python"
+            }
+        },
+        {
+            "name": "5-DOCKER-INFRA",
+            "path": "docker"
+        }
+    ],
+    "settings": {
+        // Configurações globais (SST)
+        "python.analysis.extraPaths": [
+            "./shared",
+            "./agents/Nisaba",
+            "./agents/Thoth",
+            "./tools/Glyphar"
+        ],
+        "python.envFile": "${workspaceFolder:0-CORE-RAIZ}/.env",
+        "python.terminal.useEnvFile": true,
+        "python.analysis.autoImportCompletions": true,
+        "editor.formatOnSave": true,
+        "python.formatting.provider": "black"
+    }
+}

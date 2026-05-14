@@ -1,9 +1,27 @@
 {
+    // 1. Resolve a importação da pasta 'shared' e dos agentes
     "python.analysis.extraPaths": [
-        "./agents/Thoth/src/thoth"
+        "./shared",
+        "./agents/Nisaba",
+        "./agents/Glyphar"
     ],
+
+    // 2. Aponta para o seu novo .env global (SST)
+    "python.envFile": "${workspaceFolder}/.env",
+
+    // 3. Garante que o terminal sempre carregue o .env global
     "python.terminal.useEnvFile": true,
-    "python.envFile": "${workspaceFolder}/agents/Nisaba/.env",
-    "python.terminal.activateEnvironment": true,
-    "python.defaultInterpreterPath": "/media/yuri/Noosphera/Noosphera_0.3/Venvs/nisaba/bin/python"
+
+    // 4. Configurações de Formatação (Padrão para todos os agentes)
+    "editor.formatOnSave": true,
+    "python.formatting.provider": "black",
+    "python.analysis.autoImportCompletions": true,
+
+    // 5. Organização de janelas (Esconde pastas irrelevantes)
+    "files.exclude": {
+        "**/.git": true,
+        "**/.pyc": true,
+        "**/__pycache__": true,
+        "**/Venvs": true
+    }
 }

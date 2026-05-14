@@ -50,8 +50,11 @@ SCHEMA public;
 
 -- pg_search:
 -- BM25 hybrid semantic search (ParadeDB)
+CREATE SCHEMA IF NOT EXISTS paradedb;
+
+-- pg_search MUST live inside paradedb schema
 CREATE EXTENSION IF NOT EXISTS pg_search
-SCHEMA public;
+SCHEMA paradedb;
 
 -- =============================================================================
 -- TEXT ANALYSIS & INDEXING

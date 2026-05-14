@@ -165,16 +165,6 @@ infra-up:
 	@echo "Starting Noosphera infrastructure..."
 	@$(DOCKER_COMPOSE) up -d
 	@$(MAKE) wait-db
-	@echo ""
-	@echo "============================================================================="
-	@echo " Infrastructure Online"
-	@echo "============================================================================="
-	@echo ""
-	@echo "PostgreSQL : localhost:$(POSTGRES_PORT)"
-	@echo "pgAdmin    : http://localhost:$(PGADMIN_PORT)"
-	@echo "Neo4j      : http://localhost:7474"
-	@echo "Prefect    : http://localhost:4200"
-	@echo ""
 
 infra-down:
 	@echo ""
@@ -264,12 +254,25 @@ infra-clean:
 
 wait-db:
 	@echo ""
-	@echo "Waiting for PostgreSQL readiness..."
-	@until docker exec $(POSTGRES_CONTAINER_NAME) \
-		pg_isready -U $(POSTGRES_USER) > /dev/null 2>&1; do \
+	@echo "Waiting for PostgreSQL healthcheck..."
+
+	@until [ "$$(docker inspect -f '{{.State.Health.Status}}' $(POSTGRES_CONTAINER_NAME))" = "healthy" ]; do \
 		sleep 2; \
 	done
+
+	@echo "PostgreSQL is healthy."
+
 	@echo "PostgreSQL is ready."
+	@echo ""
+	@echo "============================================================================="
+	@echo " Infrastructure Online"
+	@echo "============================================================================="
+	@echo ""
+	@echo "PostgreSQL : localhost:$(POSTGRES_PORT)"
+	@echo "pgAdmin    : http://localhost:$(PGADMIN_PORT)"
+	@echo "Neo4j      : http://localhost:7474"
+	@echo "Prefect    : http://localhost:4200"
+	@echo ""
 
 # =============================================================================
 # DATABASE SHELLS
