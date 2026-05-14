@@ -9,7 +9,6 @@ Purpose:
 Pattern: Mirrors Glyphar's alembic/env.py for consistency.
 """
 
-import os
 import sys
 from logging.config import fileConfig
 from pathlib import Path
@@ -23,23 +22,24 @@ from alembic import context
 # Ensure src/ is in sys.path so we can import nisaba.* modules
 # __file__ = /agents/Nisaba/alembic/env.py
 BASE_DIR = Path(__file__).resolve().parent.parent
+REPO_ROOT = BASE_DIR.parent.parent
 SRC_DIR = BASE_DIR / "src"
-if str(SRC_DIR) not in sys.path:
-    sys.path.insert(0, str(SRC_DIR))
+for path in [str(REPO_ROOT), str(SRC_DIR)]:
+    if path not in sys.path:
+        sys.path.insert(0, path)
 
 # =============================================================================
 # 2. IMPORT SSOT MODELS
 # =============================================================================
 # Single Source of Truth for all table definitions
+from agents.shared.config.memory import memory_settings  # type: ignore
 from nisaba.schema.tables import Base  # type: ignore
 
 # =============================================================================
 # 3. DATABASE CONNECTION
 # =============================================================================
-# Priority: Env Var > Fallback (never hardcode credentials in files)
-DATABASE_URL = os.getenv(
-    "NISABA_DATABASE_URL", "postgresql://yuri:3759@localhost:5432/noosphera_agents_db"
-)
+# Database URL comes from the shared/global config (.env at repository root).
+DATABASE_URL = memory_settings.DATABASE_URL
 
 # =============================================================================
 # 4. ALEMBIC CONFIGURATION

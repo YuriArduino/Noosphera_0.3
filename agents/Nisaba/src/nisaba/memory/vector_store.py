@@ -11,8 +11,8 @@ import numpy as np
 from sqlmodel import Session, select, create_engine
 from sqlalchemy import text
 
-from nisaba.config.memory import memory_settings
-from nisaba.config.llm import llm_settings
+from agents.shared.config.memory import memory_settings
+from nisaba.config.llm import nisaba_llm_settings as llm_settings
 from nisaba.schema.tables import SemanticExperienceTable
 
 logger = logging.getLogger(__name__)
@@ -67,7 +67,7 @@ class VectorStore:
         if self._initialized:
             return
         self.enabled = memory_settings.VECTORSTORE_ENABLED
-        self.db_url = memory_settings.NISABA_DATABASE_URL
+        self.db_url = memory_settings.DATABASE_URL
         self.dimensions = llm_settings.EMBEDDING_DIMENSION
 
         if not self.enabled:
@@ -115,7 +115,7 @@ class VectorStore:
                 category=_safe_text_for_embedding(category, fallback="general"),
                 tags=tags or [],
                 metadata_json=metadata or {},
-                embedding=embedding,  # List[float] → Vector(768) automaticamente
+                embedding=embedding,  # List[float] → Vector(384) automaticamente
             )
             session.add(experience)
             session.commit()

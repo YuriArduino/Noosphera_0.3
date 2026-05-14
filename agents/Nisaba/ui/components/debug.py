@@ -34,7 +34,7 @@ def render_debug_panel(result: Dict[str, Any], state_mgr: Any) -> None:
 
         st.subheader("🔗 Configuração Ativa")
         try:
-            from nisaba.config.memory import memory_settings
+            from nisaba.config.cognition import memory_settings
 
             st.json(
                 {

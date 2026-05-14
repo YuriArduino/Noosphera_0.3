@@ -1,84 +1,70 @@
 """
-FastAPI Server Configuration — Nisaba Agent.
+API Configuration Overrides — Nisaba Agent.
 
-Defines the server networking parameters, CORS policies, and API
-metadata for the Nisaba Agent's web interface.
+Refines the API identity, metadata, and port allocation specifically
+for the Nisaba Agent orchestration service.
 """
 
-from pydantic import Field, computed_field, ConfigDict
-from .base import NisabaBaseSettings
+from pydantic import Field
+from pydantic_settings import SettingsConfigDict
+from agents.shared.config.api import SharedAPISettings
 
 
-class APISettings(NisabaBaseSettings):
+class NisabaAPISettings(SharedAPISettings):
     """
-    Configuration for the FastAPI REST interface.
+    Nisaba-specific API metadata and port settings.
 
-    This interface serves as the primary gateway for external systems
-    to interact with the Nisaba LangGraph.
+    Inherits networking logic from SharedAPISettings while defining
+    Nisaba's unique identity in the agent fleet.
+
+    Features:
+        - Unique port assignment (8001) to prevent local collisions.
+        - Customized API title and description for Swagger documentation.
+        - Service-level isolation via 'NISABA_' environment prefix.
+
+    Use cases:
+        - Differentiating Nisaba from Glyphar (8000) or Thoth (8002) in logs.
+        - Providing psychoanalytic context in the OpenAPI metadata.
+
+    Design rationale:
+        - Hardcoding the port to 8001 here establishes a 'Static Fleet Map',
+          making it easier to manage the docker-compose routing.
     """
 
-    # ---------------------------------------------------------------
-    # NETWORK SERVER
-    # ---------------------------------------------------------------
-    FASTAPI_HOST: str = Field(
-        default="0.0.0.0",
-        description="The network interface the server will bind to",
+    # ---------------------------------------------------------------------------
+    # NETWORK OVERRIDES
+    # ---------------------------------------------------------------------------
+
+    API_PORT: int = Field(
+        default=8001,
+        description="Nisaba's dedicated port in the Noosphera fleet.",
     )
 
-    FASTAPI_PORT: int = Field(
-        default=8002,  # Glyphar (8000), Nisaba (8001)
-        ge=1,
-        le=65535,
-        description="The TCP port for the REST API",
-    )
+    # ---------------------------------------------------------------------------
+    # API IDENTITY
+    # ---------------------------------------------------------------------------
 
-    # ---------------------------------------------------------------
-    # API IDENTITY (English Standard)
-    # ---------------------------------------------------------------
-    FASTAPI_TITLE: str = Field(
+    API_TITLE: str = Field(
         default="Nisaba Agent",
-        description="Title displayed in the OpenAPI/Swagger documentation",
+        description="Title displayed in the OpenAPI/Swagger documentation.",
     )
 
-    FASTAPI_VERSION: str = Field(
-        default="0.3.0",  # Aligned with Noosphera 0.3
-        description="Current version of the Nisaba Agent service",
+    API_VERSION: str = Field(
+        default="0.3.0",
+        description="Current version aligned with Noosphera 0.3 project scope.",
     )
 
-    FASTAPI_DESCRIPTION: str = Field(
-        default="Autonomous Agent for psychoanalytic environment management and orchestration."
-        "And human interaction(HITL).",
-        description="Extended description for the API documentation",
+    API_DESCRIPTION: str = Field(
+        default=(
+            "Autonomous Agent for psychoanalytic environment orchestration "
+            "and Human-in-the-Loop (HITL) interaction."
+        ),
+        description="Extended description for the API gateway.",
     )
 
-    # ---------------------------------------------------------------
-    # SECURITY & ACCESS
-    # ---------------------------------------------------------------
-    CORS_ORIGINS: list[str] = Field(
-        default=["*"],
-        description="List of origins allowed to perform Cross-Origin Resource Sharing",
-    )
-
-    # ---------------------------------------------------------------
-    # COMPUTED PROPERTIES
-    # ---------------------------------------------------------------
-    @computed_field
-    @property
-    def api_base_url(self) -> str:
-        """Constructs the base URL for the server."""
-        host = "localhost" if self.FASTAPI_HOST == "0.0.0.0" else self.FASTAPI_HOST
-        return f"http://{host}:{self.FASTAPI_PORT}"
-
-    @computed_field
-    @property
-    def docs_url(self) -> str:
-        """Generates the direct link to the Swagger UI."""
-        return f"{self.api_base_url}/docs"
-
-    model_config = ConfigDict(frozen=True)
+    # Apply Nisaba prefix to capture NISABA_API_PORT etc. from the .env
+    model_config = SettingsConfigDict(env_prefix="NISABA_", frozen=True)
 
 
-# ================================================================
-# GLOBAL INSTANCE
-# ================================================================
-api_settings = APISettings()
+# Global instance for the Nisaba service
+nisaba_api_settings = NisabaAPISettings()

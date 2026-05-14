@@ -1,58 +1,35 @@
 """
-Base Configuration Infrastructure — Thoth Agent.
+Base Configuration Overrides — Nisaba Agent.
 
-Provides the core settings classes and utilities used by all configuration
-sub-modules. Built on top of Pydantic Settings for robust environment management.
+Refines the shared infrastructure specifically for the Nisaba Agent,
+applying service-specific prefixes and isolation rules.
 """
 
-from pathlib import Path
-from typing import Optional, Union
-from pydantic_settings import BaseSettings, SettingsConfigDict
+from pydantic_settings import SettingsConfigDict
+
+from agents.shared.config.base import SharedBaseSettings
 
 
-class NisabaBaseSettings(BaseSettings):
+class NisabaBaseSettings(SharedBaseSettings):
     """
-    Base class for all Nisaba configuration modules.
+    Nisaba-specific configuration base.
+
+    Inherits global SST logic from SharedBaseSettings while isolating
+    environment variables using the 'NISABA_' prefix.
 
     Features:
-        - Automatic environment variable loading.
-        - Mandatory 'NISABA_' prefix for system overrides.
-        - Case-insensitive name matching.
-        - UTF-8 encoding support for configuration files.
+        - Inherits global .env discovery from the shared infrastructure.
+        - Enforces service isolation via environment prefixes.
+
+    Design rationale:
+        - Using a prefix allows multiple agents (Nisaba, Thoth, etc.) to share
+          the same global .env file without variable name collisions.
+        - Overriding model_config here maintains the "DRY" (Don't Repeat Yourself)
+          principle by reusing the parent's encoding and validation logic.
+
+    Use cases:
+        - Defining specific database URLs for Nisaba (NISABA_DATABASE_URL).
+        - Configuring agent-specific LLM parameters and thresholds.
     """
 
-    model_config = SettingsConfigDict(
-        env_file=".env",
-        env_file_encoding="utf-8",
-        env_prefix="NISABA_",
-        case_sensitive=False,
-        extra="ignore",
-        validate_assignment=True,
-    )
-
-
-class PathMixin:
-    """
-    Utility mixin for standardizing path resolution across the Agent's filesystem.
-    """
-
-    @staticmethod
-    def resolve_path(path: Union[str, Path], base: Optional[Path] = None) -> Path:
-        """
-        Resolves a path, ensuring it is absolute and that the directory structure exists.
-
-        Args:
-            path: The target path (string or Path object).
-            base: An optional base directory to resolve relative paths against.
-
-        Returns:
-            A resolved, absolute Path object.
-        """
-        p = Path(path) if isinstance(path, str) else path
-
-        if base and not p.is_absolute():
-            p = base / p
-
-        # Ensure the directory exists to prevent I/O errors during Agent execution
-        p.mkdir(parents=True, exist_ok=True)
-        return p
+    model_config = SettingsConfigDict(env_prefix="NISABA_")

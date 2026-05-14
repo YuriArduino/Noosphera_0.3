@@ -9,7 +9,7 @@ from datetime import datetime, timezone
 
 from sqlmodel import Session, select, create_engine, update
 from sqlalchemy import text
-from nisaba.config.memory import memory_settings
+from agents.shared.config.memory import memory_settings
 from nisaba.schema.tables import SessionStateTable  # modelo físico correto
 
 logger = logging.getLogger(__name__)
@@ -20,7 +20,7 @@ class SessionStore:
 
     def __init__(self):
         self.enabled = memory_settings.MEMORY_ENABLED
-        self.db_url = memory_settings.NISABA_DATABASE_URL
+        self.db_url = memory_settings.DATABASE_URL
 
         if not self.enabled:
             self.engine = None

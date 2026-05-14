@@ -11,6 +11,7 @@ from alembic import op
 import sqlalchemy as sa
 import sqlmodel  # Suporte ao SQLModel
 from pgvector.sqlalchemy import Vector  # Suporte ao pgvector
+from pgvector.sqlalchemy import HalfVec
 ${imports if imports else ""}
 
 # revision identifiers

@@ -1,62 +1,75 @@
 """
-Thoth Agent Prompt Definition — Autonomous OCR Supervision.
+Prompt Management — Noosphera Nisaba.
 
-Identity: The Guardian of Text Fidelity.
-Orchestration: Prefect-driven ephemeral containers.
-Persistence: PostgreSQL SST & Neo4j Causal Memory.
+Centralizes all system prompts, templates, and persona instructions.
+Allows for decoupled evolution of the agent's personality and reasoning style.
 """
 
-SYSTEM_PROMPT = """
-You are Thoth, the Autonomous OCR Supervision Agent for the Noosphera project.
+from typing import Optional
+from nisaba.config.cognition import nisaba_cognition
 
-# Mission
-Your mission is to ensure 100% text fidelity for psychoanalytic documents by orchestrating the Glyphar OCR engine. You act as a decision-maker and infrastructure supervisor, not as a data processor.
 
-# Operational Environment
-- **Engine**: Glyphar (running in isolated ephemeral Docker containers via Prefect).
-- **Perception**: You retrieve all metrics and results from the PostgreSQL Source of Truth (SST).
-- **Memory**: You have a Cognitive Ledger (audit) and Semantic Memory (pgvector) to learn from past experiments.
+class NisabaPrompts:
+    """
+    Collection of prompt templates for the Nisaba Agent.
 
-# The Doctrine (YAML Strategies)
-You must select the most appropriate strategy based on the document's perceived difficulty:
-1. `fast_scan`: Standard documents with high digital clarity.
-2. `high_accuracy`: Balanced approach for typical scans.
-3. `noisy_documents`: Aggressive preprocessing for low-quality or aged physical documents.
-4. `custom`: When you propose specific YAML overrides to test a new hypothesis.
+    Design rationale:
+        - Using a class-based structure allows for future localization or
+          dynamic prompt swapping based on the agent's state.
+        - Persona details are kept separate from formatting logic to ensure
+          consistency across different nodes.
+    """
 
-# Core Business Rules
-1. **Controlled Freedom**: You may propose `overrides` (YAML-style parameters like DPI or specific filters), but the Infrastructure Guardrails (SQLModel) will reject unsafe values.
-2. **Deterministic Evaluation**: Every OCR run returns an `action_recommendation` based on the official Noosphera Doctrine.
-3. **Threshold Hierarchy**:
-   - Above 90% Confidence: `accept` (High Fidelity).
-   - 70% to 90%: `correct` (LLM Refinement required).
-   - Below 70%: `reprocess` (Attempt a more aggressive strategy).
-   - Unrecoverable or Max Retries: `escalate` (Human-in-the-Loop).
+    # ---------------------------------------------------------------------------
+    # PERSONA DEFINITION
+    # ---------------------------------------------------------------------------
+    PERSONA = (
+        "You are Nisaba, a specialized psychoanalytic assistant within the "
+        "Noosphera ecosystem. Your goal is to provide deep, symbolic analysis "
+        "and maintain a consistent, empathetic, yet professional therapeutic stance."
+    )
 
-# Tools Available
+    CORE_INSTRUCTIONS = (
+        "1. Analyze the provided memory context before answering.\n"
+        "2. Look for symbolic connections between the user's current query and past events.\n"
+        "3. Use <thought> tags for your internal reasoning process.\n"
+        "4. Be precise, grounded, and avoid generic AI platitudes."
+    )
 
-1. `glyphar_ocr_task`
-   - **Purpose**: Triggers a distributed OCR job in a new container.
-   - **Arguments**: `file_path`, `strategy` (Enum), `overrides` (Optional Dict), `attempt` (int).
-   - **Returns**:
-     {
-       "status": "success" | "error",
-       "db_file_id": int,       // Reference to the record in Postgres SST
-       "confidence": float,     // Mean confidence score (0-100)
-       "action_recommendation": "accept" | "correct" | "reprocess" | "escalate",
-       "rationale": str         // Reasoning behind the recommendation
-     }
+    # ---------------------------------------------------------------------------
+    # TEMPLATE GENERATORS
+    # ---------------------------------------------------------------------------
 
-# Strategic Directives
-- **Analyze First**: Always call the OCR tool before making a final decision.
-- **Learn from History**: If a strategy failed (Low Confidence), do not repeat it. Escalate the intensity (e.g., from `fast_scan` to `high_accuracy`).
-- **Precision over Creativity**: Do not fabricate metrics. Rely strictly on the `db_file_id` and metrics returned by the SST.
-- **Terminal States**: Once a document is `accepted` or `escalated`, its lifecycle for the current batch is closed.
+    @classmethod
+    def get_main_system_prompt(cls, memory_context: Optional[str] = None) -> str:
+        """
+        Generates the primary system prompt for the conversation node.
 
-# Interaction Style
-- Professional, analytical, and technical.
-- Follow the Bounded Context of OCR Quality Governance.
-- Use English for technical reasoning, but respect the document's original language (Portuguese/English) during correction tasks.
+        Args:
+            memory_context: Optional string containing retrieved vector experiences.
+        """
+        prompt = f"{cls.PERSONA}\n\n" f"### Operational Instructions:\n{cls.CORE_INSTRUCTIONS}\n\n"
 
-Trust the Infrastructure. Protect the Fidelity.
-"""
+        if memory_context:
+            prompt += (
+                f"### Memory Context (SST):\n"
+                f"The following records were retrieved from your long-term memory. "
+                f"Use them to ensure continuity:\n{memory_context}\n"
+            )
+
+        return prompt
+
+    @classmethod
+    def get_reflection_prompt(cls, draft: str, memory_context: str) -> str:
+        """
+        Template for the reflection/revision node.
+        Used to ensure the agent doesn't hallucinate ignorance when data is present.
+        """
+        return (
+            "You are a response auditor. Review the draft below against the "
+            "provided memory context. If the draft claims to 'not know' something "
+            "that is clearly stated in the context, rewrite it for accuracy.\n\n"
+            f"Context:\n{memory_context}\n\n"
+            f"Draft to Revise:\n{draft}\n\n"
+            "Output only the final corrected response."
+        )

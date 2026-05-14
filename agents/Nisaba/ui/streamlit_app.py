@@ -17,17 +17,18 @@ from pathlib import Path
 
 CURRENT_FILE = Path(__file__).resolve()
 PROJECT_ROOT = CURRENT_FILE.parent.parent  # /agents/Nisaba
+REPO_ROOT = PROJECT_ROOT.parent.parent
 SRC_DIR = PROJECT_ROOT / "src"
 
 # Add to sys.path if not already present
-for path in [str(PROJECT_ROOT), str(SRC_DIR)]:
+for path in [str(REPO_ROOT), str(PROJECT_ROOT), str(SRC_DIR)]:
     if path not in sys.path:
         sys.path.insert(0, path)
 
 # Load .env before any config imports
 from dotenv import load_dotenv
 
-env_path = PROJECT_ROOT / ".env"
+env_path = REPO_ROOT / ".env"
 if env_path.exists():
     load_dotenv(dotenv_path=env_path, override=True)
 
@@ -39,7 +40,7 @@ from ui.components.sidebar import render_sidebar
 from ui.components.chat import render_chat_interface
 from ui.state.manager import SessionStateManager
 from ui.utils.graph_runner import invoke_conversation_graph
-from nisaba.config.memory import memory_settings
+from nisaba.config.cognition import memory_settings
 
 # =============================================================================
 # PAGE CONFIGURATION

@@ -113,12 +113,11 @@ class SemanticExperienceTable(SemanticExperienceModel, TimestampMixin, table=Tru
 
     id: Optional[int] = Field(default=None, primary_key=True)
 
-    # ✅ CORREÇÃO: dois-pontos após o nome do campo
     tags: List[str] = Field(default_factory=list, sa_column=Column(JSONB))
     metadata_json: Dict[str, Any] = Field(default_factory=dict, sa_column=Column(JSONB))
 
-    # pgvector embedding (768D aligned with llm_settings.EMBEDDING_DIMENSION)
-    embedding: Optional[List[float]] = Field(default=None, sa_column=Column(Vector(768)))
+    # pgvector embedding (384D aligned with llm_settings.EMBEDDING_DIMENSION)
+    embedding: Optional[List[float]] = Field(default=None, sa_column=Column(Vector(384)))
 
 
 # =============================================================================

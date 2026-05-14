@@ -113,7 +113,7 @@ def _render_memory_status(state_mgr: SessionStateManager) -> None:
 
     if state_mgr.memory_enabled:
         try:
-            from nisaba.config.memory import memory_settings
+            from nisaba.config.cognition import memory_settings
 
             st.caption(f"""
             - Checkpoints: {'✅' if memory_settings.CHECKPOINT_ENABLED else '❌'}

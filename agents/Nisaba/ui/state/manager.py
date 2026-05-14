@@ -53,7 +53,7 @@ class SessionStateManager:
     def memory_enabled(self) -> bool:
         """Check if memory features are enabled (from env/config)."""
         try:
-            from nisaba.config.memory import memory_settings
+            from nisaba.config.cognition import memory_settings
 
             return memory_settings.MEMORY_ENABLED
         except:

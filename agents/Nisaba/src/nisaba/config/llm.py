@@ -1,141 +1,64 @@
 """
-LLM Integration Configuration — Nisaba Agent.
+LLM Configuration Overrides — Nisaba Agent.
 
-Manages connection settings, model selection, and API endpoints for
-Large Language Models (LLM) and Embedding providers.
-
-Designed to interface with OpenAI-compatible APIs (LLM Studio, LM Studio, Ollama).
+Defines the specific cognitive parameters, reasoning modes, and
+specializations for the Nisaba Agent.
 """
 
-# Maybe we can recreate this file  outside agents folders, into a SSD style,
-#  to be shared between agents, and avoid code duplication.
-#  But for now, we will keep it here, since we are still in development phase.
-
-import os
-from typing import Literal
-from pydantic import Field, computed_field, ConfigDict
-
-from .base import NisabaBaseSettings
+from typing import List
+from pydantic import Field
+from pydantic_settings import SettingsConfigDict
+from agents.shared.config.llm import SharedLLMSettings
 
 
-class LLMSettings(NisabaBaseSettings):
+class NisabaLLMSettings(SharedLLMSettings):
     """
-    Configuration for LLM and Embedding integration.
+    Nisaba-specific LLM parameters.
 
-    This class enables Nisaba to communicate with local or remote inference
-    servers for text correction and semantic indexing.
+    Refines the LLM behavior for psychoanalytic orchestration and
+    high-context cognitive tasks.
+
+    Features:
+        - Independent temperature control for creative reasoning.
+        - Specialized reasoning modes (hybrid/symbolic).
+        - Domain-specific expertise injection.
+
+    Use cases:
+        - Adjusting CHAT_TEMPERATURE to 0.5 for balanced, consistent analysis.
+        - Defining 'hybrid' reasoning to combine vector retrieval with logic.
+
+    Design rationale:
+        - Inheriting from SharedLLMSettings ensures that if the global
+          AGENT_LLM_BASE_URL changes in the root .env, Nisaba follows automatically.
     """
 
-    # ---------------------------------------------------------------
-    # CONNECTION & INFRASTRUCTURE
-    # ---------------------------------------------------------------
-
-    # Priority: Env Var 'OPENAI_API_BASE' from Noosphera Compose, then default
-    LLM_BASE_URL: str = Field(
-        default=os.environ.get("OPENAI_API_BASE", "http://127.0.0.1:1234/v1"),
-        description="Base URL for the OpenAI-compatible API (e.g., LLM Studio/Ollama)",
-    )
-
-    LLM_API_KEY: str = Field(
-        default=os.environ.get("OPENAI_API_KEY", "sk-local"),
-        description="API Key for the LLM provider (use 'sk-local' for local servers)",
-    )
-
-    LLM_TIMEOUT: int = Field(
-        default=180,
-        ge=10,
-        le=600,
-        description="Request timeout in seconds for long OCR correction tasks",
-    )
-
-    LLM_MAX_RETRIES: int = Field(
-        default=3,
-        ge=0,
-        le=10,
-        description="Maximum retry attempts for failed LLM requests",
-    )
-
-    # ---------------------------------------------------------------
-    # CHAT MODEL (Text Correction & Reasoning)
-    # ---------------------------------------------------------------
-
-    CHAT_MODEL: str = Field(
-        default="nvidia/nemotron-3-nano-4b",
-        description="Primary model used for OCR text refinement and correction",
-    )
+    # ---------------------------------------------------------------------------
+    # COGNITIVE PARAMETERS
+    # ---------------------------------------------------------------------------
 
     CHAT_TEMPERATURE: float = Field(
-        default=0.2,
+        default=0.5,
         ge=0.0,
         le=2.0,
-        description="Temperature for reasoning and operational activities"
-        "(kept medium between 0.5 and 1.0 for balanced creativity and reliability)",
+        description="Control for randomness: 0.0 is deterministic, 1.0+ is creative.",
     )
 
-    CHAT_MAX_TOKENS: int = Field(
-        default=8000,
-        ge=100,
-        le=128000,
-        description="Maximum tokens allowed for a single correction response",
+    AGENT_REASONING_MODE: str = Field(
+        default="hybrid",
+        description="The logic framework used by the agent (e.g., hybrid, reactive).",
     )
 
-    # ---------------------------------------------------------------
-    # EMBEDDING MODEL (Semantic Memory)
-    # ---------------------------------------------------------------
-
-    EMBEDDING_MODEL: str = Field(
-        default="text-embedding-all-minilm-l6-v2-embedding",
-        description="Model used to generate vectors for pgvector and memory recall",
+    AGENT_SPECIALIZATION: List[str] = Field(
+        default_factory=lambda: ["semantic analysis", "symbolic interpretation"],
+        description="Areas of expertise injected into the system prompt.",
     )
 
-    # Matches the dimension defined in memory.py (SST)
-    EMBEDDING_DIMENSION: int = Field(
-        default=384,
-        description="Vector dimensions produced by the chosen embedding model",
-    )
-
-    # ---------------------------------------------------------------
-    # AGENT LOCALIZATION
-    # ---------------------------------------------------------------
-
-    PROMPT_LANGUAGE: Literal["pt-BR", "en-US"] = Field(
-        default="pt-BR",
-        description="Primary language for Agent system prompts and thought process",
-    )
-
-    # ---------------------------------------------------------------
-    # COMPUTED ENDPOINTS (Aliases)
-    # ---------------------------------------------------------------
-
-    @computed_field
-    @property
-    def llm_chat_endpoint(self) -> str:
-        """Returns the full OpenAI-style chat completions endpoint."""
-        return f"{self.LLM_BASE_URL.rstrip('/')}/chat/completions"
-
-    @computed_field
-    @property
-    def llm_embedding_endpoint(self) -> str:
-        """Returns the full OpenAI-style embeddings endpoint."""
-        return f"{self.LLM_BASE_URL.rstrip('/')}/embeddings"
-
-    # Backward compatibility aliases
-    @computed_field
-    @property
-    def llm_full_endpoint(self) -> str:
-        """Returns the full OpenAI-style chat completions endpoint (alias)."""
-        return self.llm_chat_endpoint
-
-    @computed_field
-    @property
-    def embedding_full_endpoint(self) -> str:
-        """Returns the full OpenAI-style embeddings endpoint (alias)."""
-        return self.llm_embedding_endpoint
-
-    model_config = ConfigDict(frozen=True, extra="ignore")
+    # Apply Nisaba prefix to all inherited and new fields
+    model_config = SettingsConfigDict(env_prefix="NISABA_", frozen=True)
 
 
-# ================================================================
-# GLOBAL INSTANCE
-# ================================================================
-llm_settings = LLMSettings()
+# Global instance for Nisaba
+nisaba_llm_settings = NisabaLLMSettings()
+llm_settings = nisaba_llm_settings
+
+__all__ = ["NisabaLLMSettings", "nisaba_llm_settings", "llm_settings"]
