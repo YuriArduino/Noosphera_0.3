@@ -12,14 +12,20 @@
             "name": "2-NISABA (Orchestration)",
             "path": "agents/Nisaba",
             "settings": {
-                "python.defaultInterpreterPath": "${workspaceFolder:0-CORE-ROOT}/Venvs/nisaba/bin/python"
+                "python.defaultInterpreterPath": "/media/yuri/Noosphera/Noosphera_0.3/Venvs/nisaba/bin/python3.12",
+                "terminal.integrated.env.linux": {
+                    "PYTHONPATH": "${workspaceFolder:0-CORE-ROOT}/agents/shared"
+                }
             }
         },
         {
             "name": "3-THOTH (Text)",
             "path": "agents/Thoth",
             "settings": {
-                "python.defaultInterpreterPath": "${workspaceFolder:0-CORE-ROOT}/Venvs/thoth/bin/python"
+                "python.defaultInterpreterPath": "/media/yuri/Noosphera/Noosphera_0.3/Venvs/thoth/bin/python3.12",
+                "terminal.integrated.env.linux": {
+                    "PYTHONPATH": "${workspaceFolder:0-CORE-ROOT}/agents/shared"
+                }
             }
         },
         {
@@ -42,7 +48,10 @@
             "name": "8-TOOL-GLYPHAR (OpenCV/Tesseract)",
             "path": "tools/Glyphar",
             "settings": {
-                "python.defaultInterpreterPath": "${workspaceFolder:0-CORE-ROOT}/Venvs/glyphar/bin/python"
+                "python.defaultInterpreterPath": "/media/yuri/Noosphera/Noosphera_0.3/Venvs/glyphar/bin/python3.12",
+                "terminal.integrated.env.linux": {
+                    "PYTHONPATH": "${workspaceFolder:0-CORE-ROOT}/agents/shared"
+                }
             }
         },
         {
@@ -54,7 +63,7 @@
             "path": "tools/Nomos"
         },
         {
-            "name": "11-INFRA-DOCKER (Prefect/PostgreSQL/Cypher)",
+            "name": "11-INFRA-DOCKER",
             "path": "docker"
         },
         {
@@ -63,24 +72,12 @@
         }
     ],
     "settings": {
-        // --- IMPORT RESOLUTION (PYTHONPATH) ---
+        "python.terminal.activateEnvironment": true,
         "python.analysis.extraPaths": [
-            "./agents/shared",
-            "./agents/Nisaba",
-            "./agents/Thoth",
-            "./agents/Euterpe",
-            "./agents/Hermes",
-            "./agents/Janus",
-            "./agents/Eris",
-            "./tools/Glyphar",
-            "./tools/Lyra",
-            "./tools/Nomos"
+            "${workspaceFolder:0-CORE-ROOT}/agents/shared"
         ],
-        "python.envFile": "${workspaceFolder:0-CORE-ROOT}/.env",
-        "python.terminal.useEnvFile": true,
         "python.analysis.autoImportCompletions": true,
         "editor.formatOnSave": true,
-        "python.formatting.provider": "black",
         "python.analysis.typeCheckingMode": "basic",
         "files.exclude": {
             "**/.git": true,
