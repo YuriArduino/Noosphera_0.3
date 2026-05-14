@@ -1,54 +1,91 @@
 {
     "folders": [
         {
-            "name": "0-CORE-RAIZ",
+            "name": "0-CORE-ROOT",
             "path": "."
         },
         {
-            "name": "1-SHARED-SST",
-            "path": "shared"
+            "name": "1-SHARED",
+            "path": "agents/shared"
         },
         {
-            "name": "2-NISABA",
+            "name": "2-NISABA (Orchestration)",
             "path": "agents/Nisaba",
             "settings": {
-                // Link direto para o Venv da Nisaba
-                "python.defaultInterpreterPath": "${workspaceFolder:0-CORE-RAIZ}/Venvs/nisaba/bin/python"
+                "python.defaultInterpreterPath": "${workspaceFolder:0-CORE-ROOT}/Venvs/nisaba/bin/python"
             }
         },
         {
-            "name": "3-THOTH",
+            "name": "3-THOTH (Text)",
             "path": "agents/Thoth",
             "settings": {
-                // Link direto para o Venv do Thoth
-                "python.defaultInterpreterPath": "${workspaceFolder:0-CORE-RAIZ}/Venvs/thoth/bin/python"
+                "python.defaultInterpreterPath": "${workspaceFolder:0-CORE-ROOT}/Venvs/thoth/bin/python"
             }
         },
         {
-            "name": "4-TOOLS-GLYPHAR",
+            "name": "4-EUTERPE (Audio)",
+            "path": "agents/Euterpe"
+        },
+        {
+            "name": "5-HERMES (Semantics)",
+            "path": "agents/Hermes"
+        },
+        {
+            "name": "6-JANUS (History)",
+            "path": "agents/Janus"
+        },
+        {
+            "name": "7-ERIS (Audit)",
+            "path": "agents/Eris"
+        },
+        {
+            "name": "8-TOOL-GLYPHAR (OpenCV/Tesseract)",
             "path": "tools/Glyphar",
             "settings": {
-                // Link direto para o Venv do Glyphar
-                "python.defaultInterpreterPath": "${workspaceFolder:0-CORE-RAIZ}/Venvs/glyphar/bin/python"
+                "python.defaultInterpreterPath": "${workspaceFolder:0-CORE-ROOT}/Venvs/glyphar/bin/python"
             }
         },
         {
-            "name": "5-DOCKER-INFRA",
+            "name": "9-TOOL-LYRA (pyannote/Whisper)",
+            "path": "tools/Lyra"
+        },
+        {
+            "name": "10-TOOL-NOMOS (spaCy/LiLT)",
+            "path": "tools/Nomos"
+        },
+        {
+            "name": "11-INFRA-DOCKER (Prefect/PostgreSQL/Cypher)",
             "path": "docker"
+        },
+        {
+            "name": "12-FLOWS",
+            "path": "flows"
         }
     ],
     "settings": {
-        // Configurações globais (SST)
+        // --- IMPORT RESOLUTION (PYTHONPATH) ---
         "python.analysis.extraPaths": [
-            "./shared",
+            "./agents/shared",
             "./agents/Nisaba",
             "./agents/Thoth",
-            "./tools/Glyphar"
+            "./agents/Euterpe",
+            "./agents/Hermes",
+            "./agents/Janus",
+            "./agents/Eris",
+            "./tools/Glyphar",
+            "./tools/Lyra",
+            "./tools/Nomos"
         ],
-        "python.envFile": "${workspaceFolder:0-CORE-RAIZ}/.env",
+        "python.envFile": "${workspaceFolder:0-CORE-ROOT}/.env",
         "python.terminal.useEnvFile": true,
         "python.analysis.autoImportCompletions": true,
         "editor.formatOnSave": true,
-        "python.formatting.provider": "black"
+        "python.formatting.provider": "black",
+        "python.analysis.typeCheckingMode": "basic",
+        "files.exclude": {
+            "**/.git": true,
+            "**/__pycache__": true,
+            "Venvs": true
+        }
     }
 }
