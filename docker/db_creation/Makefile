@@ -51,6 +51,7 @@ DOCKER_COMPOSE = docker compose -f $(COMPOSE_FILE)
 
 GLYPHAR_DIR = ../../tools/Glyphar
 NISABA_DIR  = ../../agents/Nisaba
+NISABA_ALEMBIC = ../../Venvs/nisaba/bin/alembic
 
 # =============================================================================
 # DATABASE URLS
@@ -388,7 +389,7 @@ nisaba-migrate:
 	cd $(NISABA_DIR) && \
 	PYTHONPATH=src \
 	NISABA_DATABASE_URL=$(NISABA_DB_URL) \
-	alembic -c alembic/alembic.ini \
+	$(NISABA_ALEMBIC) -c alembic/alembic.ini \
 	revision --autogenerate -m "$(m)"
 
 nisaba-upgrade:
@@ -398,7 +399,7 @@ nisaba-upgrade:
 	cd $(NISABA_DIR) && \
 	PYTHONPATH=src \
 	NISABA_DATABASE_URL=$(NISABA_DB_URL) \
-	alembic -c alembic/alembic.ini \
+	$(NISABA_ALEMBIC) -c alembic/alembic.ini \
 	upgrade head
 
 	@echo ""
@@ -411,7 +412,7 @@ nisaba-history:
 	cd $(NISABA_DIR) && \
 	PYTHONPATH=src \
 	NISABA_DATABASE_URL=$(NISABA_DB_URL) \
-	alembic -c alembic/alembic.ini \
+	$(NISABA_ALEMBIC) -c alembic/alembic.ini \
 	history --verbose
 
 # =============================================================================

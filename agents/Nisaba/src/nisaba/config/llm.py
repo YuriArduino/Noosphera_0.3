@@ -6,7 +6,7 @@ specializations for the Nisaba Agent.
 """
 
 from typing import List
-from pydantic import Field
+from pydantic import AliasChoices, Field
 from pydantic_settings import SettingsConfigDict
 from agents.shared.config.llm import SharedLLMSettings
 
@@ -41,6 +41,17 @@ class NisabaLLMSettings(SharedLLMSettings):
         ge=0.0,
         le=2.0,
         description="Control for randomness: 0.0 is deterministic, 1.0+ is creative.",
+    )
+
+    CHAT_MAX_TOKENS: int = Field(
+        default=8000,
+        ge=1,
+        validation_alias=AliasChoices(
+            "NISABA_CHAT_MAX_TOKENS",
+            "AGENT_CHAT_MAX_TOKENS",
+            "CHAT_MAX_TOKENS",
+        ),
+        description="Maximum number of tokens allowed in a chat completion.",
     )
 
     AGENT_REASONING_MODE: str = Field(

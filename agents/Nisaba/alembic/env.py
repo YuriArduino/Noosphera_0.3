@@ -9,6 +9,7 @@ Purpose:
 Pattern: Mirrors Glyphar's alembic/env.py for consistency.
 """
 
+import os
 import sys
 from logging.config import fileConfig
 from pathlib import Path
@@ -33,13 +34,14 @@ for path in [str(REPO_ROOT), str(SRC_DIR)]:
 # =============================================================================
 # Single Source of Truth for all table definitions
 from agents.shared.config.memory import memory_settings  # type: ignore
-from nisaba.schema.tables import Base  # type: ignore
+from nisaba.schema.tables import Base, TABLE_SCHEMA  # type: ignore
 
 # =============================================================================
 # 3. DATABASE CONNECTION
 # =============================================================================
-# Database URL comes from the shared/global config (.env at repository root).
-DATABASE_URL = memory_settings.DATABASE_URL
+# Host-side Makefile runs pass NISABA_DATABASE_URL to avoid Docker-only hosts
+# such as "db" leaking from docker/db_creation/.env.
+DATABASE_URL = os.getenv("NISABA_DATABASE_URL") or memory_settings.DATABASE_URL
 
 # =============================================================================
 # 4. ALEMBIC CONFIGURATION
@@ -52,6 +54,15 @@ if config.config_file_name is not None:
 
 # Target metadata for auto-detecting model changes
 target_metadata = Base.metadata
+
+
+def include_name(name: str | None, type_: str, parent_names: dict) -> bool:
+    """Keep Nisaba migrations scoped to Nisaba's own PostgreSQL schema."""
+    if type_ == "schema":
+        return name == TABLE_SCHEMA
+    if type_ == "table":
+        return parent_names.get("schema_name") == TABLE_SCHEMA
+    return True
 
 # =============================================================================
 # 5. MIGRATION EXECUTION
@@ -71,6 +82,7 @@ def run_migrations_offline() -> None:
         compare_type=True,
         render_as_batch=True,  # SQLite/Postgres compatibility
         include_schemas=True,  # Detect changes in custom schemas (e.g., 'nisaba')
+        include_name=include_name,
     )
     with context.begin_transaction():
         context.run_migrations()
@@ -99,6 +111,7 @@ def run_migrations_online() -> None:
             compare_type=True,
             render_as_batch=True,
             include_schemas=True,
+            include_name=include_name,
         )
         with context.begin_transaction():
             context.run_migrations()

@@ -5,7 +5,7 @@ Manages the connection to the centralized PostgreSQL backend, controlling
 state checkpoints, vector storage, and the cognitive ledger.
 """
 
-from pydantic import Field, ConfigDict, AliasChoices
+from pydantic import Field, ConfigDict, AliasChoices, computed_field
 from agents.shared.config.base import SharedBaseSettings
 
 
@@ -36,6 +36,12 @@ class SharedMemorySettings(SharedBaseSettings):
         validation_alias=AliasChoices("AGENT_DATABASE_URL", "DATABASE_URL"),
         description="Main connection string for the PostgreSQL/pgvector instance.",
     )
+
+    @computed_field
+    @property
+    def NISABA_DATABASE_URL(self) -> str:
+        """Backward-compatible alias for older Nisaba modules."""
+        return self.DATABASE_URL
 
     # ---------------------------------------------------------------------------
     # FEATURE TOGGLES

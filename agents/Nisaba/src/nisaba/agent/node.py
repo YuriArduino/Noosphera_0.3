@@ -58,6 +58,7 @@ def get_llm() -> ChatOpenAI:
         api_key=nisaba_llm_settings.LLM_API_KEY,
         base_url=nisaba_llm_settings.LLM_BASE_URL,
         temperature=nisaba_llm_settings.CHAT_TEMPERATURE,
+        max_tokens=nisaba_llm_settings.CHAT_MAX_TOKENS,
         timeout=nisaba_llm_settings.LLM_TIMEOUT,
         max_retries=nisaba_llm_settings.LLM_MAX_RETRIES,
     )

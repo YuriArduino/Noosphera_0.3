@@ -1,0 +1,39 @@
+Metadata-Version: 2.4
+Name: nisaba
+Version: 0.3.0
+Summary: Autonomous Agent for psychoanalytic environment orchestration and HITL interaction.
+License: MIT
+Keywords: agent,langgraph,psychoanalysis,llm,memory,pgvector,neo4j,streamlit
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Requires-Python: >=3.12
+Description-Content-Type: text/markdown
+Requires-Dist: langchain
+Requires-Dist: openai
+Requires-Dist: langchain-openai
+Requires-Dist: langchain-community
+Requires-Dist: langgraph
+Requires-Dist: pydantic-settings
+Requires-Dist: python-dotenv
+Requires-Dist: fastapi
+Requires-Dist: uvicorn[standard]
+Requires-Dist: streamlit
+Requires-Dist: psycopg2-binary
+Requires-Dist: pgvector
+Requires-Dist: sqlmodel
+Requires-Dist: neo4j
+Requires-Dist: alembic
+Requires-Dist: langgraph-checkpoint-postgres
+Requires-Dist: pydantic
+Requires-Dist: httpx
+Provides-Extra: dev
+Requires-Dist: pytest>=7.4.0; extra == "dev"
+Requires-Dist: pytest-asyncio>=0.23.0; extra == "dev"
+Requires-Dist: pytest-cov>=4.1.0; extra == "dev"
+Requires-Dist: pytest-dotenv>=0.5.2; extra == "dev"
+Requires-Dist: black>=23.12.0; extra == "dev"
+Requires-Dist: isort>=5.13.0; extra == "dev"
+Requires-Dist: mypy>=1.8.0; extra == "dev"
