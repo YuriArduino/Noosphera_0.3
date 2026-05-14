@@ -14,7 +14,7 @@ from pydantic import ConfigDict
 from sqlmodel import SQLModel, Field
 from sqlalchemy import Column, text
 from sqlalchemy.dialects.postgresql import JSONB
-from pgvector.sqlalchemy import Vector
+from pgvector.sqlalchemy import HalfVec
 
 # Import logical domain models (frozen, validation-only)
 from nisaba.models.session import SessionStateModel
@@ -117,7 +117,7 @@ class SemanticExperienceTable(SemanticExperienceModel, TimestampMixin, table=Tru
     metadata_json: Dict[str, Any] = Field(default_factory=dict, sa_column=Column(JSONB))
 
     # pgvector embedding (384D aligned with llm_settings.EMBEDDING_DIMENSION)
-    embedding: Optional[List[float]] = Field(default=None, sa_column=Column(Vector(384)))
+    embedding: Optional[List[float]] = Field(default=None, sa_column=Column(HalfVec(384)))
 
 
 # =============================================================================
