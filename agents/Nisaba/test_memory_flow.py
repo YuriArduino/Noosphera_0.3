@@ -31,6 +31,7 @@ def test_conversation_graph_builds() -> None:
     assert sorted(graph.nodes.keys()) == [
         "conversation",
         "input",
+        "knowledge_retrieve",
         "memory_retrieve",
         "memory_write",
     ]

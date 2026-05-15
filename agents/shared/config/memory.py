@@ -62,9 +62,37 @@ class SharedMemorySettings(SharedBaseSettings):
         description="Enables semantic search capabilities via pgvector.",
     )
 
+    KNOWLEDGE_GRAPH_ENABLED: bool = Field(
+        default=False,
+        validation_alias=AliasChoices("KNOWLEDGE_GRAPH_ENABLED", "NEO4J_ENABLED"),
+        description="Enables relationship retrieval through Neo4j/Cypher.",
+    )
+
     LEDGER_ENABLED: bool = Field(
         default=True,
         description="Enables the historical decision/correction audit log.",
+    )
+
+    # ---------------------------------------------------------------------------
+    # KNOWLEDGE GRAPH CONNECTIVITY
+    # ---------------------------------------------------------------------------
+
+    NEO4J_URI: str = Field(
+        default="bolt://localhost:7687",
+        validation_alias=AliasChoices("NEO4J_URI", "NEO4J_URL"),
+        description="Bolt URI for the Neo4j knowledge graph.",
+    )
+
+    NEO4J_USER: str = Field(
+        default="neo4j",
+        validation_alias=AliasChoices("NEO4J_USER", "NEO4J_USERNAME"),
+        description="Neo4j username.",
+    )
+
+    NEO4J_PASSWORD: str = Field(
+        default="neo4j",
+        validation_alias=AliasChoices("NEO4J_PASSWORD", "NEO4J_PASS"),
+        description="Neo4j password.",
     )
 
     # ---------------------------------------------------------------------------

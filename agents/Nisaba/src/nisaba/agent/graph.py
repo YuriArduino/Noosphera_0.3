@@ -10,6 +10,7 @@ from nisaba.agent.node import (
     ConversationState,
     input_node,
     memory_retrieval_node,
+    knowledge_retrieval_node,
     conversation_node,
     memory_writer_node,
 )
@@ -22,8 +23,9 @@ def build_conversation_graph() -> StateGraph:
     The graph follows a sequential 'Scan-Think-Commit' architecture:
     1. Input: Sanitizes user request.
     2. Memory Retrieve: Fetches context from pgvector (SST).
-    3. Conversation: LLM reasoning with retrieved context.
-    4. Memory Write: Commits the turn to the long-term vector store.
+    3. Knowledge Retrieve: Fetches relational context from Neo4j when enabled.
+    4. Conversation: LLM reasoning with retrieved context.
+    5. Memory Write: Commits the turn to the long-term vector store.
 
     Returns:
         An uncompiled StateGraph instance.
@@ -46,6 +48,7 @@ def build_conversation_graph() -> StateGraph:
     # ---------------------------------------------------------------------------
     workflow.add_node("input", input_node)
     workflow.add_node("memory_retrieve", memory_retrieval_node)
+    workflow.add_node("knowledge_retrieve", knowledge_retrieval_node)
     workflow.add_node("conversation", conversation_node)
     workflow.add_node("memory_write", memory_writer_node)
 
@@ -56,7 +59,8 @@ def build_conversation_graph() -> StateGraph:
 
     # Linear flow for Stage 2 (Hybrid Memory)
     workflow.add_edge("input", "memory_retrieve")
-    workflow.add_edge("memory_retrieve", "conversation")
+    workflow.add_edge("memory_retrieve", "knowledge_retrieve")
+    workflow.add_edge("knowledge_retrieve", "conversation")
     workflow.add_edge("conversation", "memory_write")
 
     # Terminate the turn after committing to memory
