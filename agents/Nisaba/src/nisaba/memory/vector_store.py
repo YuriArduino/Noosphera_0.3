@@ -5,6 +5,7 @@ Enables Nisaba to retrieve similar past experiences.
 
 import logging
 import json
+import re
 from typing import List, Optional, Union
 from datetime import datetime, timezone
 
@@ -24,6 +25,48 @@ def _safe_text_for_embedding(text: Optional[str], fallback: str = "empty") -> st
         return fallback
     text = str(text).strip()
     return text if text else fallback
+
+
+def _safe_text_for_bm25_query(text: Optional[str], fallback: str = "empty") -> str:
+    """
+    Convert arbitrary chat text into a conservative ParadeDB/Lucene query.
+
+    Raw user turns may contain Cypher snippets, JSON, markdown, quotes, colons,
+    and parentheses. Those characters are meaningful to ParadeDB's query parser,
+    so the lexical side of hybrid retrieval receives only simple terms joined by
+    explicit OR operators. The original text is still used for embeddings.
+    """
+    text = _safe_text_for_embedding(text, fallback=fallback).lower()
+    terms = re.findall(r"[0-9a-zA-ZÀ-ÿ_]{3,}", text)
+
+    stopwords = {
+        "aos",
+        "com",
+        "das",
+        "dos",
+        "essa",
+        "esse",
+        "está",
+        "esta",
+        "para",
+        "por",
+        "que",
+        "sem",
+        "uma",
+        "você",
+        "voce",
+    }
+    deduped_terms: list[str] = []
+    seen = set()
+    for term in terms:
+        if term in stopwords or term in seen:
+            continue
+        seen.add(term)
+        deduped_terms.append(term)
+        if len(deduped_terms) >= 12:
+            break
+
+    return " OR ".join(deduped_terms) if deduped_terms else fallback
 
 
 def _to_float_list(vec: Optional[Union[List[float], np.ndarray]]) -> Optional[List[float]]:
@@ -206,9 +249,6 @@ class VectorStore:
         limit = limit or memory_settings.SEMANTIC_SEARCH_TOP_K
         query_embedding = get_embedding(query)
 
-        if not self._has_bm25_index():
-            return self.search_similar(query=query, limit=limit, category=category)
-
         schema = self.table_schema if self.table_schema in {"public", "nisaba"} else "public"
 
         with Session(self.engine) as session:
@@ -261,8 +301,12 @@ class VectorStore:
 
         limit = limit or memory_settings.SEMANTIC_SEARCH_TOP_K
         query_embedding = get_embedding(query)
+        bm25_query = _safe_text_for_bm25_query(query)
 
         schema = self.table_schema if self.table_schema in {"public", "nisaba"} else "public"
+
+        if not self._has_bm25_index():
+            return self.search_similar(query=query, limit=limit, category=category)
 
         with Session(self.engine) as session:
             stmt = text(
@@ -299,7 +343,7 @@ class VectorStore:
                 """
             ).bindparams(
                 embedding=query_embedding,
-                query=query,
+                query=bm25_query,
                 category=category,
                 vec_limit=limit * 2,
                 bm25_limit=limit * 2,

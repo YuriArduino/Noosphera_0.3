@@ -20,6 +20,45 @@ class NisabaPrompts:
           consistency across different nodes.
     """
 
+    @classmethod
+    def get_entity_extraction_prompt(
+        cls,
+        user_input: str,
+        agent_response: str,
+        session_id: str = "unknown",
+    ) -> str:
+        """
+        Gera o prompt para extração estruturada de fatos persistíveis.
+        """
+        return (
+            "Você extrai fatos persistíveis da conversa para alimentar um grafo.\n"
+            "Retorne JSON válido. Não retorne Cypher. Não invente IDs.\n"
+            "\n"
+            "Formato obrigatório:\n"
+            "{\n"
+            '  "person": {"name": string | null, "age": number | null},\n'
+            '  "preferences": [{"key": string, "value": string}],\n'
+            '  "topics": [{"name": string}]\n'
+            "}\n"
+            "\n"
+            "Regras:\n"
+            "1. Extraia apenas fatos estáveis afirmados pelo usuário.\n"
+            "2. Não transforme a resposta do assistente em fato.\n"
+            "3. Se o usuário disser o próprio nome, preencha person.name.\n"
+            "4. Se o usuário disser a própria idade, preencha person.age como número inteiro.\n"
+            "5. Preferências devem usar chaves canônicas quando possível: favorite_animal, favorite_food, favorite_color.\n"
+            "6. Para 'meu animal favorito é gato', use key favorite_animal e value gato.\n"
+            "7. Tópicos são assuntos mencionados explicitamente, como Neo4j ou Cypher.\n"
+            "8. Se não houver fatos claros, retorne exatamente: {\"person\": null, \"preferences\": [], \"topics\": []}\n"
+            "9. Retorne somente JSON, sem Markdown.\n"
+            "\n"
+            "Exemplo:\n"
+            '{"person": {"name": "Yuri", "age": 37}, "preferences": [{"key": "favorite_animal", "value": "gato"}], "topics": [{"name": "Neo4j"}]}\n'
+            "\n"
+            f"Session id: {session_id}\n"
+            f"Conversa:\nUser: {user_input}\nAssistant: {agent_response}\n"
+        )
+
     # ---------------------------------------------------------------------------
     # PERSONA DEFINITION
     # ---------------------------------------------------------------------------

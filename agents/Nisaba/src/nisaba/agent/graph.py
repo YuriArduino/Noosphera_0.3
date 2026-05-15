@@ -13,6 +13,7 @@ from nisaba.agent.node import (
     knowledge_retrieval_node,
     conversation_node,
     memory_writer_node,
+    entity_extraction_node,
 )
 
 
@@ -51,6 +52,7 @@ def build_conversation_graph() -> StateGraph:
     workflow.add_node("knowledge_retrieve", knowledge_retrieval_node)
     workflow.add_node("conversation", conversation_node)
     workflow.add_node("memory_write", memory_writer_node)
+    workflow.add_node("entity_extract", entity_extraction_node)
 
     # ---------------------------------------------------------------------------
     # EDGE DEFINITION (COGNITIVE PIPELINE)
@@ -63,7 +65,8 @@ def build_conversation_graph() -> StateGraph:
     workflow.add_edge("knowledge_retrieve", "conversation")
     workflow.add_edge("conversation", "memory_write")
 
-    # Terminate the turn after committing to memory
-    workflow.add_edge("memory_write", END)
+    # Persist extracted relational facts after the response is safely generated.
+    workflow.add_edge("memory_write", "entity_extract")
+    workflow.add_edge("entity_extract", END)
 
     return workflow
