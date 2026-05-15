@@ -90,7 +90,7 @@ class SessionStore:
         """Verifica se o registro expirou (consulta ao banco)."""
         with Session(self.engine) as session:
             stmt = text(
-                "SELECT 1 FROM nisaba.session_state WHERE session_id = :sid "
+                "SELECT 1 FROM public.session_state WHERE session_id = :sid "
                 "AND created_at + (ttl_seconds * INTERVAL '1 second') < NOW()"
             )
             result = session.exec(stmt, {"sid": record.session_id}).first()
@@ -118,7 +118,7 @@ class SessionStore:
 
         with Session(self.engine) as session:
             stmt = text(
-                "DELETE FROM nisaba.session_state "
+                "DELETE FROM public.session_state "
                 "WHERE ttl_seconds IS NOT NULL "
                 "AND created_at + (ttl_seconds * INTERVAL '1 second') < NOW()"
             )

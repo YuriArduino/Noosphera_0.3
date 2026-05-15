@@ -24,7 +24,7 @@ from nisaba.models.memory import SemanticExperienceModel
 # =============================================================================
 # SCHEMA CONFIGURATION
 # =============================================================================
-TABLE_SCHEMA = "nisaba"
+TABLE_SCHEMA = "public"
 TABLE_ARGS = {"schema": TABLE_SCHEMA}
 
 # Registry for SQLAlchemy & Alembic auto-discovery

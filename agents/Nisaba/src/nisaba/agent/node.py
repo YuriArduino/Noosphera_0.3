@@ -103,10 +103,9 @@ def memory_retrieval_node(state: ConversationState) -> dict:
 
     try:
         vs = get_vector_store()
-        similar = vs.search_similar(
+        similar = vs.search_hybrid(
             query=query,
             limit=memory_settings.SEMANTIC_SEARCH_TOP_K,
-            min_relevance=0.3,
         )
 
         if similar:

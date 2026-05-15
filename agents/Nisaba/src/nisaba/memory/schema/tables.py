@@ -17,7 +17,7 @@ from sqlalchemy import Column, JSON
 # BASE CONFIGURATION
 # =============================================================================
 # Shared schema for all Nisaba tables (logical isolation in shared DB)
-TABLE_SCHEMA = "nisaba"
+TABLE_SCHEMA = "public"
 TABLE_ARGS = {"schema": TABLE_SCHEMA}
 
 # =============================================================================

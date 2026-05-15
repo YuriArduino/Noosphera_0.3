@@ -14,6 +14,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[5]))
 
 from sqlalchemy import inspect, create_engine, text
 from agents.shared.config.memory import memory_settings
+from nisaba.schema.tables import TABLE_SCHEMA
 
 # 🔹 Usa a configuração compartilhada como fonte única de verdade
 DATABASE_URL = memory_settings.DATABASE_URL
@@ -31,12 +32,12 @@ try:
 
     inspector = inspect(engine)
 
-    print("\n📦 Tabelas no schema 'nisaba':")
-    tables = inspector.get_table_names(schema="nisaba")
+    print(f"\n📦 Tabelas no schema '{TABLE_SCHEMA}':")
+    tables = inspector.get_table_names(schema=TABLE_SCHEMA)
     if not tables:
         print("  ⚠️ Nenhuma tabela encontrada (rodou alembic upgrade head?)")
     for table in tables:
-        cols = [c["name"] for c in inspector.get_columns(table, schema="nisaba")]
+        cols = [c["name"] for c in inspector.get_columns(table, schema=TABLE_SCHEMA)]
         print(f"  ├── {table} ({', '.join(cols)})")
 
     print("\n✅ Schema validado via SSOT (models.py)")
